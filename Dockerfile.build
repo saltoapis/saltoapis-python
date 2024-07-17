@@ -1,0 +1,13 @@
+FROM python:3.12.4-bookworm
+
+# Install bazelisk
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends build-essential ca-certificates apt-transport-https curl cmake git software-properties-common && \
+    curl -L -o bazelisk https://github.com/bazelbuild/bazelisk/releases/download/v1.20.0/bazelisk-linux-amd64 && \
+    chmod +x bazelisk && \
+    cp bazelisk /usr/local/bin && \
+    ln -s /usr/local/bin/bazelisk /usr/local/bin/bazel
+
+# copy current workspace
+COPY . /workspace
+WORKDIR /workspace
