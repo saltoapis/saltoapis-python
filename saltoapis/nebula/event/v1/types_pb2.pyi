@@ -46,6 +46,18 @@ class AccessPointLocked(_message.Message):
     user: _user_pb2.User
     def __init__(self, access_point: _Optional[_Union[_access_point_pb2.AccessPoint, _Mapping]] = ..., user: _Optional[_Union[_user_pb2.User, _Mapping]] = ...) -> None: ...
 
+class AccessPointForcedOpen(_message.Message):
+    __slots__ = ("access_point",)
+    ACCESS_POINT_FIELD_NUMBER: _ClassVar[int]
+    access_point: _access_point_pb2.AccessPoint
+    def __init__(self, access_point: _Optional[_Union[_access_point_pb2.AccessPoint, _Mapping]] = ...) -> None: ...
+
+class AccessPointClosed(_message.Message):
+    __slots__ = ("access_point",)
+    ACCESS_POINT_FIELD_NUMBER: _ClassVar[int]
+    access_point: _access_point_pb2.AccessPoint
+    def __init__(self, access_point: _Optional[_Union[_access_point_pb2.AccessPoint, _Mapping]] = ...) -> None: ...
+
 class AccessDenied(_message.Message):
     __slots__ = ("access_point", "user")
     ACCESS_POINT_FIELD_NUMBER: _ClassVar[int]
@@ -53,6 +65,12 @@ class AccessDenied(_message.Message):
     access_point: _access_point_pb2.AccessPoint
     user: _user_pb2.User
     def __init__(self, access_point: _Optional[_Union[_access_point_pb2.AccessPoint, _Mapping]] = ..., user: _Optional[_Union[_user_pb2.User, _Mapping]] = ...) -> None: ...
+
+class AccessPointLeftOpen(_message.Message):
+    __slots__ = ("access_point",)
+    ACCESS_POINT_FIELD_NUMBER: _ClassVar[int]
+    access_point: _access_point_pb2.AccessPoint
+    def __init__(self, access_point: _Optional[_Union[_access_point_pb2.AccessPoint, _Mapping]] = ...) -> None: ...
 
 class AccessRightCreated(_message.Message):
     __slots__ = ("access_right",)
