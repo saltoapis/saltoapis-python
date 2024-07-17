@@ -39,4 +39,5 @@ packages = [
     'saltoapis.nebula.openingmodeschedule.v1',
     'saltoapis.nebula.user.v1',
     'saltoapis.nebula.event.v1',
+    'saltoapis.auth',
 ]
