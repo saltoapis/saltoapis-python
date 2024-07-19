@@ -13,7 +13,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class AccessPoint(_message.Message):
-    __slots__ = ("name", "display_name", "fixed", "schedule", "calendar", "card_key_updater", "unlock_duration")
+    __slots__ = ("name", "display_name", "fixed", "schedule", "calendar", "card_key_updater", "unlock_duration", "left_open")
     NAME_FIELD_NUMBER: _ClassVar[int]
     DISPLAY_NAME_FIELD_NUMBER: _ClassVar[int]
     FIXED_FIELD_NUMBER: _ClassVar[int]
@@ -21,6 +21,7 @@ class AccessPoint(_message.Message):
     CALENDAR_FIELD_NUMBER: _ClassVar[int]
     CARD_KEY_UPDATER_FIELD_NUMBER: _ClassVar[int]
     UNLOCK_DURATION_FIELD_NUMBER: _ClassVar[int]
+    LEFT_OPEN_FIELD_NUMBER: _ClassVar[int]
     name: str
     display_name: str
     fixed: _opening_mode_pb2.OpeningMode
@@ -28,7 +29,8 @@ class AccessPoint(_message.Message):
     calendar: str
     card_key_updater: bool
     unlock_duration: _duration_pb2.Duration
-    def __init__(self, name: _Optional[str] = ..., display_name: _Optional[str] = ..., fixed: _Optional[_Union[_opening_mode_pb2.OpeningMode, str]] = ..., schedule: _Optional[str] = ..., calendar: _Optional[str] = ..., card_key_updater: bool = ..., unlock_duration: _Optional[_Union[_duration_pb2.Duration, _Mapping]] = ...) -> None: ...
+    left_open: bool
+    def __init__(self, name: _Optional[str] = ..., display_name: _Optional[str] = ..., fixed: _Optional[_Union[_opening_mode_pb2.OpeningMode, str]] = ..., schedule: _Optional[str] = ..., calendar: _Optional[str] = ..., card_key_updater: bool = ..., unlock_duration: _Optional[_Union[_duration_pb2.Duration, _Mapping]] = ..., left_open: bool = ...) -> None: ...
 
 class CreateAccessPointRequest(_message.Message):
     __slots__ = ("parent", "access_point_id", "access_point")
