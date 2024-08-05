@@ -1,13 +1,15 @@
 load('//scripts/pyproject:pyproject.bzl', 'pyproject')
 load(':python_metadata.bzl', 'python_projects')
 
+all_projects = python_projects + ['//saltoapis/auth']
+
 pyproject(
     name = "pyproject",
     project = "saltoapis-python",
-    packages = ["{}:package".format(project) for project in python_projects],
+    packages = ["{}:package".format(project) for project in all_projects],
 )
 
 filegroup(
     name = "packages",
-    srcs = ["{}:package".format(project) for project in python_projects],
+    srcs = ["{}:package".format(project) for project in all_projects],
 )
