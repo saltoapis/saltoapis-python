@@ -1,10 +1,11 @@
 # saltoapis-python
 
-## Installation
+## Installation
 
 To install the Python SDK, first you need to make sure that you have access to this repository from your `git` client.
 
 Then, you can install the SDK using `pip`. To do so, simply add this repo as a dependency in your `requirements.txt` file:
+
 ```
 saltoapis-python @ git+https://github.com/saltoapis/saltoapis-python.git@<commit-hash>
 ```
@@ -33,6 +34,7 @@ channel = grpc.secure_channel(target='nebula.saltoapis.com', credentials=grpc.ss
 
 > **Note**
 > You should always request the following scopes when authenticating:
+>
 > ```
 > openid, offline, profile, email, https://saltoapis.com/auth/nebula
 > ```
