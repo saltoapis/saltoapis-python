@@ -1,3 +1,4 @@
+from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from saltoapis.type import color_pb2 as _color_pb2
 from saltoapis.type import color_pb2 as _color_pb2
 from google.protobuf.internal import containers as _containers
@@ -23,20 +24,22 @@ class DigitalKey(_message.Message):
         text_color: _color_pb2.Color
         def __init__(self, title: _Optional[str] = ..., subtitle: _Optional[str] = ..., photo_uri: _Optional[str] = ..., address: _Optional[str] = ..., text_color: _Optional[_Union[_color_pb2.Color, _Mapping]] = ...) -> None: ...
     class AppKey(_message.Message):
-        __slots__ = ("metadata", "data", "installation", "unit", "installation_id", "unit_id")
+        __slots__ = ("metadata", "data", "installation", "unit", "installation_id", "unit_id", "access_points_change_time")
         METADATA_FIELD_NUMBER: _ClassVar[int]
         DATA_FIELD_NUMBER: _ClassVar[int]
         INSTALLATION_FIELD_NUMBER: _ClassVar[int]
         UNIT_FIELD_NUMBER: _ClassVar[int]
         INSTALLATION_ID_FIELD_NUMBER: _ClassVar[int]
         UNIT_ID_FIELD_NUMBER: _ClassVar[int]
+        ACCESS_POINTS_CHANGE_TIME_FIELD_NUMBER: _ClassVar[int]
         metadata: DigitalKey.Metadata
         data: bytes
         installation: str
         unit: str
         installation_id: str
         unit_id: str
-        def __init__(self, metadata: _Optional[_Union[DigitalKey.Metadata, _Mapping]] = ..., data: _Optional[bytes] = ..., installation: _Optional[str] = ..., unit: _Optional[str] = ..., installation_id: _Optional[str] = ..., unit_id: _Optional[str] = ...) -> None: ...
+        access_points_change_time: _timestamp_pb2.Timestamp
+        def __init__(self, metadata: _Optional[_Union[DigitalKey.Metadata, _Mapping]] = ..., data: _Optional[bytes] = ..., installation: _Optional[str] = ..., unit: _Optional[str] = ..., installation_id: _Optional[str] = ..., unit_id: _Optional[str] = ..., access_points_change_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
     class WalletKey(_message.Message):
         __slots__ = ("metadata", "hydra_credential")
         class HydraCredential(_message.Message):
