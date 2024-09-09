@@ -88,6 +88,11 @@ class ElectronicLockServiceStub(object):
                 request_serializer=salto_dot_nebula_dot_electroniclock_dot_v1_dot_electronic__lock__pb2.GenerateAuthorizationTokenRequest.SerializeToString,
                 response_deserializer=salto_dot_nebula_dot_electroniclock_dot_v1_dot_electronic__lock__pb2.GenerateAuthorizationTokenResponse.FromString,
                 _registered_method=True)
+        self.GenerateFirmwareDownloadUri = channel.unary_unary(
+                '/salto.nebula.electroniclock.v1.ElectronicLockService/GenerateFirmwareDownloadUri',
+                request_serializer=salto_dot_nebula_dot_electroniclock_dot_v1_dot_electronic__lock__pb2.GenerateFirmwareDownloadUriRequest.SerializeToString,
+                response_deserializer=salto_dot_longrunning_dot_v1_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
 
 
 class ElectronicLockServiceServicer(object):
@@ -227,6 +232,17 @@ class ElectronicLockServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GenerateFirmwareDownloadUri(self, request, context):
+        """Generate electronic lock firmware download URI
+
+        Provides the download URI for the latest firmware bundle for the
+        electronic lock. The returned URI can be used to bring the electronic
+        lock firmwares up to latest.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_ElectronicLockServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -289,6 +305,11 @@ def add_ElectronicLockServiceServicer_to_server(servicer, server):
                     servicer.GenerateAuthorizationToken,
                     request_deserializer=salto_dot_nebula_dot_electroniclock_dot_v1_dot_electronic__lock__pb2.GenerateAuthorizationTokenRequest.FromString,
                     response_serializer=salto_dot_nebula_dot_electroniclock_dot_v1_dot_electronic__lock__pb2.GenerateAuthorizationTokenResponse.SerializeToString,
+            ),
+            'GenerateFirmwareDownloadUri': grpc.unary_unary_rpc_method_handler(
+                    servicer.GenerateFirmwareDownloadUri,
+                    request_deserializer=salto_dot_nebula_dot_electroniclock_dot_v1_dot_electronic__lock__pb2.GenerateFirmwareDownloadUriRequest.FromString,
+                    response_serializer=salto_dot_longrunning_dot_v1_dot_operation__pb2.Operation.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -624,6 +645,33 @@ class ElectronicLockService(object):
             '/salto.nebula.electroniclock.v1.ElectronicLockService/GenerateAuthorizationToken',
             salto_dot_nebula_dot_electroniclock_dot_v1_dot_electronic__lock__pb2.GenerateAuthorizationTokenRequest.SerializeToString,
             salto_dot_nebula_dot_electroniclock_dot_v1_dot_electronic__lock__pb2.GenerateAuthorizationTokenResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GenerateFirmwareDownloadUri(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/salto.nebula.electroniclock.v1.ElectronicLockService/GenerateFirmwareDownloadUri',
+            salto_dot_nebula_dot_electroniclock_dot_v1_dot_electronic__lock__pb2.GenerateFirmwareDownloadUriRequest.SerializeToString,
+            salto_dot_longrunning_dot_v1_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,
             insecure,
