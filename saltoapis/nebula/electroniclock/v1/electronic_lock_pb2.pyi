@@ -190,3 +190,21 @@ class GenerateAuthorizationTokenResponse(_message.Message):
     AUTHORIZATION_TOKEN_FIELD_NUMBER: _ClassVar[int]
     authorization_token: bytes
     def __init__(self, authorization_token: _Optional[bytes] = ...) -> None: ...
+
+class GenerateFirmwareDownloadUriRequest(_message.Message):
+    __slots__ = ("electronic_lock",)
+    ELECTRONIC_LOCK_FIELD_NUMBER: _ClassVar[int]
+    electronic_lock: str
+    def __init__(self, electronic_lock: _Optional[str] = ...) -> None: ...
+
+class GenerateFirmwareDownloadUriResponse(_message.Message):
+    __slots__ = ("download_uri", "digest")
+    DOWNLOAD_URI_FIELD_NUMBER: _ClassVar[int]
+    DIGEST_FIELD_NUMBER: _ClassVar[int]
+    download_uri: str
+    digest: str
+    def __init__(self, download_uri: _Optional[str] = ..., digest: _Optional[str] = ...) -> None: ...
+
+class GenerateFirmwareDownloadUriMetadata(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
