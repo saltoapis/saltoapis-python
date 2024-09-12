@@ -306,10 +306,12 @@ class TransferInstallationOwnershipResponse(_message.Message):
     def __init__(self) -> None: ...
 
 class AcceptInstallationOwnershipRequest(_message.Message):
-    __slots__ = ("installation",)
+    __slots__ = ("installation", "billing_info")
     INSTALLATION_FIELD_NUMBER: _ClassVar[int]
+    BILLING_INFO_FIELD_NUMBER: _ClassVar[int]
     installation: str
-    def __init__(self, installation: _Optional[str] = ...) -> None: ...
+    billing_info: BillingInfo
+    def __init__(self, installation: _Optional[str] = ..., billing_info: _Optional[_Union[BillingInfo, _Mapping]] = ...) -> None: ...
 
 class AcceptInstallationOwnershipResponse(_message.Message):
     __slots__ = ()
