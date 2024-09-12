@@ -9,16 +9,23 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Unit(_message.Message):
-    __slots__ = ("name", "display_name", "move_in_time", "move_out_time")
+    __slots__ = ("name", "display_name", "move_in_time", "move_out_time", "privacy_settings")
+    class PrivacySettings(_message.Message):
+        __slots__ = ("enabled",)
+        ENABLED_FIELD_NUMBER: _ClassVar[int]
+        enabled: bool
+        def __init__(self, enabled: bool = ...) -> None: ...
     NAME_FIELD_NUMBER: _ClassVar[int]
     DISPLAY_NAME_FIELD_NUMBER: _ClassVar[int]
     MOVE_IN_TIME_FIELD_NUMBER: _ClassVar[int]
     MOVE_OUT_TIME_FIELD_NUMBER: _ClassVar[int]
+    PRIVACY_SETTINGS_FIELD_NUMBER: _ClassVar[int]
     name: str
     display_name: str
     move_in_time: _timestamp_pb2.Timestamp
     move_out_time: _timestamp_pb2.Timestamp
-    def __init__(self, name: _Optional[str] = ..., display_name: _Optional[str] = ..., move_in_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., move_out_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+    privacy_settings: Unit.PrivacySettings
+    def __init__(self, name: _Optional[str] = ..., display_name: _Optional[str] = ..., move_in_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., move_out_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., privacy_settings: _Optional[_Union[Unit.PrivacySettings, _Mapping]] = ...) -> None: ...
 
 class Policy(_message.Message):
     __slots__ = ("name", "member", "roles")
