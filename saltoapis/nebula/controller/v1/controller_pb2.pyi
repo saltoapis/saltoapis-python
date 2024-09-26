@@ -171,3 +171,21 @@ class UpdateControllerFirmwareMetadata(_message.Message):
     PROGRESS_PERCENT_FIELD_NUMBER: _ClassVar[int]
     progress_percent: int
     def __init__(self, progress_percent: _Optional[int] = ...) -> None: ...
+
+class GenerateFirmwareDownloadUriRequest(_message.Message):
+    __slots__ = ("controller",)
+    CONTROLLER_FIELD_NUMBER: _ClassVar[int]
+    controller: str
+    def __init__(self, controller: _Optional[str] = ...) -> None: ...
+
+class GenerateFirmwareDownloadUriResponse(_message.Message):
+    __slots__ = ("download_uri", "digest")
+    DOWNLOAD_URI_FIELD_NUMBER: _ClassVar[int]
+    DIGEST_FIELD_NUMBER: _ClassVar[int]
+    download_uri: str
+    digest: str
+    def __init__(self, download_uri: _Optional[str] = ..., digest: _Optional[str] = ...) -> None: ...
+
+class GenerateFirmwareDownloadUriMetadata(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
