@@ -79,6 +79,11 @@ class ControllerServiceStub(object):
                 request_serializer=salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.UpdateControllerFirmwareRequest.SerializeToString,
                 response_deserializer=salto_dot_longrunning_dot_v1_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.GenerateFirmwareDownloadUri = channel.unary_unary(
+                '/salto.nebula.controller.v1.ControllerService/GenerateFirmwareDownloadUri',
+                request_serializer=salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.GenerateFirmwareDownloadUriRequest.SerializeToString,
+                response_deserializer=salto_dot_longrunning_dot_v1_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
 
 
 class ControllerServiceServicer(object):
@@ -204,6 +209,17 @@ class ControllerServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GenerateFirmwareDownloadUri(self, request, context):
+        """Generate controller firmware download URI
+
+        Provides the download URI for the latest firmware bundle for the
+        controller. The returned URI can be used to bring the controller
+        firmwares up to latest.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_ControllerServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -260,6 +276,11 @@ def add_ControllerServiceServicer_to_server(servicer, server):
             'UpdateControllerFirmware': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateControllerFirmware,
                     request_deserializer=salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.UpdateControllerFirmwareRequest.FromString,
+                    response_serializer=salto_dot_longrunning_dot_v1_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'GenerateFirmwareDownloadUri': grpc.unary_unary_rpc_method_handler(
+                    servicer.GenerateFirmwareDownloadUri,
+                    request_deserializer=salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.GenerateFirmwareDownloadUriRequest.FromString,
                     response_serializer=salto_dot_longrunning_dot_v1_dot_operation__pb2.Operation.SerializeToString,
             ),
     }
@@ -564,6 +585,33 @@ class ControllerService(object):
             target,
             '/salto.nebula.controller.v1.ControllerService/UpdateControllerFirmware',
             salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.UpdateControllerFirmwareRequest.SerializeToString,
+            salto_dot_longrunning_dot_v1_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GenerateFirmwareDownloadUri(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/salto.nebula.controller.v1.ControllerService/GenerateFirmwareDownloadUri',
+            salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.GenerateFirmwareDownloadUriRequest.SerializeToString,
             salto_dot_longrunning_dot_v1_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,

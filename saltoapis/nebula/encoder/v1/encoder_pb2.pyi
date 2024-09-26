@@ -183,3 +183,21 @@ class ReadKeyResponse(_message.Message):
 class ReadKeyMetadata(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
+
+class GenerateFirmwareDownloadUriRequest(_message.Message):
+    __slots__ = ("encoder",)
+    ENCODER_FIELD_NUMBER: _ClassVar[int]
+    encoder: str
+    def __init__(self, encoder: _Optional[str] = ...) -> None: ...
+
+class GenerateFirmwareDownloadUriResponse(_message.Message):
+    __slots__ = ("download_uri", "digest")
+    DOWNLOAD_URI_FIELD_NUMBER: _ClassVar[int]
+    DIGEST_FIELD_NUMBER: _ClassVar[int]
+    download_uri: str
+    digest: str
+    def __init__(self, download_uri: _Optional[str] = ..., digest: _Optional[str] = ...) -> None: ...
+
+class GenerateFirmwareDownloadUriMetadata(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...

@@ -126,3 +126,21 @@ class ResetExtenderResponse(_message.Message):
 class ResetExtenderMetadata(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
+
+class GenerateFirmwareDownloadUriRequest(_message.Message):
+    __slots__ = ("extender",)
+    EXTENDER_FIELD_NUMBER: _ClassVar[int]
+    extender: str
+    def __init__(self, extender: _Optional[str] = ...) -> None: ...
+
+class GenerateFirmwareDownloadUriResponse(_message.Message):
+    __slots__ = ("download_uri", "digest")
+    DOWNLOAD_URI_FIELD_NUMBER: _ClassVar[int]
+    DIGEST_FIELD_NUMBER: _ClassVar[int]
+    download_uri: str
+    digest: str
+    def __init__(self, download_uri: _Optional[str] = ..., digest: _Optional[str] = ...) -> None: ...
+
+class GenerateFirmwareDownloadUriMetadata(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...

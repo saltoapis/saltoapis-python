@@ -66,6 +66,11 @@ class ExtenderServiceStub(object):
                 request_serializer=salto_dot_nebula_dot_extender_dot_v1_dot_extender__pb2.ResetExtenderRequest.SerializeToString,
                 response_deserializer=salto_dot_longrunning_dot_v1_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.GenerateFirmwareDownloadUri = channel.unary_unary(
+                '/salto.nebula.extender.v1.ExtenderService/GenerateFirmwareDownloadUri',
+                request_serializer=salto_dot_nebula_dot_extender_dot_v1_dot_extender__pb2.GenerateFirmwareDownloadUriRequest.SerializeToString,
+                response_deserializer=salto_dot_longrunning_dot_v1_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
 
 
 class ExtenderServiceServicer(object):
@@ -160,6 +165,17 @@ class ExtenderServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GenerateFirmwareDownloadUri(self, request, context):
+        """Generate extender firmware download URI
+
+        Provides the download URI for the latest firmware bundle for the
+        extender. The returned URI can be used to bring the extender firmwares up
+        to latest.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_ExtenderServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -206,6 +222,11 @@ def add_ExtenderServiceServicer_to_server(servicer, server):
             'ResetExtender': grpc.unary_unary_rpc_method_handler(
                     servicer.ResetExtender,
                     request_deserializer=salto_dot_nebula_dot_extender_dot_v1_dot_extender__pb2.ResetExtenderRequest.FromString,
+                    response_serializer=salto_dot_longrunning_dot_v1_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'GenerateFirmwareDownloadUri': grpc.unary_unary_rpc_method_handler(
+                    servicer.GenerateFirmwareDownloadUri,
+                    request_deserializer=salto_dot_nebula_dot_extender_dot_v1_dot_extender__pb2.GenerateFirmwareDownloadUriRequest.FromString,
                     response_serializer=salto_dot_longrunning_dot_v1_dot_operation__pb2.Operation.SerializeToString,
             ),
     }
@@ -453,6 +474,33 @@ class ExtenderService(object):
             target,
             '/salto.nebula.extender.v1.ExtenderService/ResetExtender',
             salto_dot_nebula_dot_extender_dot_v1_dot_extender__pb2.ResetExtenderRequest.SerializeToString,
+            salto_dot_longrunning_dot_v1_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GenerateFirmwareDownloadUri(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/salto.nebula.extender.v1.ExtenderService/GenerateFirmwareDownloadUri',
+            salto_dot_nebula_dot_extender_dot_v1_dot_extender__pb2.GenerateFirmwareDownloadUriRequest.SerializeToString,
             salto_dot_longrunning_dot_v1_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,
