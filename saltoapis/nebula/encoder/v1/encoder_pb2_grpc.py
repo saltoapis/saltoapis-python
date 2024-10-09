@@ -81,6 +81,11 @@ class EncoderServiceStub(object):
                 request_serializer=salto_dot_nebula_dot_encoder_dot_v1_dot_encoder__pb2.ReadKeyRequest.SerializeToString,
                 response_deserializer=salto_dot_longrunning_dot_v1_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.GenerateAuthorizationToken = channel.unary_unary(
+                '/salto.nebula.encoder.v1.EncoderService/GenerateAuthorizationToken',
+                request_serializer=salto_dot_nebula_dot_encoder_dot_v1_dot_encoder__pb2.GenerateAuthorizationTokenRequest.SerializeToString,
+                response_deserializer=salto_dot_nebula_dot_encoder_dot_v1_dot_encoder__pb2.GenerateAuthorizationTokenResponse.FromString,
+                _registered_method=True)
         self.GenerateFirmwareDownloadUri = channel.unary_unary(
                 '/salto.nebula.encoder.v1.EncoderService/GenerateFirmwareDownloadUri',
                 request_serializer=salto_dot_nebula_dot_encoder_dot_v1_dot_encoder__pb2.GenerateFirmwareDownloadUriRequest.SerializeToString,
@@ -217,6 +222,16 @@ class EncoderServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GenerateAuthorizationToken(self, request, context):
+        """Generates an authorization token for an encoder
+
+        Generates an authorization token that allows to connect, authenticate and
+        authorize against an encoder.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def GenerateFirmwareDownloadUri(self, request, context):
         """Generate encoder firmware download URI
 
@@ -290,6 +305,11 @@ def add_EncoderServiceServicer_to_server(servicer, server):
                     servicer.ReadKey,
                     request_deserializer=salto_dot_nebula_dot_encoder_dot_v1_dot_encoder__pb2.ReadKeyRequest.FromString,
                     response_serializer=salto_dot_longrunning_dot_v1_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'GenerateAuthorizationToken': grpc.unary_unary_rpc_method_handler(
+                    servicer.GenerateAuthorizationToken,
+                    request_deserializer=salto_dot_nebula_dot_encoder_dot_v1_dot_encoder__pb2.GenerateAuthorizationTokenRequest.FromString,
+                    response_serializer=salto_dot_nebula_dot_encoder_dot_v1_dot_encoder__pb2.GenerateAuthorizationTokenResponse.SerializeToString,
             ),
             'GenerateFirmwareDownloadUri': grpc.unary_unary_rpc_method_handler(
                     servicer.GenerateFirmwareDownloadUri,
@@ -623,6 +643,33 @@ class EncoderService(object):
             '/salto.nebula.encoder.v1.EncoderService/ReadKey',
             salto_dot_nebula_dot_encoder_dot_v1_dot_encoder__pb2.ReadKeyRequest.SerializeToString,
             salto_dot_longrunning_dot_v1_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GenerateAuthorizationToken(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/salto.nebula.encoder.v1.EncoderService/GenerateAuthorizationToken',
+            salto_dot_nebula_dot_encoder_dot_v1_dot_encoder__pb2.GenerateAuthorizationTokenRequest.SerializeToString,
+            salto_dot_nebula_dot_encoder_dot_v1_dot_encoder__pb2.GenerateAuthorizationTokenResponse.FromString,
             options,
             channel_credentials,
             insecure,

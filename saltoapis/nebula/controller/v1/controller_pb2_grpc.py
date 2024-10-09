@@ -79,6 +79,11 @@ class ControllerServiceStub(object):
                 request_serializer=salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.UpdateControllerFirmwareRequest.SerializeToString,
                 response_deserializer=salto_dot_longrunning_dot_v1_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.GenerateAuthorizationToken = channel.unary_unary(
+                '/salto.nebula.controller.v1.ControllerService/GenerateAuthorizationToken',
+                request_serializer=salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.GenerateAuthorizationTokenRequest.SerializeToString,
+                response_deserializer=salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.GenerateAuthorizationTokenResponse.FromString,
+                _registered_method=True)
         self.GenerateFirmwareDownloadUri = channel.unary_unary(
                 '/salto.nebula.controller.v1.ControllerService/GenerateFirmwareDownloadUri',
                 request_serializer=salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.GenerateFirmwareDownloadUriRequest.SerializeToString,
@@ -209,6 +214,16 @@ class ControllerServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GenerateAuthorizationToken(self, request, context):
+        """Generates an authorization token for a controller
+
+        Generates an authorization token that allows to connect, authenticate and
+        authorize against a controller.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def GenerateFirmwareDownloadUri(self, request, context):
         """Generate controller firmware download URI
 
@@ -277,6 +292,11 @@ def add_ControllerServiceServicer_to_server(servicer, server):
                     servicer.UpdateControllerFirmware,
                     request_deserializer=salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.UpdateControllerFirmwareRequest.FromString,
                     response_serializer=salto_dot_longrunning_dot_v1_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'GenerateAuthorizationToken': grpc.unary_unary_rpc_method_handler(
+                    servicer.GenerateAuthorizationToken,
+                    request_deserializer=salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.GenerateAuthorizationTokenRequest.FromString,
+                    response_serializer=salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.GenerateAuthorizationTokenResponse.SerializeToString,
             ),
             'GenerateFirmwareDownloadUri': grpc.unary_unary_rpc_method_handler(
                     servicer.GenerateFirmwareDownloadUri,
@@ -586,6 +606,33 @@ class ControllerService(object):
             '/salto.nebula.controller.v1.ControllerService/UpdateControllerFirmware',
             salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.UpdateControllerFirmwareRequest.SerializeToString,
             salto_dot_longrunning_dot_v1_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GenerateAuthorizationToken(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/salto.nebula.controller.v1.ControllerService/GenerateAuthorizationToken',
+            salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.GenerateAuthorizationTokenRequest.SerializeToString,
+            salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.GenerateAuthorizationTokenResponse.FromString,
             options,
             channel_credentials,
             insecure,
