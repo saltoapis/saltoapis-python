@@ -51,6 +51,11 @@ class AccessRightServiceStub(object):
                 request_serializer=salto_dot_nebula_dot_accessright_dot_v1_dot_access__right__pb2.CreateAccessRightAccessPointRequest.SerializeToString,
                 response_deserializer=salto_dot_nebula_dot_accessright_dot_v1_dot_access__right__pb2.AccessRightAccessPoint.FromString,
                 _registered_method=True)
+        self.BatchCreateAccessRightAccessPoints = channel.unary_unary(
+                '/salto.nebula.accessright.v1.AccessRightService/BatchCreateAccessRightAccessPoints',
+                request_serializer=salto_dot_nebula_dot_accessright_dot_v1_dot_access__right__pb2.BatchCreateAccessRightAccessPointsRequest.SerializeToString,
+                response_deserializer=salto_dot_nebula_dot_accessright_dot_v1_dot_access__right__pb2.BatchCreateAccessRightAccessPointsResponse.FromString,
+                _registered_method=True)
         self.GetAccessRightAccessPoint = channel.unary_unary(
                 '/salto.nebula.accessright.v1.AccessRightService/GetAccessRightAccessPoint',
                 request_serializer=salto_dot_nebula_dot_accessright_dot_v1_dot_access__right__pb2.GetAccessRightAccessPointRequest.SerializeToString,
@@ -70,6 +75,11 @@ class AccessRightServiceStub(object):
                 '/salto.nebula.accessright.v1.AccessRightService/DeleteAccessRightAccessPoint',
                 request_serializer=salto_dot_nebula_dot_accessright_dot_v1_dot_access__right__pb2.DeleteAccessRightAccessPointRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                _registered_method=True)
+        self.BatchDeleteAccessRightAccessPoints = channel.unary_unary(
+                '/salto.nebula.accessright.v1.AccessRightService/BatchDeleteAccessRightAccessPoints',
+                request_serializer=salto_dot_nebula_dot_accessright_dot_v1_dot_access__right__pb2.BatchDeleteAccessRightAccessPointsRequest.SerializeToString,
+                response_deserializer=salto_dot_nebula_dot_accessright_dot_v1_dot_access__right__pb2.BatchDeleteAccessRightAccessPointsResponse.FromString,
                 _registered_method=True)
         self.CreateAccessRightAccessPointGroup = channel.unary_unary(
                 '/salto.nebula.accessright.v1.AccessRightService/CreateAccessRightAccessPointGroup',
@@ -160,6 +170,17 @@ class AccessRightServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def BatchCreateAccessRightAccessPoints(self, request, context):
+        """Create a batch of access rights access points
+
+        Creates a batch of access rights access points associations.
+        This method allows the creation of multiple access rights access points in a single operation.
+        Experimental feature. DO NOT USE
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def GetAccessRightAccessPoint(self, request, context):
         """Get an access point
 
@@ -191,6 +212,17 @@ class AccessRightServiceServicer(object):
         """Delete an access point
 
         Deletes an access right's access point association.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def BatchDeleteAccessRightAccessPoints(self, request, context):
+        """Delete a batch of access points
+
+        Permanently deletes a batch of access right's access point associations.
+        This cannot be undone.
+        Experimental feature. DO NOT USE
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -274,6 +306,11 @@ def add_AccessRightServiceServicer_to_server(servicer, server):
                     request_deserializer=salto_dot_nebula_dot_accessright_dot_v1_dot_access__right__pb2.CreateAccessRightAccessPointRequest.FromString,
                     response_serializer=salto_dot_nebula_dot_accessright_dot_v1_dot_access__right__pb2.AccessRightAccessPoint.SerializeToString,
             ),
+            'BatchCreateAccessRightAccessPoints': grpc.unary_unary_rpc_method_handler(
+                    servicer.BatchCreateAccessRightAccessPoints,
+                    request_deserializer=salto_dot_nebula_dot_accessright_dot_v1_dot_access__right__pb2.BatchCreateAccessRightAccessPointsRequest.FromString,
+                    response_serializer=salto_dot_nebula_dot_accessright_dot_v1_dot_access__right__pb2.BatchCreateAccessRightAccessPointsResponse.SerializeToString,
+            ),
             'GetAccessRightAccessPoint': grpc.unary_unary_rpc_method_handler(
                     servicer.GetAccessRightAccessPoint,
                     request_deserializer=salto_dot_nebula_dot_accessright_dot_v1_dot_access__right__pb2.GetAccessRightAccessPointRequest.FromString,
@@ -293,6 +330,11 @@ def add_AccessRightServiceServicer_to_server(servicer, server):
                     servicer.DeleteAccessRightAccessPoint,
                     request_deserializer=salto_dot_nebula_dot_accessright_dot_v1_dot_access__right__pb2.DeleteAccessRightAccessPointRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'BatchDeleteAccessRightAccessPoints': grpc.unary_unary_rpc_method_handler(
+                    servicer.BatchDeleteAccessRightAccessPoints,
+                    request_deserializer=salto_dot_nebula_dot_accessright_dot_v1_dot_access__right__pb2.BatchDeleteAccessRightAccessPointsRequest.FromString,
+                    response_serializer=salto_dot_nebula_dot_accessright_dot_v1_dot_access__right__pb2.BatchDeleteAccessRightAccessPointsResponse.SerializeToString,
             ),
             'CreateAccessRightAccessPointGroup': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateAccessRightAccessPointGroup,
@@ -497,6 +539,33 @@ class AccessRightService(object):
             _registered_method=True)
 
     @staticmethod
+    def BatchCreateAccessRightAccessPoints(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/salto.nebula.accessright.v1.AccessRightService/BatchCreateAccessRightAccessPoints',
+            salto_dot_nebula_dot_accessright_dot_v1_dot_access__right__pb2.BatchCreateAccessRightAccessPointsRequest.SerializeToString,
+            salto_dot_nebula_dot_accessright_dot_v1_dot_access__right__pb2.BatchCreateAccessRightAccessPointsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
     def GetAccessRightAccessPoint(request,
             target,
             options=(),
@@ -594,6 +663,33 @@ class AccessRightService(object):
             '/salto.nebula.accessright.v1.AccessRightService/DeleteAccessRightAccessPoint',
             salto_dot_nebula_dot_accessright_dot_v1_dot_access__right__pb2.DeleteAccessRightAccessPointRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def BatchDeleteAccessRightAccessPoints(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/salto.nebula.accessright.v1.AccessRightService/BatchDeleteAccessRightAccessPoints',
+            salto_dot_nebula_dot_accessright_dot_v1_dot_access__right__pb2.BatchDeleteAccessRightAccessPointsRequest.SerializeToString,
+            salto_dot_nebula_dot_accessright_dot_v1_dot_access__right__pb2.BatchDeleteAccessRightAccessPointsResponse.FromString,
             options,
             channel_credentials,
             insecure,
