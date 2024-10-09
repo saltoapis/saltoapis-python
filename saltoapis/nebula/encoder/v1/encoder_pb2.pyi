@@ -184,6 +184,18 @@ class ReadKeyMetadata(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
+class GenerateAuthorizationTokenRequest(_message.Message):
+    __slots__ = ("encoder",)
+    ENCODER_FIELD_NUMBER: _ClassVar[int]
+    encoder: str
+    def __init__(self, encoder: _Optional[str] = ...) -> None: ...
+
+class GenerateAuthorizationTokenResponse(_message.Message):
+    __slots__ = ("authorization_token",)
+    AUTHORIZATION_TOKEN_FIELD_NUMBER: _ClassVar[int]
+    authorization_token: bytes
+    def __init__(self, authorization_token: _Optional[bytes] = ...) -> None: ...
+
 class GenerateFirmwareDownloadUriRequest(_message.Message):
     __slots__ = ("encoder",)
     ENCODER_FIELD_NUMBER: _ClassVar[int]

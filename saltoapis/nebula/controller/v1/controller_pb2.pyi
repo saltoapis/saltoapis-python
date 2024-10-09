@@ -172,6 +172,18 @@ class UpdateControllerFirmwareMetadata(_message.Message):
     progress_percent: int
     def __init__(self, progress_percent: _Optional[int] = ...) -> None: ...
 
+class GenerateAuthorizationTokenRequest(_message.Message):
+    __slots__ = ("controller",)
+    CONTROLLER_FIELD_NUMBER: _ClassVar[int]
+    controller: str
+    def __init__(self, controller: _Optional[str] = ...) -> None: ...
+
+class GenerateAuthorizationTokenResponse(_message.Message):
+    __slots__ = ("authorization_token",)
+    AUTHORIZATION_TOKEN_FIELD_NUMBER: _ClassVar[int]
+    authorization_token: bytes
+    def __init__(self, authorization_token: _Optional[bytes] = ...) -> None: ...
+
 class GenerateFirmwareDownloadUriRequest(_message.Message):
     __slots__ = ("controller",)
     CONTROLLER_FIELD_NUMBER: _ClassVar[int]
