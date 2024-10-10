@@ -6,9 +6,10 @@ from saltoapis.nebula.unit.v1 import unit_pb2 as _unit_pb2
 from saltoapis.nebula.unit.v1 import unit_pb2 as _unit_pb2
 from saltoapis.nebula.user.v1 import user_pb2 as _user_pb2
 from saltoapis.nebula.user.v1 import user_pb2 as _user_pb2
+from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Optional, Union as _Union
+from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
@@ -98,6 +99,14 @@ class AccessRightAccessPointCreated(_message.Message):
     access_point: _access_point_pb2.AccessPoint
     def __init__(self, access_right: _Optional[_Union[_access_right_pb2.AccessRight, _Mapping]] = ..., access_point: _Optional[_Union[_access_point_pb2.AccessPoint, _Mapping]] = ...) -> None: ...
 
+class AccessRightAccessPointsBatchCreated(_message.Message):
+    __slots__ = ("access_right", "access_points")
+    ACCESS_RIGHT_FIELD_NUMBER: _ClassVar[int]
+    ACCESS_POINTS_FIELD_NUMBER: _ClassVar[int]
+    access_right: _access_right_pb2.AccessRight
+    access_points: _containers.RepeatedCompositeFieldContainer[_access_point_pb2.AccessPoint]
+    def __init__(self, access_right: _Optional[_Union[_access_right_pb2.AccessRight, _Mapping]] = ..., access_points: _Optional[_Iterable[_Union[_access_point_pb2.AccessPoint, _Mapping]]] = ...) -> None: ...
+
 class AccessRightAccessPointDeleted(_message.Message):
     __slots__ = ("access_right", "access_point")
     ACCESS_RIGHT_FIELD_NUMBER: _ClassVar[int]
@@ -105,6 +114,14 @@ class AccessRightAccessPointDeleted(_message.Message):
     access_right: _access_right_pb2.AccessRight
     access_point: _access_point_pb2.AccessPoint
     def __init__(self, access_right: _Optional[_Union[_access_right_pb2.AccessRight, _Mapping]] = ..., access_point: _Optional[_Union[_access_point_pb2.AccessPoint, _Mapping]] = ...) -> None: ...
+
+class AccessRightAccessPointBatchDeleted(_message.Message):
+    __slots__ = ("access_right", "access_points")
+    ACCESS_RIGHT_FIELD_NUMBER: _ClassVar[int]
+    ACCESS_POINTS_FIELD_NUMBER: _ClassVar[int]
+    access_right: _access_right_pb2.AccessRight
+    access_points: _containers.RepeatedCompositeFieldContainer[_access_point_pb2.AccessPoint]
+    def __init__(self, access_right: _Optional[_Union[_access_right_pb2.AccessRight, _Mapping]] = ..., access_points: _Optional[_Iterable[_Union[_access_point_pb2.AccessPoint, _Mapping]]] = ...) -> None: ...
 
 class UserCreated(_message.Message):
     __slots__ = ("user",)
