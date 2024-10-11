@@ -115,7 +115,7 @@ class AccessRightAccessPointDeleted(_message.Message):
     access_point: _access_point_pb2.AccessPoint
     def __init__(self, access_right: _Optional[_Union[_access_right_pb2.AccessRight, _Mapping]] = ..., access_point: _Optional[_Union[_access_point_pb2.AccessPoint, _Mapping]] = ...) -> None: ...
 
-class AccessRightAccessPointBatchDeleted(_message.Message):
+class AccessRightAccessPointsBatchDeleted(_message.Message):
     __slots__ = ("access_right", "access_points")
     ACCESS_RIGHT_FIELD_NUMBER: _ClassVar[int]
     ACCESS_POINTS_FIELD_NUMBER: _ClassVar[int]
