@@ -87,6 +87,20 @@ class CreateAccessPointGroupAccessPointRequest(_message.Message):
     access_point_group_access_point: AccessPointGroupAccessPoint
     def __init__(self, parent: _Optional[str] = ..., access_point_group_access_point: _Optional[_Union[AccessPointGroupAccessPoint, _Mapping]] = ...) -> None: ...
 
+class BatchCreateAccessPointGroupAccessPointsRequest(_message.Message):
+    __slots__ = ("parent", "requests")
+    PARENT_FIELD_NUMBER: _ClassVar[int]
+    REQUESTS_FIELD_NUMBER: _ClassVar[int]
+    parent: str
+    requests: _containers.RepeatedCompositeFieldContainer[CreateAccessPointGroupAccessPointRequest]
+    def __init__(self, parent: _Optional[str] = ..., requests: _Optional[_Iterable[_Union[CreateAccessPointGroupAccessPointRequest, _Mapping]]] = ...) -> None: ...
+
+class BatchCreateAccessPointGroupAccessPointsResponse(_message.Message):
+    __slots__ = ("access_point_group_access_points",)
+    ACCESS_POINT_GROUP_ACCESS_POINTS_FIELD_NUMBER: _ClassVar[int]
+    access_point_group_access_points: _containers.RepeatedCompositeFieldContainer[AccessPointGroupAccessPoint]
+    def __init__(self, access_point_group_access_points: _Optional[_Iterable[_Union[AccessPointGroupAccessPoint, _Mapping]]] = ...) -> None: ...
+
 class GetAccessPointGroupAccessPointRequest(_message.Message):
     __slots__ = ("name",)
     NAME_FIELD_NUMBER: _ClassVar[int]
@@ -128,3 +142,15 @@ class DeleteAccessPointGroupAccessPointRequest(_message.Message):
     NAME_FIELD_NUMBER: _ClassVar[int]
     name: str
     def __init__(self, name: _Optional[str] = ...) -> None: ...
+
+class BatchDeleteAccessPointGroupAccessPointsRequest(_message.Message):
+    __slots__ = ("parent", "requests")
+    PARENT_FIELD_NUMBER: _ClassVar[int]
+    REQUESTS_FIELD_NUMBER: _ClassVar[int]
+    parent: str
+    requests: _containers.RepeatedCompositeFieldContainer[DeleteAccessPointGroupAccessPointRequest]
+    def __init__(self, parent: _Optional[str] = ..., requests: _Optional[_Iterable[_Union[DeleteAccessPointGroupAccessPointRequest, _Mapping]]] = ...) -> None: ...
+
+class BatchDeleteAccessPointGroupAccessPointsResponse(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
