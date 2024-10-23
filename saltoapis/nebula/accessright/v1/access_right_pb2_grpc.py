@@ -185,7 +185,6 @@ class AccessRightServiceServicer(object):
 
         Creates a batch of access rights access points associations.
         This method allows the creation of multiple access rights access points in a single operation.
-        Experimental feature. DO NOT USE
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -232,7 +231,6 @@ class AccessRightServiceServicer(object):
 
         Permanently deletes a batch of access right's access point associations.
         This cannot be undone.
-        Experimental feature. DO NOT USE
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
