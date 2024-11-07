@@ -147,7 +147,7 @@ class AccessPointGroupServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def BatchCreateAccessPointGroupAccessPoints(self, request, context):
-        """Create an batch of access point group access points
+        """Create a batch of access point group access points
 
         Creates a batch of access point group's access points association.
         This method allows the creation of multiple access point group's access points in a single operation.
