@@ -48,18 +48,22 @@ class User(_message.Message):
     def __init__(self, name: _Optional[str] = ..., parent: _Optional[str] = ..., given_name: _Optional[str] = ..., family_name: _Optional[str] = ..., display_name: _Optional[str] = ..., email: _Optional[str] = ..., activate_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., expire_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., photo: _Optional[str] = ..., photo_uri: _Optional[str] = ..., card_key: _Optional[_Union[CardKey, _Mapping]] = ..., app_key: _Optional[_Union[AppKey, _Mapping]] = ..., wallet_key: _Optional[_Union[WalletKey, _Mapping]] = ..., passcode: _Optional[_Union[Passcode, _Mapping]] = ..., blocked: bool = ...) -> None: ...
 
 class UserAccessRight(_message.Message):
-    __slots__ = ("name", "access_right", "display_name", "schedules", "effective_schedules")
+    __slots__ = ("name", "access_right", "display_name", "schedules", "effective_schedules", "activate_time", "expire_time")
     NAME_FIELD_NUMBER: _ClassVar[int]
     ACCESS_RIGHT_FIELD_NUMBER: _ClassVar[int]
     DISPLAY_NAME_FIELD_NUMBER: _ClassVar[int]
     SCHEDULES_FIELD_NUMBER: _ClassVar[int]
     EFFECTIVE_SCHEDULES_FIELD_NUMBER: _ClassVar[int]
+    ACTIVATE_TIME_FIELD_NUMBER: _ClassVar[int]
+    EXPIRE_TIME_FIELD_NUMBER: _ClassVar[int]
     name: str
     access_right: str
     display_name: str
     schedules: _containers.RepeatedCompositeFieldContainer[_schedule_pb2.Schedule]
     effective_schedules: _containers.RepeatedCompositeFieldContainer[_schedule_pb2.Schedule]
-    def __init__(self, name: _Optional[str] = ..., access_right: _Optional[str] = ..., display_name: _Optional[str] = ..., schedules: _Optional[_Iterable[_Union[_schedule_pb2.Schedule, _Mapping]]] = ..., effective_schedules: _Optional[_Iterable[_Union[_schedule_pb2.Schedule, _Mapping]]] = ...) -> None: ...
+    activate_time: _timestamp_pb2.Timestamp
+    expire_time: _timestamp_pb2.Timestamp
+    def __init__(self, name: _Optional[str] = ..., access_right: _Optional[str] = ..., display_name: _Optional[str] = ..., schedules: _Optional[_Iterable[_Union[_schedule_pb2.Schedule, _Mapping]]] = ..., effective_schedules: _Optional[_Iterable[_Union[_schedule_pb2.Schedule, _Mapping]]] = ..., activate_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., expire_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
 
 class CardKey(_message.Message):
     __slots__ = ("name", "uid", "state", "outdated")
