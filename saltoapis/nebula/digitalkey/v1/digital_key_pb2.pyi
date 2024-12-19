@@ -2,6 +2,7 @@ from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from saltoapis.type import color_pb2 as _color_pb2
 from saltoapis.type import color_pb2 as _color_pb2
 from google.protobuf.internal import containers as _containers
+from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
@@ -24,22 +25,36 @@ class DigitalKey(_message.Message):
         text_color: _color_pb2.Color
         def __init__(self, title: _Optional[str] = ..., subtitle: _Optional[str] = ..., photo_uri: _Optional[str] = ..., address: _Optional[str] = ..., text_color: _Optional[_Union[_color_pb2.Color, _Mapping]] = ...) -> None: ...
     class AppKey(_message.Message):
-        __slots__ = ("metadata", "data", "installation", "unit", "installation_id", "unit_id", "access_points_change_time")
+        __slots__ = ("metadata", "data", "installation", "unit", "installation_id", "unit_id", "access_points_sync_time", "access_points_sync_state")
+        class AccessPointsSyncState(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+            __slots__ = ()
+            ACCESS_POINTS_SYNC_STATE_UNSPECIFIED: _ClassVar[DigitalKey.AppKey.AccessPointsSyncState]
+            INVALIDATED: _ClassVar[DigitalKey.AppKey.AccessPointsSyncState]
+            SYNCING: _ClassVar[DigitalKey.AppKey.AccessPointsSyncState]
+            SYNCED: _ClassVar[DigitalKey.AppKey.AccessPointsSyncState]
+            NOT_SUPPORTED: _ClassVar[DigitalKey.AppKey.AccessPointsSyncState]
+        ACCESS_POINTS_SYNC_STATE_UNSPECIFIED: DigitalKey.AppKey.AccessPointsSyncState
+        INVALIDATED: DigitalKey.AppKey.AccessPointsSyncState
+        SYNCING: DigitalKey.AppKey.AccessPointsSyncState
+        SYNCED: DigitalKey.AppKey.AccessPointsSyncState
+        NOT_SUPPORTED: DigitalKey.AppKey.AccessPointsSyncState
         METADATA_FIELD_NUMBER: _ClassVar[int]
         DATA_FIELD_NUMBER: _ClassVar[int]
         INSTALLATION_FIELD_NUMBER: _ClassVar[int]
         UNIT_FIELD_NUMBER: _ClassVar[int]
         INSTALLATION_ID_FIELD_NUMBER: _ClassVar[int]
         UNIT_ID_FIELD_NUMBER: _ClassVar[int]
-        ACCESS_POINTS_CHANGE_TIME_FIELD_NUMBER: _ClassVar[int]
+        ACCESS_POINTS_SYNC_TIME_FIELD_NUMBER: _ClassVar[int]
+        ACCESS_POINTS_SYNC_STATE_FIELD_NUMBER: _ClassVar[int]
         metadata: DigitalKey.Metadata
         data: bytes
         installation: str
         unit: str
         installation_id: str
         unit_id: str
-        access_points_change_time: _timestamp_pb2.Timestamp
-        def __init__(self, metadata: _Optional[_Union[DigitalKey.Metadata, _Mapping]] = ..., data: _Optional[bytes] = ..., installation: _Optional[str] = ..., unit: _Optional[str] = ..., installation_id: _Optional[str] = ..., unit_id: _Optional[str] = ..., access_points_change_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+        access_points_sync_time: _timestamp_pb2.Timestamp
+        access_points_sync_state: DigitalKey.AppKey.AccessPointsSyncState
+        def __init__(self, metadata: _Optional[_Union[DigitalKey.Metadata, _Mapping]] = ..., data: _Optional[bytes] = ..., installation: _Optional[str] = ..., unit: _Optional[str] = ..., installation_id: _Optional[str] = ..., unit_id: _Optional[str] = ..., access_points_sync_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., access_points_sync_state: _Optional[_Union[DigitalKey.AppKey.AccessPointsSyncState, str]] = ...) -> None: ...
     class WalletKey(_message.Message):
         __slots__ = ("metadata", "hydra_credential")
         class HydraCredential(_message.Message):
