@@ -13,7 +13,7 @@ class DeviceType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     ENCODER: _ClassVar[DeviceType]
     CONTROLLER: _ClassVar[DeviceType]
     INTERCOM_ADAPTOR: _ClassVar[DeviceType]
-    UNNAMED_1: _ClassVar[DeviceType]
+    ELECTRONIC_KEY: _ClassVar[DeviceType]
 DEVICE_TYPE_UNSPECIFIED: DeviceType
 ELECTRONIC_LOCK: DeviceType
 GATEWAY: DeviceType
@@ -21,4 +21,4 @@ EXTENDER: DeviceType
 ENCODER: DeviceType
 CONTROLLER: DeviceType
 INTERCOM_ADAPTOR: DeviceType
-UNNAMED_1: DeviceType
+ELECTRONIC_KEY: DeviceType

@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#salto/nebula/type/device_type.proto\x12\x11salto.nebula.type*\x9b\x01\n\nDeviceType\x12\x1b\n\x17\x44\x45VICE_TYPE_UNSPECIFIED\x10\x00\x12\x13\n\x0f\x45LECTRONIC_LOCK\x10\x01\x12\x0b\n\x07GATEWAY\x10\x02\x12\x0c\n\x08\x45XTENDER\x10\x03\x12\x0b\n\x07\x45NCODER\x10\x04\x12\x0e\n\nCONTROLLER\x10\x05\x12\x14\n\x10INTERCOM_ADAPTOR\x10\x06\x12\r\n\tUNNAMED_1\x10\x07\x42\xd0\x01\n\x19\x63om.saltoapis.nebula.typeB\x0f\x44\x65viceTypeProtoP\x01ZLgithub.com/saltoapis-internal/saltoapis-go/nebula/type/devicetype;devicetype\xaa\x02\x15Saltoapis.Nebula.Type\xca\x02\x15Saltoapis\\Nebula\\Type\xe2\x02!GPBMetadata\\Saltoapis\\Nebula\\Typeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#salto/nebula/type/device_type.proto\x12\x11salto.nebula.type*\xa0\x01\n\nDeviceType\x12\x1b\n\x17\x44\x45VICE_TYPE_UNSPECIFIED\x10\x00\x12\x13\n\x0f\x45LECTRONIC_LOCK\x10\x01\x12\x0b\n\x07GATEWAY\x10\x02\x12\x0c\n\x08\x45XTENDER\x10\x03\x12\x0b\n\x07\x45NCODER\x10\x04\x12\x0e\n\nCONTROLLER\x10\x05\x12\x14\n\x10INTERCOM_ADAPTOR\x10\x06\x12\x12\n\x0e\x45LECTRONIC_KEY\x10\x07\x42\xd0\x01\n\x19\x63om.saltoapis.nebula.typeB\x0f\x44\x65viceTypeProtoP\x01ZLgithub.com/saltoapis-internal/saltoapis-go/nebula/type/devicetype;devicetype\xaa\x02\x15Saltoapis.Nebula.Type\xca\x02\x15Saltoapis\\Nebula\\Type\xe2\x02!GPBMetadata\\Saltoapis\\Nebula\\Typeb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -23,5 +23,5 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\031com.saltoapis.nebula.typeB\017DeviceTypeProtoP\001ZLgithub.com/saltoapis-internal/saltoapis-go/nebula/type/devicetype;devicetype\252\002\025Saltoapis.Nebula.Type\312\002\025Saltoapis\\Nebula\\Type\342\002!GPBMetadata\\Saltoapis\\Nebula\\Type'
   _globals['_DEVICETYPE']._serialized_start=59
-  _globals['_DEVICETYPE']._serialized_end=214
+  _globals['_DEVICETYPE']._serialized_end=219
 # @@protoc_insertion_point(module_scope)

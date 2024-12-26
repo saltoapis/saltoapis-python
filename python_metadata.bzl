@@ -58,6 +58,7 @@ python_projects = [
     '//saltoapis/nebula/calendar/v1',
     '//saltoapis/nebula/controller/v1',
     '//saltoapis/nebula/device/v1',
+    '//saltoapis/nebula/electronickey/v1',
     '//saltoapis/nebula/electroniclock/v1',
     '//saltoapis/nebula/encoder/v1',
     '//saltoapis/nebula/extender/v1',
