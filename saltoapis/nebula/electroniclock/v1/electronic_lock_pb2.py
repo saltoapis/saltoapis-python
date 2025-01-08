@@ -18,9 +18,11 @@ from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mas
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 from saltoapis.longrunning.v1 import operation_pb2 as salto_dot_longrunning_dot_v1_dot_operation__pb2
 from saltoapis.longrunning.v1 import operation_pb2 as salto_dot_longrunning_dot_v1_dot_operation__pb2
+from saltoapis.nebula.type import device_metadata_pb2 as salto_dot_nebula_dot_type_dot_device__metadata__pb2
+from saltoapis.nebula.type import device_metadata_pb2 as salto_dot_nebula_dot_type_dot_device__metadata__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n4salto/nebula/electroniclock/v1/electronic_lock.proto\x12\x1esalto.nebula.electroniclock.v1\x1a\x1egoogle/protobuf/duration.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a google/protobuf/field_mask.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a$salto/longrunning/v1/operation.proto\"\xa0\x04\n\x0e\x45lectronicLock\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x14\n\x0c\x64isplay_name\x18\x02 \x01(\t\x12\x16\n\tdevice_id\x18\x03 \x01(\tH\x01\x88\x01\x01\x12\x11\n\x07gateway\x18\x04 \x01(\tH\x00\x12\x12\n\x08\x65xtender\x18\x05 \x01(\tH\x00\x12\x14\n\x0c\x61\x63\x63\x65ss_point\x18\x06 \x01(\t\x12\x13\n\x0binitialized\x18\x07 \x01(\x08\x12\x10\n\x08outdated\x18\x08 \x01(\x08\x12\x16\n\tconnected\x18\t \x01(\x08H\x02\x88\x01\x01\x12\x13\n\x0blow_battery\x18\n \x01(\x08\x12\x33\n\x0flast_event_time\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12!\n\x14\x63\x61libration_settings\x18\x0c \x01(\x0cH\x03\x88\x01\x01\x12&\n\x19\x66orce_rotate_carriage_end\x18\r \x01(\x08H\x04\x88\x01\x01\x12@\n\x18hold_back_latch_duration\x18\x0e \x01(\x0b\x32\x19.google.protobuf.DurationH\x05\x88\x01\x01\x42\x0f\n\rparent_deviceB\x0c\n\n_device_idB\x0c\n\n_connectedB\x17\n\x15_calibration_settingsB\x1c\n\x1a_force_rotate_carriage_endB\x1b\n\x19_hold_back_latch_duration\"\xae\x01\n\x1b\x43reateElectronicLockRequest\x12\x0e\n\x06parent\x18\x01 \x01(\t\x12\x1f\n\x12\x65lectronic_lock_id\x18\x02 \x01(\tH\x00\x88\x01\x01\x12G\n\x0f\x65lectronic_lock\x18\x03 \x01(\x0b\x32..salto.nebula.electroniclock.v1.ElectronicLockB\x15\n\x13_electronic_lock_id\"(\n\x18GetElectronicLockRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"u\n\x1aListElectronicLocksRequest\x12\x0e\n\x06parent\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\x12\x0e\n\x06\x66ilter\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\"\x80\x01\n\x1bListElectronicLocksResponse\x12H\n\x10\x65lectronic_locks\x18\x01 \x03(\x0b\x32..salto.nebula.electroniclock.v1.ElectronicLock\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x97\x01\n\x1bUpdateElectronicLockRequest\x12G\n\x0f\x65lectronic_lock\x18\x01 \x01(\x0b\x32..salto.nebula.electroniclock.v1.ElectronicLock\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"+\n\x1b\x44\x65leteElectronicLockRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"<\n\x19\x42indElectronicLockRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\tdevice_id\x18\x02 \x01(\t\"\x1c\n\x1a\x42indElectronicLockResponse\":\n\x1bUnbindElectronicLockRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05\x66orce\x18\x02 \x01(\x08\"\x1e\n\x1cUnbindElectronicLockResponse\"/\n\x1fInitializeElectronicLockRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"\"\n InitializeElectronicLockResponse\"<\n InitializeElectronicLockMetadata\x12\x18\n\x10progress_percent\x18\x01 \x01(\x05\".\n\x1e\x43onfigureElectronicLockRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"!\n\x1f\x43onfigureElectronicLockResponse\"!\n\x1f\x43onfigureElectronicLockMetadata\"*\n\x1aResetElectronicLockRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"\x1d\n\x1bResetElectronicLockResponse\"\x1d\n\x1bResetElectronicLockMetadata\">\n#UpdateElectronicLockFirmwareRequest\x12\x17\n\x0f\x65lectronic_lock\x18\x01 \x01(\t\"&\n$UpdateElectronicLockFirmwareResponse\"@\n$UpdateElectronicLockFirmwareMetadata\x12\x18\n\x10progress_percent\x18\x01 \x01(\x05\"<\n!GenerateAuthorizationTokenRequest\x12\x17\n\x0f\x65lectronic_lock\x18\x01 \x01(\t\"A\n\"GenerateAuthorizationTokenResponse\x12\x1b\n\x13\x61uthorization_token\x18\x01 \x01(\x0c\"=\n\"GenerateFirmwareDownloadUriRequest\x12\x17\n\x0f\x65lectronic_lock\x18\x01 \x01(\t\"K\n#GenerateFirmwareDownloadUriResponse\x12\x14\n\x0c\x64ownload_uri\x18\x01 \x01(\t\x12\x0e\n\x06\x64igest\x18\x02 \x01(\t\"%\n#GenerateFirmwareDownloadUriMetadata2\xe2\r\n\x15\x45lectronicLockService\x12\x83\x01\n\x14\x43reateElectronicLock\x12;.salto.nebula.electroniclock.v1.CreateElectronicLockRequest\x1a..salto.nebula.electroniclock.v1.ElectronicLock\x12}\n\x11GetElectronicLock\x12\x38.salto.nebula.electroniclock.v1.GetElectronicLockRequest\x1a..salto.nebula.electroniclock.v1.ElectronicLock\x12\x8e\x01\n\x13ListElectronicLocks\x12:.salto.nebula.electroniclock.v1.ListElectronicLocksRequest\x1a;.salto.nebula.electroniclock.v1.ListElectronicLocksResponse\x12\x83\x01\n\x14UpdateElectronicLock\x12;.salto.nebula.electroniclock.v1.UpdateElectronicLockRequest\x1a..salto.nebula.electroniclock.v1.ElectronicLock\x12k\n\x14\x44\x65leteElectronicLock\x12;.salto.nebula.electroniclock.v1.DeleteElectronicLockRequest\x1a\x16.google.protobuf.Empty\x12\x8b\x01\n\x12\x42indElectronicLock\x12\x39.salto.nebula.electroniclock.v1.BindElectronicLockRequest\x1a:.salto.nebula.electroniclock.v1.BindElectronicLockResponse\x12\x91\x01\n\x14UnbindElectronicLock\x12;.salto.nebula.electroniclock.v1.UnbindElectronicLockRequest\x1a<.salto.nebula.electroniclock.v1.UnbindElectronicLockResponse\x12|\n\x18InitializeElectronicLock\x12?.salto.nebula.electroniclock.v1.InitializeElectronicLockRequest\x1a\x1f.salto.longrunning.v1.Operation\x12z\n\x17\x43onfigureElectronicLock\x12>.salto.nebula.electroniclock.v1.ConfigureElectronicLockRequest\x1a\x1f.salto.longrunning.v1.Operation\x12r\n\x13ResetElectronicLock\x12:.salto.nebula.electroniclock.v1.ResetElectronicLockRequest\x1a\x1f.salto.longrunning.v1.Operation\x12\x84\x01\n\x1cUpdateElectronicLockFirmware\x12\x43.salto.nebula.electroniclock.v1.UpdateElectronicLockFirmwareRequest\x1a\x1f.salto.longrunning.v1.Operation\x12\xa3\x01\n\x1aGenerateAuthorizationToken\x12\x41.salto.nebula.electroniclock.v1.GenerateAuthorizationTokenRequest\x1a\x42.salto.nebula.electroniclock.v1.GenerateAuthorizationTokenResponse\x12\x82\x01\n\x1bGenerateFirmwareDownloadUri\x12\x42.salto.nebula.electroniclock.v1.GenerateFirmwareDownloadUriRequest\x1a\x1f.salto.longrunning.v1.OperationB\x8e\x02\n&com.saltoapis.nebula.electroniclock.v1B\x13\x45lectronicLockProtoP\x01ZRgithub.com/saltoapis-internal/saltoapis-go/nebula/electroniclock/v1;electroniclock\xaa\x02\"Saltoapis.Nebula.ElectronicLock.V1\xca\x02\"Saltoapis\\Nebula\\ElectronicLock\\V1\xe2\x02.GPBMetadata\\Saltoapis\\Nebula\\ElectronicLock\\V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n4salto/nebula/electroniclock/v1/electronic_lock.proto\x12\x1esalto.nebula.electroniclock.v1\x1a\x1egoogle/protobuf/duration.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a google/protobuf/field_mask.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a$salto/longrunning/v1/operation.proto\x1a\'salto/nebula/type/device_metadata.proto\"\xdc\x04\n\x0e\x45lectronicLock\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x14\n\x0c\x64isplay_name\x18\x02 \x01(\t\x12\x16\n\tdevice_id\x18\x03 \x01(\tH\x01\x88\x01\x01\x12\x11\n\x07gateway\x18\x04 \x01(\tH\x00\x12\x12\n\x08\x65xtender\x18\x05 \x01(\tH\x00\x12\x14\n\x0c\x61\x63\x63\x65ss_point\x18\x06 \x01(\t\x12\x13\n\x0binitialized\x18\x07 \x01(\x08\x12:\n\x0f\x64\x65vice_metadata\x18\x0f \x01(\x0b\x32!.salto.nebula.type.DeviceMetadata\x12\x10\n\x08outdated\x18\x08 \x01(\x08\x12\x16\n\tconnected\x18\t \x01(\x08H\x02\x88\x01\x01\x12\x13\n\x0blow_battery\x18\n \x01(\x08\x12\x33\n\x0flast_event_time\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12!\n\x14\x63\x61libration_settings\x18\x0c \x01(\x0cH\x03\x88\x01\x01\x12&\n\x19\x66orce_rotate_carriage_end\x18\r \x01(\x08H\x04\x88\x01\x01\x12@\n\x18hold_back_latch_duration\x18\x0e \x01(\x0b\x32\x19.google.protobuf.DurationH\x05\x88\x01\x01\x42\x0f\n\rparent_deviceB\x0c\n\n_device_idB\x0c\n\n_connectedB\x17\n\x15_calibration_settingsB\x1c\n\x1a_force_rotate_carriage_endB\x1b\n\x19_hold_back_latch_duration\"\xae\x01\n\x1b\x43reateElectronicLockRequest\x12\x0e\n\x06parent\x18\x01 \x01(\t\x12\x1f\n\x12\x65lectronic_lock_id\x18\x02 \x01(\tH\x00\x88\x01\x01\x12G\n\x0f\x65lectronic_lock\x18\x03 \x01(\x0b\x32..salto.nebula.electroniclock.v1.ElectronicLockB\x15\n\x13_electronic_lock_id\"(\n\x18GetElectronicLockRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"u\n\x1aListElectronicLocksRequest\x12\x0e\n\x06parent\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\x12\x0e\n\x06\x66ilter\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\"\x80\x01\n\x1bListElectronicLocksResponse\x12H\n\x10\x65lectronic_locks\x18\x01 \x03(\x0b\x32..salto.nebula.electroniclock.v1.ElectronicLock\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x97\x01\n\x1bUpdateElectronicLockRequest\x12G\n\x0f\x65lectronic_lock\x18\x01 \x01(\x0b\x32..salto.nebula.electroniclock.v1.ElectronicLock\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"+\n\x1b\x44\x65leteElectronicLockRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"<\n\x19\x42indElectronicLockRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\tdevice_id\x18\x02 \x01(\t\"\x1c\n\x1a\x42indElectronicLockResponse\":\n\x1bUnbindElectronicLockRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05\x66orce\x18\x02 \x01(\x08\"\x1e\n\x1cUnbindElectronicLockResponse\"/\n\x1fInitializeElectronicLockRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"\"\n InitializeElectronicLockResponse\"<\n InitializeElectronicLockMetadata\x12\x18\n\x10progress_percent\x18\x01 \x01(\x05\".\n\x1e\x43onfigureElectronicLockRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"!\n\x1f\x43onfigureElectronicLockResponse\"!\n\x1f\x43onfigureElectronicLockMetadata\"*\n\x1aResetElectronicLockRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"\x1d\n\x1bResetElectronicLockResponse\"\x1d\n\x1bResetElectronicLockMetadata\">\n#UpdateElectronicLockFirmwareRequest\x12\x17\n\x0f\x65lectronic_lock\x18\x01 \x01(\t\"&\n$UpdateElectronicLockFirmwareResponse\"@\n$UpdateElectronicLockFirmwareMetadata\x12\x18\n\x10progress_percent\x18\x01 \x01(\x05\"<\n!GenerateAuthorizationTokenRequest\x12\x17\n\x0f\x65lectronic_lock\x18\x01 \x01(\t\"A\n\"GenerateAuthorizationTokenResponse\x12\x1b\n\x13\x61uthorization_token\x18\x01 \x01(\x0c\"=\n\"GenerateFirmwareDownloadUriRequest\x12\x17\n\x0f\x65lectronic_lock\x18\x01 \x01(\t\"K\n#GenerateFirmwareDownloadUriResponse\x12\x14\n\x0c\x64ownload_uri\x18\x01 \x01(\t\x12\x0e\n\x06\x64igest\x18\x02 \x01(\t\"%\n#GenerateFirmwareDownloadUriMetadata2\xe2\r\n\x15\x45lectronicLockService\x12\x83\x01\n\x14\x43reateElectronicLock\x12;.salto.nebula.electroniclock.v1.CreateElectronicLockRequest\x1a..salto.nebula.electroniclock.v1.ElectronicLock\x12}\n\x11GetElectronicLock\x12\x38.salto.nebula.electroniclock.v1.GetElectronicLockRequest\x1a..salto.nebula.electroniclock.v1.ElectronicLock\x12\x8e\x01\n\x13ListElectronicLocks\x12:.salto.nebula.electroniclock.v1.ListElectronicLocksRequest\x1a;.salto.nebula.electroniclock.v1.ListElectronicLocksResponse\x12\x83\x01\n\x14UpdateElectronicLock\x12;.salto.nebula.electroniclock.v1.UpdateElectronicLockRequest\x1a..salto.nebula.electroniclock.v1.ElectronicLock\x12k\n\x14\x44\x65leteElectronicLock\x12;.salto.nebula.electroniclock.v1.DeleteElectronicLockRequest\x1a\x16.google.protobuf.Empty\x12\x8b\x01\n\x12\x42indElectronicLock\x12\x39.salto.nebula.electroniclock.v1.BindElectronicLockRequest\x1a:.salto.nebula.electroniclock.v1.BindElectronicLockResponse\x12\x91\x01\n\x14UnbindElectronicLock\x12;.salto.nebula.electroniclock.v1.UnbindElectronicLockRequest\x1a<.salto.nebula.electroniclock.v1.UnbindElectronicLockResponse\x12|\n\x18InitializeElectronicLock\x12?.salto.nebula.electroniclock.v1.InitializeElectronicLockRequest\x1a\x1f.salto.longrunning.v1.Operation\x12z\n\x17\x43onfigureElectronicLock\x12>.salto.nebula.electroniclock.v1.ConfigureElectronicLockRequest\x1a\x1f.salto.longrunning.v1.Operation\x12r\n\x13ResetElectronicLock\x12:.salto.nebula.electroniclock.v1.ResetElectronicLockRequest\x1a\x1f.salto.longrunning.v1.Operation\x12\x84\x01\n\x1cUpdateElectronicLockFirmware\x12\x43.salto.nebula.electroniclock.v1.UpdateElectronicLockFirmwareRequest\x1a\x1f.salto.longrunning.v1.Operation\x12\xa3\x01\n\x1aGenerateAuthorizationToken\x12\x41.salto.nebula.electroniclock.v1.GenerateAuthorizationTokenRequest\x1a\x42.salto.nebula.electroniclock.v1.GenerateAuthorizationTokenResponse\x12\x82\x01\n\x1bGenerateFirmwareDownloadUri\x12\x42.salto.nebula.electroniclock.v1.GenerateFirmwareDownloadUriRequest\x1a\x1f.salto.longrunning.v1.OperationB\x8e\x02\n&com.saltoapis.nebula.electroniclock.v1B\x13\x45lectronicLockProtoP\x01ZRgithub.com/saltoapis-internal/saltoapis-go/nebula/electroniclock/v1;electroniclock\xaa\x02\"Saltoapis.Nebula.ElectronicLock.V1\xca\x02\"Saltoapis\\Nebula\\ElectronicLock\\V1\xe2\x02.GPBMetadata\\Saltoapis\\Nebula\\ElectronicLock\\V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -28,62 +30,62 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'salto.nebula.electroniclock
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n&com.saltoapis.nebula.electroniclock.v1B\023ElectronicLockProtoP\001ZRgithub.com/saltoapis-internal/saltoapis-go/nebula/electroniclock/v1;electroniclock\252\002\"Saltoapis.Nebula.ElectronicLock.V1\312\002\"Saltoapis\\Nebula\\ElectronicLock\\V1\342\002.GPBMetadata\\Saltoapis\\Nebula\\ElectronicLock\\V1'
-  _globals['_ELECTRONICLOCK']._serialized_start=255
-  _globals['_ELECTRONICLOCK']._serialized_end=799
-  _globals['_CREATEELECTRONICLOCKREQUEST']._serialized_start=802
-  _globals['_CREATEELECTRONICLOCKREQUEST']._serialized_end=976
-  _globals['_GETELECTRONICLOCKREQUEST']._serialized_start=978
-  _globals['_GETELECTRONICLOCKREQUEST']._serialized_end=1018
-  _globals['_LISTELECTRONICLOCKSREQUEST']._serialized_start=1020
-  _globals['_LISTELECTRONICLOCKSREQUEST']._serialized_end=1137
-  _globals['_LISTELECTRONICLOCKSRESPONSE']._serialized_start=1140
-  _globals['_LISTELECTRONICLOCKSRESPONSE']._serialized_end=1268
-  _globals['_UPDATEELECTRONICLOCKREQUEST']._serialized_start=1271
-  _globals['_UPDATEELECTRONICLOCKREQUEST']._serialized_end=1422
-  _globals['_DELETEELECTRONICLOCKREQUEST']._serialized_start=1424
-  _globals['_DELETEELECTRONICLOCKREQUEST']._serialized_end=1467
-  _globals['_BINDELECTRONICLOCKREQUEST']._serialized_start=1469
-  _globals['_BINDELECTRONICLOCKREQUEST']._serialized_end=1529
-  _globals['_BINDELECTRONICLOCKRESPONSE']._serialized_start=1531
-  _globals['_BINDELECTRONICLOCKRESPONSE']._serialized_end=1559
-  _globals['_UNBINDELECTRONICLOCKREQUEST']._serialized_start=1561
-  _globals['_UNBINDELECTRONICLOCKREQUEST']._serialized_end=1619
-  _globals['_UNBINDELECTRONICLOCKRESPONSE']._serialized_start=1621
-  _globals['_UNBINDELECTRONICLOCKRESPONSE']._serialized_end=1651
-  _globals['_INITIALIZEELECTRONICLOCKREQUEST']._serialized_start=1653
-  _globals['_INITIALIZEELECTRONICLOCKREQUEST']._serialized_end=1700
-  _globals['_INITIALIZEELECTRONICLOCKRESPONSE']._serialized_start=1702
-  _globals['_INITIALIZEELECTRONICLOCKRESPONSE']._serialized_end=1736
-  _globals['_INITIALIZEELECTRONICLOCKMETADATA']._serialized_start=1738
-  _globals['_INITIALIZEELECTRONICLOCKMETADATA']._serialized_end=1798
-  _globals['_CONFIGUREELECTRONICLOCKREQUEST']._serialized_start=1800
-  _globals['_CONFIGUREELECTRONICLOCKREQUEST']._serialized_end=1846
-  _globals['_CONFIGUREELECTRONICLOCKRESPONSE']._serialized_start=1848
-  _globals['_CONFIGUREELECTRONICLOCKRESPONSE']._serialized_end=1881
-  _globals['_CONFIGUREELECTRONICLOCKMETADATA']._serialized_start=1883
-  _globals['_CONFIGUREELECTRONICLOCKMETADATA']._serialized_end=1916
-  _globals['_RESETELECTRONICLOCKREQUEST']._serialized_start=1918
-  _globals['_RESETELECTRONICLOCKREQUEST']._serialized_end=1960
-  _globals['_RESETELECTRONICLOCKRESPONSE']._serialized_start=1962
-  _globals['_RESETELECTRONICLOCKRESPONSE']._serialized_end=1991
-  _globals['_RESETELECTRONICLOCKMETADATA']._serialized_start=1993
-  _globals['_RESETELECTRONICLOCKMETADATA']._serialized_end=2022
-  _globals['_UPDATEELECTRONICLOCKFIRMWAREREQUEST']._serialized_start=2024
-  _globals['_UPDATEELECTRONICLOCKFIRMWAREREQUEST']._serialized_end=2086
-  _globals['_UPDATEELECTRONICLOCKFIRMWARERESPONSE']._serialized_start=2088
-  _globals['_UPDATEELECTRONICLOCKFIRMWARERESPONSE']._serialized_end=2126
-  _globals['_UPDATEELECTRONICLOCKFIRMWAREMETADATA']._serialized_start=2128
-  _globals['_UPDATEELECTRONICLOCKFIRMWAREMETADATA']._serialized_end=2192
-  _globals['_GENERATEAUTHORIZATIONTOKENREQUEST']._serialized_start=2194
-  _globals['_GENERATEAUTHORIZATIONTOKENREQUEST']._serialized_end=2254
-  _globals['_GENERATEAUTHORIZATIONTOKENRESPONSE']._serialized_start=2256
-  _globals['_GENERATEAUTHORIZATIONTOKENRESPONSE']._serialized_end=2321
-  _globals['_GENERATEFIRMWAREDOWNLOADURIREQUEST']._serialized_start=2323
-  _globals['_GENERATEFIRMWAREDOWNLOADURIREQUEST']._serialized_end=2384
-  _globals['_GENERATEFIRMWAREDOWNLOADURIRESPONSE']._serialized_start=2386
-  _globals['_GENERATEFIRMWAREDOWNLOADURIRESPONSE']._serialized_end=2461
-  _globals['_GENERATEFIRMWAREDOWNLOADURIMETADATA']._serialized_start=2463
-  _globals['_GENERATEFIRMWAREDOWNLOADURIMETADATA']._serialized_end=2500
-  _globals['_ELECTRONICLOCKSERVICE']._serialized_start=2503
-  _globals['_ELECTRONICLOCKSERVICE']._serialized_end=4265
+  _globals['_ELECTRONICLOCK']._serialized_start=296
+  _globals['_ELECTRONICLOCK']._serialized_end=900
+  _globals['_CREATEELECTRONICLOCKREQUEST']._serialized_start=903
+  _globals['_CREATEELECTRONICLOCKREQUEST']._serialized_end=1077
+  _globals['_GETELECTRONICLOCKREQUEST']._serialized_start=1079
+  _globals['_GETELECTRONICLOCKREQUEST']._serialized_end=1119
+  _globals['_LISTELECTRONICLOCKSREQUEST']._serialized_start=1121
+  _globals['_LISTELECTRONICLOCKSREQUEST']._serialized_end=1238
+  _globals['_LISTELECTRONICLOCKSRESPONSE']._serialized_start=1241
+  _globals['_LISTELECTRONICLOCKSRESPONSE']._serialized_end=1369
+  _globals['_UPDATEELECTRONICLOCKREQUEST']._serialized_start=1372
+  _globals['_UPDATEELECTRONICLOCKREQUEST']._serialized_end=1523
+  _globals['_DELETEELECTRONICLOCKREQUEST']._serialized_start=1525
+  _globals['_DELETEELECTRONICLOCKREQUEST']._serialized_end=1568
+  _globals['_BINDELECTRONICLOCKREQUEST']._serialized_start=1570
+  _globals['_BINDELECTRONICLOCKREQUEST']._serialized_end=1630
+  _globals['_BINDELECTRONICLOCKRESPONSE']._serialized_start=1632
+  _globals['_BINDELECTRONICLOCKRESPONSE']._serialized_end=1660
+  _globals['_UNBINDELECTRONICLOCKREQUEST']._serialized_start=1662
+  _globals['_UNBINDELECTRONICLOCKREQUEST']._serialized_end=1720
+  _globals['_UNBINDELECTRONICLOCKRESPONSE']._serialized_start=1722
+  _globals['_UNBINDELECTRONICLOCKRESPONSE']._serialized_end=1752
+  _globals['_INITIALIZEELECTRONICLOCKREQUEST']._serialized_start=1754
+  _globals['_INITIALIZEELECTRONICLOCKREQUEST']._serialized_end=1801
+  _globals['_INITIALIZEELECTRONICLOCKRESPONSE']._serialized_start=1803
+  _globals['_INITIALIZEELECTRONICLOCKRESPONSE']._serialized_end=1837
+  _globals['_INITIALIZEELECTRONICLOCKMETADATA']._serialized_start=1839
+  _globals['_INITIALIZEELECTRONICLOCKMETADATA']._serialized_end=1899
+  _globals['_CONFIGUREELECTRONICLOCKREQUEST']._serialized_start=1901
+  _globals['_CONFIGUREELECTRONICLOCKREQUEST']._serialized_end=1947
+  _globals['_CONFIGUREELECTRONICLOCKRESPONSE']._serialized_start=1949
+  _globals['_CONFIGUREELECTRONICLOCKRESPONSE']._serialized_end=1982
+  _globals['_CONFIGUREELECTRONICLOCKMETADATA']._serialized_start=1984
+  _globals['_CONFIGUREELECTRONICLOCKMETADATA']._serialized_end=2017
+  _globals['_RESETELECTRONICLOCKREQUEST']._serialized_start=2019
+  _globals['_RESETELECTRONICLOCKREQUEST']._serialized_end=2061
+  _globals['_RESETELECTRONICLOCKRESPONSE']._serialized_start=2063
+  _globals['_RESETELECTRONICLOCKRESPONSE']._serialized_end=2092
+  _globals['_RESETELECTRONICLOCKMETADATA']._serialized_start=2094
+  _globals['_RESETELECTRONICLOCKMETADATA']._serialized_end=2123
+  _globals['_UPDATEELECTRONICLOCKFIRMWAREREQUEST']._serialized_start=2125
+  _globals['_UPDATEELECTRONICLOCKFIRMWAREREQUEST']._serialized_end=2187
+  _globals['_UPDATEELECTRONICLOCKFIRMWARERESPONSE']._serialized_start=2189
+  _globals['_UPDATEELECTRONICLOCKFIRMWARERESPONSE']._serialized_end=2227
+  _globals['_UPDATEELECTRONICLOCKFIRMWAREMETADATA']._serialized_start=2229
+  _globals['_UPDATEELECTRONICLOCKFIRMWAREMETADATA']._serialized_end=2293
+  _globals['_GENERATEAUTHORIZATIONTOKENREQUEST']._serialized_start=2295
+  _globals['_GENERATEAUTHORIZATIONTOKENREQUEST']._serialized_end=2355
+  _globals['_GENERATEAUTHORIZATIONTOKENRESPONSE']._serialized_start=2357
+  _globals['_GENERATEAUTHORIZATIONTOKENRESPONSE']._serialized_end=2422
+  _globals['_GENERATEFIRMWAREDOWNLOADURIREQUEST']._serialized_start=2424
+  _globals['_GENERATEFIRMWAREDOWNLOADURIREQUEST']._serialized_end=2485
+  _globals['_GENERATEFIRMWAREDOWNLOADURIRESPONSE']._serialized_start=2487
+  _globals['_GENERATEFIRMWAREDOWNLOADURIRESPONSE']._serialized_end=2562
+  _globals['_GENERATEFIRMWAREDOWNLOADURIMETADATA']._serialized_start=2564
+  _globals['_GENERATEFIRMWAREDOWNLOADURIMETADATA']._serialized_end=2601
+  _globals['_ELECTRONICLOCKSERVICE']._serialized_start=2604
+  _globals['_ELECTRONICLOCKSERVICE']._serialized_end=4366
 # @@protoc_insertion_point(module_scope)

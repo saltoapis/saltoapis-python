@@ -4,6 +4,8 @@ from google.protobuf import field_mask_pb2 as _field_mask_pb2
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from saltoapis.longrunning.v1 import operation_pb2 as _operation_pb2
 from saltoapis.longrunning.v1 import operation_pb2 as _operation_pb2
+from saltoapis.nebula.type import device_metadata_pb2 as _device_metadata_pb2
+from saltoapis.nebula.type import device_metadata_pb2 as _device_metadata_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -12,7 +14,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class ElectronicLock(_message.Message):
-    __slots__ = ("name", "display_name", "device_id", "gateway", "extender", "access_point", "initialized", "outdated", "connected", "low_battery", "last_event_time", "calibration_settings", "force_rotate_carriage_end", "hold_back_latch_duration")
+    __slots__ = ("name", "display_name", "device_id", "gateway", "extender", "access_point", "initialized", "device_metadata", "outdated", "connected", "low_battery", "last_event_time", "calibration_settings", "force_rotate_carriage_end", "hold_back_latch_duration")
     NAME_FIELD_NUMBER: _ClassVar[int]
     DISPLAY_NAME_FIELD_NUMBER: _ClassVar[int]
     DEVICE_ID_FIELD_NUMBER: _ClassVar[int]
@@ -20,6 +22,7 @@ class ElectronicLock(_message.Message):
     EXTENDER_FIELD_NUMBER: _ClassVar[int]
     ACCESS_POINT_FIELD_NUMBER: _ClassVar[int]
     INITIALIZED_FIELD_NUMBER: _ClassVar[int]
+    DEVICE_METADATA_FIELD_NUMBER: _ClassVar[int]
     OUTDATED_FIELD_NUMBER: _ClassVar[int]
     CONNECTED_FIELD_NUMBER: _ClassVar[int]
     LOW_BATTERY_FIELD_NUMBER: _ClassVar[int]
@@ -34,6 +37,7 @@ class ElectronicLock(_message.Message):
     extender: str
     access_point: str
     initialized: bool
+    device_metadata: _device_metadata_pb2.DeviceMetadata
     outdated: bool
     connected: bool
     low_battery: bool
@@ -41,7 +45,7 @@ class ElectronicLock(_message.Message):
     calibration_settings: bytes
     force_rotate_carriage_end: bool
     hold_back_latch_duration: _duration_pb2.Duration
-    def __init__(self, name: _Optional[str] = ..., display_name: _Optional[str] = ..., device_id: _Optional[str] = ..., gateway: _Optional[str] = ..., extender: _Optional[str] = ..., access_point: _Optional[str] = ..., initialized: bool = ..., outdated: bool = ..., connected: bool = ..., low_battery: bool = ..., last_event_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., calibration_settings: _Optional[bytes] = ..., force_rotate_carriage_end: bool = ..., hold_back_latch_duration: _Optional[_Union[_duration_pb2.Duration, _Mapping]] = ...) -> None: ...
+    def __init__(self, name: _Optional[str] = ..., display_name: _Optional[str] = ..., device_id: _Optional[str] = ..., gateway: _Optional[str] = ..., extender: _Optional[str] = ..., access_point: _Optional[str] = ..., initialized: bool = ..., device_metadata: _Optional[_Union[_device_metadata_pb2.DeviceMetadata, _Mapping]] = ..., outdated: bool = ..., connected: bool = ..., low_battery: bool = ..., last_event_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., calibration_settings: _Optional[bytes] = ..., force_rotate_carriage_end: bool = ..., hold_back_latch_duration: _Optional[_Union[_duration_pb2.Duration, _Mapping]] = ...) -> None: ...
 
 class CreateElectronicLockRequest(_message.Message):
     __slots__ = ("parent", "electronic_lock_id", "electronic_lock")
