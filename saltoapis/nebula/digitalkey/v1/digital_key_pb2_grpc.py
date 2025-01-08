@@ -2,6 +2,8 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
+from saltoapis.longrunning.v1 import operation_pb2 as salto_dot_longrunning_dot_v1_dot_operation__pb2
+from saltoapis.longrunning.v1 import operation_pb2 as salto_dot_longrunning_dot_v1_dot_operation__pb2
 from saltoapis.nebula.digitalkey.v1 import digital_key_pb2 as salto_dot_nebula_dot_digitalkey_dot_v1_dot_digital__key__pb2
 from saltoapis.nebula.digitalkey.v1 import digital_key_pb2 as salto_dot_nebula_dot_digitalkey_dot_v1_dot_digital__key__pb2
 
@@ -37,6 +39,11 @@ class DigitalKeyServiceStub(object):
                 '/salto.nebula.digitalkey.v1.DigitalKeyService/ListDigitalKeyAccessPoints',
                 request_serializer=salto_dot_nebula_dot_digitalkey_dot_v1_dot_digital__key__pb2.ListDigitalKeyAccessPointsRequest.SerializeToString,
                 response_deserializer=salto_dot_nebula_dot_digitalkey_dot_v1_dot_digital__key__pb2.ListDigitalKeyAccessPointsResponse.FromString,
+                _registered_method=True)
+        self.SyncDigitalKeyAccessPoints = channel.unary_unary(
+                '/salto.nebula.digitalkey.v1.DigitalKeyService/SyncDigitalKeyAccessPoints',
+                request_serializer=salto_dot_nebula_dot_digitalkey_dot_v1_dot_digital__key__pb2.SyncDigitalKeyAccessPointsRequest.SerializeToString,
+                response_deserializer=salto_dot_longrunning_dot_v1_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
 
 
@@ -82,6 +89,18 @@ class DigitalKeyServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def SyncDigitalKeyAccessPoints(self, request, context):
+        """Synchronize access points
+
+        Synchronize the digital key's access point associations.
+        This methods asks the cloud to synchronize the access points for the given digital key.
+        The cloud will trigger the synchronization of the digital key's access points if needed.
+        (-- api-linter: core::0136::http-name-variable=disabled --)
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_DigitalKeyServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -104,6 +123,11 @@ def add_DigitalKeyServiceServicer_to_server(servicer, server):
                     servicer.ListDigitalKeyAccessPoints,
                     request_deserializer=salto_dot_nebula_dot_digitalkey_dot_v1_dot_digital__key__pb2.ListDigitalKeyAccessPointsRequest.FromString,
                     response_serializer=salto_dot_nebula_dot_digitalkey_dot_v1_dot_digital__key__pb2.ListDigitalKeyAccessPointsResponse.SerializeToString,
+            ),
+            'SyncDigitalKeyAccessPoints': grpc.unary_unary_rpc_method_handler(
+                    servicer.SyncDigitalKeyAccessPoints,
+                    request_deserializer=salto_dot_nebula_dot_digitalkey_dot_v1_dot_digital__key__pb2.SyncDigitalKeyAccessPointsRequest.FromString,
+                    response_serializer=salto_dot_longrunning_dot_v1_dot_operation__pb2.Operation.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -216,6 +240,33 @@ class DigitalKeyService(object):
             '/salto.nebula.digitalkey.v1.DigitalKeyService/ListDigitalKeyAccessPoints',
             salto_dot_nebula_dot_digitalkey_dot_v1_dot_digital__key__pb2.ListDigitalKeyAccessPointsRequest.SerializeToString,
             salto_dot_nebula_dot_digitalkey_dot_v1_dot_digital__key__pb2.ListDigitalKeyAccessPointsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def SyncDigitalKeyAccessPoints(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/salto.nebula.digitalkey.v1.DigitalKeyService/SyncDigitalKeyAccessPoints',
+            salto_dot_nebula_dot_digitalkey_dot_v1_dot_digital__key__pb2.SyncDigitalKeyAccessPointsRequest.SerializeToString,
+            salto_dot_longrunning_dot_v1_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,
             insecure,

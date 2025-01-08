@@ -6,6 +6,7 @@ package(default_visibility = ['//:__subpackages__'])
 load_rules(
     lib_name = 'salto-nebula-digitalkey-v1',
     internal_dependencies = [
+        '//saltoapis/longrunning/v1',
         '//saltoapis/type',
     ],
     extra_info = {

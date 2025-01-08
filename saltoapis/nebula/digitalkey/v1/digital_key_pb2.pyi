@@ -1,4 +1,6 @@
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
+from saltoapis.longrunning.v1 import operation_pb2 as _operation_pb2
+from saltoapis.longrunning.v1 import operation_pb2 as _operation_pb2
 from saltoapis.type import color_pb2 as _color_pb2
 from saltoapis.type import color_pb2 as _color_pb2
 from google.protobuf.internal import containers as _containers
@@ -146,3 +148,17 @@ class ListDigitalKeyAccessPointsResponse(_message.Message):
     digital_key_access_points: _containers.RepeatedCompositeFieldContainer[DigitalKeyAccessPoint]
     next_page_token: str
     def __init__(self, digital_key_access_points: _Optional[_Iterable[_Union[DigitalKeyAccessPoint, _Mapping]]] = ..., next_page_token: _Optional[str] = ...) -> None: ...
+
+class SyncDigitalKeyAccessPointsRequest(_message.Message):
+    __slots__ = ("name",)
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    def __init__(self, name: _Optional[str] = ...) -> None: ...
+
+class SyncDigitalKeyAccessPointsResponse(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
+
+class SyncDigitalKeyAccessPointsMetadata(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
