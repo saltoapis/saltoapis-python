@@ -280,7 +280,8 @@ class InstallationServiceServicer(object):
     def UpdateCard(self, request, context):
         """Update subscription payment method's card
 
-        Updates subscription payment method's card.
+        Updates subscription payment method's card. If there is a payment method
+        associated with the subscription, it will be deleted.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
