@@ -99,6 +99,11 @@ class InstallationServiceStub(object):
                 request_serializer=salto_dot_nebula_dot_installation_dot_v1_dot_installation__pb2.UpdateBillingInfoRequest.SerializeToString,
                 response_deserializer=salto_dot_nebula_dot_installation_dot_v1_dot_installation__pb2.BillingInfo.FromString,
                 _registered_method=True)
+        self.UpdatePaymentMethod = channel.unary_unary(
+                '/salto.nebula.installation.v1.InstallationService/UpdatePaymentMethod',
+                request_serializer=salto_dot_nebula_dot_installation_dot_v1_dot_installation__pb2.UpdatePaymentMethodRequest.SerializeToString,
+                response_deserializer=salto_dot_nebula_dot_installation_dot_v1_dot_installation__pb2.PaymentMethod.FromString,
+                _registered_method=True)
         self.UpdateCard = channel.unary_unary(
                 '/salto.nebula.installation.v1.InstallationService/UpdateCard',
                 request_serializer=salto_dot_nebula_dot_installation_dot_v1_dot_installation__pb2.UpdateCardRequest.SerializeToString,
@@ -277,6 +282,18 @@ class InstallationServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def UpdatePaymentMethod(self, request, context):
+        """Update subscription payment method
+
+        Updates an existing subscription payment method. If there is a payment
+        method associated with the subscription, it will be deleted.
+        (-- api-linter: core::0134::method-signature=disabled
+        aip.dev/not-precedent: We need to do this to simplify the update operation. --)
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def UpdateCard(self, request, context):
         """Update subscription payment method's card
 
@@ -396,6 +413,11 @@ def add_InstallationServiceServicer_to_server(servicer, server):
                     servicer.UpdateBillingInfo,
                     request_deserializer=salto_dot_nebula_dot_installation_dot_v1_dot_installation__pb2.UpdateBillingInfoRequest.FromString,
                     response_serializer=salto_dot_nebula_dot_installation_dot_v1_dot_installation__pb2.BillingInfo.SerializeToString,
+            ),
+            'UpdatePaymentMethod': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdatePaymentMethod,
+                    request_deserializer=salto_dot_nebula_dot_installation_dot_v1_dot_installation__pb2.UpdatePaymentMethodRequest.FromString,
+                    response_serializer=salto_dot_nebula_dot_installation_dot_v1_dot_installation__pb2.PaymentMethod.SerializeToString,
             ),
             'UpdateCard': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateCard,
@@ -852,6 +874,33 @@ class InstallationService(object):
             '/salto.nebula.installation.v1.InstallationService/UpdateBillingInfo',
             salto_dot_nebula_dot_installation_dot_v1_dot_installation__pb2.UpdateBillingInfoRequest.SerializeToString,
             salto_dot_nebula_dot_installation_dot_v1_dot_installation__pb2.BillingInfo.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UpdatePaymentMethod(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/salto.nebula.installation.v1.InstallationService/UpdatePaymentMethod',
+            salto_dot_nebula_dot_installation_dot_v1_dot_installation__pb2.UpdatePaymentMethodRequest.SerializeToString,
+            salto_dot_nebula_dot_installation_dot_v1_dot_installation__pb2.PaymentMethod.FromString,
             options,
             channel_credentials,
             insecure,
