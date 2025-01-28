@@ -162,3 +162,17 @@ class SyncDigitalKeyAccessPointsResponse(_message.Message):
 class SyncDigitalKeyAccessPointsMetadata(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
+
+class UnlockDigitalKeyAccessPointRequest(_message.Message):
+    __slots__ = ("name",)
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    def __init__(self, name: _Optional[str] = ...) -> None: ...
+
+class UnlockDigitalKeyAccessPointResponse(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
+
+class UnlockDigitalKeyAccessPointMetadata(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
