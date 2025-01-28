@@ -45,6 +45,11 @@ class DigitalKeyServiceStub(object):
                 request_serializer=salto_dot_nebula_dot_digitalkey_dot_v1_dot_digital__key__pb2.SyncDigitalKeyAccessPointsRequest.SerializeToString,
                 response_deserializer=salto_dot_longrunning_dot_v1_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.UnlockDigitalKeyAccessPoint = channel.unary_unary(
+                '/salto.nebula.digitalkey.v1.DigitalKeyService/UnlockDigitalKeyAccessPoint',
+                request_serializer=salto_dot_nebula_dot_digitalkey_dot_v1_dot_digital__key__pb2.UnlockDigitalKeyAccessPointRequest.SerializeToString,
+                response_deserializer=salto_dot_longrunning_dot_v1_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
 
 
 class DigitalKeyServiceServicer(object):
@@ -101,6 +106,18 @@ class DigitalKeyServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def UnlockDigitalKeyAccessPoint(self, request, context):
+        """Unlock an user access point
+
+        Remotely unlocks an access point. This can be run against those access
+        points where their associated devices are online and connected.
+        The user related to the digital key must have the necessary access rights
+        and the access point has to include a permitted schedule to perform a remote unlock.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_DigitalKeyServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -127,6 +144,11 @@ def add_DigitalKeyServiceServicer_to_server(servicer, server):
             'SyncDigitalKeyAccessPoints': grpc.unary_unary_rpc_method_handler(
                     servicer.SyncDigitalKeyAccessPoints,
                     request_deserializer=salto_dot_nebula_dot_digitalkey_dot_v1_dot_digital__key__pb2.SyncDigitalKeyAccessPointsRequest.FromString,
+                    response_serializer=salto_dot_longrunning_dot_v1_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'UnlockDigitalKeyAccessPoint': grpc.unary_unary_rpc_method_handler(
+                    servicer.UnlockDigitalKeyAccessPoint,
+                    request_deserializer=salto_dot_nebula_dot_digitalkey_dot_v1_dot_digital__key__pb2.UnlockDigitalKeyAccessPointRequest.FromString,
                     response_serializer=salto_dot_longrunning_dot_v1_dot_operation__pb2.Operation.SerializeToString,
             ),
     }
@@ -266,6 +288,33 @@ class DigitalKeyService(object):
             target,
             '/salto.nebula.digitalkey.v1.DigitalKeyService/SyncDigitalKeyAccessPoints',
             salto_dot_nebula_dot_digitalkey_dot_v1_dot_digital__key__pb2.SyncDigitalKeyAccessPointsRequest.SerializeToString,
+            salto_dot_longrunning_dot_v1_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UnlockDigitalKeyAccessPoint(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/salto.nebula.digitalkey.v1.DigitalKeyService/UnlockDigitalKeyAccessPoint',
+            salto_dot_nebula_dot_digitalkey_dot_v1_dot_digital__key__pb2.UnlockDigitalKeyAccessPointRequest.SerializeToString,
             salto_dot_longrunning_dot_v1_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,
