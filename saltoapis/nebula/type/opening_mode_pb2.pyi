@@ -9,6 +9,8 @@ class OpeningMode(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     OPENING_MODE_UNSPECIFIED: _ClassVar[OpeningMode]
     OFFICE: _ClassVar[OpeningMode]
     TOGGLE: _ClassVar[OpeningMode]
+    AUTOLOCK: _ClassVar[OpeningMode]
 OPENING_MODE_UNSPECIFIED: OpeningMode
 OFFICE: OpeningMode
 TOGGLE: OpeningMode
+AUTOLOCK: OpeningMode
