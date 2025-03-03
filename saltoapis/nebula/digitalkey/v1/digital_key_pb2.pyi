@@ -35,11 +35,13 @@ class DigitalKey(_message.Message):
             SYNCING: _ClassVar[DigitalKey.AppKey.AccessPointsSyncState]
             SYNCED: _ClassVar[DigitalKey.AppKey.AccessPointsSyncState]
             NOT_SUPPORTED: _ClassVar[DigitalKey.AppKey.AccessPointsSyncState]
+            LIMIT_EXCEEDED: _ClassVar[DigitalKey.AppKey.AccessPointsSyncState]
         ACCESS_POINTS_SYNC_STATE_UNSPECIFIED: DigitalKey.AppKey.AccessPointsSyncState
         INVALIDATED: DigitalKey.AppKey.AccessPointsSyncState
         SYNCING: DigitalKey.AppKey.AccessPointsSyncState
         SYNCED: DigitalKey.AppKey.AccessPointsSyncState
         NOT_SUPPORTED: DigitalKey.AppKey.AccessPointsSyncState
+        LIMIT_EXCEEDED: DigitalKey.AppKey.AccessPointsSyncState
         METADATA_FIELD_NUMBER: _ClassVar[int]
         DATA_FIELD_NUMBER: _ClassVar[int]
         INSTALLATION_FIELD_NUMBER: _ClassVar[int]
