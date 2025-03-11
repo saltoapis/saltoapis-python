@@ -303,6 +303,7 @@ def add_IntercomAdaptorServiceServicer_to_server(servicer, server):
     generic_handler = grpc.method_handlers_generic_handler(
             'salto.nebula.intercomadaptor.v1.IntercomAdaptorService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
+    server.add_registered_method_handlers('salto.nebula.intercomadaptor.v1.IntercomAdaptorService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
