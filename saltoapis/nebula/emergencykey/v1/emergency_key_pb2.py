@@ -26,7 +26,7 @@ from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n0salto/nebula/emergencykey/v1/emergency_key.proto\x12\x1csalto.nebula.emergencykey.v1\x1a\x1bgoogle/protobuf/empty.proto\x1a google/protobuf/field_mask.proto\"?\n\x0c\x45mergencyKey\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x14\n\x0c\x64isplay_name\x18\x02 \x01(\t\x12\x0b\n\x03uid\x18\x03 \x01(\t\"n\n\x19\x43reateEmergencyKeyRequest\x12\x0e\n\x06parent\x18\x01 \x01(\t\x12\x41\n\remergency_key\x18\x03 \x01(\x0b\x32*.salto.nebula.emergencykey.v1.EmergencyKey\"&\n\x16GetEmergencyKeyRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"a\n\x18ListEmergencyKeysRequest\x12\x0e\n\x06parent\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\x12\x0e\n\x06\x66ilter\x18\x04 \x01(\t\"x\n\x19ListEmergencyKeysResponse\x12\x42\n\x0e\x65mergency_keys\x18\x01 \x03(\x0b\x32*.salto.nebula.emergencykey.v1.EmergencyKey\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x8f\x01\n\x19UpdateEmergencyKeyRequest\x12\x41\n\remergency_key\x18\x01 \x01(\x0b\x32*.salto.nebula.emergencykey.v1.EmergencyKey\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\")\n\x19\x44\x65leteEmergencyKeyRequest\x12\x0c\n\x04name\x18\x01 \x01(\t2\xee\x04\n\x13\x45mergencyKeyService\x12y\n\x12\x43reateEmergencyKey\x12\x37.salto.nebula.emergencykey.v1.CreateEmergencyKeyRequest\x1a*.salto.nebula.emergencykey.v1.EmergencyKey\x12s\n\x0fGetEmergencyKey\x12\x34.salto.nebula.emergencykey.v1.GetEmergencyKeyRequest\x1a*.salto.nebula.emergencykey.v1.EmergencyKey\x12\x84\x01\n\x11ListEmergencyKeys\x12\x36.salto.nebula.emergencykey.v1.ListEmergencyKeysRequest\x1a\x37.salto.nebula.emergencykey.v1.ListEmergencyKeysResponse\x12y\n\x12UpdateEmergencyKey\x12\x37.salto.nebula.emergencykey.v1.UpdateEmergencyKeyRequest\x1a*.salto.nebula.emergencykey.v1.EmergencyKey\x12\x65\n\x12\x44\x65leteEmergencyKey\x12\x37.salto.nebula.emergencykey.v1.DeleteEmergencyKeyRequest\x1a\x16.google.protobuf.EmptyB\xf8\x01\n com.salto.nebula.emergencykey.v1B\x11\x45mergencyKeyProtoP\x01ZNgithub.com/saltoapis-internal/saltoapis-go/nebula/emergencykey/v1;emergencykey\xaa\x02\x1cSalto.Nebula.EmergencyKey.V1\xca\x02 Saltoapis\\Nebula\\EmergencyKey\\V1\xe2\x02,GPBMetadata\\Saltoapis\\Nebula\\EmergencyKey\\V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n0salto/nebula/emergencykey/v1/emergency_key.proto\x12\x1csalto.nebula.emergencykey.v1\x1a\x1bgoogle/protobuf/empty.proto\x1a google/protobuf/field_mask.proto\"?\n\x0c\x45mergencyKey\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x14\n\x0c\x64isplay_name\x18\x02 \x01(\t\x12\x0b\n\x03uid\x18\x03 \x01(\t\"n\n\x19\x43reateEmergencyKeyRequest\x12\x0e\n\x06parent\x18\x01 \x01(\t\x12\x41\n\remergency_key\x18\x03 \x01(\x0b\x32*.salto.nebula.emergencykey.v1.EmergencyKey\"&\n\x16GetEmergencyKeyRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"s\n\x18ListEmergencyKeysRequest\x12\x0e\n\x06parent\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\x12\x0e\n\x06\x66ilter\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\"x\n\x19ListEmergencyKeysResponse\x12\x42\n\x0e\x65mergency_keys\x18\x01 \x03(\x0b\x32*.salto.nebula.emergencykey.v1.EmergencyKey\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x8f\x01\n\x19UpdateEmergencyKeyRequest\x12\x41\n\remergency_key\x18\x01 \x01(\x0b\x32*.salto.nebula.emergencykey.v1.EmergencyKey\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\")\n\x19\x44\x65leteEmergencyKeyRequest\x12\x0c\n\x04name\x18\x01 \x01(\t2\xee\x04\n\x13\x45mergencyKeyService\x12y\n\x12\x43reateEmergencyKey\x12\x37.salto.nebula.emergencykey.v1.CreateEmergencyKeyRequest\x1a*.salto.nebula.emergencykey.v1.EmergencyKey\x12s\n\x0fGetEmergencyKey\x12\x34.salto.nebula.emergencykey.v1.GetEmergencyKeyRequest\x1a*.salto.nebula.emergencykey.v1.EmergencyKey\x12\x84\x01\n\x11ListEmergencyKeys\x12\x36.salto.nebula.emergencykey.v1.ListEmergencyKeysRequest\x1a\x37.salto.nebula.emergencykey.v1.ListEmergencyKeysResponse\x12y\n\x12UpdateEmergencyKey\x12\x37.salto.nebula.emergencykey.v1.UpdateEmergencyKeyRequest\x1a*.salto.nebula.emergencykey.v1.EmergencyKey\x12\x65\n\x12\x44\x65leteEmergencyKey\x12\x37.salto.nebula.emergencykey.v1.DeleteEmergencyKeyRequest\x1a\x16.google.protobuf.EmptyB\xf8\x01\n com.salto.nebula.emergencykey.v1B\x11\x45mergencyKeyProtoP\x01ZNgithub.com/saltoapis-internal/saltoapis-go/nebula/emergencykey/v1;emergencykey\xaa\x02\x1cSalto.Nebula.EmergencyKey.V1\xca\x02 Saltoapis\\Nebula\\EmergencyKey\\V1\xe2\x02,GPBMetadata\\Saltoapis\\Nebula\\EmergencyKey\\V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -41,13 +41,13 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_GETEMERGENCYKEYREQUEST']._serialized_start=322
   _globals['_GETEMERGENCYKEYREQUEST']._serialized_end=360
   _globals['_LISTEMERGENCYKEYSREQUEST']._serialized_start=362
-  _globals['_LISTEMERGENCYKEYSREQUEST']._serialized_end=459
-  _globals['_LISTEMERGENCYKEYSRESPONSE']._serialized_start=461
-  _globals['_LISTEMERGENCYKEYSRESPONSE']._serialized_end=581
-  _globals['_UPDATEEMERGENCYKEYREQUEST']._serialized_start=584
-  _globals['_UPDATEEMERGENCYKEYREQUEST']._serialized_end=727
-  _globals['_DELETEEMERGENCYKEYREQUEST']._serialized_start=729
-  _globals['_DELETEEMERGENCYKEYREQUEST']._serialized_end=770
-  _globals['_EMERGENCYKEYSERVICE']._serialized_start=773
-  _globals['_EMERGENCYKEYSERVICE']._serialized_end=1395
+  _globals['_LISTEMERGENCYKEYSREQUEST']._serialized_end=477
+  _globals['_LISTEMERGENCYKEYSRESPONSE']._serialized_start=479
+  _globals['_LISTEMERGENCYKEYSRESPONSE']._serialized_end=599
+  _globals['_UPDATEEMERGENCYKEYREQUEST']._serialized_start=602
+  _globals['_UPDATEEMERGENCYKEYREQUEST']._serialized_end=745
+  _globals['_DELETEEMERGENCYKEYREQUEST']._serialized_start=747
+  _globals['_DELETEEMERGENCYKEYREQUEST']._serialized_end=788
+  _globals['_EMERGENCYKEYSERVICE']._serialized_start=791
+  _globals['_EMERGENCYKEYSERVICE']._serialized_end=1413
 # @@protoc_insertion_point(module_scope)
