@@ -26,13 +26,15 @@ from saltoapis.nebula.accesspoint.v1 import access_point_pb2 as salto_dot_nebula
 from saltoapis.nebula.accesspoint.v1 import access_point_pb2 as salto_dot_nebula_dot_accesspoint_dot_v1_dot_access__point__pb2
 from saltoapis.nebula.accessright.v1 import access_right_pb2 as salto_dot_nebula_dot_accessright_dot_v1_dot_access__right__pb2
 from saltoapis.nebula.accessright.v1 import access_right_pb2 as salto_dot_nebula_dot_accessright_dot_v1_dot_access__right__pb2
+from saltoapis.nebula.emergencykey.v1 import emergency_key_pb2 as salto_dot_nebula_dot_emergencykey_dot_v1_dot_emergency__key__pb2
+from saltoapis.nebula.emergencykey.v1 import emergency_key_pb2 as salto_dot_nebula_dot_emergencykey_dot_v1_dot_emergency__key__pb2
 from saltoapis.nebula.unit.v1 import unit_pb2 as salto_dot_nebula_dot_unit_dot_v1_dot_unit__pb2
 from saltoapis.nebula.unit.v1 import unit_pb2 as salto_dot_nebula_dot_unit_dot_v1_dot_unit__pb2
 from saltoapis.nebula.user.v1 import user_pb2 as salto_dot_nebula_dot_user_dot_v1_dot_user__pb2
 from saltoapis.nebula.user.v1 import user_pb2 as salto_dot_nebula_dot_user_dot_v1_dot_user__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!salto/nebula/event/v1/types.proto\x12\x15salto.nebula.event.v1\x1a.salto/nebula/accesspoint/v1/access_point.proto\x1a.salto/nebula/accessright/v1/access_right.proto\x1a\x1fsalto/nebula/unit/v1/unit.proto\x1a\x1fsalto/nebula/user/v1/user.proto\"T\n\x12\x41\x63\x63\x65ssPointCreated\x12>\n\x0c\x61\x63\x63\x65ss_point\x18\x01 \x01(\x0b\x32(.salto.nebula.accesspoint.v1.AccessPoint\"T\n\x12\x41\x63\x63\x65ssPointUpdated\x12>\n\x0c\x61\x63\x63\x65ss_point\x18\x01 \x01(\x0b\x32(.salto.nebula.accesspoint.v1.AccessPoint\"T\n\x12\x41\x63\x63\x65ssPointDeleted\x12>\n\x0c\x61\x63\x63\x65ss_point\x18\x01 \x01(\x0b\x32(.salto.nebula.accesspoint.v1.AccessPoint\"\x7f\n\x13\x41\x63\x63\x65ssPointUnlocked\x12>\n\x0c\x61\x63\x63\x65ss_point\x18\x01 \x01(\x0b\x32(.salto.nebula.accesspoint.v1.AccessPoint\x12(\n\x04user\x18\x02 \x01(\x0b\x32\x1a.salto.nebula.user.v1.User\"}\n\x11\x41\x63\x63\x65ssPointLocked\x12>\n\x0c\x61\x63\x63\x65ss_point\x18\x01 \x01(\x0b\x32(.salto.nebula.accesspoint.v1.AccessPoint\x12(\n\x04user\x18\x02 \x01(\x0b\x32\x1a.salto.nebula.user.v1.User\"W\n\x15\x41\x63\x63\x65ssPointForcedOpen\x12>\n\x0c\x61\x63\x63\x65ss_point\x18\x01 \x01(\x0b\x32(.salto.nebula.accesspoint.v1.AccessPoint\"S\n\x11\x41\x63\x63\x65ssPointClosed\x12>\n\x0c\x61\x63\x63\x65ss_point\x18\x01 \x01(\x0b\x32(.salto.nebula.accesspoint.v1.AccessPoint\"x\n\x0c\x41\x63\x63\x65ssDenied\x12>\n\x0c\x61\x63\x63\x65ss_point\x18\x01 \x01(\x0b\x32(.salto.nebula.accesspoint.v1.AccessPoint\x12(\n\x04user\x18\x02 \x01(\x0b\x32\x1a.salto.nebula.user.v1.User\"U\n\x13\x41\x63\x63\x65ssPointLeftOpen\x12>\n\x0c\x61\x63\x63\x65ss_point\x18\x01 \x01(\x0b\x32(.salto.nebula.accesspoint.v1.AccessPoint\"T\n\x12\x41\x63\x63\x65ssRightCreated\x12>\n\x0c\x61\x63\x63\x65ss_right\x18\x01 \x01(\x0b\x32(.salto.nebula.accessright.v1.AccessRight\"T\n\x12\x41\x63\x63\x65ssRightUpdated\x12>\n\x0c\x61\x63\x63\x65ss_right\x18\x01 \x01(\x0b\x32(.salto.nebula.accessright.v1.AccessRight\"T\n\x12\x41\x63\x63\x65ssRightDeleted\x12>\n\x0c\x61\x63\x63\x65ss_right\x18\x01 \x01(\x0b\x32(.salto.nebula.accessright.v1.AccessRight\"\x9f\x01\n\x1d\x41\x63\x63\x65ssRightAccessPointCreated\x12>\n\x0c\x61\x63\x63\x65ss_right\x18\x01 \x01(\x0b\x32(.salto.nebula.accessright.v1.AccessRight\x12>\n\x0c\x61\x63\x63\x65ss_point\x18\x02 \x01(\x0b\x32(.salto.nebula.accesspoint.v1.AccessPoint\"\xa6\x01\n#AccessRightAccessPointsBatchCreated\x12>\n\x0c\x61\x63\x63\x65ss_right\x18\x01 \x01(\x0b\x32(.salto.nebula.accessright.v1.AccessRight\x12?\n\raccess_points\x18\x02 \x03(\x0b\x32(.salto.nebula.accesspoint.v1.AccessPoint\"\x9f\x01\n\x1d\x41\x63\x63\x65ssRightAccessPointDeleted\x12>\n\x0c\x61\x63\x63\x65ss_right\x18\x01 \x01(\x0b\x32(.salto.nebula.accessright.v1.AccessRight\x12>\n\x0c\x61\x63\x63\x65ss_point\x18\x02 \x01(\x0b\x32(.salto.nebula.accesspoint.v1.AccessPoint\"\xa6\x01\n#AccessRightAccessPointsBatchDeleted\x12>\n\x0c\x61\x63\x63\x65ss_right\x18\x01 \x01(\x0b\x32(.salto.nebula.accessright.v1.AccessRight\x12?\n\raccess_points\x18\x02 \x03(\x0b\x32(.salto.nebula.accesspoint.v1.AccessPoint\"7\n\x0bUserCreated\x12(\n\x04user\x18\x01 \x01(\x0b\x32\x1a.salto.nebula.user.v1.User\"7\n\x0bUserUpdated\x12(\n\x04user\x18\x01 \x01(\x0b\x32\x1a.salto.nebula.user.v1.User\"7\n\x0bUserBlocked\x12(\n\x04user\x18\x01 \x01(\x0b\x32\x1a.salto.nebula.user.v1.User\"9\n\rUserUnblocked\x12(\n\x04user\x18\x01 \x01(\x0b\x32\x1a.salto.nebula.user.v1.User\"7\n\x0bUserDeleted\x12(\n\x04user\x18\x01 \x01(\x0b\x32\x1a.salto.nebula.user.v1.User\"\x82\x01\n\x16UserAccessRightCreated\x12(\n\x04user\x18\x01 \x01(\x0b\x32\x1a.salto.nebula.user.v1.User\x12>\n\x0c\x61\x63\x63\x65ss_right\x18\x02 \x01(\x0b\x32(.salto.nebula.accessright.v1.AccessRight\"\x82\x01\n\x16UserAccessRightUpdated\x12(\n\x04user\x18\x01 \x01(\x0b\x32\x1a.salto.nebula.user.v1.User\x12>\n\x0c\x61\x63\x63\x65ss_right\x18\x02 \x01(\x0b\x32(.salto.nebula.accessright.v1.AccessRight\"\x82\x01\n\x16UserAccessRightDeleted\x12(\n\x04user\x18\x01 \x01(\x0b\x32\x1a.salto.nebula.user.v1.User\x12>\n\x0c\x61\x63\x63\x65ss_right\x18\x02 \x01(\x0b\x32(.salto.nebula.accessright.v1.AccessRight\"l\n\x0f\x43\x61rdKeyAssigned\x12(\n\x04user\x18\x01 \x01(\x0b\x32\x1a.salto.nebula.user.v1.User\x12/\n\x08\x63\x61rd_key\x18\x02 \x01(\x0b\x32\x1d.salto.nebula.user.v1.CardKey\"l\n\x0f\x43\x61rdKeyCanceled\x12(\n\x04user\x18\x01 \x01(\x0b\x32\x1a.salto.nebula.user.v1.User\x12/\n\x08\x63\x61rd_key\x18\x02 \x01(\x0b\x32\x1d.salto.nebula.user.v1.CardKey\"i\n\x0e\x41ppKeyAssigned\x12(\n\x04user\x18\x01 \x01(\x0b\x32\x1a.salto.nebula.user.v1.User\x12-\n\x07\x61pp_key\x18\x02 \x01(\x0b\x32\x1c.salto.nebula.user.v1.AppKey\"i\n\x0e\x41ppKeyCanceled\x12(\n\x04user\x18\x01 \x01(\x0b\x32\x1a.salto.nebula.user.v1.User\x12-\n\x07\x61pp_key\x18\x02 \x01(\x0b\x32\x1c.salto.nebula.user.v1.AppKey\"r\n\x11WalletKeyAssigned\x12(\n\x04user\x18\x01 \x01(\x0b\x32\x1a.salto.nebula.user.v1.User\x12\x33\n\nwallet_key\x18\x02 \x01(\x0b\x32\x1f.salto.nebula.user.v1.WalletKey\"r\n\x11WalletKeyCanceled\x12(\n\x04user\x18\x01 \x01(\x0b\x32\x1a.salto.nebula.user.v1.User\x12\x33\n\nwallet_key\x18\x02 \x01(\x0b\x32\x1f.salto.nebula.user.v1.WalletKey\"7\n\x0bUnitMovedIn\x12(\n\x04unit\x18\x01 \x01(\x0b\x32\x1a.salto.nebula.unit.v1.Unit\"8\n\x0cUnitMovedOut\x12(\n\x04unit\x18\x01 \x01(\x0b\x32\x1a.salto.nebula.unit.v1.Unit\"7\n\x0bUnitCreated\x12(\n\x04unit\x18\x01 \x01(\x0b\x32\x1a.salto.nebula.unit.v1.Unit\"7\n\x0bUnitUpdated\x12(\n\x04unit\x18\x01 \x01(\x0b\x32\x1a.salto.nebula.unit.v1.Unit\"7\n\x0bUnitDeleted\x12(\n\x04unit\x18\x01 \x01(\x0b\x32\x1a.salto.nebula.unit.v1.UnitB\xcf\x01\n\x1d\x63om.saltoapis.nebula.event.v1B\nTypesProtoP\x01Z@github.com/saltoapis-internal/saltoapis-go/nebula/event/v1;event\xaa\x02\x19Saltoapis.Nebula.Event.V1\xca\x02\x19Saltoapis\\Nebula\\Event\\V1\xe2\x02%GPBMetadata\\Saltoapis\\Nebula\\Event\\V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!salto/nebula/event/v1/types.proto\x12\x15salto.nebula.event.v1\x1a.salto/nebula/accesspoint/v1/access_point.proto\x1a.salto/nebula/accessright/v1/access_right.proto\x1a\x30salto/nebula/emergencykey/v1/emergency_key.proto\x1a\x1fsalto/nebula/unit/v1/unit.proto\x1a\x1fsalto/nebula/user/v1/user.proto\"T\n\x12\x41\x63\x63\x65ssPointCreated\x12>\n\x0c\x61\x63\x63\x65ss_point\x18\x01 \x01(\x0b\x32(.salto.nebula.accesspoint.v1.AccessPoint\"T\n\x12\x41\x63\x63\x65ssPointUpdated\x12>\n\x0c\x61\x63\x63\x65ss_point\x18\x01 \x01(\x0b\x32(.salto.nebula.accesspoint.v1.AccessPoint\"T\n\x12\x41\x63\x63\x65ssPointDeleted\x12>\n\x0c\x61\x63\x63\x65ss_point\x18\x01 \x01(\x0b\x32(.salto.nebula.accesspoint.v1.AccessPoint\"\x7f\n\x13\x41\x63\x63\x65ssPointUnlocked\x12>\n\x0c\x61\x63\x63\x65ss_point\x18\x01 \x01(\x0b\x32(.salto.nebula.accesspoint.v1.AccessPoint\x12(\n\x04user\x18\x02 \x01(\x0b\x32\x1a.salto.nebula.user.v1.User\"}\n\x11\x41\x63\x63\x65ssPointLocked\x12>\n\x0c\x61\x63\x63\x65ss_point\x18\x01 \x01(\x0b\x32(.salto.nebula.accesspoint.v1.AccessPoint\x12(\n\x04user\x18\x02 \x01(\x0b\x32\x1a.salto.nebula.user.v1.User\"W\n\x15\x41\x63\x63\x65ssPointForcedOpen\x12>\n\x0c\x61\x63\x63\x65ss_point\x18\x01 \x01(\x0b\x32(.salto.nebula.accesspoint.v1.AccessPoint\"S\n\x11\x41\x63\x63\x65ssPointClosed\x12>\n\x0c\x61\x63\x63\x65ss_point\x18\x01 \x01(\x0b\x32(.salto.nebula.accesspoint.v1.AccessPoint\"x\n\x0c\x41\x63\x63\x65ssDenied\x12>\n\x0c\x61\x63\x63\x65ss_point\x18\x01 \x01(\x0b\x32(.salto.nebula.accesspoint.v1.AccessPoint\x12(\n\x04user\x18\x02 \x01(\x0b\x32\x1a.salto.nebula.user.v1.User\"U\n\x13\x41\x63\x63\x65ssPointLeftOpen\x12>\n\x0c\x61\x63\x63\x65ss_point\x18\x01 \x01(\x0b\x32(.salto.nebula.accesspoint.v1.AccessPoint\"T\n\x12\x41\x63\x63\x65ssRightCreated\x12>\n\x0c\x61\x63\x63\x65ss_right\x18\x01 \x01(\x0b\x32(.salto.nebula.accessright.v1.AccessRight\"T\n\x12\x41\x63\x63\x65ssRightUpdated\x12>\n\x0c\x61\x63\x63\x65ss_right\x18\x01 \x01(\x0b\x32(.salto.nebula.accessright.v1.AccessRight\"T\n\x12\x41\x63\x63\x65ssRightDeleted\x12>\n\x0c\x61\x63\x63\x65ss_right\x18\x01 \x01(\x0b\x32(.salto.nebula.accessright.v1.AccessRight\"\x9f\x01\n\x1d\x41\x63\x63\x65ssRightAccessPointCreated\x12>\n\x0c\x61\x63\x63\x65ss_right\x18\x01 \x01(\x0b\x32(.salto.nebula.accessright.v1.AccessRight\x12>\n\x0c\x61\x63\x63\x65ss_point\x18\x02 \x01(\x0b\x32(.salto.nebula.accesspoint.v1.AccessPoint\"\xa6\x01\n#AccessRightAccessPointsBatchCreated\x12>\n\x0c\x61\x63\x63\x65ss_right\x18\x01 \x01(\x0b\x32(.salto.nebula.accessright.v1.AccessRight\x12?\n\raccess_points\x18\x02 \x03(\x0b\x32(.salto.nebula.accesspoint.v1.AccessPoint\"\x9f\x01\n\x1d\x41\x63\x63\x65ssRightAccessPointDeleted\x12>\n\x0c\x61\x63\x63\x65ss_right\x18\x01 \x01(\x0b\x32(.salto.nebula.accessright.v1.AccessRight\x12>\n\x0c\x61\x63\x63\x65ss_point\x18\x02 \x01(\x0b\x32(.salto.nebula.accesspoint.v1.AccessPoint\"\xa6\x01\n#AccessRightAccessPointsBatchDeleted\x12>\n\x0c\x61\x63\x63\x65ss_right\x18\x01 \x01(\x0b\x32(.salto.nebula.accessright.v1.AccessRight\x12?\n\raccess_points\x18\x02 \x03(\x0b\x32(.salto.nebula.accesspoint.v1.AccessPoint\"7\n\x0bUserCreated\x12(\n\x04user\x18\x01 \x01(\x0b\x32\x1a.salto.nebula.user.v1.User\"7\n\x0bUserUpdated\x12(\n\x04user\x18\x01 \x01(\x0b\x32\x1a.salto.nebula.user.v1.User\"7\n\x0bUserBlocked\x12(\n\x04user\x18\x01 \x01(\x0b\x32\x1a.salto.nebula.user.v1.User\"9\n\rUserUnblocked\x12(\n\x04user\x18\x01 \x01(\x0b\x32\x1a.salto.nebula.user.v1.User\"7\n\x0bUserDeleted\x12(\n\x04user\x18\x01 \x01(\x0b\x32\x1a.salto.nebula.user.v1.User\"\x82\x01\n\x16UserAccessRightCreated\x12(\n\x04user\x18\x01 \x01(\x0b\x32\x1a.salto.nebula.user.v1.User\x12>\n\x0c\x61\x63\x63\x65ss_right\x18\x02 \x01(\x0b\x32(.salto.nebula.accessright.v1.AccessRight\"\x82\x01\n\x16UserAccessRightUpdated\x12(\n\x04user\x18\x01 \x01(\x0b\x32\x1a.salto.nebula.user.v1.User\x12>\n\x0c\x61\x63\x63\x65ss_right\x18\x02 \x01(\x0b\x32(.salto.nebula.accessright.v1.AccessRight\"\x82\x01\n\x16UserAccessRightDeleted\x12(\n\x04user\x18\x01 \x01(\x0b\x32\x1a.salto.nebula.user.v1.User\x12>\n\x0c\x61\x63\x63\x65ss_right\x18\x02 \x01(\x0b\x32(.salto.nebula.accessright.v1.AccessRight\"l\n\x0f\x43\x61rdKeyAssigned\x12(\n\x04user\x18\x01 \x01(\x0b\x32\x1a.salto.nebula.user.v1.User\x12/\n\x08\x63\x61rd_key\x18\x02 \x01(\x0b\x32\x1d.salto.nebula.user.v1.CardKey\"l\n\x0f\x43\x61rdKeyCanceled\x12(\n\x04user\x18\x01 \x01(\x0b\x32\x1a.salto.nebula.user.v1.User\x12/\n\x08\x63\x61rd_key\x18\x02 \x01(\x0b\x32\x1d.salto.nebula.user.v1.CardKey\"i\n\x0e\x41ppKeyAssigned\x12(\n\x04user\x18\x01 \x01(\x0b\x32\x1a.salto.nebula.user.v1.User\x12-\n\x07\x61pp_key\x18\x02 \x01(\x0b\x32\x1c.salto.nebula.user.v1.AppKey\"i\n\x0e\x41ppKeyCanceled\x12(\n\x04user\x18\x01 \x01(\x0b\x32\x1a.salto.nebula.user.v1.User\x12-\n\x07\x61pp_key\x18\x02 \x01(\x0b\x32\x1c.salto.nebula.user.v1.AppKey\"r\n\x11WalletKeyAssigned\x12(\n\x04user\x18\x01 \x01(\x0b\x32\x1a.salto.nebula.user.v1.User\x12\x33\n\nwallet_key\x18\x02 \x01(\x0b\x32\x1f.salto.nebula.user.v1.WalletKey\"r\n\x11WalletKeyCanceled\x12(\n\x04user\x18\x01 \x01(\x0b\x32\x1a.salto.nebula.user.v1.User\x12\x33\n\nwallet_key\x18\x02 \x01(\x0b\x32\x1f.salto.nebula.user.v1.WalletKey\"7\n\x0bUnitMovedIn\x12(\n\x04unit\x18\x01 \x01(\x0b\x32\x1a.salto.nebula.unit.v1.Unit\"8\n\x0cUnitMovedOut\x12(\n\x04unit\x18\x01 \x01(\x0b\x32\x1a.salto.nebula.unit.v1.Unit\"7\n\x0bUnitCreated\x12(\n\x04unit\x18\x01 \x01(\x0b\x32\x1a.salto.nebula.unit.v1.Unit\"7\n\x0bUnitUpdated\x12(\n\x04unit\x18\x01 \x01(\x0b\x32\x1a.salto.nebula.unit.v1.Unit\"7\n\x0bUnitDeleted\x12(\n\x04unit\x18\x01 \x01(\x0b\x32\x1a.salto.nebula.unit.v1.Unit\"X\n\x13\x45mergencyKeyCreated\x12\x41\n\remergency_key\x18\x01 \x01(\x0b\x32*.salto.nebula.emergencykey.v1.EmergencyKey\"X\n\x13\x45mergencyKeyUpdated\x12\x41\n\remergency_key\x18\x01 \x01(\x0b\x32*.salto.nebula.emergencykey.v1.EmergencyKey\"X\n\x13\x45mergencyKeyDeleted\x12\x41\n\remergency_key\x18\x01 \x01(\x0b\x32*.salto.nebula.emergencykey.v1.EmergencyKeyB\xcf\x01\n\x1d\x63om.saltoapis.nebula.event.v1B\nTypesProtoP\x01Z@github.com/saltoapis-internal/saltoapis-go/nebula/event/v1;event\xaa\x02\x19Saltoapis.Nebula.Event.V1\xca\x02\x19Saltoapis\\Nebula\\Event\\V1\xe2\x02%GPBMetadata\\Saltoapis\\Nebula\\Event\\V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -40,74 +42,80 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'salto.nebula.event.v1.types
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\035com.saltoapis.nebula.event.v1B\nTypesProtoP\001Z@github.com/saltoapis-internal/saltoapis-go/nebula/event/v1;event\252\002\031Saltoapis.Nebula.Event.V1\312\002\031Saltoapis\\Nebula\\Event\\V1\342\002%GPBMetadata\\Saltoapis\\Nebula\\Event\\V1'
-  _globals['_ACCESSPOINTCREATED']._serialized_start=222
-  _globals['_ACCESSPOINTCREATED']._serialized_end=306
-  _globals['_ACCESSPOINTUPDATED']._serialized_start=308
-  _globals['_ACCESSPOINTUPDATED']._serialized_end=392
-  _globals['_ACCESSPOINTDELETED']._serialized_start=394
-  _globals['_ACCESSPOINTDELETED']._serialized_end=478
-  _globals['_ACCESSPOINTUNLOCKED']._serialized_start=480
-  _globals['_ACCESSPOINTUNLOCKED']._serialized_end=607
-  _globals['_ACCESSPOINTLOCKED']._serialized_start=609
-  _globals['_ACCESSPOINTLOCKED']._serialized_end=734
-  _globals['_ACCESSPOINTFORCEDOPEN']._serialized_start=736
-  _globals['_ACCESSPOINTFORCEDOPEN']._serialized_end=823
-  _globals['_ACCESSPOINTCLOSED']._serialized_start=825
-  _globals['_ACCESSPOINTCLOSED']._serialized_end=908
-  _globals['_ACCESSDENIED']._serialized_start=910
-  _globals['_ACCESSDENIED']._serialized_end=1030
-  _globals['_ACCESSPOINTLEFTOPEN']._serialized_start=1032
-  _globals['_ACCESSPOINTLEFTOPEN']._serialized_end=1117
-  _globals['_ACCESSRIGHTCREATED']._serialized_start=1119
-  _globals['_ACCESSRIGHTCREATED']._serialized_end=1203
-  _globals['_ACCESSRIGHTUPDATED']._serialized_start=1205
-  _globals['_ACCESSRIGHTUPDATED']._serialized_end=1289
-  _globals['_ACCESSRIGHTDELETED']._serialized_start=1291
-  _globals['_ACCESSRIGHTDELETED']._serialized_end=1375
-  _globals['_ACCESSRIGHTACCESSPOINTCREATED']._serialized_start=1378
-  _globals['_ACCESSRIGHTACCESSPOINTCREATED']._serialized_end=1537
-  _globals['_ACCESSRIGHTACCESSPOINTSBATCHCREATED']._serialized_start=1540
-  _globals['_ACCESSRIGHTACCESSPOINTSBATCHCREATED']._serialized_end=1706
-  _globals['_ACCESSRIGHTACCESSPOINTDELETED']._serialized_start=1709
-  _globals['_ACCESSRIGHTACCESSPOINTDELETED']._serialized_end=1868
-  _globals['_ACCESSRIGHTACCESSPOINTSBATCHDELETED']._serialized_start=1871
-  _globals['_ACCESSRIGHTACCESSPOINTSBATCHDELETED']._serialized_end=2037
-  _globals['_USERCREATED']._serialized_start=2039
-  _globals['_USERCREATED']._serialized_end=2094
-  _globals['_USERUPDATED']._serialized_start=2096
-  _globals['_USERUPDATED']._serialized_end=2151
-  _globals['_USERBLOCKED']._serialized_start=2153
-  _globals['_USERBLOCKED']._serialized_end=2208
-  _globals['_USERUNBLOCKED']._serialized_start=2210
-  _globals['_USERUNBLOCKED']._serialized_end=2267
-  _globals['_USERDELETED']._serialized_start=2269
-  _globals['_USERDELETED']._serialized_end=2324
-  _globals['_USERACCESSRIGHTCREATED']._serialized_start=2327
-  _globals['_USERACCESSRIGHTCREATED']._serialized_end=2457
-  _globals['_USERACCESSRIGHTUPDATED']._serialized_start=2460
-  _globals['_USERACCESSRIGHTUPDATED']._serialized_end=2590
-  _globals['_USERACCESSRIGHTDELETED']._serialized_start=2593
-  _globals['_USERACCESSRIGHTDELETED']._serialized_end=2723
-  _globals['_CARDKEYASSIGNED']._serialized_start=2725
-  _globals['_CARDKEYASSIGNED']._serialized_end=2833
-  _globals['_CARDKEYCANCELED']._serialized_start=2835
-  _globals['_CARDKEYCANCELED']._serialized_end=2943
-  _globals['_APPKEYASSIGNED']._serialized_start=2945
-  _globals['_APPKEYASSIGNED']._serialized_end=3050
-  _globals['_APPKEYCANCELED']._serialized_start=3052
-  _globals['_APPKEYCANCELED']._serialized_end=3157
-  _globals['_WALLETKEYASSIGNED']._serialized_start=3159
-  _globals['_WALLETKEYASSIGNED']._serialized_end=3273
-  _globals['_WALLETKEYCANCELED']._serialized_start=3275
-  _globals['_WALLETKEYCANCELED']._serialized_end=3389
-  _globals['_UNITMOVEDIN']._serialized_start=3391
-  _globals['_UNITMOVEDIN']._serialized_end=3446
-  _globals['_UNITMOVEDOUT']._serialized_start=3448
-  _globals['_UNITMOVEDOUT']._serialized_end=3504
-  _globals['_UNITCREATED']._serialized_start=3506
-  _globals['_UNITCREATED']._serialized_end=3561
-  _globals['_UNITUPDATED']._serialized_start=3563
-  _globals['_UNITUPDATED']._serialized_end=3618
-  _globals['_UNITDELETED']._serialized_start=3620
-  _globals['_UNITDELETED']._serialized_end=3675
+  _globals['_ACCESSPOINTCREATED']._serialized_start=272
+  _globals['_ACCESSPOINTCREATED']._serialized_end=356
+  _globals['_ACCESSPOINTUPDATED']._serialized_start=358
+  _globals['_ACCESSPOINTUPDATED']._serialized_end=442
+  _globals['_ACCESSPOINTDELETED']._serialized_start=444
+  _globals['_ACCESSPOINTDELETED']._serialized_end=528
+  _globals['_ACCESSPOINTUNLOCKED']._serialized_start=530
+  _globals['_ACCESSPOINTUNLOCKED']._serialized_end=657
+  _globals['_ACCESSPOINTLOCKED']._serialized_start=659
+  _globals['_ACCESSPOINTLOCKED']._serialized_end=784
+  _globals['_ACCESSPOINTFORCEDOPEN']._serialized_start=786
+  _globals['_ACCESSPOINTFORCEDOPEN']._serialized_end=873
+  _globals['_ACCESSPOINTCLOSED']._serialized_start=875
+  _globals['_ACCESSPOINTCLOSED']._serialized_end=958
+  _globals['_ACCESSDENIED']._serialized_start=960
+  _globals['_ACCESSDENIED']._serialized_end=1080
+  _globals['_ACCESSPOINTLEFTOPEN']._serialized_start=1082
+  _globals['_ACCESSPOINTLEFTOPEN']._serialized_end=1167
+  _globals['_ACCESSRIGHTCREATED']._serialized_start=1169
+  _globals['_ACCESSRIGHTCREATED']._serialized_end=1253
+  _globals['_ACCESSRIGHTUPDATED']._serialized_start=1255
+  _globals['_ACCESSRIGHTUPDATED']._serialized_end=1339
+  _globals['_ACCESSRIGHTDELETED']._serialized_start=1341
+  _globals['_ACCESSRIGHTDELETED']._serialized_end=1425
+  _globals['_ACCESSRIGHTACCESSPOINTCREATED']._serialized_start=1428
+  _globals['_ACCESSRIGHTACCESSPOINTCREATED']._serialized_end=1587
+  _globals['_ACCESSRIGHTACCESSPOINTSBATCHCREATED']._serialized_start=1590
+  _globals['_ACCESSRIGHTACCESSPOINTSBATCHCREATED']._serialized_end=1756
+  _globals['_ACCESSRIGHTACCESSPOINTDELETED']._serialized_start=1759
+  _globals['_ACCESSRIGHTACCESSPOINTDELETED']._serialized_end=1918
+  _globals['_ACCESSRIGHTACCESSPOINTSBATCHDELETED']._serialized_start=1921
+  _globals['_ACCESSRIGHTACCESSPOINTSBATCHDELETED']._serialized_end=2087
+  _globals['_USERCREATED']._serialized_start=2089
+  _globals['_USERCREATED']._serialized_end=2144
+  _globals['_USERUPDATED']._serialized_start=2146
+  _globals['_USERUPDATED']._serialized_end=2201
+  _globals['_USERBLOCKED']._serialized_start=2203
+  _globals['_USERBLOCKED']._serialized_end=2258
+  _globals['_USERUNBLOCKED']._serialized_start=2260
+  _globals['_USERUNBLOCKED']._serialized_end=2317
+  _globals['_USERDELETED']._serialized_start=2319
+  _globals['_USERDELETED']._serialized_end=2374
+  _globals['_USERACCESSRIGHTCREATED']._serialized_start=2377
+  _globals['_USERACCESSRIGHTCREATED']._serialized_end=2507
+  _globals['_USERACCESSRIGHTUPDATED']._serialized_start=2510
+  _globals['_USERACCESSRIGHTUPDATED']._serialized_end=2640
+  _globals['_USERACCESSRIGHTDELETED']._serialized_start=2643
+  _globals['_USERACCESSRIGHTDELETED']._serialized_end=2773
+  _globals['_CARDKEYASSIGNED']._serialized_start=2775
+  _globals['_CARDKEYASSIGNED']._serialized_end=2883
+  _globals['_CARDKEYCANCELED']._serialized_start=2885
+  _globals['_CARDKEYCANCELED']._serialized_end=2993
+  _globals['_APPKEYASSIGNED']._serialized_start=2995
+  _globals['_APPKEYASSIGNED']._serialized_end=3100
+  _globals['_APPKEYCANCELED']._serialized_start=3102
+  _globals['_APPKEYCANCELED']._serialized_end=3207
+  _globals['_WALLETKEYASSIGNED']._serialized_start=3209
+  _globals['_WALLETKEYASSIGNED']._serialized_end=3323
+  _globals['_WALLETKEYCANCELED']._serialized_start=3325
+  _globals['_WALLETKEYCANCELED']._serialized_end=3439
+  _globals['_UNITMOVEDIN']._serialized_start=3441
+  _globals['_UNITMOVEDIN']._serialized_end=3496
+  _globals['_UNITMOVEDOUT']._serialized_start=3498
+  _globals['_UNITMOVEDOUT']._serialized_end=3554
+  _globals['_UNITCREATED']._serialized_start=3556
+  _globals['_UNITCREATED']._serialized_end=3611
+  _globals['_UNITUPDATED']._serialized_start=3613
+  _globals['_UNITUPDATED']._serialized_end=3668
+  _globals['_UNITDELETED']._serialized_start=3670
+  _globals['_UNITDELETED']._serialized_end=3725
+  _globals['_EMERGENCYKEYCREATED']._serialized_start=3727
+  _globals['_EMERGENCYKEYCREATED']._serialized_end=3815
+  _globals['_EMERGENCYKEYUPDATED']._serialized_start=3817
+  _globals['_EMERGENCYKEYUPDATED']._serialized_end=3905
+  _globals['_EMERGENCYKEYDELETED']._serialized_start=3907
+  _globals['_EMERGENCYKEYDELETED']._serialized_end=3995
 # @@protoc_insertion_point(module_scope)

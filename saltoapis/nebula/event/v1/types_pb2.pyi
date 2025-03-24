@@ -2,6 +2,8 @@ from saltoapis.nebula.accesspoint.v1 import access_point_pb2 as _access_point_pb
 from saltoapis.nebula.accesspoint.v1 import access_point_pb2 as _access_point_pb2
 from saltoapis.nebula.accessright.v1 import access_right_pb2 as _access_right_pb2
 from saltoapis.nebula.accessright.v1 import access_right_pb2 as _access_right_pb2
+from saltoapis.nebula.emergencykey.v1 import emergency_key_pb2 as _emergency_key_pb2
+from saltoapis.nebula.emergencykey.v1 import emergency_key_pb2 as _emergency_key_pb2
 from saltoapis.nebula.unit.v1 import unit_pb2 as _unit_pb2
 from saltoapis.nebula.unit.v1 import unit_pb2 as _unit_pb2
 from saltoapis.nebula.user.v1 import user_pb2 as _user_pb2
@@ -254,3 +256,21 @@ class UnitDeleted(_message.Message):
     UNIT_FIELD_NUMBER: _ClassVar[int]
     unit: _unit_pb2.Unit
     def __init__(self, unit: _Optional[_Union[_unit_pb2.Unit, _Mapping]] = ...) -> None: ...
+
+class EmergencyKeyCreated(_message.Message):
+    __slots__ = ("emergency_key",)
+    EMERGENCY_KEY_FIELD_NUMBER: _ClassVar[int]
+    emergency_key: _emergency_key_pb2.EmergencyKey
+    def __init__(self, emergency_key: _Optional[_Union[_emergency_key_pb2.EmergencyKey, _Mapping]] = ...) -> None: ...
+
+class EmergencyKeyUpdated(_message.Message):
+    __slots__ = ("emergency_key",)
+    EMERGENCY_KEY_FIELD_NUMBER: _ClassVar[int]
+    emergency_key: _emergency_key_pb2.EmergencyKey
+    def __init__(self, emergency_key: _Optional[_Union[_emergency_key_pb2.EmergencyKey, _Mapping]] = ...) -> None: ...
+
+class EmergencyKeyDeleted(_message.Message):
+    __slots__ = ("emergency_key",)
+    EMERGENCY_KEY_FIELD_NUMBER: _ClassVar[int]
+    emergency_key: _emergency_key_pb2.EmergencyKey
+    def __init__(self, emergency_key: _Optional[_Union[_emergency_key_pb2.EmergencyKey, _Mapping]] = ...) -> None: ...
