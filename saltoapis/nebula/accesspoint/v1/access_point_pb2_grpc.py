@@ -51,6 +51,11 @@ class AccessPointServiceStub(object):
                 request_serializer=salto_dot_nebula_dot_accesspoint_dot_v1_dot_access__point__pb2.UnlockAccessPointRequest.SerializeToString,
                 response_deserializer=salto_dot_longrunning_dot_v1_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.LockAccessPoint = channel.unary_unary(
+                '/salto.nebula.accesspoint.v1.AccessPointService/LockAccessPoint',
+                request_serializer=salto_dot_nebula_dot_accesspoint_dot_v1_dot_access__point__pb2.LockAccessPointRequest.SerializeToString,
+                response_deserializer=salto_dot_longrunning_dot_v1_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
 
 
 class AccessPointServiceServicer(object):
@@ -114,6 +119,16 @@ class AccessPointServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def LockAccessPoint(self, request, context):
+        """Lock an access point
+
+        Remotely locks an access point. This can be run against those access
+        points where their associated devices are online and connected.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_AccessPointServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -145,6 +160,11 @@ def add_AccessPointServiceServicer_to_server(servicer, server):
             'UnlockAccessPoint': grpc.unary_unary_rpc_method_handler(
                     servicer.UnlockAccessPoint,
                     request_deserializer=salto_dot_nebula_dot_accesspoint_dot_v1_dot_access__point__pb2.UnlockAccessPointRequest.FromString,
+                    response_serializer=salto_dot_longrunning_dot_v1_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'LockAccessPoint': grpc.unary_unary_rpc_method_handler(
+                    servicer.LockAccessPoint,
+                    request_deserializer=salto_dot_nebula_dot_accesspoint_dot_v1_dot_access__point__pb2.LockAccessPointRequest.FromString,
                     response_serializer=salto_dot_longrunning_dot_v1_dot_operation__pb2.Operation.SerializeToString,
             ),
     }
@@ -312,6 +332,33 @@ class AccessPointService(object):
             target,
             '/salto.nebula.accesspoint.v1.AccessPointService/UnlockAccessPoint',
             salto_dot_nebula_dot_accesspoint_dot_v1_dot_access__point__pb2.UnlockAccessPointRequest.SerializeToString,
+            salto_dot_longrunning_dot_v1_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def LockAccessPoint(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/salto.nebula.accesspoint.v1.AccessPointService/LockAccessPoint',
+            salto_dot_nebula_dot_accesspoint_dot_v1_dot_access__point__pb2.LockAccessPointRequest.SerializeToString,
             salto_dot_longrunning_dot_v1_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,
