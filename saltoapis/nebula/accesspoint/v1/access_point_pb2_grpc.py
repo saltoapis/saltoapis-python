@@ -123,7 +123,9 @@ class AccessPointServiceServicer(object):
         """Lock an access point
 
         Remotely locks an access point. This can be run against those access
-        points where their associated devices are online and connected.
+        points where their associated devices are online and connected. The lock
+        device type can only be a motorized lock. Attempting to call this method
+        on non-motorized locks will result in an INVALID_ARGUMENT error.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
