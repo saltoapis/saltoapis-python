@@ -99,3 +99,17 @@ class UnlockAccessPointResponse(_message.Message):
 class UnlockAccessPointMetadata(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
+
+class LockAccessPointRequest(_message.Message):
+    __slots__ = ("name",)
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    def __init__(self, name: _Optional[str] = ...) -> None: ...
+
+class LockAccessPointResponse(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
+
+class LockAccessPointMetadata(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
