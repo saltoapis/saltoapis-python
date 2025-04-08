@@ -34,24 +34,28 @@ class AccessPointDeleted(_message.Message):
     def __init__(self, access_point: _Optional[_Union[_access_point_pb2.AccessPoint, _Mapping]] = ...) -> None: ...
 
 class AccessPointUnlocked(_message.Message):
-    __slots__ = ("access_point", "user", "emergency_key")
+    __slots__ = ("access_point", "user", "emergency_key", "card_key")
     ACCESS_POINT_FIELD_NUMBER: _ClassVar[int]
     USER_FIELD_NUMBER: _ClassVar[int]
     EMERGENCY_KEY_FIELD_NUMBER: _ClassVar[int]
+    CARD_KEY_FIELD_NUMBER: _ClassVar[int]
     access_point: _access_point_pb2.AccessPoint
     user: _user_pb2.User
     emergency_key: _emergency_key_pb2.EmergencyKey
-    def __init__(self, access_point: _Optional[_Union[_access_point_pb2.AccessPoint, _Mapping]] = ..., user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., emergency_key: _Optional[_Union[_emergency_key_pb2.EmergencyKey, _Mapping]] = ...) -> None: ...
+    card_key: _user_pb2.CardKey
+    def __init__(self, access_point: _Optional[_Union[_access_point_pb2.AccessPoint, _Mapping]] = ..., user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., emergency_key: _Optional[_Union[_emergency_key_pb2.EmergencyKey, _Mapping]] = ..., card_key: _Optional[_Union[_user_pb2.CardKey, _Mapping]] = ...) -> None: ...
 
 class AccessPointLocked(_message.Message):
-    __slots__ = ("access_point", "user", "emergency_key")
+    __slots__ = ("access_point", "user", "emergency_key", "card_key")
     ACCESS_POINT_FIELD_NUMBER: _ClassVar[int]
     USER_FIELD_NUMBER: _ClassVar[int]
     EMERGENCY_KEY_FIELD_NUMBER: _ClassVar[int]
+    CARD_KEY_FIELD_NUMBER: _ClassVar[int]
     access_point: _access_point_pb2.AccessPoint
     user: _user_pb2.User
     emergency_key: _emergency_key_pb2.EmergencyKey
-    def __init__(self, access_point: _Optional[_Union[_access_point_pb2.AccessPoint, _Mapping]] = ..., user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., emergency_key: _Optional[_Union[_emergency_key_pb2.EmergencyKey, _Mapping]] = ...) -> None: ...
+    card_key: _user_pb2.CardKey
+    def __init__(self, access_point: _Optional[_Union[_access_point_pb2.AccessPoint, _Mapping]] = ..., user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., emergency_key: _Optional[_Union[_emergency_key_pb2.EmergencyKey, _Mapping]] = ..., card_key: _Optional[_Union[_user_pb2.CardKey, _Mapping]] = ...) -> None: ...
 
 class AccessPointForcedOpen(_message.Message):
     __slots__ = ("access_point",)
