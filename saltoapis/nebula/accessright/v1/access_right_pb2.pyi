@@ -1,6 +1,5 @@
 from google.protobuf import empty_pb2 as _empty_pb2
 from google.protobuf import field_mask_pb2 as _field_mask_pb2
-from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from saltoapis.nebula.type import schedule_pb2 as _schedule_pb2
 from saltoapis.nebula.type import schedule_pb2 as _schedule_pb2
 from google.protobuf.internal import containers as _containers
@@ -11,18 +10,14 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class AccessRight(_message.Message):
-    __slots__ = ("name", "display_name", "activate_time", "expire_time", "schedules")
+    __slots__ = ("name", "display_name", "schedules")
     NAME_FIELD_NUMBER: _ClassVar[int]
     DISPLAY_NAME_FIELD_NUMBER: _ClassVar[int]
-    ACTIVATE_TIME_FIELD_NUMBER: _ClassVar[int]
-    EXPIRE_TIME_FIELD_NUMBER: _ClassVar[int]
     SCHEDULES_FIELD_NUMBER: _ClassVar[int]
     name: str
     display_name: str
-    activate_time: _timestamp_pb2.Timestamp
-    expire_time: _timestamp_pb2.Timestamp
     schedules: _containers.RepeatedCompositeFieldContainer[_schedule_pb2.Schedule]
-    def __init__(self, name: _Optional[str] = ..., display_name: _Optional[str] = ..., activate_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., expire_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., schedules: _Optional[_Iterable[_Union[_schedule_pb2.Schedule, _Mapping]]] = ...) -> None: ...
+    def __init__(self, name: _Optional[str] = ..., display_name: _Optional[str] = ..., schedules: _Optional[_Iterable[_Union[_schedule_pb2.Schedule, _Mapping]]] = ...) -> None: ...
 
 class AccessRightAccessPoint(_message.Message):
     __slots__ = ("name", "access_point", "display_name")
