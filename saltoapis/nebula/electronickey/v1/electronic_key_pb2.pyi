@@ -2,6 +2,8 @@ from google.protobuf import empty_pb2 as _empty_pb2
 from google.protobuf import field_mask_pb2 as _field_mask_pb2
 from saltoapis.longrunning.v1 import operation_pb2 as _operation_pb2
 from saltoapis.longrunning.v1 import operation_pb2 as _operation_pb2
+from saltoapis.nebula.type import device_metadata_pb2 as _device_metadata_pb2
+from saltoapis.nebula.type import device_metadata_pb2 as _device_metadata_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -10,20 +12,22 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class ElectronicKey(_message.Message):
-    __slots__ = ("name", "display_name", "initialized", "device_id", "outdated", "low_battery")
+    __slots__ = ("name", "display_name", "initialized", "device_id", "outdated", "device_metadata", "low_battery")
     NAME_FIELD_NUMBER: _ClassVar[int]
     DISPLAY_NAME_FIELD_NUMBER: _ClassVar[int]
     INITIALIZED_FIELD_NUMBER: _ClassVar[int]
     DEVICE_ID_FIELD_NUMBER: _ClassVar[int]
     OUTDATED_FIELD_NUMBER: _ClassVar[int]
+    DEVICE_METADATA_FIELD_NUMBER: _ClassVar[int]
     LOW_BATTERY_FIELD_NUMBER: _ClassVar[int]
     name: str
     display_name: str
     initialized: bool
     device_id: str
     outdated: bool
+    device_metadata: _device_metadata_pb2.DeviceMetadata
     low_battery: bool
-    def __init__(self, name: _Optional[str] = ..., display_name: _Optional[str] = ..., initialized: bool = ..., device_id: _Optional[str] = ..., outdated: bool = ..., low_battery: bool = ...) -> None: ...
+    def __init__(self, name: _Optional[str] = ..., display_name: _Optional[str] = ..., initialized: bool = ..., device_id: _Optional[str] = ..., outdated: bool = ..., device_metadata: _Optional[_Union[_device_metadata_pb2.DeviceMetadata, _Mapping]] = ..., low_battery: bool = ...) -> None: ...
 
 class CreateElectronicKeyRequest(_message.Message):
     __slots__ = ("parent", "electronic_key_id", "electronic_key")

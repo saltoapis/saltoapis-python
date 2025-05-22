@@ -7,6 +7,7 @@ load_rules(
     lib_name = 'salto-nebula-controller-v1',
     internal_dependencies = [
         '//saltoapis/longrunning/v1',
+        '//saltoapis/nebula/type',
     ],
     extra_info = {
         'generator': 'python',

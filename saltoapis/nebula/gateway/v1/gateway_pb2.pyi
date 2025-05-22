@@ -2,6 +2,8 @@ from google.protobuf import empty_pb2 as _empty_pb2
 from google.protobuf import field_mask_pb2 as _field_mask_pb2
 from saltoapis.longrunning.v1 import operation_pb2 as _operation_pb2
 from saltoapis.longrunning.v1 import operation_pb2 as _operation_pb2
+from saltoapis.nebula.type import device_metadata_pb2 as _device_metadata_pb2
+from saltoapis.nebula.type import device_metadata_pb2 as _device_metadata_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -10,11 +12,12 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Gateway(_message.Message):
-    __slots__ = ("name", "display_name", "device_id", "initialized", "connected", "ethernet_settings", "wifi_settings")
+    __slots__ = ("name", "display_name", "device_id", "initialized", "device_metadata", "connected", "ethernet_settings", "wifi_settings")
     NAME_FIELD_NUMBER: _ClassVar[int]
     DISPLAY_NAME_FIELD_NUMBER: _ClassVar[int]
     DEVICE_ID_FIELD_NUMBER: _ClassVar[int]
     INITIALIZED_FIELD_NUMBER: _ClassVar[int]
+    DEVICE_METADATA_FIELD_NUMBER: _ClassVar[int]
     CONNECTED_FIELD_NUMBER: _ClassVar[int]
     ETHERNET_SETTINGS_FIELD_NUMBER: _ClassVar[int]
     WIFI_SETTINGS_FIELD_NUMBER: _ClassVar[int]
@@ -22,10 +25,11 @@ class Gateway(_message.Message):
     display_name: str
     device_id: str
     initialized: bool
+    device_metadata: _device_metadata_pb2.DeviceMetadata
     connected: bool
     ethernet_settings: EthernetSettings
     wifi_settings: WifiSettings
-    def __init__(self, name: _Optional[str] = ..., display_name: _Optional[str] = ..., device_id: _Optional[str] = ..., initialized: bool = ..., connected: bool = ..., ethernet_settings: _Optional[_Union[EthernetSettings, _Mapping]] = ..., wifi_settings: _Optional[_Union[WifiSettings, _Mapping]] = ...) -> None: ...
+    def __init__(self, name: _Optional[str] = ..., display_name: _Optional[str] = ..., device_id: _Optional[str] = ..., initialized: bool = ..., device_metadata: _Optional[_Union[_device_metadata_pb2.DeviceMetadata, _Mapping]] = ..., connected: bool = ..., ethernet_settings: _Optional[_Union[EthernetSettings, _Mapping]] = ..., wifi_settings: _Optional[_Union[WifiSettings, _Mapping]] = ...) -> None: ...
 
 class EthernetSettings(_message.Message):
     __slots__ = ("ipv4_settings", "dns_settings")
