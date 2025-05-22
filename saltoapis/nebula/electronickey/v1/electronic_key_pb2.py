@@ -26,9 +26,11 @@ from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 from saltoapis.longrunning.v1 import operation_pb2 as salto_dot_longrunning_dot_v1_dot_operation__pb2
 from saltoapis.longrunning.v1 import operation_pb2 as salto_dot_longrunning_dot_v1_dot_operation__pb2
+from saltoapis.nebula.type import device_metadata_pb2 as salto_dot_nebula_dot_type_dot_device__metadata__pb2
+from saltoapis.nebula.type import device_metadata_pb2 as salto_dot_nebula_dot_type_dot_device__metadata__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n2salto/nebula/electronickey/v1/electronic_key.proto\x12\x1dsalto.nebula.electronickey.v1\x1a\x1bgoogle/protobuf/empty.proto\x1a google/protobuf/field_mask.proto\x1a$salto/longrunning/v1/operation.proto\"\x95\x01\n\rElectronicKey\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x14\n\x0c\x64isplay_name\x18\x02 \x01(\t\x12\x13\n\x0binitialized\x18\x03 \x01(\x08\x12\x16\n\tdevice_id\x18\x04 \x01(\tH\x00\x88\x01\x01\x12\x10\n\x08outdated\x18\x05 \x01(\x08\x12\x13\n\x0blow_battery\x18\x07 \x01(\x08\x42\x0c\n\n_device_id\"\xa8\x01\n\x1a\x43reateElectronicKeyRequest\x12\x0e\n\x06parent\x18\x01 \x01(\t\x12\x1e\n\x11\x65lectronic_key_id\x18\x02 \x01(\tH\x00\x88\x01\x01\x12\x44\n\x0e\x65lectronic_key\x18\x03 \x01(\x0b\x32,.salto.nebula.electronickey.v1.ElectronicKeyB\x14\n\x12_electronic_key_id\"\'\n\x17GetElectronicKeyRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"t\n\x19ListElectronicKeysRequest\x12\x0e\n\x06parent\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\x12\x0e\n\x06\x66ilter\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\"|\n\x1aListElectronicKeysResponse\x12\x45\n\x0f\x65lectronic_keys\x18\x01 \x03(\x0b\x32,.salto.nebula.electronickey.v1.ElectronicKey\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x93\x01\n\x1aUpdateElectronicKeyRequest\x12\x44\n\x0e\x65lectronic_key\x18\x01 \x01(\x0b\x32,.salto.nebula.electronickey.v1.ElectronicKey\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"*\n\x1a\x44\x65leteElectronicKeyRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\";\n\x18\x42indElectronicKeyRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\tdevice_id\x18\x02 \x01(\t\"\x1b\n\x19\x42indElectronicKeyResponse\"9\n\x1aUnbindElectronicKeyRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05\x66orce\x18\x02 \x01(\x08\"\x1d\n\x1bUnbindElectronicKeyResponse\".\n\x1eInitializeElectronicKeyRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"!\n\x1fInitializeElectronicKeyResponse\"!\n\x1fInitializeElectronicKeyMetadata\"-\n\x1d\x43onfigureElectronicKeyRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\" \n\x1e\x43onfigureElectronicKeyResponse\" \n\x1e\x43onfigureElectronicKeyMetadata\")\n\x19ResetElectronicKeyRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"\x1c\n\x1aResetElectronicKeyResponse\"\x1c\n\x1aResetElectronicKeyMetadata\";\n!GenerateAuthorizationTokenRequest\x12\x16\n\x0e\x65lectronic_key\x18\x01 \x01(\t\"A\n\"GenerateAuthorizationTokenResponse\x12\x1b\n\x13\x61uthorization_token\x18\x01 \x01(\x0c\"<\n\"GenerateFirmwareDownloadUriRequest\x12\x16\n\x0e\x65lectronic_key\x18\x01 \x01(\t\"K\n#GenerateFirmwareDownloadUriResponse\x12\x14\n\x0c\x64ownload_uri\x18\x01 \x01(\t\x12\x0e\n\x06\x64igest\x18\x02 \x01(\t\"%\n#GenerateFirmwareDownloadUriMetadata2\xab\x0c\n\x14\x45lectronicKeyService\x12~\n\x13\x43reateElectronicKey\x12\x39.salto.nebula.electronickey.v1.CreateElectronicKeyRequest\x1a,.salto.nebula.electronickey.v1.ElectronicKey\x12x\n\x10GetElectronicKey\x12\x36.salto.nebula.electronickey.v1.GetElectronicKeyRequest\x1a,.salto.nebula.electronickey.v1.ElectronicKey\x12\x89\x01\n\x12ListElectronicKeys\x12\x38.salto.nebula.electronickey.v1.ListElectronicKeysRequest\x1a\x39.salto.nebula.electronickey.v1.ListElectronicKeysResponse\x12~\n\x13UpdateElectronicKey\x12\x39.salto.nebula.electronickey.v1.UpdateElectronicKeyRequest\x1a,.salto.nebula.electronickey.v1.ElectronicKey\x12h\n\x13\x44\x65leteElectronicKey\x12\x39.salto.nebula.electronickey.v1.DeleteElectronicKeyRequest\x1a\x16.google.protobuf.Empty\x12\x86\x01\n\x11\x42indElectronicKey\x12\x37.salto.nebula.electronickey.v1.BindElectronicKeyRequest\x1a\x38.salto.nebula.electronickey.v1.BindElectronicKeyResponse\x12\x8c\x01\n\x13UnbindElectronicKey\x12\x39.salto.nebula.electronickey.v1.UnbindElectronicKeyRequest\x1a:.salto.nebula.electronickey.v1.UnbindElectronicKeyResponse\x12y\n\x17InitializeElectronicKey\x12=.salto.nebula.electronickey.v1.InitializeElectronicKeyRequest\x1a\x1f.salto.longrunning.v1.Operation\x12w\n\x16\x43onfigureElectronicKey\x12<.salto.nebula.electronickey.v1.ConfigureElectronicKeyRequest\x1a\x1f.salto.longrunning.v1.Operation\x12o\n\x12ResetElectronicKey\x12\x38.salto.nebula.electronickey.v1.ResetElectronicKeyRequest\x1a\x1f.salto.longrunning.v1.Operation\x12\xa1\x01\n\x1aGenerateAuthorizationToken\x12@.salto.nebula.electronickey.v1.GenerateAuthorizationTokenRequest\x1a\x41.salto.nebula.electronickey.v1.GenerateAuthorizationTokenResponse\x12\x81\x01\n\x1bGenerateFirmwareDownloadUri\x12\x41.salto.nebula.electronickey.v1.GenerateFirmwareDownloadUriRequest\x1a\x1f.salto.longrunning.v1.OperationB\x87\x02\n%com.saltoapis.nebula.electronickey.v1B\x12\x45lectronicKeyProtoP\x01ZPgithub.com/saltoapis-internal/saltoapis-go/nebula/electronickey/v1;electronickey\xaa\x02!Saltoapis.Nebula.ElectronicKey.V1\xca\x02!Saltoapis\\Nebula\\ElectronicKey\\V1\xe2\x02-GPBMetadata\\Saltoapis\\Nebula\\ElectronicKey\\V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n2salto/nebula/electronickey/v1/electronic_key.proto\x12\x1dsalto.nebula.electronickey.v1\x1a\x1bgoogle/protobuf/empty.proto\x1a google/protobuf/field_mask.proto\x1a$salto/longrunning/v1/operation.proto\x1a\'salto/nebula/type/device_metadata.proto\"\xd1\x01\n\rElectronicKey\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x14\n\x0c\x64isplay_name\x18\x02 \x01(\t\x12\x13\n\x0binitialized\x18\x03 \x01(\x08\x12\x16\n\tdevice_id\x18\x04 \x01(\tH\x00\x88\x01\x01\x12\x10\n\x08outdated\x18\x05 \x01(\x08\x12:\n\x0f\x64\x65vice_metadata\x18\x08 \x01(\x0b\x32!.salto.nebula.type.DeviceMetadata\x12\x13\n\x0blow_battery\x18\x07 \x01(\x08\x42\x0c\n\n_device_id\"\xa8\x01\n\x1a\x43reateElectronicKeyRequest\x12\x0e\n\x06parent\x18\x01 \x01(\t\x12\x1e\n\x11\x65lectronic_key_id\x18\x02 \x01(\tH\x00\x88\x01\x01\x12\x44\n\x0e\x65lectronic_key\x18\x03 \x01(\x0b\x32,.salto.nebula.electronickey.v1.ElectronicKeyB\x14\n\x12_electronic_key_id\"\'\n\x17GetElectronicKeyRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"t\n\x19ListElectronicKeysRequest\x12\x0e\n\x06parent\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\x12\x0e\n\x06\x66ilter\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\"|\n\x1aListElectronicKeysResponse\x12\x45\n\x0f\x65lectronic_keys\x18\x01 \x03(\x0b\x32,.salto.nebula.electronickey.v1.ElectronicKey\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x93\x01\n\x1aUpdateElectronicKeyRequest\x12\x44\n\x0e\x65lectronic_key\x18\x01 \x01(\x0b\x32,.salto.nebula.electronickey.v1.ElectronicKey\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"*\n\x1a\x44\x65leteElectronicKeyRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\";\n\x18\x42indElectronicKeyRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\tdevice_id\x18\x02 \x01(\t\"\x1b\n\x19\x42indElectronicKeyResponse\"9\n\x1aUnbindElectronicKeyRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05\x66orce\x18\x02 \x01(\x08\"\x1d\n\x1bUnbindElectronicKeyResponse\".\n\x1eInitializeElectronicKeyRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"!\n\x1fInitializeElectronicKeyResponse\"!\n\x1fInitializeElectronicKeyMetadata\"-\n\x1d\x43onfigureElectronicKeyRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\" \n\x1e\x43onfigureElectronicKeyResponse\" \n\x1e\x43onfigureElectronicKeyMetadata\")\n\x19ResetElectronicKeyRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"\x1c\n\x1aResetElectronicKeyResponse\"\x1c\n\x1aResetElectronicKeyMetadata\";\n!GenerateAuthorizationTokenRequest\x12\x16\n\x0e\x65lectronic_key\x18\x01 \x01(\t\"A\n\"GenerateAuthorizationTokenResponse\x12\x1b\n\x13\x61uthorization_token\x18\x01 \x01(\x0c\"<\n\"GenerateFirmwareDownloadUriRequest\x12\x16\n\x0e\x65lectronic_key\x18\x01 \x01(\t\"K\n#GenerateFirmwareDownloadUriResponse\x12\x14\n\x0c\x64ownload_uri\x18\x01 \x01(\t\x12\x0e\n\x06\x64igest\x18\x02 \x01(\t\"%\n#GenerateFirmwareDownloadUriMetadata2\xab\x0c\n\x14\x45lectronicKeyService\x12~\n\x13\x43reateElectronicKey\x12\x39.salto.nebula.electronickey.v1.CreateElectronicKeyRequest\x1a,.salto.nebula.electronickey.v1.ElectronicKey\x12x\n\x10GetElectronicKey\x12\x36.salto.nebula.electronickey.v1.GetElectronicKeyRequest\x1a,.salto.nebula.electronickey.v1.ElectronicKey\x12\x89\x01\n\x12ListElectronicKeys\x12\x38.salto.nebula.electronickey.v1.ListElectronicKeysRequest\x1a\x39.salto.nebula.electronickey.v1.ListElectronicKeysResponse\x12~\n\x13UpdateElectronicKey\x12\x39.salto.nebula.electronickey.v1.UpdateElectronicKeyRequest\x1a,.salto.nebula.electronickey.v1.ElectronicKey\x12h\n\x13\x44\x65leteElectronicKey\x12\x39.salto.nebula.electronickey.v1.DeleteElectronicKeyRequest\x1a\x16.google.protobuf.Empty\x12\x86\x01\n\x11\x42indElectronicKey\x12\x37.salto.nebula.electronickey.v1.BindElectronicKeyRequest\x1a\x38.salto.nebula.electronickey.v1.BindElectronicKeyResponse\x12\x8c\x01\n\x13UnbindElectronicKey\x12\x39.salto.nebula.electronickey.v1.UnbindElectronicKeyRequest\x1a:.salto.nebula.electronickey.v1.UnbindElectronicKeyResponse\x12y\n\x17InitializeElectronicKey\x12=.salto.nebula.electronickey.v1.InitializeElectronicKeyRequest\x1a\x1f.salto.longrunning.v1.Operation\x12w\n\x16\x43onfigureElectronicKey\x12<.salto.nebula.electronickey.v1.ConfigureElectronicKeyRequest\x1a\x1f.salto.longrunning.v1.Operation\x12o\n\x12ResetElectronicKey\x12\x38.salto.nebula.electronickey.v1.ResetElectronicKeyRequest\x1a\x1f.salto.longrunning.v1.Operation\x12\xa1\x01\n\x1aGenerateAuthorizationToken\x12@.salto.nebula.electronickey.v1.GenerateAuthorizationTokenRequest\x1a\x41.salto.nebula.electronickey.v1.GenerateAuthorizationTokenResponse\x12\x81\x01\n\x1bGenerateFirmwareDownloadUri\x12\x41.salto.nebula.electronickey.v1.GenerateFirmwareDownloadUriRequest\x1a\x1f.salto.longrunning.v1.OperationB\x87\x02\n%com.saltoapis.nebula.electronickey.v1B\x12\x45lectronicKeyProtoP\x01ZPgithub.com/saltoapis-internal/saltoapis-go/nebula/electronickey/v1;electronickey\xaa\x02!Saltoapis.Nebula.ElectronicKey.V1\xca\x02!Saltoapis\\Nebula\\ElectronicKey\\V1\xe2\x02-GPBMetadata\\Saltoapis\\Nebula\\ElectronicKey\\V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -36,56 +38,56 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'salto.nebula.electronickey.
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n%com.saltoapis.nebula.electronickey.v1B\022ElectronicKeyProtoP\001ZPgithub.com/saltoapis-internal/saltoapis-go/nebula/electronickey/v1;electronickey\252\002!Saltoapis.Nebula.ElectronicKey.V1\312\002!Saltoapis\\Nebula\\ElectronicKey\\V1\342\002-GPBMetadata\\Saltoapis\\Nebula\\ElectronicKey\\V1'
-  _globals['_ELECTRONICKEY']._serialized_start=187
-  _globals['_ELECTRONICKEY']._serialized_end=336
-  _globals['_CREATEELECTRONICKEYREQUEST']._serialized_start=339
-  _globals['_CREATEELECTRONICKEYREQUEST']._serialized_end=507
-  _globals['_GETELECTRONICKEYREQUEST']._serialized_start=509
-  _globals['_GETELECTRONICKEYREQUEST']._serialized_end=548
-  _globals['_LISTELECTRONICKEYSREQUEST']._serialized_start=550
-  _globals['_LISTELECTRONICKEYSREQUEST']._serialized_end=666
-  _globals['_LISTELECTRONICKEYSRESPONSE']._serialized_start=668
-  _globals['_LISTELECTRONICKEYSRESPONSE']._serialized_end=792
-  _globals['_UPDATEELECTRONICKEYREQUEST']._serialized_start=795
-  _globals['_UPDATEELECTRONICKEYREQUEST']._serialized_end=942
-  _globals['_DELETEELECTRONICKEYREQUEST']._serialized_start=944
-  _globals['_DELETEELECTRONICKEYREQUEST']._serialized_end=986
-  _globals['_BINDELECTRONICKEYREQUEST']._serialized_start=988
-  _globals['_BINDELECTRONICKEYREQUEST']._serialized_end=1047
-  _globals['_BINDELECTRONICKEYRESPONSE']._serialized_start=1049
-  _globals['_BINDELECTRONICKEYRESPONSE']._serialized_end=1076
-  _globals['_UNBINDELECTRONICKEYREQUEST']._serialized_start=1078
-  _globals['_UNBINDELECTRONICKEYREQUEST']._serialized_end=1135
-  _globals['_UNBINDELECTRONICKEYRESPONSE']._serialized_start=1137
-  _globals['_UNBINDELECTRONICKEYRESPONSE']._serialized_end=1166
-  _globals['_INITIALIZEELECTRONICKEYREQUEST']._serialized_start=1168
-  _globals['_INITIALIZEELECTRONICKEYREQUEST']._serialized_end=1214
-  _globals['_INITIALIZEELECTRONICKEYRESPONSE']._serialized_start=1216
-  _globals['_INITIALIZEELECTRONICKEYRESPONSE']._serialized_end=1249
-  _globals['_INITIALIZEELECTRONICKEYMETADATA']._serialized_start=1251
-  _globals['_INITIALIZEELECTRONICKEYMETADATA']._serialized_end=1284
-  _globals['_CONFIGUREELECTRONICKEYREQUEST']._serialized_start=1286
-  _globals['_CONFIGUREELECTRONICKEYREQUEST']._serialized_end=1331
-  _globals['_CONFIGUREELECTRONICKEYRESPONSE']._serialized_start=1333
-  _globals['_CONFIGUREELECTRONICKEYRESPONSE']._serialized_end=1365
-  _globals['_CONFIGUREELECTRONICKEYMETADATA']._serialized_start=1367
-  _globals['_CONFIGUREELECTRONICKEYMETADATA']._serialized_end=1399
-  _globals['_RESETELECTRONICKEYREQUEST']._serialized_start=1401
-  _globals['_RESETELECTRONICKEYREQUEST']._serialized_end=1442
-  _globals['_RESETELECTRONICKEYRESPONSE']._serialized_start=1444
-  _globals['_RESETELECTRONICKEYRESPONSE']._serialized_end=1472
-  _globals['_RESETELECTRONICKEYMETADATA']._serialized_start=1474
-  _globals['_RESETELECTRONICKEYMETADATA']._serialized_end=1502
-  _globals['_GENERATEAUTHORIZATIONTOKENREQUEST']._serialized_start=1504
-  _globals['_GENERATEAUTHORIZATIONTOKENREQUEST']._serialized_end=1563
-  _globals['_GENERATEAUTHORIZATIONTOKENRESPONSE']._serialized_start=1565
-  _globals['_GENERATEAUTHORIZATIONTOKENRESPONSE']._serialized_end=1630
-  _globals['_GENERATEFIRMWAREDOWNLOADURIREQUEST']._serialized_start=1632
-  _globals['_GENERATEFIRMWAREDOWNLOADURIREQUEST']._serialized_end=1692
-  _globals['_GENERATEFIRMWAREDOWNLOADURIRESPONSE']._serialized_start=1694
-  _globals['_GENERATEFIRMWAREDOWNLOADURIRESPONSE']._serialized_end=1769
-  _globals['_GENERATEFIRMWAREDOWNLOADURIMETADATA']._serialized_start=1771
-  _globals['_GENERATEFIRMWAREDOWNLOADURIMETADATA']._serialized_end=1808
-  _globals['_ELECTRONICKEYSERVICE']._serialized_start=1811
-  _globals['_ELECTRONICKEYSERVICE']._serialized_end=3390
+  _globals['_ELECTRONICKEY']._serialized_start=228
+  _globals['_ELECTRONICKEY']._serialized_end=437
+  _globals['_CREATEELECTRONICKEYREQUEST']._serialized_start=440
+  _globals['_CREATEELECTRONICKEYREQUEST']._serialized_end=608
+  _globals['_GETELECTRONICKEYREQUEST']._serialized_start=610
+  _globals['_GETELECTRONICKEYREQUEST']._serialized_end=649
+  _globals['_LISTELECTRONICKEYSREQUEST']._serialized_start=651
+  _globals['_LISTELECTRONICKEYSREQUEST']._serialized_end=767
+  _globals['_LISTELECTRONICKEYSRESPONSE']._serialized_start=769
+  _globals['_LISTELECTRONICKEYSRESPONSE']._serialized_end=893
+  _globals['_UPDATEELECTRONICKEYREQUEST']._serialized_start=896
+  _globals['_UPDATEELECTRONICKEYREQUEST']._serialized_end=1043
+  _globals['_DELETEELECTRONICKEYREQUEST']._serialized_start=1045
+  _globals['_DELETEELECTRONICKEYREQUEST']._serialized_end=1087
+  _globals['_BINDELECTRONICKEYREQUEST']._serialized_start=1089
+  _globals['_BINDELECTRONICKEYREQUEST']._serialized_end=1148
+  _globals['_BINDELECTRONICKEYRESPONSE']._serialized_start=1150
+  _globals['_BINDELECTRONICKEYRESPONSE']._serialized_end=1177
+  _globals['_UNBINDELECTRONICKEYREQUEST']._serialized_start=1179
+  _globals['_UNBINDELECTRONICKEYREQUEST']._serialized_end=1236
+  _globals['_UNBINDELECTRONICKEYRESPONSE']._serialized_start=1238
+  _globals['_UNBINDELECTRONICKEYRESPONSE']._serialized_end=1267
+  _globals['_INITIALIZEELECTRONICKEYREQUEST']._serialized_start=1269
+  _globals['_INITIALIZEELECTRONICKEYREQUEST']._serialized_end=1315
+  _globals['_INITIALIZEELECTRONICKEYRESPONSE']._serialized_start=1317
+  _globals['_INITIALIZEELECTRONICKEYRESPONSE']._serialized_end=1350
+  _globals['_INITIALIZEELECTRONICKEYMETADATA']._serialized_start=1352
+  _globals['_INITIALIZEELECTRONICKEYMETADATA']._serialized_end=1385
+  _globals['_CONFIGUREELECTRONICKEYREQUEST']._serialized_start=1387
+  _globals['_CONFIGUREELECTRONICKEYREQUEST']._serialized_end=1432
+  _globals['_CONFIGUREELECTRONICKEYRESPONSE']._serialized_start=1434
+  _globals['_CONFIGUREELECTRONICKEYRESPONSE']._serialized_end=1466
+  _globals['_CONFIGUREELECTRONICKEYMETADATA']._serialized_start=1468
+  _globals['_CONFIGUREELECTRONICKEYMETADATA']._serialized_end=1500
+  _globals['_RESETELECTRONICKEYREQUEST']._serialized_start=1502
+  _globals['_RESETELECTRONICKEYREQUEST']._serialized_end=1543
+  _globals['_RESETELECTRONICKEYRESPONSE']._serialized_start=1545
+  _globals['_RESETELECTRONICKEYRESPONSE']._serialized_end=1573
+  _globals['_RESETELECTRONICKEYMETADATA']._serialized_start=1575
+  _globals['_RESETELECTRONICKEYMETADATA']._serialized_end=1603
+  _globals['_GENERATEAUTHORIZATIONTOKENREQUEST']._serialized_start=1605
+  _globals['_GENERATEAUTHORIZATIONTOKENREQUEST']._serialized_end=1664
+  _globals['_GENERATEAUTHORIZATIONTOKENRESPONSE']._serialized_start=1666
+  _globals['_GENERATEAUTHORIZATIONTOKENRESPONSE']._serialized_end=1731
+  _globals['_GENERATEFIRMWAREDOWNLOADURIREQUEST']._serialized_start=1733
+  _globals['_GENERATEFIRMWAREDOWNLOADURIREQUEST']._serialized_end=1793
+  _globals['_GENERATEFIRMWAREDOWNLOADURIRESPONSE']._serialized_start=1795
+  _globals['_GENERATEFIRMWAREDOWNLOADURIRESPONSE']._serialized_end=1870
+  _globals['_GENERATEFIRMWAREDOWNLOADURIMETADATA']._serialized_start=1872
+  _globals['_GENERATEFIRMWAREDOWNLOADURIMETADATA']._serialized_end=1909
+  _globals['_ELECTRONICKEYSERVICE']._serialized_start=1912
+  _globals['_ELECTRONICKEYSERVICE']._serialized_end=3491
 # @@protoc_insertion_point(module_scope)

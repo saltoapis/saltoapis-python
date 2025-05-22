@@ -3,6 +3,8 @@ from google.protobuf import field_mask_pb2 as _field_mask_pb2
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from saltoapis.longrunning.v1 import operation_pb2 as _operation_pb2
 from saltoapis.longrunning.v1 import operation_pb2 as _operation_pb2
+from saltoapis.nebula.type import device_metadata_pb2 as _device_metadata_pb2
+from saltoapis.nebula.type import device_metadata_pb2 as _device_metadata_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -11,7 +13,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class IntercomAdaptor(_message.Message):
-    __slots__ = ("name", "display_name", "device_id", "gateway", "extender", "access_points", "initialized", "outdated", "connected", "low_battery", "last_event_time", "intercom", "photos", "photo_uris", "readings")
+    __slots__ = ("name", "display_name", "device_id", "gateway", "extender", "access_points", "initialized", "device_metadata", "outdated", "connected", "low_battery", "last_event_time", "intercom", "photos", "photo_uris", "readings")
     NAME_FIELD_NUMBER: _ClassVar[int]
     DISPLAY_NAME_FIELD_NUMBER: _ClassVar[int]
     DEVICE_ID_FIELD_NUMBER: _ClassVar[int]
@@ -19,6 +21,7 @@ class IntercomAdaptor(_message.Message):
     EXTENDER_FIELD_NUMBER: _ClassVar[int]
     ACCESS_POINTS_FIELD_NUMBER: _ClassVar[int]
     INITIALIZED_FIELD_NUMBER: _ClassVar[int]
+    DEVICE_METADATA_FIELD_NUMBER: _ClassVar[int]
     OUTDATED_FIELD_NUMBER: _ClassVar[int]
     CONNECTED_FIELD_NUMBER: _ClassVar[int]
     LOW_BATTERY_FIELD_NUMBER: _ClassVar[int]
@@ -34,6 +37,7 @@ class IntercomAdaptor(_message.Message):
     extender: str
     access_points: _containers.RepeatedCompositeFieldContainer[IntercomAdaptorAccessPoint]
     initialized: bool
+    device_metadata: _device_metadata_pb2.DeviceMetadata
     outdated: bool
     connected: bool
     low_battery: bool
@@ -42,7 +46,7 @@ class IntercomAdaptor(_message.Message):
     photos: _containers.RepeatedScalarFieldContainer[str]
     photo_uris: _containers.RepeatedScalarFieldContainer[str]
     readings: _containers.RepeatedScalarFieldContainer[str]
-    def __init__(self, name: _Optional[str] = ..., display_name: _Optional[str] = ..., device_id: _Optional[str] = ..., gateway: _Optional[str] = ..., extender: _Optional[str] = ..., access_points: _Optional[_Iterable[_Union[IntercomAdaptorAccessPoint, _Mapping]]] = ..., initialized: bool = ..., outdated: bool = ..., connected: bool = ..., low_battery: bool = ..., last_event_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., intercom: _Optional[str] = ..., photos: _Optional[_Iterable[str]] = ..., photo_uris: _Optional[_Iterable[str]] = ..., readings: _Optional[_Iterable[str]] = ...) -> None: ...
+    def __init__(self, name: _Optional[str] = ..., display_name: _Optional[str] = ..., device_id: _Optional[str] = ..., gateway: _Optional[str] = ..., extender: _Optional[str] = ..., access_points: _Optional[_Iterable[_Union[IntercomAdaptorAccessPoint, _Mapping]]] = ..., initialized: bool = ..., device_metadata: _Optional[_Union[_device_metadata_pb2.DeviceMetadata, _Mapping]] = ..., outdated: bool = ..., connected: bool = ..., low_battery: bool = ..., last_event_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., intercom: _Optional[str] = ..., photos: _Optional[_Iterable[str]] = ..., photo_uris: _Optional[_Iterable[str]] = ..., readings: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class IntercomAdaptorAccessPoint(_message.Message):
     __slots__ = ("access_point", "frame_settings")
