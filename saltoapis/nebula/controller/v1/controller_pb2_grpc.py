@@ -89,6 +89,46 @@ class ControllerServiceStub(object):
                 request_serializer=salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.GenerateFirmwareDownloadUriRequest.SerializeToString,
                 response_deserializer=salto_dot_longrunning_dot_v1_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.CreateControllerRelay = channel.unary_unary(
+                '/salto.nebula.controller.v1.ControllerService/CreateControllerRelay',
+                request_serializer=salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.CreateControllerRelayRequest.SerializeToString,
+                response_deserializer=salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.ControllerRelay.FromString,
+                _registered_method=True)
+        self.BatchCreateControllerRelays = channel.unary_unary(
+                '/salto.nebula.controller.v1.ControllerService/BatchCreateControllerRelays',
+                request_serializer=salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.BatchCreateControllerRelaysRequest.SerializeToString,
+                response_deserializer=salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.BatchCreateControllerRelaysResponse.FromString,
+                _registered_method=True)
+        self.GetControllerRelay = channel.unary_unary(
+                '/salto.nebula.controller.v1.ControllerService/GetControllerRelay',
+                request_serializer=salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.GetControllerRelayRequest.SerializeToString,
+                response_deserializer=salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.ControllerRelay.FromString,
+                _registered_method=True)
+        self.ListControllerRelays = channel.unary_unary(
+                '/salto.nebula.controller.v1.ControllerService/ListControllerRelays',
+                request_serializer=salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.ListControllerRelaysRequest.SerializeToString,
+                response_deserializer=salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.ListControllerRelaysResponse.FromString,
+                _registered_method=True)
+        self.UpdateControllerRelay = channel.unary_unary(
+                '/salto.nebula.controller.v1.ControllerService/UpdateControllerRelay',
+                request_serializer=salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.UpdateControllerRelayRequest.SerializeToString,
+                response_deserializer=salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.ControllerRelay.FromString,
+                _registered_method=True)
+        self.BatchUpdateControllerRelays = channel.unary_unary(
+                '/salto.nebula.controller.v1.ControllerService/BatchUpdateControllerRelays',
+                request_serializer=salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.BatchUpdateControllerRelaysRequest.SerializeToString,
+                response_deserializer=salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.BatchUpdateControllerRelaysResponse.FromString,
+                _registered_method=True)
+        self.DeleteControllerRelay = channel.unary_unary(
+                '/salto.nebula.controller.v1.ControllerService/DeleteControllerRelay',
+                request_serializer=salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.DeleteControllerRelayRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                _registered_method=True)
+        self.BatchDeleteControllerRelays = channel.unary_unary(
+                '/salto.nebula.controller.v1.ControllerService/BatchDeleteControllerRelays',
+                request_serializer=salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.BatchDeleteControllerRelaysRequest.SerializeToString,
+                response_deserializer=salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.BatchDeleteControllerRelaysResponse.FromString,
+                _registered_method=True)
 
 
 class ControllerServiceServicer(object):
@@ -235,6 +275,79 @@ class ControllerServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def CreateControllerRelay(self, request, context):
+        """Create a controller relay
+
+        Creates a new controller relay
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def BatchCreateControllerRelays(self, request, context):
+        """Create a batch of controller relays
+
+        Creates a batch of controller relays. This method allows the creation of multiple
+        controller relays in a single operation.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetControllerRelay(self, request, context):
+        """Get a controller relay
+
+        Gets an existing controller relay.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListControllerRelays(self, request, context):
+        """List controller relays
+
+        Returns a list of controller relays that have been previously created.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateControllerRelay(self, request, context):
+        """Update a controller relay
+
+        Updates an existing controller relay.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def BatchUpdateControllerRelays(self, request, context):
+        """Update a batch of controller relays
+
+        Updates a batch of controller relays. This method allows updating multiple controller relays in a single operation.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteControllerRelay(self, request, context):
+        """Delete a controller relay
+
+        Permanently deletes a controller relay. This cannot be undone.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def BatchDeleteControllerRelays(self, request, context):
+        """Delete a batch of controller relays
+
+        Permanently deletes a batch of controller relays. This cannot be undone.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_ControllerServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -302,6 +415,46 @@ def add_ControllerServiceServicer_to_server(servicer, server):
                     servicer.GenerateFirmwareDownloadUri,
                     request_deserializer=salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.GenerateFirmwareDownloadUriRequest.FromString,
                     response_serializer=salto_dot_longrunning_dot_v1_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'CreateControllerRelay': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateControllerRelay,
+                    request_deserializer=salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.CreateControllerRelayRequest.FromString,
+                    response_serializer=salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.ControllerRelay.SerializeToString,
+            ),
+            'BatchCreateControllerRelays': grpc.unary_unary_rpc_method_handler(
+                    servicer.BatchCreateControllerRelays,
+                    request_deserializer=salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.BatchCreateControllerRelaysRequest.FromString,
+                    response_serializer=salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.BatchCreateControllerRelaysResponse.SerializeToString,
+            ),
+            'GetControllerRelay': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetControllerRelay,
+                    request_deserializer=salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.GetControllerRelayRequest.FromString,
+                    response_serializer=salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.ControllerRelay.SerializeToString,
+            ),
+            'ListControllerRelays': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListControllerRelays,
+                    request_deserializer=salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.ListControllerRelaysRequest.FromString,
+                    response_serializer=salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.ListControllerRelaysResponse.SerializeToString,
+            ),
+            'UpdateControllerRelay': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateControllerRelay,
+                    request_deserializer=salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.UpdateControllerRelayRequest.FromString,
+                    response_serializer=salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.ControllerRelay.SerializeToString,
+            ),
+            'BatchUpdateControllerRelays': grpc.unary_unary_rpc_method_handler(
+                    servicer.BatchUpdateControllerRelays,
+                    request_deserializer=salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.BatchUpdateControllerRelaysRequest.FromString,
+                    response_serializer=salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.BatchUpdateControllerRelaysResponse.SerializeToString,
+            ),
+            'DeleteControllerRelay': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteControllerRelay,
+                    request_deserializer=salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.DeleteControllerRelayRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'BatchDeleteControllerRelays': grpc.unary_unary_rpc_method_handler(
+                    servicer.BatchDeleteControllerRelays,
+                    request_deserializer=salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.BatchDeleteControllerRelaysRequest.FromString,
+                    response_serializer=salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.BatchDeleteControllerRelaysResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -661,6 +814,222 @@ class ControllerService(object):
             '/salto.nebula.controller.v1.ControllerService/GenerateFirmwareDownloadUri',
             salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.GenerateFirmwareDownloadUriRequest.SerializeToString,
             salto_dot_longrunning_dot_v1_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def CreateControllerRelay(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/salto.nebula.controller.v1.ControllerService/CreateControllerRelay',
+            salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.CreateControllerRelayRequest.SerializeToString,
+            salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.ControllerRelay.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def BatchCreateControllerRelays(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/salto.nebula.controller.v1.ControllerService/BatchCreateControllerRelays',
+            salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.BatchCreateControllerRelaysRequest.SerializeToString,
+            salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.BatchCreateControllerRelaysResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetControllerRelay(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/salto.nebula.controller.v1.ControllerService/GetControllerRelay',
+            salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.GetControllerRelayRequest.SerializeToString,
+            salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.ControllerRelay.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListControllerRelays(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/salto.nebula.controller.v1.ControllerService/ListControllerRelays',
+            salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.ListControllerRelaysRequest.SerializeToString,
+            salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.ListControllerRelaysResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UpdateControllerRelay(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/salto.nebula.controller.v1.ControllerService/UpdateControllerRelay',
+            salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.UpdateControllerRelayRequest.SerializeToString,
+            salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.ControllerRelay.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def BatchUpdateControllerRelays(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/salto.nebula.controller.v1.ControllerService/BatchUpdateControllerRelays',
+            salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.BatchUpdateControllerRelaysRequest.SerializeToString,
+            salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.BatchUpdateControllerRelaysResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def DeleteControllerRelay(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/salto.nebula.controller.v1.ControllerService/DeleteControllerRelay',
+            salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.DeleteControllerRelayRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def BatchDeleteControllerRelays(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/salto.nebula.controller.v1.ControllerService/BatchDeleteControllerRelays',
+            salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.BatchDeleteControllerRelaysRequest.SerializeToString,
+            salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2.BatchDeleteControllerRelaysResponse.FromString,
             options,
             channel_credentials,
             insecure,
