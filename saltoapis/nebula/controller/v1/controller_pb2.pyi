@@ -39,18 +39,14 @@ class Controller(_message.Message):
     def __init__(self, name: _Optional[str] = ..., display_name: _Optional[str] = ..., device_id: _Optional[str] = ..., gateway: _Optional[str] = ..., extender: _Optional[str] = ..., access_points: _Optional[_Iterable[str]] = ..., initialized: bool = ..., device_metadata: _Optional[_Union[_device_metadata_pb2.DeviceMetadata, _Mapping]] = ..., outdated: bool = ..., connected: bool = ..., last_event_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
 
 class ControllerRelay(_message.Message):
-    __slots__ = ("name", "dipswitch", "relay_id", "destination_output", "access_point")
+    __slots__ = ("name", "relay_id", "destination_output")
     NAME_FIELD_NUMBER: _ClassVar[int]
-    DIPSWITCH_FIELD_NUMBER: _ClassVar[int]
     RELAY_ID_FIELD_NUMBER: _ClassVar[int]
     DESTINATION_OUTPUT_FIELD_NUMBER: _ClassVar[int]
-    ACCESS_POINT_FIELD_NUMBER: _ClassVar[int]
     name: str
-    dipswitch: int
     relay_id: int
     destination_output: DestinationOutput
-    access_point: str
-    def __init__(self, name: _Optional[str] = ..., dipswitch: _Optional[int] = ..., relay_id: _Optional[int] = ..., destination_output: _Optional[_Union[DestinationOutput, _Mapping]] = ..., access_point: _Optional[str] = ...) -> None: ...
+    def __init__(self, name: _Optional[str] = ..., relay_id: _Optional[int] = ..., destination_output: _Optional[_Union[DestinationOutput, _Mapping]] = ...) -> None: ...
 
 class DestinationOutput(_message.Message):
     __slots__ = ("destination",)
@@ -235,89 +231,3 @@ class CreateControllerRelayRequest(_message.Message):
     controller_relay_id: str
     controller_relay: ControllerRelay
     def __init__(self, parent: _Optional[str] = ..., controller_relay_id: _Optional[str] = ..., controller_relay: _Optional[_Union[ControllerRelay, _Mapping]] = ...) -> None: ...
-
-class GetControllerRelayRequest(_message.Message):
-    __slots__ = ("name",)
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    name: str
-    def __init__(self, name: _Optional[str] = ...) -> None: ...
-
-class ListControllerRelaysRequest(_message.Message):
-    __slots__ = ("parent", "page_size", "page_token", "filter", "order_by", "accurate_total_size")
-    PARENT_FIELD_NUMBER: _ClassVar[int]
-    PAGE_SIZE_FIELD_NUMBER: _ClassVar[int]
-    PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
-    FILTER_FIELD_NUMBER: _ClassVar[int]
-    ORDER_BY_FIELD_NUMBER: _ClassVar[int]
-    ACCURATE_TOTAL_SIZE_FIELD_NUMBER: _ClassVar[int]
-    parent: str
-    page_size: int
-    page_token: str
-    filter: str
-    order_by: str
-    accurate_total_size: bool
-    def __init__(self, parent: _Optional[str] = ..., page_size: _Optional[int] = ..., page_token: _Optional[str] = ..., filter: _Optional[str] = ..., order_by: _Optional[str] = ..., accurate_total_size: bool = ...) -> None: ...
-
-class ListControllerRelaysResponse(_message.Message):
-    __slots__ = ("controller_relays", "next_page_token", "accurate_total_size")
-    CONTROLLER_RELAYS_FIELD_NUMBER: _ClassVar[int]
-    NEXT_PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
-    ACCURATE_TOTAL_SIZE_FIELD_NUMBER: _ClassVar[int]
-    controller_relays: _containers.RepeatedCompositeFieldContainer[ControllerRelay]
-    next_page_token: str
-    accurate_total_size: int
-    def __init__(self, controller_relays: _Optional[_Iterable[_Union[ControllerRelay, _Mapping]]] = ..., next_page_token: _Optional[str] = ..., accurate_total_size: _Optional[int] = ...) -> None: ...
-
-class UpdateControllerRelayRequest(_message.Message):
-    __slots__ = ("controller_relay", "update_mask")
-    CONTROLLER_RELAY_FIELD_NUMBER: _ClassVar[int]
-    UPDATE_MASK_FIELD_NUMBER: _ClassVar[int]
-    controller_relay: ControllerRelay
-    update_mask: _field_mask_pb2.FieldMask
-    def __init__(self, controller_relay: _Optional[_Union[ControllerRelay, _Mapping]] = ..., update_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
-
-class DeleteControllerRelayRequest(_message.Message):
-    __slots__ = ("name",)
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    name: str
-    def __init__(self, name: _Optional[str] = ...) -> None: ...
-
-class BatchDeleteControllerRelaysRequest(_message.Message):
-    __slots__ = ("parent", "requests")
-    PARENT_FIELD_NUMBER: _ClassVar[int]
-    REQUESTS_FIELD_NUMBER: _ClassVar[int]
-    parent: str
-    requests: _containers.RepeatedCompositeFieldContainer[DeleteControllerRelayRequest]
-    def __init__(self, parent: _Optional[str] = ..., requests: _Optional[_Iterable[_Union[DeleteControllerRelayRequest, _Mapping]]] = ...) -> None: ...
-
-class BatchDeleteControllerRelaysResponse(_message.Message):
-    __slots__ = ()
-    def __init__(self) -> None: ...
-
-class BatchCreateControllerRelaysRequest(_message.Message):
-    __slots__ = ("parent", "requests")
-    PARENT_FIELD_NUMBER: _ClassVar[int]
-    REQUESTS_FIELD_NUMBER: _ClassVar[int]
-    parent: str
-    requests: _containers.RepeatedCompositeFieldContainer[CreateControllerRelayRequest]
-    def __init__(self, parent: _Optional[str] = ..., requests: _Optional[_Iterable[_Union[CreateControllerRelayRequest, _Mapping]]] = ...) -> None: ...
-
-class BatchCreateControllerRelaysResponse(_message.Message):
-    __slots__ = ("controller_relays",)
-    CONTROLLER_RELAYS_FIELD_NUMBER: _ClassVar[int]
-    controller_relays: _containers.RepeatedCompositeFieldContainer[ControllerRelay]
-    def __init__(self, controller_relays: _Optional[_Iterable[_Union[ControllerRelay, _Mapping]]] = ...) -> None: ...
-
-class BatchUpdateControllerRelaysRequest(_message.Message):
-    __slots__ = ("parent", "requests")
-    PARENT_FIELD_NUMBER: _ClassVar[int]
-    REQUESTS_FIELD_NUMBER: _ClassVar[int]
-    parent: str
-    requests: _containers.RepeatedCompositeFieldContainer[UpdateControllerRelayRequest]
-    def __init__(self, parent: _Optional[str] = ..., requests: _Optional[_Iterable[_Union[UpdateControllerRelayRequest, _Mapping]]] = ...) -> None: ...
-
-class BatchUpdateControllerRelaysResponse(_message.Message):
-    __slots__ = ("controller_relays",)
-    CONTROLLER_RELAYS_FIELD_NUMBER: _ClassVar[int]
-    controller_relays: _containers.RepeatedCompositeFieldContainer[ControllerRelay]
-    def __init__(self, controller_relays: _Optional[_Iterable[_Union[ControllerRelay, _Mapping]]] = ...) -> None: ...
