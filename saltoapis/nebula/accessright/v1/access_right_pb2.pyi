@@ -39,6 +39,18 @@ class AccessRightAccessPointGroup(_message.Message):
     display_name: str
     def __init__(self, name: _Optional[str] = ..., access_point_group: _Optional[str] = ..., display_name: _Optional[str] = ...) -> None: ...
 
+class AccessRightDestination(_message.Message):
+    __slots__ = ("name", "destination", "access_right", "display_name")
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    DESTINATION_FIELD_NUMBER: _ClassVar[int]
+    ACCESS_RIGHT_FIELD_NUMBER: _ClassVar[int]
+    DISPLAY_NAME_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    destination: str
+    access_right: str
+    display_name: str
+    def __init__(self, name: _Optional[str] = ..., destination: _Optional[str] = ..., access_right: _Optional[str] = ..., display_name: _Optional[str] = ...) -> None: ...
+
 class CreateAccessRightRequest(_message.Message):
     __slots__ = ("parent", "access_right_id", "access_right")
     PARENT_FIELD_NUMBER: _ClassVar[int]
@@ -242,3 +254,53 @@ class BatchDeleteAccessRightAccessPointsRequest(_message.Message):
 class BatchDeleteAccessRightAccessPointsResponse(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
+
+class CreateAccessRightDestinationRequest(_message.Message):
+    __slots__ = ("parent", "access_right_destination")
+    PARENT_FIELD_NUMBER: _ClassVar[int]
+    ACCESS_RIGHT_DESTINATION_FIELD_NUMBER: _ClassVar[int]
+    parent: str
+    access_right_destination: AccessRightDestination
+    def __init__(self, parent: _Optional[str] = ..., access_right_destination: _Optional[_Union[AccessRightDestination, _Mapping]] = ...) -> None: ...
+
+class GetAccessRightDestinationRequest(_message.Message):
+    __slots__ = ("name",)
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    def __init__(self, name: _Optional[str] = ...) -> None: ...
+
+class ListAccessRightDestinationsRequest(_message.Message):
+    __slots__ = ("parent", "page_size", "page_token", "filter", "order_by")
+    PARENT_FIELD_NUMBER: _ClassVar[int]
+    PAGE_SIZE_FIELD_NUMBER: _ClassVar[int]
+    PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
+    FILTER_FIELD_NUMBER: _ClassVar[int]
+    ORDER_BY_FIELD_NUMBER: _ClassVar[int]
+    parent: str
+    page_size: int
+    page_token: str
+    filter: str
+    order_by: str
+    def __init__(self, parent: _Optional[str] = ..., page_size: _Optional[int] = ..., page_token: _Optional[str] = ..., filter: _Optional[str] = ..., order_by: _Optional[str] = ...) -> None: ...
+
+class ListAccessRightDestinationsResponse(_message.Message):
+    __slots__ = ("access_right_destinations", "next_page_token")
+    ACCESS_RIGHT_DESTINATIONS_FIELD_NUMBER: _ClassVar[int]
+    NEXT_PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
+    access_right_destinations: _containers.RepeatedCompositeFieldContainer[AccessRightDestination]
+    next_page_token: str
+    def __init__(self, access_right_destinations: _Optional[_Iterable[_Union[AccessRightDestination, _Mapping]]] = ..., next_page_token: _Optional[str] = ...) -> None: ...
+
+class UpdateAccessRightDestinationRequest(_message.Message):
+    __slots__ = ("access_right_destination", "update_mask")
+    ACCESS_RIGHT_DESTINATION_FIELD_NUMBER: _ClassVar[int]
+    UPDATE_MASK_FIELD_NUMBER: _ClassVar[int]
+    access_right_destination: AccessRightDestination
+    update_mask: _field_mask_pb2.FieldMask
+    def __init__(self, access_right_destination: _Optional[_Union[AccessRightDestination, _Mapping]] = ..., update_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
+
+class DeleteAccessRightDestinationRequest(_message.Message):
+    __slots__ = ("name",)
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    def __init__(self, name: _Optional[str] = ...) -> None: ...
