@@ -40,19 +40,18 @@ class Controller(_message.Message):
 
 class ControllerRelay(_message.Message):
     __slots__ = ("name", "relay_id", "destination_output")
+    class DestinationOutput(_message.Message):
+        __slots__ = ("destination",)
+        DESTINATION_FIELD_NUMBER: _ClassVar[int]
+        destination: str
+        def __init__(self, destination: _Optional[str] = ...) -> None: ...
     NAME_FIELD_NUMBER: _ClassVar[int]
     RELAY_ID_FIELD_NUMBER: _ClassVar[int]
     DESTINATION_OUTPUT_FIELD_NUMBER: _ClassVar[int]
     name: str
     relay_id: int
-    destination_output: DestinationOutput
-    def __init__(self, name: _Optional[str] = ..., relay_id: _Optional[int] = ..., destination_output: _Optional[_Union[DestinationOutput, _Mapping]] = ...) -> None: ...
-
-class DestinationOutput(_message.Message):
-    __slots__ = ("destination",)
-    DESTINATION_FIELD_NUMBER: _ClassVar[int]
-    destination: str
-    def __init__(self, destination: _Optional[str] = ...) -> None: ...
+    destination_output: ControllerRelay.DestinationOutput
+    def __init__(self, name: _Optional[str] = ..., relay_id: _Optional[int] = ..., destination_output: _Optional[_Union[ControllerRelay.DestinationOutput, _Mapping]] = ...) -> None: ...
 
 class CreateControllerRequest(_message.Message):
     __slots__ = ("parent", "controller_id", "controller")
