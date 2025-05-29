@@ -40,16 +40,14 @@ class AccessRightAccessPointGroup(_message.Message):
     def __init__(self, name: _Optional[str] = ..., access_point_group: _Optional[str] = ..., display_name: _Optional[str] = ...) -> None: ...
 
 class AccessRightDestination(_message.Message):
-    __slots__ = ("name", "destination", "access_right", "display_name")
+    __slots__ = ("name", "destination", "display_name")
     NAME_FIELD_NUMBER: _ClassVar[int]
     DESTINATION_FIELD_NUMBER: _ClassVar[int]
-    ACCESS_RIGHT_FIELD_NUMBER: _ClassVar[int]
     DISPLAY_NAME_FIELD_NUMBER: _ClassVar[int]
     name: str
     destination: str
-    access_right: str
     display_name: str
-    def __init__(self, name: _Optional[str] = ..., destination: _Optional[str] = ..., access_right: _Optional[str] = ..., display_name: _Optional[str] = ...) -> None: ...
+    def __init__(self, name: _Optional[str] = ..., destination: _Optional[str] = ..., display_name: _Optional[str] = ...) -> None: ...
 
 class CreateAccessRightRequest(_message.Message):
     __slots__ = ("parent", "access_right_id", "access_right")
