@@ -109,6 +109,11 @@ class InstallationServiceStub(object):
                 request_serializer=salto_dot_nebula_dot_installation_dot_v1_dot_installation__pb2.UpdateCardRequest.SerializeToString,
                 response_deserializer=salto_dot_nebula_dot_installation_dot_v1_dot_installation__pb2.UpdateCardResponse.FromString,
                 _registered_method=True)
+        self.CreatePaymentAuthorization = channel.unary_unary(
+                '/salto.nebula.installation.v1.InstallationService/CreatePaymentAuthorization',
+                request_serializer=salto_dot_nebula_dot_installation_dot_v1_dot_installation__pb2.CreatePaymentAuthorizationRequest.SerializeToString,
+                response_deserializer=salto_dot_nebula_dot_installation_dot_v1_dot_installation__pb2.PaymentAuthorization.FromString,
+                _registered_method=True)
         self.ListInvoices = channel.unary_unary(
                 '/salto.nebula.installation.v1.InstallationService/ListInvoices',
                 request_serializer=salto_dot_nebula_dot_installation_dot_v1_dot_installation__pb2.ListInvoicesRequest.SerializeToString,
@@ -304,6 +309,19 @@ class InstallationServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def CreatePaymentAuthorization(self, request, context):
+        """Create a payment authorization
+
+        Creates a payment authorization for the subscription.
+        The payment authorization is a process that allows the customer to
+        authorize a payment card for future use. This is done by creating a payment
+        authorization request. The result of the request is a payment authorization
+        that must be authorized by the client in the client's UI.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def ListInvoices(self, request, context):
         """List invoices
 
@@ -423,6 +441,11 @@ def add_InstallationServiceServicer_to_server(servicer, server):
                     servicer.UpdateCard,
                     request_deserializer=salto_dot_nebula_dot_installation_dot_v1_dot_installation__pb2.UpdateCardRequest.FromString,
                     response_serializer=salto_dot_nebula_dot_installation_dot_v1_dot_installation__pb2.UpdateCardResponse.SerializeToString,
+            ),
+            'CreatePaymentAuthorization': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreatePaymentAuthorization,
+                    request_deserializer=salto_dot_nebula_dot_installation_dot_v1_dot_installation__pb2.CreatePaymentAuthorizationRequest.FromString,
+                    response_serializer=salto_dot_nebula_dot_installation_dot_v1_dot_installation__pb2.PaymentAuthorization.SerializeToString,
             ),
             'ListInvoices': grpc.unary_unary_rpc_method_handler(
                     servicer.ListInvoices,
@@ -929,6 +952,33 @@ class InstallationService(object):
             '/salto.nebula.installation.v1.InstallationService/UpdateCard',
             salto_dot_nebula_dot_installation_dot_v1_dot_installation__pb2.UpdateCardRequest.SerializeToString,
             salto_dot_nebula_dot_installation_dot_v1_dot_installation__pb2.UpdateCardResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def CreatePaymentAuthorization(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/salto.nebula.installation.v1.InstallationService/CreatePaymentAuthorization',
+            salto_dot_nebula_dot_installation_dot_v1_dot_installation__pb2.CreatePaymentAuthorizationRequest.SerializeToString,
+            salto_dot_nebula_dot_installation_dot_v1_dot_installation__pb2.PaymentAuthorization.FromString,
             options,
             channel_credentials,
             insecure,

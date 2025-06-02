@@ -132,6 +132,12 @@ class PaymentMethod(_message.Message):
     direct_debit: PaymentMethod.DirectDebit
     def __init__(self, name: _Optional[str] = ..., card: _Optional[_Union[PaymentMethod.Card, _Mapping]] = ..., direct_debit: _Optional[_Union[PaymentMethod.DirectDebit, _Mapping]] = ...) -> None: ...
 
+class PaymentAuthorization(_message.Message):
+    __slots__ = ("name",)
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    def __init__(self, name: _Optional[str] = ...) -> None: ...
+
 class Coupon(_message.Message):
     __slots__ = ("name",)
     NAME_FIELD_NUMBER: _ClassVar[int]
@@ -362,6 +368,14 @@ class UpdateCardRequest(_message.Message):
 class UpdateCardResponse(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
+
+class CreatePaymentAuthorizationRequest(_message.Message):
+    __slots__ = ("parent", "payment_authorization")
+    PARENT_FIELD_NUMBER: _ClassVar[int]
+    PAYMENT_AUTHORIZATION_FIELD_NUMBER: _ClassVar[int]
+    parent: str
+    payment_authorization: PaymentAuthorization
+    def __init__(self, parent: _Optional[str] = ..., payment_authorization: _Optional[_Union[PaymentAuthorization, _Mapping]] = ...) -> None: ...
 
 class ListInvoicesRequest(_message.Message):
     __slots__ = ("parent",)
