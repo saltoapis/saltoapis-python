@@ -211,7 +211,7 @@ class UserServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def CreateUserAccessRight(self, request, context):
-        """Create an access right
+        """Create a user access right
 
         Creates a user's access right association.
         """
@@ -220,7 +220,7 @@ class UserServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def GetUserAccessRight(self, request, context):
-        """Get an access right
+        """Get a user access right
 
         Gets an existing user's access right association.
         """
@@ -229,7 +229,7 @@ class UserServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListUserAccessRights(self, request, context):
-        """List access rights
+        """List user access rights
 
         Lists an existing user's access right associations.
         """
@@ -238,7 +238,7 @@ class UserServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def UpdateUserAccessRight(self, request, context):
-        """Update an access right
+        """Update a user access right
 
         Updates an existing user's access right associations.
         """
@@ -247,7 +247,7 @@ class UserServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def DeleteUserAccessRight(self, request, context):
-        """Delete an access right
+        """Delete a user access right
 
         Deletes a user's access right association. This cannot be undone.
         """
