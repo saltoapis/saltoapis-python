@@ -49,6 +49,7 @@ VALE_VERSION="3.7.1"
 
 python_projects = [
     '//saltoapis/nebula/accesspointgroup/v1',
+    '//saltoapis/nebula/destination/v1',
     '//saltoapis/nebula/emergencykey/v1',
     '//saltoapis/nebula/file/v1',
     '//saltoapis/nebula/iam/v1',
