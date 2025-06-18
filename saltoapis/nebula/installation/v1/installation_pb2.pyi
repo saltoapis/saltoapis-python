@@ -102,14 +102,16 @@ class BillingInfo(_message.Message):
 class PaymentMethod(_message.Message):
     __slots__ = ("name", "card", "direct_debit")
     class Card(_message.Message):
-        __slots__ = ("expire_date", "last_four", "brand")
+        __slots__ = ("expire_date", "last_four", "brand", "payment_authorization")
         EXPIRE_DATE_FIELD_NUMBER: _ClassVar[int]
         LAST_FOUR_FIELD_NUMBER: _ClassVar[int]
         BRAND_FIELD_NUMBER: _ClassVar[int]
+        PAYMENT_AUTHORIZATION_FIELD_NUMBER: _ClassVar[int]
         expire_date: _date_pb2.Date
         last_four: str
         brand: str
-        def __init__(self, expire_date: _Optional[_Union[_date_pb2.Date, _Mapping]] = ..., last_four: _Optional[str] = ..., brand: _Optional[str] = ...) -> None: ...
+        payment_authorization: str
+        def __init__(self, expire_date: _Optional[_Union[_date_pb2.Date, _Mapping]] = ..., last_four: _Optional[str] = ..., brand: _Optional[str] = ..., payment_authorization: _Optional[str] = ...) -> None: ...
     class DirectDebit(_message.Message):
         __slots__ = ("sepa",)
         class SEPA(_message.Message):
