@@ -66,7 +66,7 @@ class UserAccessRight(_message.Message):
     def __init__(self, name: _Optional[str] = ..., access_right: _Optional[str] = ..., display_name: _Optional[str] = ..., schedules: _Optional[_Iterable[_Union[_schedule_pb2.Schedule, _Mapping]]] = ..., effective_schedules: _Optional[_Iterable[_Union[_schedule_pb2.Schedule, _Mapping]]] = ..., activate_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., expire_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
 
 class CardKey(_message.Message):
-    __slots__ = ("name", "uid", "state", "outdated")
+    __slots__ = ("name", "uid", "device_id", "state", "outdated")
     class State(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         STATE_UNSPECIFIED: _ClassVar[CardKey.State]
@@ -79,13 +79,15 @@ class CardKey(_message.Message):
     ACTIVE: CardKey.State
     NAME_FIELD_NUMBER: _ClassVar[int]
     UID_FIELD_NUMBER: _ClassVar[int]
+    DEVICE_ID_FIELD_NUMBER: _ClassVar[int]
     STATE_FIELD_NUMBER: _ClassVar[int]
     OUTDATED_FIELD_NUMBER: _ClassVar[int]
     name: str
     uid: str
+    device_id: str
     state: CardKey.State
     outdated: bool
-    def __init__(self, name: _Optional[str] = ..., uid: _Optional[str] = ..., state: _Optional[_Union[CardKey.State, str]] = ..., outdated: bool = ...) -> None: ...
+    def __init__(self, name: _Optional[str] = ..., uid: _Optional[str] = ..., device_id: _Optional[str] = ..., state: _Optional[_Union[CardKey.State, str]] = ..., outdated: bool = ...) -> None: ...
 
 class AppKey(_message.Message):
     __slots__ = ("name", "state", "outdated")
