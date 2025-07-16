@@ -31,6 +31,20 @@ class GetDestinationRequest(_message.Message):
     name: str
     def __init__(self, name: _Optional[str] = ...) -> None: ...
 
+class BatchGetDestinationsRequest(_message.Message):
+    __slots__ = ("parent", "names")
+    PARENT_FIELD_NUMBER: _ClassVar[int]
+    NAMES_FIELD_NUMBER: _ClassVar[int]
+    parent: str
+    names: _containers.RepeatedScalarFieldContainer[str]
+    def __init__(self, parent: _Optional[str] = ..., names: _Optional[_Iterable[str]] = ...) -> None: ...
+
+class BatchGetDestinationsResponse(_message.Message):
+    __slots__ = ("destinations",)
+    DESTINATIONS_FIELD_NUMBER: _ClassVar[int]
+    destinations: _containers.RepeatedCompositeFieldContainer[Destination]
+    def __init__(self, destinations: _Optional[_Iterable[_Union[Destination, _Mapping]]] = ...) -> None: ...
+
 class UpdateDestinationRequest(_message.Message):
     __slots__ = ("destination", "update_mask")
     DESTINATION_FIELD_NUMBER: _ClassVar[int]

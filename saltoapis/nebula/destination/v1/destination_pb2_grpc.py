@@ -31,6 +31,11 @@ class DestinationServiceStub(object):
                 request_serializer=salto_dot_nebula_dot_destination_dot_v1_dot_destination__pb2.GetDestinationRequest.SerializeToString,
                 response_deserializer=salto_dot_nebula_dot_destination_dot_v1_dot_destination__pb2.Destination.FromString,
                 _registered_method=True)
+        self.BatchGetDestinations = channel.unary_unary(
+                '/salto.nebula.destination.v1.DestinationService/BatchGetDestinations',
+                request_serializer=salto_dot_nebula_dot_destination_dot_v1_dot_destination__pb2.BatchGetDestinationsRequest.SerializeToString,
+                response_deserializer=salto_dot_nebula_dot_destination_dot_v1_dot_destination__pb2.BatchGetDestinationsResponse.FromString,
+                _registered_method=True)
         self.UpdateDestination = channel.unary_unary(
                 '/salto.nebula.destination.v1.DestinationService/UpdateDestination',
                 request_serializer=salto_dot_nebula_dot_destination_dot_v1_dot_destination__pb2.UpdateDestinationRequest.SerializeToString,
@@ -69,6 +74,15 @@ class DestinationServiceServicer(object):
         """Get an existing destination
 
         Retrieves an existing destination.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def BatchGetDestinations(self, request, context):
+        """Get a batch of destinations
+
+        Retrieves a batch of existing destinations.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -113,6 +127,11 @@ def add_DestinationServiceServicer_to_server(servicer, server):
                     servicer.GetDestination,
                     request_deserializer=salto_dot_nebula_dot_destination_dot_v1_dot_destination__pb2.GetDestinationRequest.FromString,
                     response_serializer=salto_dot_nebula_dot_destination_dot_v1_dot_destination__pb2.Destination.SerializeToString,
+            ),
+            'BatchGetDestinations': grpc.unary_unary_rpc_method_handler(
+                    servicer.BatchGetDestinations,
+                    request_deserializer=salto_dot_nebula_dot_destination_dot_v1_dot_destination__pb2.BatchGetDestinationsRequest.FromString,
+                    response_serializer=salto_dot_nebula_dot_destination_dot_v1_dot_destination__pb2.BatchGetDestinationsResponse.SerializeToString,
             ),
             'UpdateDestination': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateDestination,
@@ -189,6 +208,33 @@ class DestinationService(object):
             '/salto.nebula.destination.v1.DestinationService/GetDestination',
             salto_dot_nebula_dot_destination_dot_v1_dot_destination__pb2.GetDestinationRequest.SerializeToString,
             salto_dot_nebula_dot_destination_dot_v1_dot_destination__pb2.Destination.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def BatchGetDestinations(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/salto.nebula.destination.v1.DestinationService/BatchGetDestinations',
+            salto_dot_nebula_dot_destination_dot_v1_dot_destination__pb2.BatchGetDestinationsRequest.SerializeToString,
+            salto_dot_nebula_dot_destination_dot_v1_dot_destination__pb2.BatchGetDestinationsResponse.FromString,
             options,
             channel_credentials,
             insecure,
