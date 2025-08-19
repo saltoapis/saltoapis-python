@@ -143,6 +143,28 @@ class Passcode(_message.Message):
     state: Passcode.State
     def __init__(self, name: _Optional[str] = ..., state: _Optional[_Union[Passcode.State, str]] = ...) -> None: ...
 
+class ElectronicKey(_message.Message):
+    __slots__ = ("name", "device_id", "state", "outdated")
+    class State(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = ()
+        STATE_UNSPECIFIED: _ClassVar[ElectronicKey.State]
+        NOT_ASSIGNED: _ClassVar[ElectronicKey.State]
+        PENDING: _ClassVar[ElectronicKey.State]
+        ACTIVE: _ClassVar[ElectronicKey.State]
+    STATE_UNSPECIFIED: ElectronicKey.State
+    NOT_ASSIGNED: ElectronicKey.State
+    PENDING: ElectronicKey.State
+    ACTIVE: ElectronicKey.State
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    DEVICE_ID_FIELD_NUMBER: _ClassVar[int]
+    STATE_FIELD_NUMBER: _ClassVar[int]
+    OUTDATED_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    device_id: str
+    state: ElectronicKey.State
+    outdated: bool
+    def __init__(self, name: _Optional[str] = ..., device_id: _Optional[str] = ..., state: _Optional[_Union[ElectronicKey.State, str]] = ..., outdated: bool = ...) -> None: ...
+
 class CreateUserRequest(_message.Message):
     __slots__ = ("parent", "user_id", "user")
     PARENT_FIELD_NUMBER: _ClassVar[int]
@@ -376,3 +398,49 @@ class CancelPasscodeResponse(_message.Message):
     PASSCODE_FIELD_NUMBER: _ClassVar[int]
     passcode: Passcode
     def __init__(self, passcode: _Optional[_Union[Passcode, _Mapping]] = ...) -> None: ...
+
+class AssignElectronicKeyRequest(_message.Message):
+    __slots__ = ("name", "device_id")
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    DEVICE_ID_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    device_id: str
+    def __init__(self, name: _Optional[str] = ..., device_id: _Optional[str] = ...) -> None: ...
+
+class AssignElectronicKeyResponse(_message.Message):
+    __slots__ = ("electronic_key",)
+    ELECTRONIC_KEY_FIELD_NUMBER: _ClassVar[int]
+    electronic_key: ElectronicKey
+    def __init__(self, electronic_key: _Optional[_Union[ElectronicKey, _Mapping]] = ...) -> None: ...
+
+class CancelElectronicKeyRequest(_message.Message):
+    __slots__ = ("name",)
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    def __init__(self, name: _Optional[str] = ...) -> None: ...
+
+class CancelElectronicKeyResponse(_message.Message):
+    __slots__ = ("electronic_key",)
+    ELECTRONIC_KEY_FIELD_NUMBER: _ClassVar[int]
+    electronic_key: ElectronicKey
+    def __init__(self, electronic_key: _Optional[_Union[ElectronicKey, _Mapping]] = ...) -> None: ...
+
+class EncodeElectronicKeyRequest(_message.Message):
+    __slots__ = ("name", "encoder", "electronic_lock", "controller")
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    ENCODER_FIELD_NUMBER: _ClassVar[int]
+    ELECTRONIC_LOCK_FIELD_NUMBER: _ClassVar[int]
+    CONTROLLER_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    encoder: str
+    electronic_lock: str
+    controller: str
+    def __init__(self, name: _Optional[str] = ..., encoder: _Optional[str] = ..., electronic_lock: _Optional[str] = ..., controller: _Optional[str] = ...) -> None: ...
+
+class EncodeElectronicKeyResponse(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
+
+class EncodeElectronicKeyMetadata(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
