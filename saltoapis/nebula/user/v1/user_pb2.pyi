@@ -14,7 +14,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class User(_message.Message):
-    __slots__ = ("name", "parent", "given_name", "family_name", "display_name", "email", "activate_time", "expire_time", "photo", "photo_uri", "card_key", "app_key", "wallet_key", "passcode", "blocked")
+    __slots__ = ("name", "parent", "given_name", "family_name", "display_name", "email", "activate_time", "expire_time", "photo", "photo_uri", "card_key", "electronic_key", "app_key", "wallet_key", "passcode", "blocked")
     NAME_FIELD_NUMBER: _ClassVar[int]
     PARENT_FIELD_NUMBER: _ClassVar[int]
     GIVEN_NAME_FIELD_NUMBER: _ClassVar[int]
@@ -26,6 +26,7 @@ class User(_message.Message):
     PHOTO_FIELD_NUMBER: _ClassVar[int]
     PHOTO_URI_FIELD_NUMBER: _ClassVar[int]
     CARD_KEY_FIELD_NUMBER: _ClassVar[int]
+    ELECTRONIC_KEY_FIELD_NUMBER: _ClassVar[int]
     APP_KEY_FIELD_NUMBER: _ClassVar[int]
     WALLET_KEY_FIELD_NUMBER: _ClassVar[int]
     PASSCODE_FIELD_NUMBER: _ClassVar[int]
@@ -41,11 +42,12 @@ class User(_message.Message):
     photo: str
     photo_uri: str
     card_key: CardKey
+    electronic_key: ElectronicKey
     app_key: AppKey
     wallet_key: WalletKey
     passcode: Passcode
     blocked: bool
-    def __init__(self, name: _Optional[str] = ..., parent: _Optional[str] = ..., given_name: _Optional[str] = ..., family_name: _Optional[str] = ..., display_name: _Optional[str] = ..., email: _Optional[str] = ..., activate_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., expire_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., photo: _Optional[str] = ..., photo_uri: _Optional[str] = ..., card_key: _Optional[_Union[CardKey, _Mapping]] = ..., app_key: _Optional[_Union[AppKey, _Mapping]] = ..., wallet_key: _Optional[_Union[WalletKey, _Mapping]] = ..., passcode: _Optional[_Union[Passcode, _Mapping]] = ..., blocked: bool = ...) -> None: ...
+    def __init__(self, name: _Optional[str] = ..., parent: _Optional[str] = ..., given_name: _Optional[str] = ..., family_name: _Optional[str] = ..., display_name: _Optional[str] = ..., email: _Optional[str] = ..., activate_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., expire_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., photo: _Optional[str] = ..., photo_uri: _Optional[str] = ..., card_key: _Optional[_Union[CardKey, _Mapping]] = ..., electronic_key: _Optional[_Union[ElectronicKey, _Mapping]] = ..., app_key: _Optional[_Union[AppKey, _Mapping]] = ..., wallet_key: _Optional[_Union[WalletKey, _Mapping]] = ..., passcode: _Optional[_Union[Passcode, _Mapping]] = ..., blocked: bool = ...) -> None: ...
 
 class UserAccessRight(_message.Message):
     __slots__ = ("name", "access_right", "display_name", "schedules", "effective_schedules", "activate_time", "expire_time")
