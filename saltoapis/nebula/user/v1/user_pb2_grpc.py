@@ -132,6 +132,21 @@ class UserServiceStub(object):
                 request_serializer=salto_dot_nebula_dot_user_dot_v1_dot_user__pb2.CancelPasscodeRequest.SerializeToString,
                 response_deserializer=salto_dot_nebula_dot_user_dot_v1_dot_user__pb2.CancelPasscodeResponse.FromString,
                 _registered_method=True)
+        self.AssignElectronicKey = channel.unary_unary(
+                '/salto.nebula.user.v1.UserService/AssignElectronicKey',
+                request_serializer=salto_dot_nebula_dot_user_dot_v1_dot_user__pb2.AssignElectronicKeyRequest.SerializeToString,
+                response_deserializer=salto_dot_nebula_dot_user_dot_v1_dot_user__pb2.AssignElectronicKeyResponse.FromString,
+                _registered_method=True)
+        self.CancelElectronicKey = channel.unary_unary(
+                '/salto.nebula.user.v1.UserService/CancelElectronicKey',
+                request_serializer=salto_dot_nebula_dot_user_dot_v1_dot_user__pb2.CancelElectronicKeyRequest.SerializeToString,
+                response_deserializer=salto_dot_nebula_dot_user_dot_v1_dot_user__pb2.CancelElectronicKeyResponse.FromString,
+                _registered_method=True)
+        self.EncodeElectronicKey = channel.unary_unary(
+                '/salto.nebula.user.v1.UserService/EncodeElectronicKey',
+                request_serializer=salto_dot_nebula_dot_user_dot_v1_dot_user__pb2.EncodeElectronicKeyRequest.SerializeToString,
+                response_deserializer=salto_dot_longrunning_dot_v1_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
 
 
 class UserServiceServicer(object):
@@ -347,6 +362,33 @@ class UserServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def AssignElectronicKey(self, request, context):
+        """Assign an electronic key
+
+        Assigns an electronic key to an existing user.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CancelElectronicKey(self, request, context):
+        """Cancel an electronic key
+
+        Cancels an existing user's electronic key.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def EncodeElectronicKey(self, request, context):
+        """Encode an electronic key
+
+        Encodes an existing user's electronic key.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_UserServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -459,6 +501,21 @@ def add_UserServiceServicer_to_server(servicer, server):
                     servicer.CancelPasscode,
                     request_deserializer=salto_dot_nebula_dot_user_dot_v1_dot_user__pb2.CancelPasscodeRequest.FromString,
                     response_serializer=salto_dot_nebula_dot_user_dot_v1_dot_user__pb2.CancelPasscodeResponse.SerializeToString,
+            ),
+            'AssignElectronicKey': grpc.unary_unary_rpc_method_handler(
+                    servicer.AssignElectronicKey,
+                    request_deserializer=salto_dot_nebula_dot_user_dot_v1_dot_user__pb2.AssignElectronicKeyRequest.FromString,
+                    response_serializer=salto_dot_nebula_dot_user_dot_v1_dot_user__pb2.AssignElectronicKeyResponse.SerializeToString,
+            ),
+            'CancelElectronicKey': grpc.unary_unary_rpc_method_handler(
+                    servicer.CancelElectronicKey,
+                    request_deserializer=salto_dot_nebula_dot_user_dot_v1_dot_user__pb2.CancelElectronicKeyRequest.FromString,
+                    response_serializer=salto_dot_nebula_dot_user_dot_v1_dot_user__pb2.CancelElectronicKeyResponse.SerializeToString,
+            ),
+            'EncodeElectronicKey': grpc.unary_unary_rpc_method_handler(
+                    servicer.EncodeElectronicKey,
+                    request_deserializer=salto_dot_nebula_dot_user_dot_v1_dot_user__pb2.EncodeElectronicKeyRequest.FromString,
+                    response_serializer=salto_dot_longrunning_dot_v1_dot_operation__pb2.Operation.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -1059,6 +1116,87 @@ class UserService(object):
             '/salto.nebula.user.v1.UserService/CancelPasscode',
             salto_dot_nebula_dot_user_dot_v1_dot_user__pb2.CancelPasscodeRequest.SerializeToString,
             salto_dot_nebula_dot_user_dot_v1_dot_user__pb2.CancelPasscodeResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def AssignElectronicKey(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/salto.nebula.user.v1.UserService/AssignElectronicKey',
+            salto_dot_nebula_dot_user_dot_v1_dot_user__pb2.AssignElectronicKeyRequest.SerializeToString,
+            salto_dot_nebula_dot_user_dot_v1_dot_user__pb2.AssignElectronicKeyResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def CancelElectronicKey(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/salto.nebula.user.v1.UserService/CancelElectronicKey',
+            salto_dot_nebula_dot_user_dot_v1_dot_user__pb2.CancelElectronicKeyRequest.SerializeToString,
+            salto_dot_nebula_dot_user_dot_v1_dot_user__pb2.CancelElectronicKeyResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def EncodeElectronicKey(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/salto.nebula.user.v1.UserService/EncodeElectronicKey',
+            salto_dot_nebula_dot_user_dot_v1_dot_user__pb2.EncodeElectronicKeyRequest.SerializeToString,
+            salto_dot_longrunning_dot_v1_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,
             insecure,
