@@ -12,7 +12,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class ElectronicKey(_message.Message):
-    __slots__ = ("name", "display_name", "initialized", "device_id", "outdated", "device_metadata", "low_battery")
+    __slots__ = ("name", "display_name", "initialized", "device_id", "outdated", "device_metadata", "low_battery", "user")
     NAME_FIELD_NUMBER: _ClassVar[int]
     DISPLAY_NAME_FIELD_NUMBER: _ClassVar[int]
     INITIALIZED_FIELD_NUMBER: _ClassVar[int]
@@ -20,6 +20,7 @@ class ElectronicKey(_message.Message):
     OUTDATED_FIELD_NUMBER: _ClassVar[int]
     DEVICE_METADATA_FIELD_NUMBER: _ClassVar[int]
     LOW_BATTERY_FIELD_NUMBER: _ClassVar[int]
+    USER_FIELD_NUMBER: _ClassVar[int]
     name: str
     display_name: str
     initialized: bool
@@ -27,7 +28,8 @@ class ElectronicKey(_message.Message):
     outdated: bool
     device_metadata: _device_metadata_pb2.DeviceMetadata
     low_battery: bool
-    def __init__(self, name: _Optional[str] = ..., display_name: _Optional[str] = ..., initialized: bool = ..., device_id: _Optional[str] = ..., outdated: bool = ..., device_metadata: _Optional[_Union[_device_metadata_pb2.DeviceMetadata, _Mapping]] = ..., low_battery: bool = ...) -> None: ...
+    user: str
+    def __init__(self, name: _Optional[str] = ..., display_name: _Optional[str] = ..., initialized: bool = ..., device_id: _Optional[str] = ..., outdated: bool = ..., device_metadata: _Optional[_Union[_device_metadata_pb2.DeviceMetadata, _Mapping]] = ..., low_battery: bool = ..., user: _Optional[str] = ...) -> None: ...
 
 class CreateElectronicKeyRequest(_message.Message):
     __slots__ = ("parent", "electronic_key_id", "electronic_key")
