@@ -13,7 +13,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class AccessPoint(_message.Message):
-    __slots__ = ("name", "display_name", "fixed", "schedule", "calendar", "card_key_updater", "unlock_duration", "left_open")
+    __slots__ = ("name", "display_name", "fixed", "schedule", "calendar", "card_key_updater", "unlock_duration", "left_open", "electronic_lock", "controller", "intercom_adaptor")
     NAME_FIELD_NUMBER: _ClassVar[int]
     DISPLAY_NAME_FIELD_NUMBER: _ClassVar[int]
     FIXED_FIELD_NUMBER: _ClassVar[int]
@@ -22,6 +22,9 @@ class AccessPoint(_message.Message):
     CARD_KEY_UPDATER_FIELD_NUMBER: _ClassVar[int]
     UNLOCK_DURATION_FIELD_NUMBER: _ClassVar[int]
     LEFT_OPEN_FIELD_NUMBER: _ClassVar[int]
+    ELECTRONIC_LOCK_FIELD_NUMBER: _ClassVar[int]
+    CONTROLLER_FIELD_NUMBER: _ClassVar[int]
+    INTERCOM_ADAPTOR_FIELD_NUMBER: _ClassVar[int]
     name: str
     display_name: str
     fixed: _opening_mode_pb2.OpeningMode
@@ -30,7 +33,10 @@ class AccessPoint(_message.Message):
     card_key_updater: bool
     unlock_duration: _duration_pb2.Duration
     left_open: bool
-    def __init__(self, name: _Optional[str] = ..., display_name: _Optional[str] = ..., fixed: _Optional[_Union[_opening_mode_pb2.OpeningMode, str]] = ..., schedule: _Optional[str] = ..., calendar: _Optional[str] = ..., card_key_updater: bool = ..., unlock_duration: _Optional[_Union[_duration_pb2.Duration, _Mapping]] = ..., left_open: bool = ...) -> None: ...
+    electronic_lock: str
+    controller: str
+    intercom_adaptor: str
+    def __init__(self, name: _Optional[str] = ..., display_name: _Optional[str] = ..., fixed: _Optional[_Union[_opening_mode_pb2.OpeningMode, str]] = ..., schedule: _Optional[str] = ..., calendar: _Optional[str] = ..., card_key_updater: bool = ..., unlock_duration: _Optional[_Union[_duration_pb2.Duration, _Mapping]] = ..., left_open: bool = ..., electronic_lock: _Optional[str] = ..., controller: _Optional[str] = ..., intercom_adaptor: _Optional[str] = ...) -> None: ...
 
 class CreateAccessPointRequest(_message.Message):
     __slots__ = ("parent", "access_point_id", "access_point")
