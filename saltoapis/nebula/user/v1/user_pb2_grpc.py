@@ -32,6 +32,11 @@ class UserServiceStub(object):
                 request_serializer=salto_dot_nebula_dot_user_dot_v1_dot_user__pb2.GetUserRequest.SerializeToString,
                 response_deserializer=salto_dot_nebula_dot_user_dot_v1_dot_user__pb2.User.FromString,
                 _registered_method=True)
+        self.BatchGetUsers = channel.unary_unary(
+                '/salto.nebula.user.v1.UserService/BatchGetUsers',
+                request_serializer=salto_dot_nebula_dot_user_dot_v1_dot_user__pb2.BatchGetUsersRequest.SerializeToString,
+                response_deserializer=salto_dot_nebula_dot_user_dot_v1_dot_user__pb2.BatchGetUsersResponse.FromString,
+                _registered_method=True)
         self.ListUsers = channel.unary_unary(
                 '/salto.nebula.user.v1.UserService/ListUsers',
                 request_serializer=salto_dot_nebula_dot_user_dot_v1_dot_user__pb2.ListUsersRequest.SerializeToString,
@@ -169,6 +174,15 @@ class UserServiceServicer(object):
         """Get a user
 
         Retrieves an existing user.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def BatchGetUsers(self, request, context):
+        """Get a batch of users
+
+        Retrieves a batch of existing users.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -407,6 +421,11 @@ def add_UserServiceServicer_to_server(servicer, server):
                     request_deserializer=salto_dot_nebula_dot_user_dot_v1_dot_user__pb2.GetUserRequest.FromString,
                     response_serializer=salto_dot_nebula_dot_user_dot_v1_dot_user__pb2.User.SerializeToString,
             ),
+            'BatchGetUsers': grpc.unary_unary_rpc_method_handler(
+                    servicer.BatchGetUsers,
+                    request_deserializer=salto_dot_nebula_dot_user_dot_v1_dot_user__pb2.BatchGetUsersRequest.FromString,
+                    response_serializer=salto_dot_nebula_dot_user_dot_v1_dot_user__pb2.BatchGetUsersResponse.SerializeToString,
+            ),
             'ListUsers': grpc.unary_unary_rpc_method_handler(
                     servicer.ListUsers,
                     request_deserializer=salto_dot_nebula_dot_user_dot_v1_dot_user__pb2.ListUsersRequest.FromString,
@@ -581,6 +600,33 @@ class UserService(object):
             '/salto.nebula.user.v1.UserService/GetUser',
             salto_dot_nebula_dot_user_dot_v1_dot_user__pb2.GetUserRequest.SerializeToString,
             salto_dot_nebula_dot_user_dot_v1_dot_user__pb2.User.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def BatchGetUsers(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/salto.nebula.user.v1.UserService/BatchGetUsers',
+            salto_dot_nebula_dot_user_dot_v1_dot_user__pb2.BatchGetUsersRequest.SerializeToString,
+            salto_dot_nebula_dot_user_dot_v1_dot_user__pb2.BatchGetUsersResponse.FromString,
             options,
             channel_credentials,
             insecure,
