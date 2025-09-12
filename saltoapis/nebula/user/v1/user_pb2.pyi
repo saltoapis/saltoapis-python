@@ -183,6 +183,20 @@ class GetUserRequest(_message.Message):
     name: str
     def __init__(self, name: _Optional[str] = ...) -> None: ...
 
+class BatchGetUsersRequest(_message.Message):
+    __slots__ = ("parent", "names")
+    PARENT_FIELD_NUMBER: _ClassVar[int]
+    NAMES_FIELD_NUMBER: _ClassVar[int]
+    parent: str
+    names: _containers.RepeatedScalarFieldContainer[str]
+    def __init__(self, parent: _Optional[str] = ..., names: _Optional[_Iterable[str]] = ...) -> None: ...
+
+class BatchGetUsersResponse(_message.Message):
+    __slots__ = ("users",)
+    USERS_FIELD_NUMBER: _ClassVar[int]
+    users: _containers.RepeatedCompositeFieldContainer[User]
+    def __init__(self, users: _Optional[_Iterable[_Union[User, _Mapping]]] = ...) -> None: ...
+
 class ListUsersRequest(_message.Message):
     __slots__ = ("parent", "page_size", "page_token", "filter", "order_by")
     PARENT_FIELD_NUMBER: _ClassVar[int]
