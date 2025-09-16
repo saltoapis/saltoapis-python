@@ -294,3 +294,19 @@ class EmergencyKeyDeleted(_message.Message):
     EMERGENCY_KEY_FIELD_NUMBER: _ClassVar[int]
     emergency_key: _emergency_key_pb2.EmergencyKey
     def __init__(self, emergency_key: _Optional[_Union[_emergency_key_pb2.EmergencyKey, _Mapping]] = ...) -> None: ...
+
+class ElectronicKeyAssigned(_message.Message):
+    __slots__ = ("user", "electronic_key")
+    USER_FIELD_NUMBER: _ClassVar[int]
+    ELECTRONIC_KEY_FIELD_NUMBER: _ClassVar[int]
+    user: _user_pb2.User
+    electronic_key: _user_pb2.ElectronicKey
+    def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., electronic_key: _Optional[_Union[_user_pb2.ElectronicKey, _Mapping]] = ...) -> None: ...
+
+class ElectronicKeyCanceled(_message.Message):
+    __slots__ = ("user", "electronic_key")
+    USER_FIELD_NUMBER: _ClassVar[int]
+    ELECTRONIC_KEY_FIELD_NUMBER: _ClassVar[int]
+    user: _user_pb2.User
+    electronic_key: _user_pb2.ElectronicKey
+    def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., electronic_key: _Optional[_Union[_user_pb2.ElectronicKey, _Mapping]] = ...) -> None: ...
