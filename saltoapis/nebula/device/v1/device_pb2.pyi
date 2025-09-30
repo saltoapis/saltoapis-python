@@ -9,7 +9,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Device(_message.Message):
-    __slots__ = ("name", "display_name", "device_id", "device_type", "source", "gateway", "extender", "outdated", "connected", "low_battery", "last_event_time")
+    __slots__ = ("name", "display_name", "device_id", "device_type", "source", "gateway", "extender", "outdated", "connected", "low_battery", "last_event_time", "initialized")
     NAME_FIELD_NUMBER: _ClassVar[int]
     DISPLAY_NAME_FIELD_NUMBER: _ClassVar[int]
     DEVICE_ID_FIELD_NUMBER: _ClassVar[int]
@@ -21,6 +21,7 @@ class Device(_message.Message):
     CONNECTED_FIELD_NUMBER: _ClassVar[int]
     LOW_BATTERY_FIELD_NUMBER: _ClassVar[int]
     LAST_EVENT_TIME_FIELD_NUMBER: _ClassVar[int]
+    INITIALIZED_FIELD_NUMBER: _ClassVar[int]
     name: str
     display_name: str
     device_id: str
@@ -32,7 +33,8 @@ class Device(_message.Message):
     connected: bool
     low_battery: bool
     last_event_time: _timestamp_pb2.Timestamp
-    def __init__(self, name: _Optional[str] = ..., display_name: _Optional[str] = ..., device_id: _Optional[str] = ..., device_type: _Optional[_Union[_device_type_pb2.DeviceType, str]] = ..., source: _Optional[str] = ..., gateway: _Optional[str] = ..., extender: _Optional[str] = ..., outdated: bool = ..., connected: bool = ..., low_battery: bool = ..., last_event_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+    initialized: bool
+    def __init__(self, name: _Optional[str] = ..., display_name: _Optional[str] = ..., device_id: _Optional[str] = ..., device_type: _Optional[_Union[_device_type_pb2.DeviceType, str]] = ..., source: _Optional[str] = ..., gateway: _Optional[str] = ..., extender: _Optional[str] = ..., outdated: bool = ..., connected: bool = ..., low_battery: bool = ..., last_event_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., initialized: bool = ...) -> None: ...
 
 class GetDeviceRequest(_message.Message):
     __slots__ = ("name",)

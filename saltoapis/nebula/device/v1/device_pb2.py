@@ -27,7 +27,7 @@ from saltoapis.nebula.type import device_type_pb2 as salto_dot_nebula_dot_type_d
 from saltoapis.nebula.type import device_type_pb2 as salto_dot_nebula_dot_type_dot_device__type__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#salto/nebula/device/v1/device.proto\x12\x16salto.nebula.device.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a#salto/nebula/type/device_type.proto\"\xe5\x02\n\x06\x44\x65vice\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x14\n\x0c\x64isplay_name\x18\x02 \x01(\t\x12\x16\n\tdevice_id\x18\x03 \x01(\tH\x01\x88\x01\x01\x12\x32\n\x0b\x64\x65vice_type\x18\x04 \x01(\x0e\x32\x1d.salto.nebula.type.DeviceType\x12\x0e\n\x06source\x18\x05 \x01(\t\x12\x11\n\x07gateway\x18\x06 \x01(\tH\x00\x12\x12\n\x08\x65xtender\x18\x07 \x01(\tH\x00\x12\x10\n\x08outdated\x18\x08 \x01(\x08\x12\x16\n\tconnected\x18\t \x01(\x08H\x02\x88\x01\x01\x12\x18\n\x0blow_battery\x18\n \x01(\x08H\x03\x88\x01\x01\x12\x33\n\x0flast_event_time\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x0f\n\rparent_deviceB\x0c\n\n_device_idB\x0c\n\n_connectedB\x0e\n\x0c_low_battery\" \n\x10GetDeviceRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"m\n\x12ListDevicesRequest\x12\x0e\n\x06parent\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\x12\x0e\n\x06\x66ilter\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\"s\n\x13ListDevicesResponse\x12/\n\x07\x64\x65vices\x18\x01 \x03(\x0b\x32\x1e.salto.nebula.device.v1.Device\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\x12\x12\n\ntotal_size\x18\x03 \x01(\x05\x32\xce\x01\n\rDeviceService\x12U\n\tGetDevice\x12(.salto.nebula.device.v1.GetDeviceRequest\x1a\x1e.salto.nebula.device.v1.Device\x12\x66\n\x0bListDevices\x12*.salto.nebula.device.v1.ListDevicesRequest\x1a+.salto.nebula.device.v1.ListDevicesResponseB\xd6\x01\n\x1e\x63om.saltoapis.nebula.device.v1B\x0b\x44\x65viceProtoP\x01ZBgithub.com/saltoapis-internal/saltoapis-go/nebula/device/v1;device\xaa\x02\x1aSaltoapis.Nebula.Device.V1\xca\x02\x1aSaltoapis\\Nebula\\Device\\V1\xe2\x02&GPBMetadata\\Saltoapis\\Nebula\\Device\\V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#salto/nebula/device/v1/device.proto\x12\x16salto.nebula.device.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a#salto/nebula/type/device_type.proto\"\xfa\x02\n\x06\x44\x65vice\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x14\n\x0c\x64isplay_name\x18\x02 \x01(\t\x12\x16\n\tdevice_id\x18\x03 \x01(\tH\x01\x88\x01\x01\x12\x32\n\x0b\x64\x65vice_type\x18\x04 \x01(\x0e\x32\x1d.salto.nebula.type.DeviceType\x12\x0e\n\x06source\x18\x05 \x01(\t\x12\x11\n\x07gateway\x18\x06 \x01(\tH\x00\x12\x12\n\x08\x65xtender\x18\x07 \x01(\tH\x00\x12\x10\n\x08outdated\x18\x08 \x01(\x08\x12\x16\n\tconnected\x18\t \x01(\x08H\x02\x88\x01\x01\x12\x18\n\x0blow_battery\x18\n \x01(\x08H\x03\x88\x01\x01\x12\x33\n\x0flast_event_time\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x13\n\x0binitialized\x18\x0c \x01(\x08\x42\x0f\n\rparent_deviceB\x0c\n\n_device_idB\x0c\n\n_connectedB\x0e\n\x0c_low_battery\" \n\x10GetDeviceRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"m\n\x12ListDevicesRequest\x12\x0e\n\x06parent\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\x12\x0e\n\x06\x66ilter\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\"s\n\x13ListDevicesResponse\x12/\n\x07\x64\x65vices\x18\x01 \x03(\x0b\x32\x1e.salto.nebula.device.v1.Device\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\x12\x12\n\ntotal_size\x18\x03 \x01(\x05\x32\xce\x01\n\rDeviceService\x12U\n\tGetDevice\x12(.salto.nebula.device.v1.GetDeviceRequest\x1a\x1e.salto.nebula.device.v1.Device\x12\x66\n\x0bListDevices\x12*.salto.nebula.device.v1.ListDevicesRequest\x1a+.salto.nebula.device.v1.ListDevicesResponseB\xd6\x01\n\x1e\x63om.saltoapis.nebula.device.v1B\x0b\x44\x65viceProtoP\x01ZBgithub.com/saltoapis-internal/saltoapis-go/nebula/device/v1;device\xaa\x02\x1aSaltoapis.Nebula.Device.V1\xca\x02\x1aSaltoapis\\Nebula\\Device\\V1\xe2\x02&GPBMetadata\\Saltoapis\\Nebula\\Device\\V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -36,13 +36,13 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\036com.saltoapis.nebula.device.v1B\013DeviceProtoP\001ZBgithub.com/saltoapis-internal/saltoapis-go/nebula/device/v1;device\252\002\032Saltoapis.Nebula.Device.V1\312\002\032Saltoapis\\Nebula\\Device\\V1\342\002&GPBMetadata\\Saltoapis\\Nebula\\Device\\V1'
   _globals['_DEVICE']._serialized_start=134
-  _globals['_DEVICE']._serialized_end=491
-  _globals['_GETDEVICEREQUEST']._serialized_start=493
-  _globals['_GETDEVICEREQUEST']._serialized_end=525
-  _globals['_LISTDEVICESREQUEST']._serialized_start=527
-  _globals['_LISTDEVICESREQUEST']._serialized_end=636
-  _globals['_LISTDEVICESRESPONSE']._serialized_start=638
-  _globals['_LISTDEVICESRESPONSE']._serialized_end=753
-  _globals['_DEVICESERVICE']._serialized_start=756
-  _globals['_DEVICESERVICE']._serialized_end=962
+  _globals['_DEVICE']._serialized_end=512
+  _globals['_GETDEVICEREQUEST']._serialized_start=514
+  _globals['_GETDEVICEREQUEST']._serialized_end=546
+  _globals['_LISTDEVICESREQUEST']._serialized_start=548
+  _globals['_LISTDEVICESREQUEST']._serialized_end=657
+  _globals['_LISTDEVICESRESPONSE']._serialized_start=659
+  _globals['_LISTDEVICESRESPONSE']._serialized_end=774
+  _globals['_DEVICESERVICE']._serialized_start=777
+  _globals['_DEVICESERVICE']._serialized_end=983
 # @@protoc_insertion_point(module_scope)
