@@ -16,23 +16,35 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
+class Principal(_message.Message):
+    __slots__ = ("user",)
+    USER_FIELD_NUMBER: _ClassVar[int]
+    user: _user_pb2.User
+    def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ...) -> None: ...
+
 class AccessPointCreated(_message.Message):
-    __slots__ = ("access_point",)
+    __slots__ = ("access_point", "actor")
     ACCESS_POINT_FIELD_NUMBER: _ClassVar[int]
+    ACTOR_FIELD_NUMBER: _ClassVar[int]
     access_point: _access_point_pb2.AccessPoint
-    def __init__(self, access_point: _Optional[_Union[_access_point_pb2.AccessPoint, _Mapping]] = ...) -> None: ...
+    actor: Principal
+    def __init__(self, access_point: _Optional[_Union[_access_point_pb2.AccessPoint, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class AccessPointUpdated(_message.Message):
-    __slots__ = ("access_point",)
+    __slots__ = ("access_point", "actor")
     ACCESS_POINT_FIELD_NUMBER: _ClassVar[int]
+    ACTOR_FIELD_NUMBER: _ClassVar[int]
     access_point: _access_point_pb2.AccessPoint
-    def __init__(self, access_point: _Optional[_Union[_access_point_pb2.AccessPoint, _Mapping]] = ...) -> None: ...
+    actor: Principal
+    def __init__(self, access_point: _Optional[_Union[_access_point_pb2.AccessPoint, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class AccessPointDeleted(_message.Message):
-    __slots__ = ("access_point",)
+    __slots__ = ("access_point", "actor")
     ACCESS_POINT_FIELD_NUMBER: _ClassVar[int]
+    ACTOR_FIELD_NUMBER: _ClassVar[int]
     access_point: _access_point_pb2.AccessPoint
-    def __init__(self, access_point: _Optional[_Union[_access_point_pb2.AccessPoint, _Mapping]] = ...) -> None: ...
+    actor: Principal
+    def __init__(self, access_point: _Optional[_Union[_access_point_pb2.AccessPoint, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class AccessPointUnlocked(_message.Message):
     __slots__ = ("access_point", "user", "emergency_key", "card_key", "app_key", "wallet_key", "passcode")
