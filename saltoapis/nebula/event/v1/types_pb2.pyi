@@ -87,7 +87,9 @@ class AccessDenied(_message.Message):
     class Reason(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         REASON_UNSPECIFIED: _ClassVar[AccessDenied.Reason]
+        CREDENTIAL_EXPIRED: _ClassVar[AccessDenied.Reason]
     REASON_UNSPECIFIED: AccessDenied.Reason
+    CREDENTIAL_EXPIRED: AccessDenied.Reason
     ACCESS_POINT_FIELD_NUMBER: _ClassVar[int]
     USER_FIELD_NUMBER: _ClassVar[int]
     REASON_FIELD_NUMBER: _ClassVar[int]
