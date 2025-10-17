@@ -9,6 +9,7 @@ from saltoapis.nebula.unit.v1 import unit_pb2 as _unit_pb2
 from saltoapis.nebula.user.v1 import user_pb2 as _user_pb2
 from saltoapis.nebula.user.v1 import user_pb2 as _user_pb2
 from google.protobuf.internal import containers as _containers
+from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
@@ -82,12 +83,18 @@ class AccessPointClosed(_message.Message):
     def __init__(self, access_point: _Optional[_Union[_access_point_pb2.AccessPoint, _Mapping]] = ...) -> None: ...
 
 class AccessDenied(_message.Message):
-    __slots__ = ("access_point", "user")
+    __slots__ = ("access_point", "user", "reason")
+    class Reason(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = ()
+        REASON_UNSPECIFIED: _ClassVar[AccessDenied.Reason]
+    REASON_UNSPECIFIED: AccessDenied.Reason
     ACCESS_POINT_FIELD_NUMBER: _ClassVar[int]
     USER_FIELD_NUMBER: _ClassVar[int]
+    REASON_FIELD_NUMBER: _ClassVar[int]
     access_point: _access_point_pb2.AccessPoint
     user: _user_pb2.User
-    def __init__(self, access_point: _Optional[_Union[_access_point_pb2.AccessPoint, _Mapping]] = ..., user: _Optional[_Union[_user_pb2.User, _Mapping]] = ...) -> None: ...
+    reason: AccessDenied.Reason
+    def __init__(self, access_point: _Optional[_Union[_access_point_pb2.AccessPoint, _Mapping]] = ..., user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., reason: _Optional[_Union[AccessDenied.Reason, str]] = ...) -> None: ...
 
 class AccessPointLeftOpen(_message.Message):
     __slots__ = ("access_point",)
