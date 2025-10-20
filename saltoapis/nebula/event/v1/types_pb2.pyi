@@ -1,3 +1,4 @@
+from google.protobuf import struct_pb2 as _struct_pb2
 from saltoapis.nebula.accesspoint.v1 import access_point_pb2 as _access_point_pb2
 from saltoapis.nebula.accesspoint.v1 import access_point_pb2 as _access_point_pb2
 from saltoapis.nebula.accessright.v1 import access_right_pb2 as _access_right_pb2
@@ -21,6 +22,19 @@ class Principal(_message.Message):
     USER_FIELD_NUMBER: _ClassVar[int]
     user: _user_pb2.User
     def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ...) -> None: ...
+
+class PreviousValues(_message.Message):
+    __slots__ = ("values",)
+    class ValuesEntry(_message.Message):
+        __slots__ = ("key", "value")
+        KEY_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        key: str
+        value: _struct_pb2.Value
+        def __init__(self, key: _Optional[str] = ..., value: _Optional[_Union[_struct_pb2.Value, _Mapping]] = ...) -> None: ...
+    VALUES_FIELD_NUMBER: _ClassVar[int]
+    values: _containers.RepeatedCompositeFieldContainer[PreviousValues.ValuesEntry]
+    def __init__(self, values: _Optional[_Iterable[_Union[PreviousValues.ValuesEntry, _Mapping]]] = ...) -> None: ...
 
 class AccessPointCreated(_message.Message):
     __slots__ = ("access_point", "actor")
