@@ -165,90 +165,114 @@ class AccessRightDeleted(_message.Message):
     def __init__(self, access_right: _Optional[_Union[_access_right_pb2.AccessRight, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class AccessRightAccessPointCreated(_message.Message):
-    __slots__ = ("access_right", "access_point")
+    __slots__ = ("access_right", "access_point", "actor")
     ACCESS_RIGHT_FIELD_NUMBER: _ClassVar[int]
     ACCESS_POINT_FIELD_NUMBER: _ClassVar[int]
+    ACTOR_FIELD_NUMBER: _ClassVar[int]
     access_right: _access_right_pb2.AccessRight
     access_point: _access_point_pb2.AccessPoint
-    def __init__(self, access_right: _Optional[_Union[_access_right_pb2.AccessRight, _Mapping]] = ..., access_point: _Optional[_Union[_access_point_pb2.AccessPoint, _Mapping]] = ...) -> None: ...
+    actor: Principal
+    def __init__(self, access_right: _Optional[_Union[_access_right_pb2.AccessRight, _Mapping]] = ..., access_point: _Optional[_Union[_access_point_pb2.AccessPoint, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class AccessRightAccessPointsBatchCreated(_message.Message):
-    __slots__ = ("access_right", "access_points")
+    __slots__ = ("access_right", "access_points", "actor")
     ACCESS_RIGHT_FIELD_NUMBER: _ClassVar[int]
     ACCESS_POINTS_FIELD_NUMBER: _ClassVar[int]
+    ACTOR_FIELD_NUMBER: _ClassVar[int]
     access_right: _access_right_pb2.AccessRight
     access_points: _containers.RepeatedCompositeFieldContainer[_access_point_pb2.AccessPoint]
-    def __init__(self, access_right: _Optional[_Union[_access_right_pb2.AccessRight, _Mapping]] = ..., access_points: _Optional[_Iterable[_Union[_access_point_pb2.AccessPoint, _Mapping]]] = ...) -> None: ...
+    actor: Principal
+    def __init__(self, access_right: _Optional[_Union[_access_right_pb2.AccessRight, _Mapping]] = ..., access_points: _Optional[_Iterable[_Union[_access_point_pb2.AccessPoint, _Mapping]]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class AccessRightAccessPointDeleted(_message.Message):
-    __slots__ = ("access_right", "access_point")
+    __slots__ = ("access_right", "access_point", "actor")
     ACCESS_RIGHT_FIELD_NUMBER: _ClassVar[int]
     ACCESS_POINT_FIELD_NUMBER: _ClassVar[int]
+    ACTOR_FIELD_NUMBER: _ClassVar[int]
     access_right: _access_right_pb2.AccessRight
     access_point: _access_point_pb2.AccessPoint
-    def __init__(self, access_right: _Optional[_Union[_access_right_pb2.AccessRight, _Mapping]] = ..., access_point: _Optional[_Union[_access_point_pb2.AccessPoint, _Mapping]] = ...) -> None: ...
+    actor: Principal
+    def __init__(self, access_right: _Optional[_Union[_access_right_pb2.AccessRight, _Mapping]] = ..., access_point: _Optional[_Union[_access_point_pb2.AccessPoint, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class AccessRightAccessPointsBatchDeleted(_message.Message):
-    __slots__ = ("access_right", "access_points")
+    __slots__ = ("access_right", "access_points", "actor")
     ACCESS_RIGHT_FIELD_NUMBER: _ClassVar[int]
     ACCESS_POINTS_FIELD_NUMBER: _ClassVar[int]
+    ACTOR_FIELD_NUMBER: _ClassVar[int]
     access_right: _access_right_pb2.AccessRight
     access_points: _containers.RepeatedCompositeFieldContainer[_access_point_pb2.AccessPoint]
-    def __init__(self, access_right: _Optional[_Union[_access_right_pb2.AccessRight, _Mapping]] = ..., access_points: _Optional[_Iterable[_Union[_access_point_pb2.AccessPoint, _Mapping]]] = ...) -> None: ...
+    actor: Principal
+    def __init__(self, access_right: _Optional[_Union[_access_right_pb2.AccessRight, _Mapping]] = ..., access_points: _Optional[_Iterable[_Union[_access_point_pb2.AccessPoint, _Mapping]]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class UserCreated(_message.Message):
-    __slots__ = ("user",)
+    __slots__ = ("user", "actor")
     USER_FIELD_NUMBER: _ClassVar[int]
+    ACTOR_FIELD_NUMBER: _ClassVar[int]
     user: _user_pb2.User
-    def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ...) -> None: ...
+    actor: Principal
+    def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class UserUpdated(_message.Message):
-    __slots__ = ("user",)
+    __slots__ = ("user", "actor")
     USER_FIELD_NUMBER: _ClassVar[int]
+    ACTOR_FIELD_NUMBER: _ClassVar[int]
     user: _user_pb2.User
-    def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ...) -> None: ...
+    actor: Principal
+    def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class UserBlocked(_message.Message):
-    __slots__ = ("user",)
+    __slots__ = ("user", "actor")
     USER_FIELD_NUMBER: _ClassVar[int]
+    ACTOR_FIELD_NUMBER: _ClassVar[int]
     user: _user_pb2.User
-    def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ...) -> None: ...
+    actor: Principal
+    def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class UserUnblocked(_message.Message):
-    __slots__ = ("user",)
+    __slots__ = ("user", "actor")
     USER_FIELD_NUMBER: _ClassVar[int]
+    ACTOR_FIELD_NUMBER: _ClassVar[int]
     user: _user_pb2.User
-    def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ...) -> None: ...
+    actor: Principal
+    def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class UserDeleted(_message.Message):
-    __slots__ = ("user",)
+    __slots__ = ("user", "actor")
     USER_FIELD_NUMBER: _ClassVar[int]
+    ACTOR_FIELD_NUMBER: _ClassVar[int]
     user: _user_pb2.User
-    def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ...) -> None: ...
+    actor: Principal
+    def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class UserAccessRightCreated(_message.Message):
-    __slots__ = ("user", "access_right")
+    __slots__ = ("user", "access_right", "actor")
     USER_FIELD_NUMBER: _ClassVar[int]
     ACCESS_RIGHT_FIELD_NUMBER: _ClassVar[int]
+    ACTOR_FIELD_NUMBER: _ClassVar[int]
     user: _user_pb2.User
     access_right: _access_right_pb2.AccessRight
-    def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., access_right: _Optional[_Union[_access_right_pb2.AccessRight, _Mapping]] = ...) -> None: ...
+    actor: Principal
+    def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., access_right: _Optional[_Union[_access_right_pb2.AccessRight, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class UserAccessRightUpdated(_message.Message):
-    __slots__ = ("user", "access_right")
+    __slots__ = ("user", "access_right", "actor")
     USER_FIELD_NUMBER: _ClassVar[int]
     ACCESS_RIGHT_FIELD_NUMBER: _ClassVar[int]
+    ACTOR_FIELD_NUMBER: _ClassVar[int]
     user: _user_pb2.User
     access_right: _access_right_pb2.AccessRight
-    def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., access_right: _Optional[_Union[_access_right_pb2.AccessRight, _Mapping]] = ...) -> None: ...
+    actor: Principal
+    def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., access_right: _Optional[_Union[_access_right_pb2.AccessRight, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class UserAccessRightDeleted(_message.Message):
-    __slots__ = ("user", "access_right")
+    __slots__ = ("user", "access_right", "actor")
     USER_FIELD_NUMBER: _ClassVar[int]
     ACCESS_RIGHT_FIELD_NUMBER: _ClassVar[int]
+    ACTOR_FIELD_NUMBER: _ClassVar[int]
     user: _user_pb2.User
     access_right: _access_right_pb2.AccessRight
-    def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., access_right: _Optional[_Union[_access_right_pb2.AccessRight, _Mapping]] = ...) -> None: ...
+    actor: Principal
+    def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., access_right: _Optional[_Union[_access_right_pb2.AccessRight, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class CardKeyAssigned(_message.Message):
     __slots__ = ("user", "card_key")
