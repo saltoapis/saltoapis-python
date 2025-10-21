@@ -109,7 +109,7 @@ class AccessPointClosed(_message.Message):
     def __init__(self, access_point: _Optional[_Union[_access_point_pb2.AccessPoint, _Mapping]] = ...) -> None: ...
 
 class AccessDenied(_message.Message):
-    __slots__ = ("access_point", "user", "reason")
+    __slots__ = ("access_point", "user", "reason", "emergency_key", "card_key", "app_key", "wallet_key", "passcode")
     class Reason(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         REASON_UNSPECIFIED: _ClassVar[AccessDenied.Reason]
@@ -119,10 +119,20 @@ class AccessDenied(_message.Message):
     ACCESS_POINT_FIELD_NUMBER: _ClassVar[int]
     USER_FIELD_NUMBER: _ClassVar[int]
     REASON_FIELD_NUMBER: _ClassVar[int]
+    EMERGENCY_KEY_FIELD_NUMBER: _ClassVar[int]
+    CARD_KEY_FIELD_NUMBER: _ClassVar[int]
+    APP_KEY_FIELD_NUMBER: _ClassVar[int]
+    WALLET_KEY_FIELD_NUMBER: _ClassVar[int]
+    PASSCODE_FIELD_NUMBER: _ClassVar[int]
     access_point: _access_point_pb2.AccessPoint
     user: _user_pb2.User
     reason: AccessDenied.Reason
-    def __init__(self, access_point: _Optional[_Union[_access_point_pb2.AccessPoint, _Mapping]] = ..., user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., reason: _Optional[_Union[AccessDenied.Reason, str]] = ...) -> None: ...
+    emergency_key: _emergency_key_pb2.EmergencyKey
+    card_key: _user_pb2.CardKey
+    app_key: _user_pb2.AppKey
+    wallet_key: _user_pb2.WalletKey
+    passcode: _user_pb2.Passcode
+    def __init__(self, access_point: _Optional[_Union[_access_point_pb2.AccessPoint, _Mapping]] = ..., user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., reason: _Optional[_Union[AccessDenied.Reason, str]] = ..., emergency_key: _Optional[_Union[_emergency_key_pb2.EmergencyKey, _Mapping]] = ..., card_key: _Optional[_Union[_user_pb2.CardKey, _Mapping]] = ..., app_key: _Optional[_Union[_user_pb2.AppKey, _Mapping]] = ..., wallet_key: _Optional[_Union[_user_pb2.WalletKey, _Mapping]] = ..., passcode: _Optional[_Union[_user_pb2.Passcode, _Mapping]] = ...) -> None: ...
 
 class AccessPointLeftOpen(_message.Message):
     __slots__ = ("access_point",)
