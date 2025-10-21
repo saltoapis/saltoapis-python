@@ -275,52 +275,64 @@ class UserAccessRightDeleted(_message.Message):
     def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., access_right: _Optional[_Union[_access_right_pb2.AccessRight, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class CardKeyAssigned(_message.Message):
-    __slots__ = ("user", "card_key")
+    __slots__ = ("user", "card_key", "actor")
     USER_FIELD_NUMBER: _ClassVar[int]
     CARD_KEY_FIELD_NUMBER: _ClassVar[int]
+    ACTOR_FIELD_NUMBER: _ClassVar[int]
     user: _user_pb2.User
     card_key: _user_pb2.CardKey
-    def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., card_key: _Optional[_Union[_user_pb2.CardKey, _Mapping]] = ...) -> None: ...
+    actor: Principal
+    def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., card_key: _Optional[_Union[_user_pb2.CardKey, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class CardKeyCanceled(_message.Message):
-    __slots__ = ("user", "card_key")
+    __slots__ = ("user", "card_key", "actor")
     USER_FIELD_NUMBER: _ClassVar[int]
     CARD_KEY_FIELD_NUMBER: _ClassVar[int]
+    ACTOR_FIELD_NUMBER: _ClassVar[int]
     user: _user_pb2.User
     card_key: _user_pb2.CardKey
-    def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., card_key: _Optional[_Union[_user_pb2.CardKey, _Mapping]] = ...) -> None: ...
+    actor: Principal
+    def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., card_key: _Optional[_Union[_user_pb2.CardKey, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class AppKeyAssigned(_message.Message):
-    __slots__ = ("user", "app_key")
+    __slots__ = ("user", "app_key", "actor")
     USER_FIELD_NUMBER: _ClassVar[int]
     APP_KEY_FIELD_NUMBER: _ClassVar[int]
+    ACTOR_FIELD_NUMBER: _ClassVar[int]
     user: _user_pb2.User
     app_key: _user_pb2.AppKey
-    def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., app_key: _Optional[_Union[_user_pb2.AppKey, _Mapping]] = ...) -> None: ...
+    actor: Principal
+    def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., app_key: _Optional[_Union[_user_pb2.AppKey, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class AppKeyCanceled(_message.Message):
-    __slots__ = ("user", "app_key")
+    __slots__ = ("user", "app_key", "actor")
     USER_FIELD_NUMBER: _ClassVar[int]
     APP_KEY_FIELD_NUMBER: _ClassVar[int]
+    ACTOR_FIELD_NUMBER: _ClassVar[int]
     user: _user_pb2.User
     app_key: _user_pb2.AppKey
-    def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., app_key: _Optional[_Union[_user_pb2.AppKey, _Mapping]] = ...) -> None: ...
+    actor: Principal
+    def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., app_key: _Optional[_Union[_user_pb2.AppKey, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class WalletKeyAssigned(_message.Message):
-    __slots__ = ("user", "wallet_key")
+    __slots__ = ("user", "wallet_key", "actor")
     USER_FIELD_NUMBER: _ClassVar[int]
     WALLET_KEY_FIELD_NUMBER: _ClassVar[int]
+    ACTOR_FIELD_NUMBER: _ClassVar[int]
     user: _user_pb2.User
     wallet_key: _user_pb2.WalletKey
-    def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., wallet_key: _Optional[_Union[_user_pb2.WalletKey, _Mapping]] = ...) -> None: ...
+    actor: Principal
+    def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., wallet_key: _Optional[_Union[_user_pb2.WalletKey, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class WalletKeyCanceled(_message.Message):
-    __slots__ = ("user", "wallet_key")
+    __slots__ = ("user", "wallet_key", "actor")
     USER_FIELD_NUMBER: _ClassVar[int]
     WALLET_KEY_FIELD_NUMBER: _ClassVar[int]
+    ACTOR_FIELD_NUMBER: _ClassVar[int]
     user: _user_pb2.User
     wallet_key: _user_pb2.WalletKey
-    def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., wallet_key: _Optional[_Union[_user_pb2.WalletKey, _Mapping]] = ...) -> None: ...
+    actor: Principal
+    def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., wallet_key: _Optional[_Union[_user_pb2.WalletKey, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class UnitMovedIn(_message.Message):
     __slots__ = ("unit",)
@@ -353,35 +365,45 @@ class UnitDeleted(_message.Message):
     def __init__(self, unit: _Optional[_Union[_unit_pb2.Unit, _Mapping]] = ...) -> None: ...
 
 class EmergencyKeyCreated(_message.Message):
-    __slots__ = ("emergency_key",)
+    __slots__ = ("emergency_key", "actor")
     EMERGENCY_KEY_FIELD_NUMBER: _ClassVar[int]
+    ACTOR_FIELD_NUMBER: _ClassVar[int]
     emergency_key: _emergency_key_pb2.EmergencyKey
-    def __init__(self, emergency_key: _Optional[_Union[_emergency_key_pb2.EmergencyKey, _Mapping]] = ...) -> None: ...
+    actor: Principal
+    def __init__(self, emergency_key: _Optional[_Union[_emergency_key_pb2.EmergencyKey, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class EmergencyKeyUpdated(_message.Message):
-    __slots__ = ("emergency_key",)
+    __slots__ = ("emergency_key", "actor")
     EMERGENCY_KEY_FIELD_NUMBER: _ClassVar[int]
+    ACTOR_FIELD_NUMBER: _ClassVar[int]
     emergency_key: _emergency_key_pb2.EmergencyKey
-    def __init__(self, emergency_key: _Optional[_Union[_emergency_key_pb2.EmergencyKey, _Mapping]] = ...) -> None: ...
+    actor: Principal
+    def __init__(self, emergency_key: _Optional[_Union[_emergency_key_pb2.EmergencyKey, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class EmergencyKeyDeleted(_message.Message):
-    __slots__ = ("emergency_key",)
+    __slots__ = ("emergency_key", "actor")
     EMERGENCY_KEY_FIELD_NUMBER: _ClassVar[int]
+    ACTOR_FIELD_NUMBER: _ClassVar[int]
     emergency_key: _emergency_key_pb2.EmergencyKey
-    def __init__(self, emergency_key: _Optional[_Union[_emergency_key_pb2.EmergencyKey, _Mapping]] = ...) -> None: ...
+    actor: Principal
+    def __init__(self, emergency_key: _Optional[_Union[_emergency_key_pb2.EmergencyKey, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class ElectronicKeyAssigned(_message.Message):
-    __slots__ = ("user", "electronic_key")
+    __slots__ = ("user", "electronic_key", "actor")
     USER_FIELD_NUMBER: _ClassVar[int]
     ELECTRONIC_KEY_FIELD_NUMBER: _ClassVar[int]
+    ACTOR_FIELD_NUMBER: _ClassVar[int]
     user: _user_pb2.User
     electronic_key: _user_pb2.ElectronicKey
-    def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., electronic_key: _Optional[_Union[_user_pb2.ElectronicKey, _Mapping]] = ...) -> None: ...
+    actor: Principal
+    def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., electronic_key: _Optional[_Union[_user_pb2.ElectronicKey, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class ElectronicKeyCanceled(_message.Message):
-    __slots__ = ("user", "electronic_key")
+    __slots__ = ("user", "electronic_key", "actor")
     USER_FIELD_NUMBER: _ClassVar[int]
     ELECTRONIC_KEY_FIELD_NUMBER: _ClassVar[int]
+    ACTOR_FIELD_NUMBER: _ClassVar[int]
     user: _user_pb2.User
     electronic_key: _user_pb2.ElectronicKey
-    def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., electronic_key: _Optional[_Union[_user_pb2.ElectronicKey, _Mapping]] = ...) -> None: ...
+    actor: Principal
+    def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., electronic_key: _Optional[_Union[_user_pb2.ElectronicKey, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
