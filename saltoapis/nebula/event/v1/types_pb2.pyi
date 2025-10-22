@@ -114,8 +114,10 @@ class AccessDenied(_message.Message):
         __slots__ = ()
         REASON_UNSPECIFIED: _ClassVar[AccessDenied.Reason]
         CREDENTIAL_EXPIRED: _ClassVar[AccessDenied.Reason]
+        CREDENTIAL_UNACTIVATED: _ClassVar[AccessDenied.Reason]
     REASON_UNSPECIFIED: AccessDenied.Reason
     CREDENTIAL_EXPIRED: AccessDenied.Reason
+    CREDENTIAL_UNACTIVATED: AccessDenied.Reason
     ACCESS_POINT_FIELD_NUMBER: _ClassVar[int]
     USER_FIELD_NUMBER: _ClassVar[int]
     REASON_FIELD_NUMBER: _ClassVar[int]
