@@ -45,12 +45,14 @@ class AccessPointCreated(_message.Message):
     def __init__(self, access_point: _Optional[_Union[_access_point_pb2.AccessPoint, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class AccessPointUpdated(_message.Message):
-    __slots__ = ("access_point", "actor")
+    __slots__ = ("access_point", "actor", "previous_values")
     ACCESS_POINT_FIELD_NUMBER: _ClassVar[int]
     ACTOR_FIELD_NUMBER: _ClassVar[int]
+    PREVIOUS_VALUES_FIELD_NUMBER: _ClassVar[int]
     access_point: _access_point_pb2.AccessPoint
     actor: Principal
-    def __init__(self, access_point: _Optional[_Union[_access_point_pb2.AccessPoint, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
+    previous_values: PreviousValues
+    def __init__(self, access_point: _Optional[_Union[_access_point_pb2.AccessPoint, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ..., previous_values: _Optional[_Union[PreviousValues, _Mapping]] = ...) -> None: ...
 
 class AccessPointDeleted(_message.Message):
     __slots__ = ("access_point", "actor")
