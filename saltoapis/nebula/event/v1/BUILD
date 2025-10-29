@@ -8,6 +8,7 @@ load_rules(
     internal_dependencies = [
         '//saltoapis/nebula/accesspoint/v1',
         '//saltoapis/nebula/accessright/v1',
+        '//saltoapis/nebula/controller/v1',
         '//saltoapis/nebula/emergencykey/v1',
         '//saltoapis/nebula/unit/v1',
         '//saltoapis/nebula/user/v1',

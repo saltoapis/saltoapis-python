@@ -3,6 +3,8 @@ from saltoapis.nebula.accesspoint.v1 import access_point_pb2 as _access_point_pb
 from saltoapis.nebula.accesspoint.v1 import access_point_pb2 as _access_point_pb2
 from saltoapis.nebula.accessright.v1 import access_right_pb2 as _access_right_pb2
 from saltoapis.nebula.accessright.v1 import access_right_pb2 as _access_right_pb2
+from saltoapis.nebula.controller.v1 import controller_pb2 as _controller_pb2
+from saltoapis.nebula.controller.v1 import controller_pb2 as _controller_pb2
 from saltoapis.nebula.emergencykey.v1 import emergency_key_pb2 as _emergency_key_pb2
 from saltoapis.nebula.emergencykey.v1 import emergency_key_pb2 as _emergency_key_pb2
 from saltoapis.nebula.unit.v1 import unit_pb2 as _unit_pb2
@@ -421,3 +423,21 @@ class ElectronicKeyCanceled(_message.Message):
     electronic_key: _user_pb2.ElectronicKey
     actor: Principal
     def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., electronic_key: _Optional[_Union[_user_pb2.ElectronicKey, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
+
+class AccessGranted(_message.Message):
+    __slots__ = ("controller", "user", "emergency_key", "card_key", "app_key", "wallet_key", "passcode")
+    CONTROLLER_FIELD_NUMBER: _ClassVar[int]
+    USER_FIELD_NUMBER: _ClassVar[int]
+    EMERGENCY_KEY_FIELD_NUMBER: _ClassVar[int]
+    CARD_KEY_FIELD_NUMBER: _ClassVar[int]
+    APP_KEY_FIELD_NUMBER: _ClassVar[int]
+    WALLET_KEY_FIELD_NUMBER: _ClassVar[int]
+    PASSCODE_FIELD_NUMBER: _ClassVar[int]
+    controller: _controller_pb2.Controller
+    user: _user_pb2.User
+    emergency_key: _emergency_key_pb2.EmergencyKey
+    card_key: _user_pb2.CardKey
+    app_key: _user_pb2.AppKey
+    wallet_key: _user_pb2.WalletKey
+    passcode: _user_pb2.Passcode
+    def __init__(self, controller: _Optional[_Union[_controller_pb2.Controller, _Mapping]] = ..., user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., emergency_key: _Optional[_Union[_emergency_key_pb2.EmergencyKey, _Mapping]] = ..., card_key: _Optional[_Union[_user_pb2.CardKey, _Mapping]] = ..., app_key: _Optional[_Union[_user_pb2.AppKey, _Mapping]] = ..., wallet_key: _Optional[_Union[_user_pb2.WalletKey, _Mapping]] = ..., passcode: _Optional[_Union[_user_pb2.Passcode, _Mapping]] = ...) -> None: ...
