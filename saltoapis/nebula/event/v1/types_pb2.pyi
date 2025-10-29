@@ -155,12 +155,14 @@ class AccessRightCreated(_message.Message):
     def __init__(self, access_right: _Optional[_Union[_access_right_pb2.AccessRight, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class AccessRightUpdated(_message.Message):
-    __slots__ = ("access_right", "actor")
+    __slots__ = ("access_right", "actor", "previous_values")
     ACCESS_RIGHT_FIELD_NUMBER: _ClassVar[int]
     ACTOR_FIELD_NUMBER: _ClassVar[int]
+    PREVIOUS_VALUES_FIELD_NUMBER: _ClassVar[int]
     access_right: _access_right_pb2.AccessRight
     actor: Principal
-    def __init__(self, access_right: _Optional[_Union[_access_right_pb2.AccessRight, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
+    previous_values: PreviousValues
+    def __init__(self, access_right: _Optional[_Union[_access_right_pb2.AccessRight, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ..., previous_values: _Optional[_Union[PreviousValues, _Mapping]] = ...) -> None: ...
 
 class AccessRightDeleted(_message.Message):
     __slots__ = ("access_right", "actor")
@@ -219,12 +221,14 @@ class UserCreated(_message.Message):
     def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class UserUpdated(_message.Message):
-    __slots__ = ("user", "actor")
+    __slots__ = ("user", "actor", "previous_values")
     USER_FIELD_NUMBER: _ClassVar[int]
     ACTOR_FIELD_NUMBER: _ClassVar[int]
+    PREVIOUS_VALUES_FIELD_NUMBER: _ClassVar[int]
     user: _user_pb2.User
     actor: Principal
-    def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
+    previous_values: PreviousValues
+    def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ..., previous_values: _Optional[_Union[PreviousValues, _Mapping]] = ...) -> None: ...
 
 class UserBlocked(_message.Message):
     __slots__ = ("user", "actor")
@@ -365,12 +369,14 @@ class UnitCreated(_message.Message):
     def __init__(self, unit: _Optional[_Union[_unit_pb2.Unit, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class UnitUpdated(_message.Message):
-    __slots__ = ("unit", "actor")
+    __slots__ = ("unit", "actor", "previous_values")
     UNIT_FIELD_NUMBER: _ClassVar[int]
     ACTOR_FIELD_NUMBER: _ClassVar[int]
+    PREVIOUS_VALUES_FIELD_NUMBER: _ClassVar[int]
     unit: _unit_pb2.Unit
     actor: Principal
-    def __init__(self, unit: _Optional[_Union[_unit_pb2.Unit, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
+    previous_values: PreviousValues
+    def __init__(self, unit: _Optional[_Union[_unit_pb2.Unit, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ..., previous_values: _Optional[_Union[PreviousValues, _Mapping]] = ...) -> None: ...
 
 class UnitDeleted(_message.Message):
     __slots__ = ("unit", "actor")
@@ -389,12 +395,14 @@ class EmergencyKeyCreated(_message.Message):
     def __init__(self, emergency_key: _Optional[_Union[_emergency_key_pb2.EmergencyKey, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class EmergencyKeyUpdated(_message.Message):
-    __slots__ = ("emergency_key", "actor")
+    __slots__ = ("emergency_key", "actor", "previous_values")
     EMERGENCY_KEY_FIELD_NUMBER: _ClassVar[int]
     ACTOR_FIELD_NUMBER: _ClassVar[int]
+    PREVIOUS_VALUES_FIELD_NUMBER: _ClassVar[int]
     emergency_key: _emergency_key_pb2.EmergencyKey
     actor: Principal
-    def __init__(self, emergency_key: _Optional[_Union[_emergency_key_pb2.EmergencyKey, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
+    previous_values: PreviousValues
+    def __init__(self, emergency_key: _Optional[_Union[_emergency_key_pb2.EmergencyKey, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ..., previous_values: _Optional[_Union[PreviousValues, _Mapping]] = ...) -> None: ...
 
 class EmergencyKeyDeleted(_message.Message):
     __slots__ = ("emergency_key", "actor")
