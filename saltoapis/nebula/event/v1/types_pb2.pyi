@@ -65,7 +65,15 @@ class AccessPointDeleted(_message.Message):
     def __init__(self, access_point: _Optional[_Union[_access_point_pb2.AccessPoint, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class AccessPointUnlocked(_message.Message):
-    __slots__ = ("access_point", "user", "emergency_key", "card_key", "app_key", "wallet_key", "passcode")
+    __slots__ = ("access_point", "user", "emergency_key", "card_key", "app_key", "wallet_key", "passcode", "direction")
+    class Direction(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = ()
+        DIRECTION_UNSPECIFIED: _ClassVar[AccessPointUnlocked.Direction]
+        ENTRY: _ClassVar[AccessPointUnlocked.Direction]
+        EXIT: _ClassVar[AccessPointUnlocked.Direction]
+    DIRECTION_UNSPECIFIED: AccessPointUnlocked.Direction
+    ENTRY: AccessPointUnlocked.Direction
+    EXIT: AccessPointUnlocked.Direction
     ACCESS_POINT_FIELD_NUMBER: _ClassVar[int]
     USER_FIELD_NUMBER: _ClassVar[int]
     EMERGENCY_KEY_FIELD_NUMBER: _ClassVar[int]
@@ -73,6 +81,7 @@ class AccessPointUnlocked(_message.Message):
     APP_KEY_FIELD_NUMBER: _ClassVar[int]
     WALLET_KEY_FIELD_NUMBER: _ClassVar[int]
     PASSCODE_FIELD_NUMBER: _ClassVar[int]
+    DIRECTION_FIELD_NUMBER: _ClassVar[int]
     access_point: _access_point_pb2.AccessPoint
     user: _user_pb2.User
     emergency_key: _emergency_key_pb2.EmergencyKey
@@ -80,7 +89,8 @@ class AccessPointUnlocked(_message.Message):
     app_key: _user_pb2.AppKey
     wallet_key: _user_pb2.WalletKey
     passcode: _user_pb2.Passcode
-    def __init__(self, access_point: _Optional[_Union[_access_point_pb2.AccessPoint, _Mapping]] = ..., user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., emergency_key: _Optional[_Union[_emergency_key_pb2.EmergencyKey, _Mapping]] = ..., card_key: _Optional[_Union[_user_pb2.CardKey, _Mapping]] = ..., app_key: _Optional[_Union[_user_pb2.AppKey, _Mapping]] = ..., wallet_key: _Optional[_Union[_user_pb2.WalletKey, _Mapping]] = ..., passcode: _Optional[_Union[_user_pb2.Passcode, _Mapping]] = ...) -> None: ...
+    direction: AccessPointUnlocked.Direction
+    def __init__(self, access_point: _Optional[_Union[_access_point_pb2.AccessPoint, _Mapping]] = ..., user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., emergency_key: _Optional[_Union[_emergency_key_pb2.EmergencyKey, _Mapping]] = ..., card_key: _Optional[_Union[_user_pb2.CardKey, _Mapping]] = ..., app_key: _Optional[_Union[_user_pb2.AppKey, _Mapping]] = ..., wallet_key: _Optional[_Union[_user_pb2.WalletKey, _Mapping]] = ..., passcode: _Optional[_Union[_user_pb2.Passcode, _Mapping]] = ..., direction: _Optional[_Union[AccessPointUnlocked.Direction, str]] = ...) -> None: ...
 
 class AccessPointLocked(_message.Message):
     __slots__ = ("access_point", "user", "emergency_key", "card_key", "app_key", "wallet_key", "passcode")
