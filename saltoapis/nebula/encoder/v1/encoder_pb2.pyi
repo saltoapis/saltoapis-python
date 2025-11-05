@@ -179,10 +179,14 @@ class ReadKeyRequest(_message.Message):
     def __init__(self, encoder: _Optional[str] = ...) -> None: ...
 
 class ReadKeyResponse(_message.Message):
-    __slots__ = ("card_key",)
+    __slots__ = ("card_key", "uid", "device_id")
     CARD_KEY_FIELD_NUMBER: _ClassVar[int]
+    UID_FIELD_NUMBER: _ClassVar[int]
+    DEVICE_ID_FIELD_NUMBER: _ClassVar[int]
     card_key: str
-    def __init__(self, card_key: _Optional[str] = ...) -> None: ...
+    uid: str
+    device_id: str
+    def __init__(self, card_key: _Optional[str] = ..., uid: _Optional[str] = ..., device_id: _Optional[str] = ...) -> None: ...
 
 class ReadKeyMetadata(_message.Message):
     __slots__ = ()
