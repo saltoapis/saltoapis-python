@@ -35,8 +35,8 @@ class PreviousValues(_message.Message):
         value: _struct_pb2.Value
         def __init__(self, key: _Optional[str] = ..., value: _Optional[_Union[_struct_pb2.Value, _Mapping]] = ...) -> None: ...
     VALUES_FIELD_NUMBER: _ClassVar[int]
-    values: _containers.RepeatedCompositeFieldContainer[PreviousValues.ValuesEntry]
-    def __init__(self, values: _Optional[_Iterable[_Union[PreviousValues.ValuesEntry, _Mapping]]] = ...) -> None: ...
+    values: _containers.MessageMap[str, _struct_pb2.Value]
+    def __init__(self, values: _Optional[_Mapping[str, _struct_pb2.Value]] = ...) -> None: ...
 
 class AccessPointCreated(_message.Message):
     __slots__ = ("access_point", "actor")
