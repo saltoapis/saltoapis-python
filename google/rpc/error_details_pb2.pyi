@@ -47,8 +47,8 @@ class ErrorInfo(_message.Message):
     METADATA_FIELD_NUMBER: _ClassVar[int]
     reason: str
     domain: str
-    metadata: _containers.RepeatedCompositeFieldContainer[ErrorInfo.MetadataEntry]
-    def __init__(self, reason: _Optional[str] = ..., domain: _Optional[str] = ..., metadata: _Optional[_Iterable[_Union[ErrorInfo.MetadataEntry, _Mapping]]] = ...) -> None: ...
+    metadata: _containers.ScalarMap[str, str]
+    def __init__(self, reason: _Optional[str] = ..., domain: _Optional[str] = ..., metadata: _Optional[_Mapping[str, str]] = ...) -> None: ...
 
 class PreconditionFailure(_message.Message):
     __slots__ = ("violations",)
