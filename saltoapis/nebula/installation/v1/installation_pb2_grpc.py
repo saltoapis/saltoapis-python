@@ -129,6 +129,11 @@ class InstallationServiceStub(object):
                 request_serializer=salto_dot_nebula_dot_installation_dot_v1_dot_installation__pb2.UnapplyCouponRequest.SerializeToString,
                 response_deserializer=salto_dot_nebula_dot_installation_dot_v1_dot_installation__pb2.UnapplyCouponResponse.FromString,
                 _registered_method=True)
+        self.GenerateAuthorizationToken = channel.unary_unary(
+                '/salto.nebula.installation.v1.InstallationService/GenerateAuthorizationToken',
+                request_serializer=salto_dot_nebula_dot_installation_dot_v1_dot_installation__pb2.GenerateAuthorizationTokenRequest.SerializeToString,
+                response_deserializer=salto_dot_nebula_dot_installation_dot_v1_dot_installation__pb2.GenerateAuthorizationTokenResponse.FromString,
+                _registered_method=True)
 
 
 class InstallationServiceServicer(object):
@@ -349,6 +354,24 @@ class InstallationServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GenerateAuthorizationToken(self, request, context):
+        """Generate authorization token for uninitialized devices
+
+        Generates an authorization token for a client application to use when
+        connecting to an uninitialized Salto device. The token contains the
+        necessary security material for the client to validate the device's
+        identity. This prevents man-in-the-middle (MITM) attacks and ensures the
+        client is connecting to a genuine Salto device during its initial
+        initialization.
+
+        This token is distinct from other `GenerateAuthorizationToken` methods, it
+        is used only for the client to validate the device and does not contain a
+        client certificate for authenticating the client itself.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_InstallationServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -461,6 +484,11 @@ def add_InstallationServiceServicer_to_server(servicer, server):
                     servicer.UnapplyCoupon,
                     request_deserializer=salto_dot_nebula_dot_installation_dot_v1_dot_installation__pb2.UnapplyCouponRequest.FromString,
                     response_serializer=salto_dot_nebula_dot_installation_dot_v1_dot_installation__pb2.UnapplyCouponResponse.SerializeToString,
+            ),
+            'GenerateAuthorizationToken': grpc.unary_unary_rpc_method_handler(
+                    servicer.GenerateAuthorizationToken,
+                    request_deserializer=salto_dot_nebula_dot_installation_dot_v1_dot_installation__pb2.GenerateAuthorizationTokenRequest.FromString,
+                    response_serializer=salto_dot_nebula_dot_installation_dot_v1_dot_installation__pb2.GenerateAuthorizationTokenResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -1060,6 +1088,33 @@ class InstallationService(object):
             '/salto.nebula.installation.v1.InstallationService/UnapplyCoupon',
             salto_dot_nebula_dot_installation_dot_v1_dot_installation__pb2.UnapplyCouponRequest.SerializeToString,
             salto_dot_nebula_dot_installation_dot_v1_dot_installation__pb2.UnapplyCouponResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GenerateAuthorizationToken(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/salto.nebula.installation.v1.InstallationService/GenerateAuthorizationToken',
+            salto_dot_nebula_dot_installation_dot_v1_dot_installation__pb2.GenerateAuthorizationTokenRequest.SerializeToString,
+            salto_dot_nebula_dot_installation_dot_v1_dot_installation__pb2.GenerateAuthorizationTokenResponse.FromString,
             options,
             channel_credentials,
             insecure,

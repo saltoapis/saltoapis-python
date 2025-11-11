@@ -414,3 +414,15 @@ class UnapplyCouponRequest(_message.Message):
 class UnapplyCouponResponse(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
+
+class GenerateAuthorizationTokenRequest(_message.Message):
+    __slots__ = ("installation",)
+    INSTALLATION_FIELD_NUMBER: _ClassVar[int]
+    installation: str
+    def __init__(self, installation: _Optional[str] = ...) -> None: ...
+
+class GenerateAuthorizationTokenResponse(_message.Message):
+    __slots__ = ("authorization_token",)
+    AUTHORIZATION_TOKEN_FIELD_NUMBER: _ClassVar[int]
+    authorization_token: bytes
+    def __init__(self, authorization_token: _Optional[bytes] = ...) -> None: ...
