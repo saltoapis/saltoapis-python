@@ -130,10 +130,14 @@ class AccessDenied(_message.Message):
         CREDENTIAL_EXPIRED: _ClassVar[AccessDenied.Reason]
         CREDENTIAL_UNACTIVATED: _ClassVar[AccessDenied.Reason]
         CREDENTIAL_LACKS_ACCESS_RIGHTS: _ClassVar[AccessDenied.Reason]
+        CREDENTIAL_OUTSIDE_CALENDAR_DAY: _ClassVar[AccessDenied.Reason]
+        CREDENTIAL_OUTSIDE_TIME_WINDOW: _ClassVar[AccessDenied.Reason]
     REASON_UNSPECIFIED: AccessDenied.Reason
     CREDENTIAL_EXPIRED: AccessDenied.Reason
     CREDENTIAL_UNACTIVATED: AccessDenied.Reason
     CREDENTIAL_LACKS_ACCESS_RIGHTS: AccessDenied.Reason
+    CREDENTIAL_OUTSIDE_CALENDAR_DAY: AccessDenied.Reason
+    CREDENTIAL_OUTSIDE_TIME_WINDOW: AccessDenied.Reason
     ACCESS_POINT_FIELD_NUMBER: _ClassVar[int]
     USER_FIELD_NUMBER: _ClassVar[int]
     REASON_FIELD_NUMBER: _ClassVar[int]
