@@ -127,7 +127,7 @@ class AccessPointClosed(_message.Message):
     def __init__(self, access_point: _Optional[_Union[_access_point_pb2.AccessPoint, _Mapping]] = ...) -> None: ...
 
 class AccessDenied(_message.Message):
-    __slots__ = ("access_point", "user", "reason", "emergency_key", "card_key", "app_key", "wallet_key", "passcode", "electronic_key")
+    __slots__ = ("access_point", "controller", "user", "reason", "emergency_key", "card_key", "app_key", "wallet_key", "passcode", "electronic_key")
     class Reason(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         REASON_UNSPECIFIED: _ClassVar[AccessDenied.Reason]
@@ -145,6 +145,7 @@ class AccessDenied(_message.Message):
     CREDENTIAL_OUTSIDE_TIME_WINDOW: AccessDenied.Reason
     INVALID_ACCESS_CODE: AccessDenied.Reason
     ACCESS_POINT_FIELD_NUMBER: _ClassVar[int]
+    CONTROLLER_FIELD_NUMBER: _ClassVar[int]
     USER_FIELD_NUMBER: _ClassVar[int]
     REASON_FIELD_NUMBER: _ClassVar[int]
     EMERGENCY_KEY_FIELD_NUMBER: _ClassVar[int]
@@ -154,6 +155,7 @@ class AccessDenied(_message.Message):
     PASSCODE_FIELD_NUMBER: _ClassVar[int]
     ELECTRONIC_KEY_FIELD_NUMBER: _ClassVar[int]
     access_point: _access_point_pb2.AccessPoint
+    controller: _controller_pb2.Controller
     user: _user_pb2.User
     reason: AccessDenied.Reason
     emergency_key: _emergency_key_pb2.EmergencyKey
@@ -162,7 +164,7 @@ class AccessDenied(_message.Message):
     wallet_key: _user_pb2.WalletKey
     passcode: _user_pb2.Passcode
     electronic_key: _user_pb2.ElectronicKey
-    def __init__(self, access_point: _Optional[_Union[_access_point_pb2.AccessPoint, _Mapping]] = ..., user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., reason: _Optional[_Union[AccessDenied.Reason, str]] = ..., emergency_key: _Optional[_Union[_emergency_key_pb2.EmergencyKey, _Mapping]] = ..., card_key: _Optional[_Union[_user_pb2.CardKey, _Mapping]] = ..., app_key: _Optional[_Union[_user_pb2.AppKey, _Mapping]] = ..., wallet_key: _Optional[_Union[_user_pb2.WalletKey, _Mapping]] = ..., passcode: _Optional[_Union[_user_pb2.Passcode, _Mapping]] = ..., electronic_key: _Optional[_Union[_user_pb2.ElectronicKey, _Mapping]] = ...) -> None: ...
+    def __init__(self, access_point: _Optional[_Union[_access_point_pb2.AccessPoint, _Mapping]] = ..., controller: _Optional[_Union[_controller_pb2.Controller, _Mapping]] = ..., user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., reason: _Optional[_Union[AccessDenied.Reason, str]] = ..., emergency_key: _Optional[_Union[_emergency_key_pb2.EmergencyKey, _Mapping]] = ..., card_key: _Optional[_Union[_user_pb2.CardKey, _Mapping]] = ..., app_key: _Optional[_Union[_user_pb2.AppKey, _Mapping]] = ..., wallet_key: _Optional[_Union[_user_pb2.WalletKey, _Mapping]] = ..., passcode: _Optional[_Union[_user_pb2.Passcode, _Mapping]] = ..., electronic_key: _Optional[_Union[_user_pb2.ElectronicKey, _Mapping]] = ...) -> None: ...
 
 class AccessPointLeftOpen(_message.Message):
     __slots__ = ("access_point",)
