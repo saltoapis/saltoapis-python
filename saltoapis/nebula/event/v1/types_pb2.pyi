@@ -133,16 +133,16 @@ class AccessDenied(_message.Message):
         REASON_UNSPECIFIED: _ClassVar[AccessDenied.Reason]
         CREDENTIAL_EXPIRED: _ClassVar[AccessDenied.Reason]
         CREDENTIAL_UNACTIVATED: _ClassVar[AccessDenied.Reason]
-        CREDENTIAL_LACKS_ACCESS_RIGHTS: _ClassVar[AccessDenied.Reason]
-        CREDENTIAL_OUTSIDE_CALENDAR_DAY: _ClassVar[AccessDenied.Reason]
-        CREDENTIAL_OUTSIDE_TIME_WINDOW: _ClassVar[AccessDenied.Reason]
+        CREDENTIAL_LACKS_PERMISSION: _ClassVar[AccessDenied.Reason]
+        CREDENTIAL_PERMISSION_OUTSIDE_VALIDITY: _ClassVar[AccessDenied.Reason]
+        CREDENTIAL_PERMISSION_OUTSIDE_SCHEDULE: _ClassVar[AccessDenied.Reason]
         INVALID_ACCESS_CODE: _ClassVar[AccessDenied.Reason]
     REASON_UNSPECIFIED: AccessDenied.Reason
     CREDENTIAL_EXPIRED: AccessDenied.Reason
     CREDENTIAL_UNACTIVATED: AccessDenied.Reason
-    CREDENTIAL_LACKS_ACCESS_RIGHTS: AccessDenied.Reason
-    CREDENTIAL_OUTSIDE_CALENDAR_DAY: AccessDenied.Reason
-    CREDENTIAL_OUTSIDE_TIME_WINDOW: AccessDenied.Reason
+    CREDENTIAL_LACKS_PERMISSION: AccessDenied.Reason
+    CREDENTIAL_PERMISSION_OUTSIDE_VALIDITY: AccessDenied.Reason
+    CREDENTIAL_PERMISSION_OUTSIDE_SCHEDULE: AccessDenied.Reason
     INVALID_ACCESS_CODE: AccessDenied.Reason
     ACCESS_POINT_FIELD_NUMBER: _ClassVar[int]
     CONTROLLER_FIELD_NUMBER: _ClassVar[int]
