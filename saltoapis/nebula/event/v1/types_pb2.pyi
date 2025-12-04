@@ -133,17 +133,19 @@ class AccessDenied(_message.Message):
         REASON_UNSPECIFIED: _ClassVar[AccessDenied.Reason]
         CREDENTIAL_EXPIRED: _ClassVar[AccessDenied.Reason]
         CREDENTIAL_UNACTIVATED: _ClassVar[AccessDenied.Reason]
-        CREDENTIAL_LACKS_PERMISSION: _ClassVar[AccessDenied.Reason]
+        CREDENTIAL_PERMISSION_INSUFFICIENT: _ClassVar[AccessDenied.Reason]
         CREDENTIAL_PERMISSION_OUTSIDE_VALIDITY: _ClassVar[AccessDenied.Reason]
         CREDENTIAL_PERMISSION_OUTSIDE_SCHEDULE: _ClassVar[AccessDenied.Reason]
         INVALID_ACCESS_CODE: _ClassVar[AccessDenied.Reason]
+        DEVICE_BATTERY_INSUFFICIENT: _ClassVar[AccessDenied.Reason]
     REASON_UNSPECIFIED: AccessDenied.Reason
     CREDENTIAL_EXPIRED: AccessDenied.Reason
     CREDENTIAL_UNACTIVATED: AccessDenied.Reason
-    CREDENTIAL_LACKS_PERMISSION: AccessDenied.Reason
+    CREDENTIAL_PERMISSION_INSUFFICIENT: AccessDenied.Reason
     CREDENTIAL_PERMISSION_OUTSIDE_VALIDITY: AccessDenied.Reason
     CREDENTIAL_PERMISSION_OUTSIDE_SCHEDULE: AccessDenied.Reason
     INVALID_ACCESS_CODE: AccessDenied.Reason
+    DEVICE_BATTERY_INSUFFICIENT: AccessDenied.Reason
     ACCESS_POINT_FIELD_NUMBER: _ClassVar[int]
     CONTROLLER_FIELD_NUMBER: _ClassVar[int]
     USER_FIELD_NUMBER: _ClassVar[int]
