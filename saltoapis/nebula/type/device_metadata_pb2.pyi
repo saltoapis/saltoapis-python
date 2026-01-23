@@ -12,12 +12,14 @@ class DeviceMetadata(_message.Message):
     class CircuitBoard(_message.Message):
         __slots__ = ("manufacture_date", "serial_number", "firmwares")
         class Firmware(_message.Message):
-            __slots__ = ("number", "version")
+            __slots__ = ("number", "version", "revision")
             NUMBER_FIELD_NUMBER: _ClassVar[int]
             VERSION_FIELD_NUMBER: _ClassVar[int]
+            REVISION_FIELD_NUMBER: _ClassVar[int]
             number: str
             version: str
-            def __init__(self, number: _Optional[str] = ..., version: _Optional[str] = ...) -> None: ...
+            revision: str
+            def __init__(self, number: _Optional[str] = ..., version: _Optional[str] = ..., revision: _Optional[str] = ...) -> None: ...
         MANUFACTURE_DATE_FIELD_NUMBER: _ClassVar[int]
         SERIAL_NUMBER_FIELD_NUMBER: _ClassVar[int]
         FIRMWARES_FIELD_NUMBER: _ClassVar[int]
