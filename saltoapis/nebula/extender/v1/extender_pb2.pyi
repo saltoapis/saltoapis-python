@@ -5,12 +5,13 @@ from saltoapis.longrunning.v1 import operation_pb2 as _operation_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
+from collections.abc import Iterable as _Iterable, Mapping as _Mapping
+from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Extender(_message.Message):
-    __slots__ = ("name", "display_name", "device_id", "gateway", "extender")
+    __slots__ = ()
     NAME_FIELD_NUMBER: _ClassVar[int]
     DISPLAY_NAME_FIELD_NUMBER: _ClassVar[int]
     DEVICE_ID_FIELD_NUMBER: _ClassVar[int]
@@ -24,7 +25,7 @@ class Extender(_message.Message):
     def __init__(self, name: _Optional[str] = ..., display_name: _Optional[str] = ..., device_id: _Optional[str] = ..., gateway: _Optional[str] = ..., extender: _Optional[str] = ...) -> None: ...
 
 class CreateExtenderRequest(_message.Message):
-    __slots__ = ("parent", "extender_id", "extender")
+    __slots__ = ()
     PARENT_FIELD_NUMBER: _ClassVar[int]
     EXTENDER_ID_FIELD_NUMBER: _ClassVar[int]
     EXTENDER_FIELD_NUMBER: _ClassVar[int]
@@ -34,13 +35,13 @@ class CreateExtenderRequest(_message.Message):
     def __init__(self, parent: _Optional[str] = ..., extender_id: _Optional[str] = ..., extender: _Optional[_Union[Extender, _Mapping]] = ...) -> None: ...
 
 class GetExtenderRequest(_message.Message):
-    __slots__ = ("name",)
+    __slots__ = ()
     NAME_FIELD_NUMBER: _ClassVar[int]
     name: str
     def __init__(self, name: _Optional[str] = ...) -> None: ...
 
 class ListExtendersRequest(_message.Message):
-    __slots__ = ("parent", "page_size", "page_token", "filter", "order_by")
+    __slots__ = ()
     PARENT_FIELD_NUMBER: _ClassVar[int]
     PAGE_SIZE_FIELD_NUMBER: _ClassVar[int]
     PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
@@ -54,7 +55,7 @@ class ListExtendersRequest(_message.Message):
     def __init__(self, parent: _Optional[str] = ..., page_size: _Optional[int] = ..., page_token: _Optional[str] = ..., filter: _Optional[str] = ..., order_by: _Optional[str] = ...) -> None: ...
 
 class ListExtendersResponse(_message.Message):
-    __slots__ = ("extenders", "next_page_token")
+    __slots__ = ()
     EXTENDERS_FIELD_NUMBER: _ClassVar[int]
     NEXT_PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
     extenders: _containers.RepeatedCompositeFieldContainer[Extender]
@@ -62,7 +63,7 @@ class ListExtendersResponse(_message.Message):
     def __init__(self, extenders: _Optional[_Iterable[_Union[Extender, _Mapping]]] = ..., next_page_token: _Optional[str] = ...) -> None: ...
 
 class UpdateExtenderRequest(_message.Message):
-    __slots__ = ("extender", "update_mask")
+    __slots__ = ()
     EXTENDER_FIELD_NUMBER: _ClassVar[int]
     UPDATE_MASK_FIELD_NUMBER: _ClassVar[int]
     extender: Extender
@@ -70,13 +71,13 @@ class UpdateExtenderRequest(_message.Message):
     def __init__(self, extender: _Optional[_Union[Extender, _Mapping]] = ..., update_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
 
 class DeleteExtenderRequest(_message.Message):
-    __slots__ = ("name",)
+    __slots__ = ()
     NAME_FIELD_NUMBER: _ClassVar[int]
     name: str
     def __init__(self, name: _Optional[str] = ...) -> None: ...
 
 class BindExtenderRequest(_message.Message):
-    __slots__ = ("name", "device_id")
+    __slots__ = ()
     NAME_FIELD_NUMBER: _ClassVar[int]
     DEVICE_ID_FIELD_NUMBER: _ClassVar[int]
     name: str
@@ -88,7 +89,7 @@ class BindExtenderResponse(_message.Message):
     def __init__(self) -> None: ...
 
 class UnbindExtenderRequest(_message.Message):
-    __slots__ = ("name",)
+    __slots__ = ()
     NAME_FIELD_NUMBER: _ClassVar[int]
     name: str
     def __init__(self, name: _Optional[str] = ...) -> None: ...
@@ -98,7 +99,7 @@ class UnbindExtenderResponse(_message.Message):
     def __init__(self) -> None: ...
 
 class UpdateExtenderFirmwareRequest(_message.Message):
-    __slots__ = ("extender",)
+    __slots__ = ()
     EXTENDER_FIELD_NUMBER: _ClassVar[int]
     extender: str
     def __init__(self, extender: _Optional[str] = ...) -> None: ...
@@ -108,13 +109,13 @@ class UpdateExtenderFirmwareResponse(_message.Message):
     def __init__(self) -> None: ...
 
 class UpdateExtenderFirmwareMetadata(_message.Message):
-    __slots__ = ("progress_percent",)
+    __slots__ = ()
     PROGRESS_PERCENT_FIELD_NUMBER: _ClassVar[int]
     progress_percent: int
     def __init__(self, progress_percent: _Optional[int] = ...) -> None: ...
 
 class ResetExtenderRequest(_message.Message):
-    __slots__ = ("name",)
+    __slots__ = ()
     NAME_FIELD_NUMBER: _ClassVar[int]
     name: str
     def __init__(self, name: _Optional[str] = ...) -> None: ...
@@ -128,13 +129,13 @@ class ResetExtenderMetadata(_message.Message):
     def __init__(self) -> None: ...
 
 class GenerateFirmwareDownloadUriRequest(_message.Message):
-    __slots__ = ("extender",)
+    __slots__ = ()
     EXTENDER_FIELD_NUMBER: _ClassVar[int]
     extender: str
     def __init__(self, extender: _Optional[str] = ...) -> None: ...
 
 class GenerateFirmwareDownloadUriResponse(_message.Message):
-    __slots__ = ("download_uri", "digest")
+    __slots__ = ()
     DOWNLOAD_URI_FIELD_NUMBER: _ClassVar[int]
     DIGEST_FIELD_NUMBER: _ClassVar[int]
     download_uri: str

@@ -7,14 +7,15 @@ from saltoapis.type import time_of_day_pb2 as _time_of_day_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
+from collections.abc import Iterable as _Iterable, Mapping as _Mapping
+from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Schedule(_message.Message):
-    __slots__ = ("days", "start_time", "end_time")
+    __slots__ = ()
     class Day(_message.Message):
-        __slots__ = ("day_type", "day_of_week")
+        __slots__ = ()
         DAY_TYPE_FIELD_NUMBER: _ClassVar[int]
         DAY_OF_WEEK_FIELD_NUMBER: _ClassVar[int]
         day_type: _day_type_pb2.DayType

@@ -5,7 +5,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class File(_message.Message):
-    __slots__ = ("name", "upload_uri")
+    __slots__ = ()
     NAME_FIELD_NUMBER: _ClassVar[int]
     UPLOAD_URI_FIELD_NUMBER: _ClassVar[int]
     name: str
@@ -13,7 +13,7 @@ class File(_message.Message):
     def __init__(self, name: _Optional[str] = ..., upload_uri: _Optional[str] = ...) -> None: ...
 
 class CreateFileRequest(_message.Message):
-    __slots__ = ("parent",)
+    __slots__ = ()
     PARENT_FIELD_NUMBER: _ClassVar[int]
     parent: str
     def __init__(self, parent: _Optional[str] = ...) -> None: ...

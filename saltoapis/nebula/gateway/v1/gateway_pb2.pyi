@@ -7,12 +7,13 @@ from saltoapis.nebula.type import device_metadata_pb2 as _device_metadata_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
+from collections.abc import Iterable as _Iterable, Mapping as _Mapping
+from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Gateway(_message.Message):
-    __slots__ = ("name", "display_name", "device_id", "initialized", "device_metadata", "connected", "ethernet_settings", "wifi_settings")
+    __slots__ = ()
     NAME_FIELD_NUMBER: _ClassVar[int]
     DISPLAY_NAME_FIELD_NUMBER: _ClassVar[int]
     DEVICE_ID_FIELD_NUMBER: _ClassVar[int]
@@ -29,10 +30,10 @@ class Gateway(_message.Message):
     connected: bool
     ethernet_settings: EthernetSettings
     wifi_settings: WifiSettings
-    def __init__(self, name: _Optional[str] = ..., display_name: _Optional[str] = ..., device_id: _Optional[str] = ..., initialized: bool = ..., device_metadata: _Optional[_Union[_device_metadata_pb2.DeviceMetadata, _Mapping]] = ..., connected: bool = ..., ethernet_settings: _Optional[_Union[EthernetSettings, _Mapping]] = ..., wifi_settings: _Optional[_Union[WifiSettings, _Mapping]] = ...) -> None: ...
+    def __init__(self, name: _Optional[str] = ..., display_name: _Optional[str] = ..., device_id: _Optional[str] = ..., initialized: _Optional[bool] = ..., device_metadata: _Optional[_Union[_device_metadata_pb2.DeviceMetadata, _Mapping]] = ..., connected: _Optional[bool] = ..., ethernet_settings: _Optional[_Union[EthernetSettings, _Mapping]] = ..., wifi_settings: _Optional[_Union[WifiSettings, _Mapping]] = ...) -> None: ...
 
 class EthernetSettings(_message.Message):
-    __slots__ = ("ipv4_settings", "dns_settings")
+    __slots__ = ()
     IPV4_SETTINGS_FIELD_NUMBER: _ClassVar[int]
     DNS_SETTINGS_FIELD_NUMBER: _ClassVar[int]
     ipv4_settings: IPv4Settings
@@ -40,7 +41,7 @@ class EthernetSettings(_message.Message):
     def __init__(self, ipv4_settings: _Optional[_Union[IPv4Settings, _Mapping]] = ..., dns_settings: _Optional[_Union[DNSSettings, _Mapping]] = ...) -> None: ...
 
 class WifiSettings(_message.Message):
-    __slots__ = ("ipv4_settings", "dns_settings", "ssid", "password")
+    __slots__ = ()
     IPV4_SETTINGS_FIELD_NUMBER: _ClassVar[int]
     DNS_SETTINGS_FIELD_NUMBER: _ClassVar[int]
     SSID_FIELD_NUMBER: _ClassVar[int]
@@ -52,7 +53,7 @@ class WifiSettings(_message.Message):
     def __init__(self, ipv4_settings: _Optional[_Union[IPv4Settings, _Mapping]] = ..., dns_settings: _Optional[_Union[DNSSettings, _Mapping]] = ..., ssid: _Optional[str] = ..., password: _Optional[str] = ...) -> None: ...
 
 class IPv4Settings(_message.Message):
-    __slots__ = ("ip_address", "mask", "router_address")
+    __slots__ = ()
     IP_ADDRESS_FIELD_NUMBER: _ClassVar[int]
     MASK_FIELD_NUMBER: _ClassVar[int]
     ROUTER_ADDRESS_FIELD_NUMBER: _ClassVar[int]
@@ -62,13 +63,13 @@ class IPv4Settings(_message.Message):
     def __init__(self, ip_address: _Optional[str] = ..., mask: _Optional[str] = ..., router_address: _Optional[str] = ...) -> None: ...
 
 class DNSSettings(_message.Message):
-    __slots__ = ("dns_addresses",)
+    __slots__ = ()
     DNS_ADDRESSES_FIELD_NUMBER: _ClassVar[int]
     dns_addresses: _containers.RepeatedScalarFieldContainer[str]
     def __init__(self, dns_addresses: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class CreateGatewayRequest(_message.Message):
-    __slots__ = ("parent", "gateway_id", "gateway")
+    __slots__ = ()
     PARENT_FIELD_NUMBER: _ClassVar[int]
     GATEWAY_ID_FIELD_NUMBER: _ClassVar[int]
     GATEWAY_FIELD_NUMBER: _ClassVar[int]
@@ -78,13 +79,13 @@ class CreateGatewayRequest(_message.Message):
     def __init__(self, parent: _Optional[str] = ..., gateway_id: _Optional[str] = ..., gateway: _Optional[_Union[Gateway, _Mapping]] = ...) -> None: ...
 
 class GetGatewayRequest(_message.Message):
-    __slots__ = ("name",)
+    __slots__ = ()
     NAME_FIELD_NUMBER: _ClassVar[int]
     name: str
     def __init__(self, name: _Optional[str] = ...) -> None: ...
 
 class ListGatewaysRequest(_message.Message):
-    __slots__ = ("parent", "page_size", "page_token", "filter", "order_by")
+    __slots__ = ()
     PARENT_FIELD_NUMBER: _ClassVar[int]
     PAGE_SIZE_FIELD_NUMBER: _ClassVar[int]
     PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
@@ -98,7 +99,7 @@ class ListGatewaysRequest(_message.Message):
     def __init__(self, parent: _Optional[str] = ..., page_size: _Optional[int] = ..., page_token: _Optional[str] = ..., filter: _Optional[str] = ..., order_by: _Optional[str] = ...) -> None: ...
 
 class ListGatewaysResponse(_message.Message):
-    __slots__ = ("gateways", "next_page_token")
+    __slots__ = ()
     GATEWAYS_FIELD_NUMBER: _ClassVar[int]
     NEXT_PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
     gateways: _containers.RepeatedCompositeFieldContainer[Gateway]
@@ -106,7 +107,7 @@ class ListGatewaysResponse(_message.Message):
     def __init__(self, gateways: _Optional[_Iterable[_Union[Gateway, _Mapping]]] = ..., next_page_token: _Optional[str] = ...) -> None: ...
 
 class UpdateGatewayRequest(_message.Message):
-    __slots__ = ("gateway", "update_mask")
+    __slots__ = ()
     GATEWAY_FIELD_NUMBER: _ClassVar[int]
     UPDATE_MASK_FIELD_NUMBER: _ClassVar[int]
     gateway: Gateway
@@ -114,13 +115,13 @@ class UpdateGatewayRequest(_message.Message):
     def __init__(self, gateway: _Optional[_Union[Gateway, _Mapping]] = ..., update_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
 
 class DeleteGatewayRequest(_message.Message):
-    __slots__ = ("name",)
+    __slots__ = ()
     NAME_FIELD_NUMBER: _ClassVar[int]
     name: str
     def __init__(self, name: _Optional[str] = ...) -> None: ...
 
 class BindGatewayRequest(_message.Message):
-    __slots__ = ("name", "device_id")
+    __slots__ = ()
     NAME_FIELD_NUMBER: _ClassVar[int]
     DEVICE_ID_FIELD_NUMBER: _ClassVar[int]
     name: str
@@ -132,19 +133,19 @@ class BindGatewayResponse(_message.Message):
     def __init__(self) -> None: ...
 
 class UnbindGatewayRequest(_message.Message):
-    __slots__ = ("name", "force")
+    __slots__ = ()
     NAME_FIELD_NUMBER: _ClassVar[int]
     FORCE_FIELD_NUMBER: _ClassVar[int]
     name: str
     force: bool
-    def __init__(self, name: _Optional[str] = ..., force: bool = ...) -> None: ...
+    def __init__(self, name: _Optional[str] = ..., force: _Optional[bool] = ...) -> None: ...
 
 class UnbindGatewayResponse(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
 class InitializeGatewayRequest(_message.Message):
-    __slots__ = ("name",)
+    __slots__ = ()
     NAME_FIELD_NUMBER: _ClassVar[int]
     name: str
     def __init__(self, name: _Optional[str] = ...) -> None: ...
@@ -158,7 +159,7 @@ class InitializeGatewayMetadata(_message.Message):
     def __init__(self) -> None: ...
 
 class ConfigureGatewayRequest(_message.Message):
-    __slots__ = ("name",)
+    __slots__ = ()
     NAME_FIELD_NUMBER: _ClassVar[int]
     name: str
     def __init__(self, name: _Optional[str] = ...) -> None: ...
@@ -172,7 +173,7 @@ class ConfigureGatewayMetadata(_message.Message):
     def __init__(self) -> None: ...
 
 class ResetGatewayRequest(_message.Message):
-    __slots__ = ("name",)
+    __slots__ = ()
     NAME_FIELD_NUMBER: _ClassVar[int]
     name: str
     def __init__(self, name: _Optional[str] = ...) -> None: ...
@@ -186,7 +187,7 @@ class ResetGatewayMetadata(_message.Message):
     def __init__(self) -> None: ...
 
 class UpdateGatewayFirmwareRequest(_message.Message):
-    __slots__ = ("gateway",)
+    __slots__ = ()
     GATEWAY_FIELD_NUMBER: _ClassVar[int]
     gateway: str
     def __init__(self, gateway: _Optional[str] = ...) -> None: ...
@@ -196,31 +197,31 @@ class UpdateGatewayFirmwareResponse(_message.Message):
     def __init__(self) -> None: ...
 
 class UpdateGatewayFirmwareMetadata(_message.Message):
-    __slots__ = ("progress_percent",)
+    __slots__ = ()
     PROGRESS_PERCENT_FIELD_NUMBER: _ClassVar[int]
     progress_percent: int
     def __init__(self, progress_percent: _Optional[int] = ...) -> None: ...
 
 class GenerateAuthorizationTokenRequest(_message.Message):
-    __slots__ = ("gateway",)
+    __slots__ = ()
     GATEWAY_FIELD_NUMBER: _ClassVar[int]
     gateway: str
     def __init__(self, gateway: _Optional[str] = ...) -> None: ...
 
 class GenerateAuthorizationTokenResponse(_message.Message):
-    __slots__ = ("authorization_token",)
+    __slots__ = ()
     AUTHORIZATION_TOKEN_FIELD_NUMBER: _ClassVar[int]
     authorization_token: bytes
     def __init__(self, authorization_token: _Optional[bytes] = ...) -> None: ...
 
 class GenerateFirmwareDownloadUriRequest(_message.Message):
-    __slots__ = ("gateway",)
+    __slots__ = ()
     GATEWAY_FIELD_NUMBER: _ClassVar[int]
     gateway: str
     def __init__(self, gateway: _Optional[str] = ...) -> None: ...
 
 class GenerateFirmwareDownloadUriResponse(_message.Message):
-    __slots__ = ("download_uri", "digest")
+    __slots__ = ()
     DOWNLOAD_URI_FIELD_NUMBER: _ClassVar[int]
     DIGEST_FIELD_NUMBER: _ClassVar[int]
     download_uri: str

@@ -1,15 +1,18 @@
+import datetime
+
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from saltoapis.nebula.type import device_type_pb2 as _device_type_pb2
 from saltoapis.nebula.type import device_type_pb2 as _device_type_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
+from collections.abc import Iterable as _Iterable, Mapping as _Mapping
+from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Device(_message.Message):
-    __slots__ = ("name", "display_name", "device_id", "device_type", "source", "gateway", "extender", "outdated", "connected", "low_battery", "last_event_time", "initialized")
+    __slots__ = ()
     NAME_FIELD_NUMBER: _ClassVar[int]
     DISPLAY_NAME_FIELD_NUMBER: _ClassVar[int]
     DEVICE_ID_FIELD_NUMBER: _ClassVar[int]
@@ -34,16 +37,16 @@ class Device(_message.Message):
     low_battery: bool
     last_event_time: _timestamp_pb2.Timestamp
     initialized: bool
-    def __init__(self, name: _Optional[str] = ..., display_name: _Optional[str] = ..., device_id: _Optional[str] = ..., device_type: _Optional[_Union[_device_type_pb2.DeviceType, str]] = ..., source: _Optional[str] = ..., gateway: _Optional[str] = ..., extender: _Optional[str] = ..., outdated: bool = ..., connected: bool = ..., low_battery: bool = ..., last_event_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., initialized: bool = ...) -> None: ...
+    def __init__(self, name: _Optional[str] = ..., display_name: _Optional[str] = ..., device_id: _Optional[str] = ..., device_type: _Optional[_Union[_device_type_pb2.DeviceType, str]] = ..., source: _Optional[str] = ..., gateway: _Optional[str] = ..., extender: _Optional[str] = ..., outdated: _Optional[bool] = ..., connected: _Optional[bool] = ..., low_battery: _Optional[bool] = ..., last_event_time: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., initialized: _Optional[bool] = ...) -> None: ...
 
 class GetDeviceRequest(_message.Message):
-    __slots__ = ("name",)
+    __slots__ = ()
     NAME_FIELD_NUMBER: _ClassVar[int]
     name: str
     def __init__(self, name: _Optional[str] = ...) -> None: ...
 
 class ListDevicesRequest(_message.Message):
-    __slots__ = ("parent", "page_size", "page_token", "filter", "order_by")
+    __slots__ = ()
     PARENT_FIELD_NUMBER: _ClassVar[int]
     PAGE_SIZE_FIELD_NUMBER: _ClassVar[int]
     PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
@@ -57,7 +60,7 @@ class ListDevicesRequest(_message.Message):
     def __init__(self, parent: _Optional[str] = ..., page_size: _Optional[int] = ..., page_token: _Optional[str] = ..., filter: _Optional[str] = ..., order_by: _Optional[str] = ...) -> None: ...
 
 class ListDevicesResponse(_message.Message):
-    __slots__ = ("devices", "next_page_token", "total_size")
+    __slots__ = ()
     DEVICES_FIELD_NUMBER: _ClassVar[int]
     NEXT_PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
     TOTAL_SIZE_FIELD_NUMBER: _ClassVar[int]

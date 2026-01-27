@@ -1,20 +1,23 @@
+import datetime
+
 from google.protobuf import empty_pb2 as _empty_pb2
 from google.protobuf import field_mask_pb2 as _field_mask_pb2
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
+from collections.abc import Iterable as _Iterable, Mapping as _Mapping
+from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Unit(_message.Message):
-    __slots__ = ("name", "display_name", "move_in_time", "move_out_time", "privacy_settings")
+    __slots__ = ()
     class PrivacySettings(_message.Message):
-        __slots__ = ("enabled",)
+        __slots__ = ()
         ENABLED_FIELD_NUMBER: _ClassVar[int]
         enabled: bool
-        def __init__(self, enabled: bool = ...) -> None: ...
+        def __init__(self, enabled: _Optional[bool] = ...) -> None: ...
     NAME_FIELD_NUMBER: _ClassVar[int]
     DISPLAY_NAME_FIELD_NUMBER: _ClassVar[int]
     MOVE_IN_TIME_FIELD_NUMBER: _ClassVar[int]
@@ -25,10 +28,10 @@ class Unit(_message.Message):
     move_in_time: _timestamp_pb2.Timestamp
     move_out_time: _timestamp_pb2.Timestamp
     privacy_settings: Unit.PrivacySettings
-    def __init__(self, name: _Optional[str] = ..., display_name: _Optional[str] = ..., move_in_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., move_out_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., privacy_settings: _Optional[_Union[Unit.PrivacySettings, _Mapping]] = ...) -> None: ...
+    def __init__(self, name: _Optional[str] = ..., display_name: _Optional[str] = ..., move_in_time: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., move_out_time: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., privacy_settings: _Optional[_Union[Unit.PrivacySettings, _Mapping]] = ...) -> None: ...
 
 class Policy(_message.Message):
-    __slots__ = ("name", "member", "roles")
+    __slots__ = ()
     NAME_FIELD_NUMBER: _ClassVar[int]
     MEMBER_FIELD_NUMBER: _ClassVar[int]
     ROLES_FIELD_NUMBER: _ClassVar[int]
@@ -38,7 +41,7 @@ class Policy(_message.Message):
     def __init__(self, name: _Optional[str] = ..., member: _Optional[str] = ..., roles: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class CreateUnitRequest(_message.Message):
-    __slots__ = ("parent", "unit_id", "unit")
+    __slots__ = ()
     PARENT_FIELD_NUMBER: _ClassVar[int]
     UNIT_ID_FIELD_NUMBER: _ClassVar[int]
     UNIT_FIELD_NUMBER: _ClassVar[int]
@@ -48,13 +51,13 @@ class CreateUnitRequest(_message.Message):
     def __init__(self, parent: _Optional[str] = ..., unit_id: _Optional[str] = ..., unit: _Optional[_Union[Unit, _Mapping]] = ...) -> None: ...
 
 class GetUnitRequest(_message.Message):
-    __slots__ = ("name",)
+    __slots__ = ()
     NAME_FIELD_NUMBER: _ClassVar[int]
     name: str
     def __init__(self, name: _Optional[str] = ...) -> None: ...
 
 class ListUnitsRequest(_message.Message):
-    __slots__ = ("parent", "page_size", "page_token", "filter", "order_by")
+    __slots__ = ()
     PARENT_FIELD_NUMBER: _ClassVar[int]
     PAGE_SIZE_FIELD_NUMBER: _ClassVar[int]
     PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
@@ -68,7 +71,7 @@ class ListUnitsRequest(_message.Message):
     def __init__(self, parent: _Optional[str] = ..., page_size: _Optional[int] = ..., page_token: _Optional[str] = ..., filter: _Optional[str] = ..., order_by: _Optional[str] = ...) -> None: ...
 
 class ListUnitsResponse(_message.Message):
-    __slots__ = ("units", "next_page_token")
+    __slots__ = ()
     UNITS_FIELD_NUMBER: _ClassVar[int]
     NEXT_PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
     units: _containers.RepeatedCompositeFieldContainer[Unit]
@@ -76,7 +79,7 @@ class ListUnitsResponse(_message.Message):
     def __init__(self, units: _Optional[_Iterable[_Union[Unit, _Mapping]]] = ..., next_page_token: _Optional[str] = ...) -> None: ...
 
 class UpdateUnitRequest(_message.Message):
-    __slots__ = ("unit", "update_mask")
+    __slots__ = ()
     UNIT_FIELD_NUMBER: _ClassVar[int]
     UPDATE_MASK_FIELD_NUMBER: _ClassVar[int]
     unit: Unit
@@ -84,13 +87,13 @@ class UpdateUnitRequest(_message.Message):
     def __init__(self, unit: _Optional[_Union[Unit, _Mapping]] = ..., update_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
 
 class DeleteUnitRequest(_message.Message):
-    __slots__ = ("name",)
+    __slots__ = ()
     NAME_FIELD_NUMBER: _ClassVar[int]
     name: str
     def __init__(self, name: _Optional[str] = ...) -> None: ...
 
 class CleanOutUnitRequest(_message.Message):
-    __slots__ = ("name",)
+    __slots__ = ()
     NAME_FIELD_NUMBER: _ClassVar[int]
     name: str
     def __init__(self, name: _Optional[str] = ...) -> None: ...
@@ -100,9 +103,9 @@ class CleanOutUnitResponse(_message.Message):
     def __init__(self) -> None: ...
 
 class MoveInUnitRequest(_message.Message):
-    __slots__ = ("name", "occupants")
+    __slots__ = ()
     class Occupant(_message.Message):
-        __slots__ = ("given_name", "family_name", "email", "access_rights", "iam_roles")
+        __slots__ = ()
         GIVEN_NAME_FIELD_NUMBER: _ClassVar[int]
         FAMILY_NAME_FIELD_NUMBER: _ClassVar[int]
         EMAIL_FIELD_NUMBER: _ClassVar[int]
@@ -125,7 +128,7 @@ class MoveInUnitResponse(_message.Message):
     def __init__(self) -> None: ...
 
 class MoveOutUnitRequest(_message.Message):
-    __slots__ = ("name",)
+    __slots__ = ()
     NAME_FIELD_NUMBER: _ClassVar[int]
     name: str
     def __init__(self, name: _Optional[str] = ...) -> None: ...
@@ -135,7 +138,7 @@ class MoveOutUnitResponse(_message.Message):
     def __init__(self) -> None: ...
 
 class CreatePolicyRequest(_message.Message):
-    __slots__ = ("parent", "policy_id", "policy")
+    __slots__ = ()
     PARENT_FIELD_NUMBER: _ClassVar[int]
     POLICY_ID_FIELD_NUMBER: _ClassVar[int]
     POLICY_FIELD_NUMBER: _ClassVar[int]
@@ -145,13 +148,13 @@ class CreatePolicyRequest(_message.Message):
     def __init__(self, parent: _Optional[str] = ..., policy_id: _Optional[str] = ..., policy: _Optional[_Union[Policy, _Mapping]] = ...) -> None: ...
 
 class GetPolicyRequest(_message.Message):
-    __slots__ = ("name",)
+    __slots__ = ()
     NAME_FIELD_NUMBER: _ClassVar[int]
     name: str
     def __init__(self, name: _Optional[str] = ...) -> None: ...
 
 class ListPoliciesRequest(_message.Message):
-    __slots__ = ("parent", "page_size", "page_token", "filter", "order_by")
+    __slots__ = ()
     PARENT_FIELD_NUMBER: _ClassVar[int]
     PAGE_SIZE_FIELD_NUMBER: _ClassVar[int]
     PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
@@ -165,7 +168,7 @@ class ListPoliciesRequest(_message.Message):
     def __init__(self, parent: _Optional[str] = ..., page_size: _Optional[int] = ..., page_token: _Optional[str] = ..., filter: _Optional[str] = ..., order_by: _Optional[str] = ...) -> None: ...
 
 class ListPoliciesResponse(_message.Message):
-    __slots__ = ("policies", "next_page_token")
+    __slots__ = ()
     POLICIES_FIELD_NUMBER: _ClassVar[int]
     NEXT_PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
     policies: _containers.RepeatedCompositeFieldContainer[Policy]
@@ -173,7 +176,7 @@ class ListPoliciesResponse(_message.Message):
     def __init__(self, policies: _Optional[_Iterable[_Union[Policy, _Mapping]]] = ..., next_page_token: _Optional[str] = ...) -> None: ...
 
 class UpdatePolicyRequest(_message.Message):
-    __slots__ = ("policy", "update_mask")
+    __slots__ = ()
     POLICY_FIELD_NUMBER: _ClassVar[int]
     UPDATE_MASK_FIELD_NUMBER: _ClassVar[int]
     policy: Policy
@@ -181,13 +184,13 @@ class UpdatePolicyRequest(_message.Message):
     def __init__(self, policy: _Optional[_Union[Policy, _Mapping]] = ..., update_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
 
 class DeletePolicyRequest(_message.Message):
-    __slots__ = ("name",)
+    __slots__ = ()
     NAME_FIELD_NUMBER: _ClassVar[int]
     name: str
     def __init__(self, name: _Optional[str] = ...) -> None: ...
 
 class TestPermissionsRequest(_message.Message):
-    __slots__ = ("unit", "permissions")
+    __slots__ = ()
     UNIT_FIELD_NUMBER: _ClassVar[int]
     PERMISSIONS_FIELD_NUMBER: _ClassVar[int]
     unit: str
@@ -195,7 +198,7 @@ class TestPermissionsRequest(_message.Message):
     def __init__(self, unit: _Optional[str] = ..., permissions: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class TestPermissionsResponse(_message.Message):
-    __slots__ = ("permissions",)
+    __slots__ = ()
     PERMISSIONS_FIELD_NUMBER: _ClassVar[int]
     permissions: _containers.RepeatedScalarFieldContainer[str]
     def __init__(self, permissions: _Optional[_Iterable[str]] = ...) -> None: ...

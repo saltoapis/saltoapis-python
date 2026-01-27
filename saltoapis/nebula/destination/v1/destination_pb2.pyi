@@ -3,12 +3,13 @@ from google.protobuf import field_mask_pb2 as _field_mask_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
+from collections.abc import Iterable as _Iterable, Mapping as _Mapping
+from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Destination(_message.Message):
-    __slots__ = ("name", "display_name")
+    __slots__ = ()
     NAME_FIELD_NUMBER: _ClassVar[int]
     DISPLAY_NAME_FIELD_NUMBER: _ClassVar[int]
     name: str
@@ -16,7 +17,7 @@ class Destination(_message.Message):
     def __init__(self, name: _Optional[str] = ..., display_name: _Optional[str] = ...) -> None: ...
 
 class CreateDestinationRequest(_message.Message):
-    __slots__ = ("parent", "destination_id", "destination")
+    __slots__ = ()
     PARENT_FIELD_NUMBER: _ClassVar[int]
     DESTINATION_ID_FIELD_NUMBER: _ClassVar[int]
     DESTINATION_FIELD_NUMBER: _ClassVar[int]
@@ -26,13 +27,13 @@ class CreateDestinationRequest(_message.Message):
     def __init__(self, parent: _Optional[str] = ..., destination_id: _Optional[str] = ..., destination: _Optional[_Union[Destination, _Mapping]] = ...) -> None: ...
 
 class GetDestinationRequest(_message.Message):
-    __slots__ = ("name",)
+    __slots__ = ()
     NAME_FIELD_NUMBER: _ClassVar[int]
     name: str
     def __init__(self, name: _Optional[str] = ...) -> None: ...
 
 class BatchGetDestinationsRequest(_message.Message):
-    __slots__ = ("parent", "names")
+    __slots__ = ()
     PARENT_FIELD_NUMBER: _ClassVar[int]
     NAMES_FIELD_NUMBER: _ClassVar[int]
     parent: str
@@ -40,13 +41,13 @@ class BatchGetDestinationsRequest(_message.Message):
     def __init__(self, parent: _Optional[str] = ..., names: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class BatchGetDestinationsResponse(_message.Message):
-    __slots__ = ("destinations",)
+    __slots__ = ()
     DESTINATIONS_FIELD_NUMBER: _ClassVar[int]
     destinations: _containers.RepeatedCompositeFieldContainer[Destination]
     def __init__(self, destinations: _Optional[_Iterable[_Union[Destination, _Mapping]]] = ...) -> None: ...
 
 class UpdateDestinationRequest(_message.Message):
-    __slots__ = ("destination", "update_mask")
+    __slots__ = ()
     DESTINATION_FIELD_NUMBER: _ClassVar[int]
     UPDATE_MASK_FIELD_NUMBER: _ClassVar[int]
     destination: Destination
@@ -54,7 +55,7 @@ class UpdateDestinationRequest(_message.Message):
     def __init__(self, destination: _Optional[_Union[Destination, _Mapping]] = ..., update_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
 
 class ListDestinationsRequest(_message.Message):
-    __slots__ = ("parent", "page_size", "page_token", "filter", "order_by")
+    __slots__ = ()
     PARENT_FIELD_NUMBER: _ClassVar[int]
     PAGE_SIZE_FIELD_NUMBER: _ClassVar[int]
     PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
@@ -68,7 +69,7 @@ class ListDestinationsRequest(_message.Message):
     def __init__(self, parent: _Optional[str] = ..., page_size: _Optional[int] = ..., page_token: _Optional[str] = ..., filter: _Optional[str] = ..., order_by: _Optional[str] = ...) -> None: ...
 
 class ListDestinationsResponse(_message.Message):
-    __slots__ = ("destinations", "next_page_token")
+    __slots__ = ()
     DESTINATIONS_FIELD_NUMBER: _ClassVar[int]
     NEXT_PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
     destinations: _containers.RepeatedCompositeFieldContainer[Destination]
@@ -76,7 +77,7 @@ class ListDestinationsResponse(_message.Message):
     def __init__(self, destinations: _Optional[_Iterable[_Union[Destination, _Mapping]]] = ..., next_page_token: _Optional[str] = ...) -> None: ...
 
 class DeleteDestinationRequest(_message.Message):
-    __slots__ = ("name",)
+    __slots__ = ()
     NAME_FIELD_NUMBER: _ClassVar[int]
     name: str
     def __init__(self, name: _Optional[str] = ...) -> None: ...
