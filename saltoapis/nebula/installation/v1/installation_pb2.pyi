@@ -1,3 +1,5 @@
+import datetime
+
 from google.protobuf import duration_pb2 as _duration_pb2
 from google.protobuf import empty_pb2 as _empty_pb2
 from google.protobuf import field_mask_pb2 as _field_mask_pb2
@@ -10,14 +12,15 @@ from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
+from collections.abc import Iterable as _Iterable, Mapping as _Mapping
+from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Installation(_message.Message):
-    __slots__ = ("name", "display_name", "photo", "photo_uri", "address", "time_zone", "digital_key_art", "transfer_ownership_state", "delete_time", "partner_info", "block_time", "key_renewal_duration")
+    __slots__ = ()
     class DigitalKeyArt(_message.Message):
-        __slots__ = ("background_image", "background_image_uri", "text_color")
+        __slots__ = ()
         BACKGROUND_IMAGE_FIELD_NUMBER: _ClassVar[int]
         BACKGROUND_IMAGE_URI_FIELD_NUMBER: _ClassVar[int]
         TEXT_COLOR_FIELD_NUMBER: _ClassVar[int]
@@ -26,14 +29,14 @@ class Installation(_message.Message):
         text_color: _color_pb2.Color
         def __init__(self, background_image: _Optional[str] = ..., background_image_uri: _Optional[str] = ..., text_color: _Optional[_Union[_color_pb2.Color, _Mapping]] = ...) -> None: ...
     class TransferOwnershipState(_message.Message):
-        __slots__ = ("email", "expire_time")
+        __slots__ = ()
         EMAIL_FIELD_NUMBER: _ClassVar[int]
         EXPIRE_TIME_FIELD_NUMBER: _ClassVar[int]
         email: str
         expire_time: _timestamp_pb2.Timestamp
-        def __init__(self, email: _Optional[str] = ..., expire_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+        def __init__(self, email: _Optional[str] = ..., expire_time: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
     class PartnerInfo(_message.Message):
-        __slots__ = ("partner_id", "currency_code")
+        __slots__ = ()
         PARTNER_ID_FIELD_NUMBER: _ClassVar[int]
         CURRENCY_CODE_FIELD_NUMBER: _ClassVar[int]
         partner_id: str
@@ -63,10 +66,10 @@ class Installation(_message.Message):
     partner_info: Installation.PartnerInfo
     block_time: _timestamp_pb2.Timestamp
     key_renewal_duration: _duration_pb2.Duration
-    def __init__(self, name: _Optional[str] = ..., display_name: _Optional[str] = ..., photo: _Optional[str] = ..., photo_uri: _Optional[str] = ..., address: _Optional[str] = ..., time_zone: _Optional[str] = ..., digital_key_art: _Optional[_Union[Installation.DigitalKeyArt, _Mapping]] = ..., transfer_ownership_state: _Optional[_Union[Installation.TransferOwnershipState, _Mapping]] = ..., delete_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., partner_info: _Optional[_Union[Installation.PartnerInfo, _Mapping]] = ..., block_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., key_renewal_duration: _Optional[_Union[_duration_pb2.Duration, _Mapping]] = ...) -> None: ...
+    def __init__(self, name: _Optional[str] = ..., display_name: _Optional[str] = ..., photo: _Optional[str] = ..., photo_uri: _Optional[str] = ..., address: _Optional[str] = ..., time_zone: _Optional[str] = ..., digital_key_art: _Optional[_Union[Installation.DigitalKeyArt, _Mapping]] = ..., transfer_ownership_state: _Optional[_Union[Installation.TransferOwnershipState, _Mapping]] = ..., delete_time: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., partner_info: _Optional[_Union[Installation.PartnerInfo, _Mapping]] = ..., block_time: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., key_renewal_duration: _Optional[_Union[datetime.timedelta, _duration_pb2.Duration, _Mapping]] = ...) -> None: ...
 
 class Subscription(_message.Message):
-    __slots__ = ("name", "trial_end_time", "billing_info", "payment_method", "coupons")
+    __slots__ = ()
     NAME_FIELD_NUMBER: _ClassVar[int]
     TRIAL_END_TIME_FIELD_NUMBER: _ClassVar[int]
     BILLING_INFO_FIELD_NUMBER: _ClassVar[int]
@@ -77,10 +80,10 @@ class Subscription(_message.Message):
     billing_info: BillingInfo
     payment_method: PaymentMethod
     coupons: _containers.RepeatedCompositeFieldContainer[Coupon]
-    def __init__(self, name: _Optional[str] = ..., trial_end_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., billing_info: _Optional[_Union[BillingInfo, _Mapping]] = ..., payment_method: _Optional[_Union[PaymentMethod, _Mapping]] = ..., coupons: _Optional[_Iterable[_Union[Coupon, _Mapping]]] = ...) -> None: ...
+    def __init__(self, name: _Optional[str] = ..., trial_end_time: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., billing_info: _Optional[_Union[BillingInfo, _Mapping]] = ..., payment_method: _Optional[_Union[PaymentMethod, _Mapping]] = ..., coupons: _Optional[_Iterable[_Union[Coupon, _Mapping]]] = ...) -> None: ...
 
 class BillingInfo(_message.Message):
-    __slots__ = ("name", "company", "address", "region_code", "city", "state_code", "zip", "vat_number")
+    __slots__ = ()
     NAME_FIELD_NUMBER: _ClassVar[int]
     COMPANY_FIELD_NUMBER: _ClassVar[int]
     ADDRESS_FIELD_NUMBER: _ClassVar[int]
@@ -100,9 +103,9 @@ class BillingInfo(_message.Message):
     def __init__(self, name: _Optional[str] = ..., company: _Optional[str] = ..., address: _Optional[_Iterable[str]] = ..., region_code: _Optional[str] = ..., city: _Optional[str] = ..., state_code: _Optional[str] = ..., zip: _Optional[str] = ..., vat_number: _Optional[str] = ...) -> None: ...
 
 class PaymentMethod(_message.Message):
-    __slots__ = ("name", "card", "direct_debit")
+    __slots__ = ()
     class Card(_message.Message):
-        __slots__ = ("expire_date", "last_four", "brand", "payment_authorization")
+        __slots__ = ()
         EXPIRE_DATE_FIELD_NUMBER: _ClassVar[int]
         LAST_FOUR_FIELD_NUMBER: _ClassVar[int]
         BRAND_FIELD_NUMBER: _ClassVar[int]
@@ -113,9 +116,9 @@ class PaymentMethod(_message.Message):
         payment_authorization: str
         def __init__(self, expire_date: _Optional[_Union[_date_pb2.Date, _Mapping]] = ..., last_four: _Optional[str] = ..., brand: _Optional[str] = ..., payment_authorization: _Optional[str] = ...) -> None: ...
     class DirectDebit(_message.Message):
-        __slots__ = ("sepa",)
+        __slots__ = ()
         class SEPA(_message.Message):
-            __slots__ = ("last_four", "account_holder", "iban")
+            __slots__ = ()
             LAST_FOUR_FIELD_NUMBER: _ClassVar[int]
             ACCOUNT_HOLDER_FIELD_NUMBER: _ClassVar[int]
             IBAN_FIELD_NUMBER: _ClassVar[int]
@@ -135,19 +138,19 @@ class PaymentMethod(_message.Message):
     def __init__(self, name: _Optional[str] = ..., card: _Optional[_Union[PaymentMethod.Card, _Mapping]] = ..., direct_debit: _Optional[_Union[PaymentMethod.DirectDebit, _Mapping]] = ...) -> None: ...
 
 class PaymentAuthorization(_message.Message):
-    __slots__ = ("name",)
+    __slots__ = ()
     NAME_FIELD_NUMBER: _ClassVar[int]
     name: str
     def __init__(self, name: _Optional[str] = ...) -> None: ...
 
 class Coupon(_message.Message):
-    __slots__ = ("name",)
+    __slots__ = ()
     NAME_FIELD_NUMBER: _ClassVar[int]
     name: str
     def __init__(self, name: _Optional[str] = ...) -> None: ...
 
 class Invoice(_message.Message):
-    __slots__ = ("name", "start_time", "end_time", "line_items", "total", "state")
+    __slots__ = ()
     class State(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         STATE_UNSPECIFIED: _ClassVar[Invoice.State]
@@ -157,7 +160,7 @@ class Invoice(_message.Message):
     UNPAID: Invoice.State
     PAID: Invoice.State
     class LineItem(_message.Message):
-        __slots__ = ("id", "quantity", "price")
+        __slots__ = ()
         ID_FIELD_NUMBER: _ClassVar[int]
         QUANTITY_FIELD_NUMBER: _ClassVar[int]
         PRICE_FIELD_NUMBER: _ClassVar[int]
@@ -177,10 +180,10 @@ class Invoice(_message.Message):
     line_items: _containers.RepeatedCompositeFieldContainer[Invoice.LineItem]
     total: int
     state: Invoice.State
-    def __init__(self, name: _Optional[str] = ..., start_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., end_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., line_items: _Optional[_Iterable[_Union[Invoice.LineItem, _Mapping]]] = ..., total: _Optional[int] = ..., state: _Optional[_Union[Invoice.State, str]] = ...) -> None: ...
+    def __init__(self, name: _Optional[str] = ..., start_time: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., end_time: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., line_items: _Optional[_Iterable[_Union[Invoice.LineItem, _Mapping]]] = ..., total: _Optional[int] = ..., state: _Optional[_Union[Invoice.State, str]] = ...) -> None: ...
 
 class Policy(_message.Message):
-    __slots__ = ("name", "member", "roles")
+    __slots__ = ()
     NAME_FIELD_NUMBER: _ClassVar[int]
     MEMBER_FIELD_NUMBER: _ClassVar[int]
     ROLES_FIELD_NUMBER: _ClassVar[int]
@@ -190,23 +193,23 @@ class Policy(_message.Message):
     def __init__(self, name: _Optional[str] = ..., member: _Optional[str] = ..., roles: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class CreateInstallationRequest(_message.Message):
-    __slots__ = ("installation_id", "installation", "validate_only")
+    __slots__ = ()
     INSTALLATION_ID_FIELD_NUMBER: _ClassVar[int]
     INSTALLATION_FIELD_NUMBER: _ClassVar[int]
     VALIDATE_ONLY_FIELD_NUMBER: _ClassVar[int]
     installation_id: str
     installation: Installation
     validate_only: bool
-    def __init__(self, installation_id: _Optional[str] = ..., installation: _Optional[_Union[Installation, _Mapping]] = ..., validate_only: bool = ...) -> None: ...
+    def __init__(self, installation_id: _Optional[str] = ..., installation: _Optional[_Union[Installation, _Mapping]] = ..., validate_only: _Optional[bool] = ...) -> None: ...
 
 class GetInstallationRequest(_message.Message):
-    __slots__ = ("name",)
+    __slots__ = ()
     NAME_FIELD_NUMBER: _ClassVar[int]
     name: str
     def __init__(self, name: _Optional[str] = ...) -> None: ...
 
 class ListInstallationsRequest(_message.Message):
-    __slots__ = ("page_size", "page_token", "filter", "order_by", "show_deleted")
+    __slots__ = ()
     PAGE_SIZE_FIELD_NUMBER: _ClassVar[int]
     PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
     FILTER_FIELD_NUMBER: _ClassVar[int]
@@ -217,10 +220,10 @@ class ListInstallationsRequest(_message.Message):
     filter: str
     order_by: str
     show_deleted: bool
-    def __init__(self, page_size: _Optional[int] = ..., page_token: _Optional[str] = ..., filter: _Optional[str] = ..., order_by: _Optional[str] = ..., show_deleted: bool = ...) -> None: ...
+    def __init__(self, page_size: _Optional[int] = ..., page_token: _Optional[str] = ..., filter: _Optional[str] = ..., order_by: _Optional[str] = ..., show_deleted: _Optional[bool] = ...) -> None: ...
 
 class ListInstallationsResponse(_message.Message):
-    __slots__ = ("installations", "next_page_token")
+    __slots__ = ()
     INSTALLATIONS_FIELD_NUMBER: _ClassVar[int]
     NEXT_PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
     installations: _containers.RepeatedCompositeFieldContainer[Installation]
@@ -228,7 +231,7 @@ class ListInstallationsResponse(_message.Message):
     def __init__(self, installations: _Optional[_Iterable[_Union[Installation, _Mapping]]] = ..., next_page_token: _Optional[str] = ...) -> None: ...
 
 class UpdateInstallationRequest(_message.Message):
-    __slots__ = ("installation", "update_mask")
+    __slots__ = ()
     INSTALLATION_FIELD_NUMBER: _ClassVar[int]
     UPDATE_MASK_FIELD_NUMBER: _ClassVar[int]
     installation: Installation
@@ -236,23 +239,23 @@ class UpdateInstallationRequest(_message.Message):
     def __init__(self, installation: _Optional[_Union[Installation, _Mapping]] = ..., update_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
 
 class DeleteInstallationRequest(_message.Message):
-    __slots__ = ("name", "validate_only", "delay_hours")
+    __slots__ = ()
     NAME_FIELD_NUMBER: _ClassVar[int]
     VALIDATE_ONLY_FIELD_NUMBER: _ClassVar[int]
     DELAY_HOURS_FIELD_NUMBER: _ClassVar[int]
     name: str
     validate_only: bool
     delay_hours: int
-    def __init__(self, name: _Optional[str] = ..., validate_only: bool = ..., delay_hours: _Optional[int] = ...) -> None: ...
+    def __init__(self, name: _Optional[str] = ..., validate_only: _Optional[bool] = ..., delay_hours: _Optional[int] = ...) -> None: ...
 
 class UndeleteInstallationRequest(_message.Message):
-    __slots__ = ("name",)
+    __slots__ = ()
     NAME_FIELD_NUMBER: _ClassVar[int]
     name: str
     def __init__(self, name: _Optional[str] = ...) -> None: ...
 
 class CreatePolicyRequest(_message.Message):
-    __slots__ = ("parent", "policy_id", "policy")
+    __slots__ = ()
     PARENT_FIELD_NUMBER: _ClassVar[int]
     POLICY_ID_FIELD_NUMBER: _ClassVar[int]
     POLICY_FIELD_NUMBER: _ClassVar[int]
@@ -262,13 +265,13 @@ class CreatePolicyRequest(_message.Message):
     def __init__(self, parent: _Optional[str] = ..., policy_id: _Optional[str] = ..., policy: _Optional[_Union[Policy, _Mapping]] = ...) -> None: ...
 
 class GetPolicyRequest(_message.Message):
-    __slots__ = ("name",)
+    __slots__ = ()
     NAME_FIELD_NUMBER: _ClassVar[int]
     name: str
     def __init__(self, name: _Optional[str] = ...) -> None: ...
 
 class ListPoliciesRequest(_message.Message):
-    __slots__ = ("parent", "page_size", "page_token", "filter", "order_by")
+    __slots__ = ()
     PARENT_FIELD_NUMBER: _ClassVar[int]
     PAGE_SIZE_FIELD_NUMBER: _ClassVar[int]
     PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
@@ -282,7 +285,7 @@ class ListPoliciesRequest(_message.Message):
     def __init__(self, parent: _Optional[str] = ..., page_size: _Optional[int] = ..., page_token: _Optional[str] = ..., filter: _Optional[str] = ..., order_by: _Optional[str] = ...) -> None: ...
 
 class ListPoliciesResponse(_message.Message):
-    __slots__ = ("policies", "next_page_token")
+    __slots__ = ()
     POLICIES_FIELD_NUMBER: _ClassVar[int]
     NEXT_PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
     policies: _containers.RepeatedCompositeFieldContainer[Policy]
@@ -290,7 +293,7 @@ class ListPoliciesResponse(_message.Message):
     def __init__(self, policies: _Optional[_Iterable[_Union[Policy, _Mapping]]] = ..., next_page_token: _Optional[str] = ...) -> None: ...
 
 class UpdatePolicyRequest(_message.Message):
-    __slots__ = ("policy", "update_mask")
+    __slots__ = ()
     POLICY_FIELD_NUMBER: _ClassVar[int]
     UPDATE_MASK_FIELD_NUMBER: _ClassVar[int]
     policy: Policy
@@ -298,13 +301,13 @@ class UpdatePolicyRequest(_message.Message):
     def __init__(self, policy: _Optional[_Union[Policy, _Mapping]] = ..., update_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
 
 class DeletePolicyRequest(_message.Message):
-    __slots__ = ("name",)
+    __slots__ = ()
     NAME_FIELD_NUMBER: _ClassVar[int]
     name: str
     def __init__(self, name: _Optional[str] = ...) -> None: ...
 
 class TestPermissionsRequest(_message.Message):
-    __slots__ = ("installation", "permissions")
+    __slots__ = ()
     INSTALLATION_FIELD_NUMBER: _ClassVar[int]
     PERMISSIONS_FIELD_NUMBER: _ClassVar[int]
     installation: str
@@ -312,13 +315,13 @@ class TestPermissionsRequest(_message.Message):
     def __init__(self, installation: _Optional[str] = ..., permissions: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class TestPermissionsResponse(_message.Message):
-    __slots__ = ("permissions",)
+    __slots__ = ()
     PERMISSIONS_FIELD_NUMBER: _ClassVar[int]
     permissions: _containers.RepeatedScalarFieldContainer[str]
     def __init__(self, permissions: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class TransferInstallationOwnershipRequest(_message.Message):
-    __slots__ = ("installation", "email")
+    __slots__ = ()
     INSTALLATION_FIELD_NUMBER: _ClassVar[int]
     EMAIL_FIELD_NUMBER: _ClassVar[int]
     installation: str
@@ -330,7 +333,7 @@ class TransferInstallationOwnershipResponse(_message.Message):
     def __init__(self) -> None: ...
 
 class AcceptInstallationOwnershipRequest(_message.Message):
-    __slots__ = ("installation", "billing_info")
+    __slots__ = ()
     INSTALLATION_FIELD_NUMBER: _ClassVar[int]
     BILLING_INFO_FIELD_NUMBER: _ClassVar[int]
     installation: str
@@ -342,25 +345,25 @@ class AcceptInstallationOwnershipResponse(_message.Message):
     def __init__(self) -> None: ...
 
 class GetSubscriptionRequest(_message.Message):
-    __slots__ = ("name",)
+    __slots__ = ()
     NAME_FIELD_NUMBER: _ClassVar[int]
     name: str
     def __init__(self, name: _Optional[str] = ...) -> None: ...
 
 class UpdateBillingInfoRequest(_message.Message):
-    __slots__ = ("billing_info",)
+    __slots__ = ()
     BILLING_INFO_FIELD_NUMBER: _ClassVar[int]
     billing_info: BillingInfo
     def __init__(self, billing_info: _Optional[_Union[BillingInfo, _Mapping]] = ...) -> None: ...
 
 class UpdatePaymentMethodRequest(_message.Message):
-    __slots__ = ("payment_method",)
+    __slots__ = ()
     PAYMENT_METHOD_FIELD_NUMBER: _ClassVar[int]
     payment_method: PaymentMethod
     def __init__(self, payment_method: _Optional[_Union[PaymentMethod, _Mapping]] = ...) -> None: ...
 
 class UpdateCardRequest(_message.Message):
-    __slots__ = ("payment_method", "token")
+    __slots__ = ()
     PAYMENT_METHOD_FIELD_NUMBER: _ClassVar[int]
     TOKEN_FIELD_NUMBER: _ClassVar[int]
     payment_method: str
@@ -372,7 +375,7 @@ class UpdateCardResponse(_message.Message):
     def __init__(self) -> None: ...
 
 class CreatePaymentAuthorizationRequest(_message.Message):
-    __slots__ = ("parent", "payment_authorization")
+    __slots__ = ()
     PARENT_FIELD_NUMBER: _ClassVar[int]
     PAYMENT_AUTHORIZATION_FIELD_NUMBER: _ClassVar[int]
     parent: str
@@ -380,19 +383,19 @@ class CreatePaymentAuthorizationRequest(_message.Message):
     def __init__(self, parent: _Optional[str] = ..., payment_authorization: _Optional[_Union[PaymentAuthorization, _Mapping]] = ...) -> None: ...
 
 class ListInvoicesRequest(_message.Message):
-    __slots__ = ("parent",)
+    __slots__ = ()
     PARENT_FIELD_NUMBER: _ClassVar[int]
     parent: str
     def __init__(self, parent: _Optional[str] = ...) -> None: ...
 
 class ListInvoicesResponse(_message.Message):
-    __slots__ = ("invoices",)
+    __slots__ = ()
     INVOICES_FIELD_NUMBER: _ClassVar[int]
     invoices: _containers.RepeatedCompositeFieldContainer[Invoice]
     def __init__(self, invoices: _Optional[_Iterable[_Union[Invoice, _Mapping]]] = ...) -> None: ...
 
 class ApplyCouponRequest(_message.Message):
-    __slots__ = ("subscription", "coupon")
+    __slots__ = ()
     SUBSCRIPTION_FIELD_NUMBER: _ClassVar[int]
     COUPON_FIELD_NUMBER: _ClassVar[int]
     subscription: str
@@ -404,7 +407,7 @@ class ApplyCouponResponse(_message.Message):
     def __init__(self) -> None: ...
 
 class UnapplyCouponRequest(_message.Message):
-    __slots__ = ("subscription", "coupon")
+    __slots__ = ()
     SUBSCRIPTION_FIELD_NUMBER: _ClassVar[int]
     COUPON_FIELD_NUMBER: _ClassVar[int]
     subscription: str
@@ -416,13 +419,13 @@ class UnapplyCouponResponse(_message.Message):
     def __init__(self) -> None: ...
 
 class GenerateAuthorizationTokenRequest(_message.Message):
-    __slots__ = ("installation",)
+    __slots__ = ()
     INSTALLATION_FIELD_NUMBER: _ClassVar[int]
     installation: str
     def __init__(self, installation: _Optional[str] = ...) -> None: ...
 
 class GenerateAuthorizationTokenResponse(_message.Message):
-    __slots__ = ("authorization_token",)
+    __slots__ = ()
     AUTHORIZATION_TOKEN_FIELD_NUMBER: _ClassVar[int]
     authorization_token: bytes
     def __init__(self, authorization_token: _Optional[bytes] = ...) -> None: ...

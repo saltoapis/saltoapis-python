@@ -1,3 +1,5 @@
+import datetime
+
 from google.protobuf import empty_pb2 as _empty_pb2
 from google.protobuf import field_mask_pb2 as _field_mask_pb2
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
@@ -8,12 +10,13 @@ from saltoapis.nebula.type import device_metadata_pb2 as _device_metadata_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
+from collections.abc import Iterable as _Iterable, Mapping as _Mapping
+from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class IntercomAdaptor(_message.Message):
-    __slots__ = ("name", "display_name", "device_id", "gateway", "extender", "access_points", "initialized", "device_metadata", "outdated", "connected", "low_battery", "last_event_time", "intercom", "photos", "photo_uris", "readings")
+    __slots__ = ()
     NAME_FIELD_NUMBER: _ClassVar[int]
     DISPLAY_NAME_FIELD_NUMBER: _ClassVar[int]
     DEVICE_ID_FIELD_NUMBER: _ClassVar[int]
@@ -46,10 +49,10 @@ class IntercomAdaptor(_message.Message):
     photos: _containers.RepeatedScalarFieldContainer[str]
     photo_uris: _containers.RepeatedScalarFieldContainer[str]
     readings: _containers.RepeatedScalarFieldContainer[str]
-    def __init__(self, name: _Optional[str] = ..., display_name: _Optional[str] = ..., device_id: _Optional[str] = ..., gateway: _Optional[str] = ..., extender: _Optional[str] = ..., access_points: _Optional[_Iterable[_Union[IntercomAdaptorAccessPoint, _Mapping]]] = ..., initialized: bool = ..., device_metadata: _Optional[_Union[_device_metadata_pb2.DeviceMetadata, _Mapping]] = ..., outdated: bool = ..., connected: bool = ..., low_battery: bool = ..., last_event_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., intercom: _Optional[str] = ..., photos: _Optional[_Iterable[str]] = ..., photo_uris: _Optional[_Iterable[str]] = ..., readings: _Optional[_Iterable[str]] = ...) -> None: ...
+    def __init__(self, name: _Optional[str] = ..., display_name: _Optional[str] = ..., device_id: _Optional[str] = ..., gateway: _Optional[str] = ..., extender: _Optional[str] = ..., access_points: _Optional[_Iterable[_Union[IntercomAdaptorAccessPoint, _Mapping]]] = ..., initialized: _Optional[bool] = ..., device_metadata: _Optional[_Union[_device_metadata_pb2.DeviceMetadata, _Mapping]] = ..., outdated: _Optional[bool] = ..., connected: _Optional[bool] = ..., low_battery: _Optional[bool] = ..., last_event_time: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., intercom: _Optional[str] = ..., photos: _Optional[_Iterable[str]] = ..., photo_uris: _Optional[_Iterable[str]] = ..., readings: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class IntercomAdaptorAccessPoint(_message.Message):
-    __slots__ = ("access_point", "frame_settings")
+    __slots__ = ()
     ACCESS_POINT_FIELD_NUMBER: _ClassVar[int]
     FRAME_SETTINGS_FIELD_NUMBER: _ClassVar[int]
     access_point: str
@@ -57,7 +60,7 @@ class IntercomAdaptorAccessPoint(_message.Message):
     def __init__(self, access_point: _Optional[str] = ..., frame_settings: _Optional[bytes] = ...) -> None: ...
 
 class CreateIntercomAdaptorRequest(_message.Message):
-    __slots__ = ("parent", "intercom_adaptor_id", "intercom_adaptor")
+    __slots__ = ()
     PARENT_FIELD_NUMBER: _ClassVar[int]
     INTERCOM_ADAPTOR_ID_FIELD_NUMBER: _ClassVar[int]
     INTERCOM_ADAPTOR_FIELD_NUMBER: _ClassVar[int]
@@ -67,13 +70,13 @@ class CreateIntercomAdaptorRequest(_message.Message):
     def __init__(self, parent: _Optional[str] = ..., intercom_adaptor_id: _Optional[str] = ..., intercom_adaptor: _Optional[_Union[IntercomAdaptor, _Mapping]] = ...) -> None: ...
 
 class GetIntercomAdaptorRequest(_message.Message):
-    __slots__ = ("name",)
+    __slots__ = ()
     NAME_FIELD_NUMBER: _ClassVar[int]
     name: str
     def __init__(self, name: _Optional[str] = ...) -> None: ...
 
 class ListIntercomAdaptorsRequest(_message.Message):
-    __slots__ = ("parent", "page_size", "page_token", "filter", "order_by")
+    __slots__ = ()
     PARENT_FIELD_NUMBER: _ClassVar[int]
     PAGE_SIZE_FIELD_NUMBER: _ClassVar[int]
     PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
@@ -87,7 +90,7 @@ class ListIntercomAdaptorsRequest(_message.Message):
     def __init__(self, parent: _Optional[str] = ..., page_size: _Optional[int] = ..., page_token: _Optional[str] = ..., filter: _Optional[str] = ..., order_by: _Optional[str] = ...) -> None: ...
 
 class ListIntercomAdaptorsResponse(_message.Message):
-    __slots__ = ("intercom_adaptors", "next_page_token")
+    __slots__ = ()
     INTERCOM_ADAPTORS_FIELD_NUMBER: _ClassVar[int]
     NEXT_PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
     intercom_adaptors: _containers.RepeatedCompositeFieldContainer[IntercomAdaptor]
@@ -95,7 +98,7 @@ class ListIntercomAdaptorsResponse(_message.Message):
     def __init__(self, intercom_adaptors: _Optional[_Iterable[_Union[IntercomAdaptor, _Mapping]]] = ..., next_page_token: _Optional[str] = ...) -> None: ...
 
 class UpdateIntercomAdaptorRequest(_message.Message):
-    __slots__ = ("intercom_adaptor", "update_mask")
+    __slots__ = ()
     INTERCOM_ADAPTOR_FIELD_NUMBER: _ClassVar[int]
     UPDATE_MASK_FIELD_NUMBER: _ClassVar[int]
     intercom_adaptor: IntercomAdaptor
@@ -103,13 +106,13 @@ class UpdateIntercomAdaptorRequest(_message.Message):
     def __init__(self, intercom_adaptor: _Optional[_Union[IntercomAdaptor, _Mapping]] = ..., update_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
 
 class DeleteIntercomAdaptorRequest(_message.Message):
-    __slots__ = ("name",)
+    __slots__ = ()
     NAME_FIELD_NUMBER: _ClassVar[int]
     name: str
     def __init__(self, name: _Optional[str] = ...) -> None: ...
 
 class BindIntercomAdaptorRequest(_message.Message):
-    __slots__ = ("name", "device_id")
+    __slots__ = ()
     NAME_FIELD_NUMBER: _ClassVar[int]
     DEVICE_ID_FIELD_NUMBER: _ClassVar[int]
     name: str
@@ -121,19 +124,19 @@ class BindIntercomAdaptorResponse(_message.Message):
     def __init__(self) -> None: ...
 
 class UnbindIntercomAdaptorRequest(_message.Message):
-    __slots__ = ("name", "force")
+    __slots__ = ()
     NAME_FIELD_NUMBER: _ClassVar[int]
     FORCE_FIELD_NUMBER: _ClassVar[int]
     name: str
     force: bool
-    def __init__(self, name: _Optional[str] = ..., force: bool = ...) -> None: ...
+    def __init__(self, name: _Optional[str] = ..., force: _Optional[bool] = ...) -> None: ...
 
 class UnbindIntercomAdaptorResponse(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
 class InitializeIntercomAdaptorRequest(_message.Message):
-    __slots__ = ("name",)
+    __slots__ = ()
     NAME_FIELD_NUMBER: _ClassVar[int]
     name: str
     def __init__(self, name: _Optional[str] = ...) -> None: ...
@@ -143,13 +146,13 @@ class InitializeIntercomAdaptorResponse(_message.Message):
     def __init__(self) -> None: ...
 
 class InitializeIntercomAdaptorMetadata(_message.Message):
-    __slots__ = ("progress_percent",)
+    __slots__ = ()
     PROGRESS_PERCENT_FIELD_NUMBER: _ClassVar[int]
     progress_percent: int
     def __init__(self, progress_percent: _Optional[int] = ...) -> None: ...
 
 class ConfigureIntercomAdaptorRequest(_message.Message):
-    __slots__ = ("name",)
+    __slots__ = ()
     NAME_FIELD_NUMBER: _ClassVar[int]
     name: str
     def __init__(self, name: _Optional[str] = ...) -> None: ...
@@ -163,7 +166,7 @@ class ConfigureIntercomAdaptorMetadata(_message.Message):
     def __init__(self) -> None: ...
 
 class ResetIntercomAdaptorRequest(_message.Message):
-    __slots__ = ("name",)
+    __slots__ = ()
     NAME_FIELD_NUMBER: _ClassVar[int]
     name: str
     def __init__(self, name: _Optional[str] = ...) -> None: ...
@@ -177,7 +180,7 @@ class ResetIntercomAdaptorMetadata(_message.Message):
     def __init__(self) -> None: ...
 
 class UpdateIntercomAdaptorFirmwareRequest(_message.Message):
-    __slots__ = ("intercom_adaptor",)
+    __slots__ = ()
     INTERCOM_ADAPTOR_FIELD_NUMBER: _ClassVar[int]
     intercom_adaptor: str
     def __init__(self, intercom_adaptor: _Optional[str] = ...) -> None: ...
@@ -187,31 +190,31 @@ class UpdateIntercomAdaptorFirmwareResponse(_message.Message):
     def __init__(self) -> None: ...
 
 class UpdateIntercomAdaptorFirmwareMetadata(_message.Message):
-    __slots__ = ("progress_percent",)
+    __slots__ = ()
     PROGRESS_PERCENT_FIELD_NUMBER: _ClassVar[int]
     progress_percent: int
     def __init__(self, progress_percent: _Optional[int] = ...) -> None: ...
 
 class GenerateAuthorizationTokenRequest(_message.Message):
-    __slots__ = ("intercom_adaptor",)
+    __slots__ = ()
     INTERCOM_ADAPTOR_FIELD_NUMBER: _ClassVar[int]
     intercom_adaptor: str
     def __init__(self, intercom_adaptor: _Optional[str] = ...) -> None: ...
 
 class GenerateAuthorizationTokenResponse(_message.Message):
-    __slots__ = ("authorization_token",)
+    __slots__ = ()
     AUTHORIZATION_TOKEN_FIELD_NUMBER: _ClassVar[int]
     authorization_token: bytes
     def __init__(self, authorization_token: _Optional[bytes] = ...) -> None: ...
 
 class GenerateFirmwareDownloadUriRequest(_message.Message):
-    __slots__ = ("intercom_adaptor",)
+    __slots__ = ()
     INTERCOM_ADAPTOR_FIELD_NUMBER: _ClassVar[int]
     intercom_adaptor: str
     def __init__(self, intercom_adaptor: _Optional[str] = ...) -> None: ...
 
 class GenerateFirmwareDownloadUriResponse(_message.Message):
-    __slots__ = ("download_uri", "digest")
+    __slots__ = ()
     DOWNLOAD_URI_FIELD_NUMBER: _ClassVar[int]
     DIGEST_FIELD_NUMBER: _ClassVar[int]
     download_uri: str

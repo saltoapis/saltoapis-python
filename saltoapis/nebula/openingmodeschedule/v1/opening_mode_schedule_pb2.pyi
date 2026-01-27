@@ -11,16 +11,17 @@ from saltoapis.type import time_of_day_pb2 as _time_of_day_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
+from collections.abc import Iterable as _Iterable, Mapping as _Mapping
+from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class OpeningModeSchedule(_message.Message):
-    __slots__ = ("name", "display_name", "days")
+    __slots__ = ()
     class Day(_message.Message):
-        __slots__ = ("day_type", "day_of_week", "slots")
+        __slots__ = ()
         class Slot(_message.Message):
-            __slots__ = ("opening_mode", "start_time", "end_time")
+            __slots__ = ()
             OPENING_MODE_FIELD_NUMBER: _ClassVar[int]
             START_TIME_FIELD_NUMBER: _ClassVar[int]
             END_TIME_FIELD_NUMBER: _ClassVar[int]
@@ -44,7 +45,7 @@ class OpeningModeSchedule(_message.Message):
     def __init__(self, name: _Optional[str] = ..., display_name: _Optional[str] = ..., days: _Optional[_Iterable[_Union[OpeningModeSchedule.Day, _Mapping]]] = ...) -> None: ...
 
 class CreateOpeningModeScheduleRequest(_message.Message):
-    __slots__ = ("parent", "opening_mode_schedule_id", "opening_mode_schedule")
+    __slots__ = ()
     PARENT_FIELD_NUMBER: _ClassVar[int]
     OPENING_MODE_SCHEDULE_ID_FIELD_NUMBER: _ClassVar[int]
     OPENING_MODE_SCHEDULE_FIELD_NUMBER: _ClassVar[int]
@@ -54,13 +55,13 @@ class CreateOpeningModeScheduleRequest(_message.Message):
     def __init__(self, parent: _Optional[str] = ..., opening_mode_schedule_id: _Optional[str] = ..., opening_mode_schedule: _Optional[_Union[OpeningModeSchedule, _Mapping]] = ...) -> None: ...
 
 class GetOpeningModeScheduleRequest(_message.Message):
-    __slots__ = ("name",)
+    __slots__ = ()
     NAME_FIELD_NUMBER: _ClassVar[int]
     name: str
     def __init__(self, name: _Optional[str] = ...) -> None: ...
 
 class ListOpeningModeSchedulesRequest(_message.Message):
-    __slots__ = ("parent", "page_size", "page_token", "filter", "order_by")
+    __slots__ = ()
     PARENT_FIELD_NUMBER: _ClassVar[int]
     PAGE_SIZE_FIELD_NUMBER: _ClassVar[int]
     PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
@@ -74,7 +75,7 @@ class ListOpeningModeSchedulesRequest(_message.Message):
     def __init__(self, parent: _Optional[str] = ..., page_size: _Optional[int] = ..., page_token: _Optional[str] = ..., filter: _Optional[str] = ..., order_by: _Optional[str] = ...) -> None: ...
 
 class ListOpeningModeSchedulesResponse(_message.Message):
-    __slots__ = ("opening_mode_schedules", "next_page_token")
+    __slots__ = ()
     OPENING_MODE_SCHEDULES_FIELD_NUMBER: _ClassVar[int]
     NEXT_PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
     opening_mode_schedules: _containers.RepeatedCompositeFieldContainer[OpeningModeSchedule]
@@ -82,7 +83,7 @@ class ListOpeningModeSchedulesResponse(_message.Message):
     def __init__(self, opening_mode_schedules: _Optional[_Iterable[_Union[OpeningModeSchedule, _Mapping]]] = ..., next_page_token: _Optional[str] = ...) -> None: ...
 
 class UpdateOpeningModeScheduleRequest(_message.Message):
-    __slots__ = ("opening_mode_schedule", "update_mask")
+    __slots__ = ()
     OPENING_MODE_SCHEDULE_FIELD_NUMBER: _ClassVar[int]
     UPDATE_MASK_FIELD_NUMBER: _ClassVar[int]
     opening_mode_schedule: OpeningModeSchedule
@@ -90,7 +91,7 @@ class UpdateOpeningModeScheduleRequest(_message.Message):
     def __init__(self, opening_mode_schedule: _Optional[_Union[OpeningModeSchedule, _Mapping]] = ..., update_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
 
 class DeleteOpeningModeScheduleRequest(_message.Message):
-    __slots__ = ("name",)
+    __slots__ = ()
     NAME_FIELD_NUMBER: _ClassVar[int]
     name: str
     def __init__(self, name: _Optional[str] = ...) -> None: ...

@@ -15,20 +15,21 @@ from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
+from collections.abc import Iterable as _Iterable, Mapping as _Mapping
+from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Principal(_message.Message):
-    __slots__ = ("user",)
+    __slots__ = ()
     USER_FIELD_NUMBER: _ClassVar[int]
     user: _user_pb2.User
     def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ...) -> None: ...
 
 class PreviousValues(_message.Message):
-    __slots__ = ("values",)
+    __slots__ = ()
     class ValuesEntry(_message.Message):
-        __slots__ = ("key", "value")
+        __slots__ = ()
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
@@ -39,7 +40,7 @@ class PreviousValues(_message.Message):
     def __init__(self, values: _Optional[_Mapping[str, _struct_pb2.Value]] = ...) -> None: ...
 
 class AccessPointCreated(_message.Message):
-    __slots__ = ("access_point", "actor")
+    __slots__ = ()
     ACCESS_POINT_FIELD_NUMBER: _ClassVar[int]
     ACTOR_FIELD_NUMBER: _ClassVar[int]
     access_point: _access_point_pb2.AccessPoint
@@ -47,7 +48,7 @@ class AccessPointCreated(_message.Message):
     def __init__(self, access_point: _Optional[_Union[_access_point_pb2.AccessPoint, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class AccessPointUpdated(_message.Message):
-    __slots__ = ("access_point", "actor", "previous_values")
+    __slots__ = ()
     ACCESS_POINT_FIELD_NUMBER: _ClassVar[int]
     ACTOR_FIELD_NUMBER: _ClassVar[int]
     PREVIOUS_VALUES_FIELD_NUMBER: _ClassVar[int]
@@ -57,7 +58,7 @@ class AccessPointUpdated(_message.Message):
     def __init__(self, access_point: _Optional[_Union[_access_point_pb2.AccessPoint, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ..., previous_values: _Optional[_Union[PreviousValues, _Mapping]] = ...) -> None: ...
 
 class AccessPointDeleted(_message.Message):
-    __slots__ = ("access_point", "actor")
+    __slots__ = ()
     ACCESS_POINT_FIELD_NUMBER: _ClassVar[int]
     ACTOR_FIELD_NUMBER: _ClassVar[int]
     access_point: _access_point_pb2.AccessPoint
@@ -65,7 +66,7 @@ class AccessPointDeleted(_message.Message):
     def __init__(self, access_point: _Optional[_Union[_access_point_pb2.AccessPoint, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class AccessPointUnlocked(_message.Message):
-    __slots__ = ("access_point", "user", "emergency_key", "card_key", "app_key", "wallet_key", "passcode", "electronic_key", "direction")
+    __slots__ = ()
     class Direction(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         DIRECTION_UNSPECIFIED: _ClassVar[AccessPointUnlocked.Direction]
@@ -95,7 +96,7 @@ class AccessPointUnlocked(_message.Message):
     def __init__(self, access_point: _Optional[_Union[_access_point_pb2.AccessPoint, _Mapping]] = ..., user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., emergency_key: _Optional[_Union[_emergency_key_pb2.EmergencyKey, _Mapping]] = ..., card_key: _Optional[_Union[_user_pb2.CardKey, _Mapping]] = ..., app_key: _Optional[_Union[_user_pb2.AppKey, _Mapping]] = ..., wallet_key: _Optional[_Union[_user_pb2.WalletKey, _Mapping]] = ..., passcode: _Optional[_Union[_user_pb2.Passcode, _Mapping]] = ..., electronic_key: _Optional[_Union[_user_pb2.ElectronicKey, _Mapping]] = ..., direction: _Optional[_Union[AccessPointUnlocked.Direction, str]] = ...) -> None: ...
 
 class AccessPointLocked(_message.Message):
-    __slots__ = ("access_point", "user", "emergency_key", "card_key", "app_key", "wallet_key", "passcode", "electronic_key")
+    __slots__ = ()
     ACCESS_POINT_FIELD_NUMBER: _ClassVar[int]
     USER_FIELD_NUMBER: _ClassVar[int]
     EMERGENCY_KEY_FIELD_NUMBER: _ClassVar[int]
@@ -115,19 +116,19 @@ class AccessPointLocked(_message.Message):
     def __init__(self, access_point: _Optional[_Union[_access_point_pb2.AccessPoint, _Mapping]] = ..., user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., emergency_key: _Optional[_Union[_emergency_key_pb2.EmergencyKey, _Mapping]] = ..., card_key: _Optional[_Union[_user_pb2.CardKey, _Mapping]] = ..., app_key: _Optional[_Union[_user_pb2.AppKey, _Mapping]] = ..., wallet_key: _Optional[_Union[_user_pb2.WalletKey, _Mapping]] = ..., passcode: _Optional[_Union[_user_pb2.Passcode, _Mapping]] = ..., electronic_key: _Optional[_Union[_user_pb2.ElectronicKey, _Mapping]] = ...) -> None: ...
 
 class AccessPointForcedOpen(_message.Message):
-    __slots__ = ("access_point",)
+    __slots__ = ()
     ACCESS_POINT_FIELD_NUMBER: _ClassVar[int]
     access_point: _access_point_pb2.AccessPoint
     def __init__(self, access_point: _Optional[_Union[_access_point_pb2.AccessPoint, _Mapping]] = ...) -> None: ...
 
 class AccessPointClosed(_message.Message):
-    __slots__ = ("access_point",)
+    __slots__ = ()
     ACCESS_POINT_FIELD_NUMBER: _ClassVar[int]
     access_point: _access_point_pb2.AccessPoint
     def __init__(self, access_point: _Optional[_Union[_access_point_pb2.AccessPoint, _Mapping]] = ...) -> None: ...
 
 class AccessDenied(_message.Message):
-    __slots__ = ("access_point", "controller", "user", "reason", "emergency_key", "card_key", "app_key", "wallet_key", "passcode", "electronic_key")
+    __slots__ = ()
     class Reason(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         REASON_UNSPECIFIED: _ClassVar[AccessDenied.Reason]
@@ -169,13 +170,13 @@ class AccessDenied(_message.Message):
     def __init__(self, access_point: _Optional[_Union[_access_point_pb2.AccessPoint, _Mapping]] = ..., controller: _Optional[_Union[_controller_pb2.Controller, _Mapping]] = ..., user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., reason: _Optional[_Union[AccessDenied.Reason, str]] = ..., emergency_key: _Optional[_Union[_emergency_key_pb2.EmergencyKey, _Mapping]] = ..., card_key: _Optional[_Union[_user_pb2.CardKey, _Mapping]] = ..., app_key: _Optional[_Union[_user_pb2.AppKey, _Mapping]] = ..., wallet_key: _Optional[_Union[_user_pb2.WalletKey, _Mapping]] = ..., passcode: _Optional[_Union[_user_pb2.Passcode, _Mapping]] = ..., electronic_key: _Optional[_Union[_user_pb2.ElectronicKey, _Mapping]] = ...) -> None: ...
 
 class AccessPointLeftOpen(_message.Message):
-    __slots__ = ("access_point",)
+    __slots__ = ()
     ACCESS_POINT_FIELD_NUMBER: _ClassVar[int]
     access_point: _access_point_pb2.AccessPoint
     def __init__(self, access_point: _Optional[_Union[_access_point_pb2.AccessPoint, _Mapping]] = ...) -> None: ...
 
 class AccessRightCreated(_message.Message):
-    __slots__ = ("access_right", "actor")
+    __slots__ = ()
     ACCESS_RIGHT_FIELD_NUMBER: _ClassVar[int]
     ACTOR_FIELD_NUMBER: _ClassVar[int]
     access_right: _access_right_pb2.AccessRight
@@ -183,7 +184,7 @@ class AccessRightCreated(_message.Message):
     def __init__(self, access_right: _Optional[_Union[_access_right_pb2.AccessRight, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class AccessRightUpdated(_message.Message):
-    __slots__ = ("access_right", "actor", "previous_values")
+    __slots__ = ()
     ACCESS_RIGHT_FIELD_NUMBER: _ClassVar[int]
     ACTOR_FIELD_NUMBER: _ClassVar[int]
     PREVIOUS_VALUES_FIELD_NUMBER: _ClassVar[int]
@@ -193,7 +194,7 @@ class AccessRightUpdated(_message.Message):
     def __init__(self, access_right: _Optional[_Union[_access_right_pb2.AccessRight, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ..., previous_values: _Optional[_Union[PreviousValues, _Mapping]] = ...) -> None: ...
 
 class AccessRightDeleted(_message.Message):
-    __slots__ = ("access_right", "actor")
+    __slots__ = ()
     ACCESS_RIGHT_FIELD_NUMBER: _ClassVar[int]
     ACTOR_FIELD_NUMBER: _ClassVar[int]
     access_right: _access_right_pb2.AccessRight
@@ -201,7 +202,7 @@ class AccessRightDeleted(_message.Message):
     def __init__(self, access_right: _Optional[_Union[_access_right_pb2.AccessRight, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class AccessRightAccessPointCreated(_message.Message):
-    __slots__ = ("access_right", "access_point", "actor")
+    __slots__ = ()
     ACCESS_RIGHT_FIELD_NUMBER: _ClassVar[int]
     ACCESS_POINT_FIELD_NUMBER: _ClassVar[int]
     ACTOR_FIELD_NUMBER: _ClassVar[int]
@@ -211,7 +212,7 @@ class AccessRightAccessPointCreated(_message.Message):
     def __init__(self, access_right: _Optional[_Union[_access_right_pb2.AccessRight, _Mapping]] = ..., access_point: _Optional[_Union[_access_point_pb2.AccessPoint, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class AccessRightAccessPointsBatchCreated(_message.Message):
-    __slots__ = ("access_right", "access_points", "actor")
+    __slots__ = ()
     ACCESS_RIGHT_FIELD_NUMBER: _ClassVar[int]
     ACCESS_POINTS_FIELD_NUMBER: _ClassVar[int]
     ACTOR_FIELD_NUMBER: _ClassVar[int]
@@ -221,7 +222,7 @@ class AccessRightAccessPointsBatchCreated(_message.Message):
     def __init__(self, access_right: _Optional[_Union[_access_right_pb2.AccessRight, _Mapping]] = ..., access_points: _Optional[_Iterable[_Union[_access_point_pb2.AccessPoint, _Mapping]]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class AccessRightAccessPointDeleted(_message.Message):
-    __slots__ = ("access_right", "access_point", "actor")
+    __slots__ = ()
     ACCESS_RIGHT_FIELD_NUMBER: _ClassVar[int]
     ACCESS_POINT_FIELD_NUMBER: _ClassVar[int]
     ACTOR_FIELD_NUMBER: _ClassVar[int]
@@ -231,7 +232,7 @@ class AccessRightAccessPointDeleted(_message.Message):
     def __init__(self, access_right: _Optional[_Union[_access_right_pb2.AccessRight, _Mapping]] = ..., access_point: _Optional[_Union[_access_point_pb2.AccessPoint, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class AccessRightAccessPointsBatchDeleted(_message.Message):
-    __slots__ = ("access_right", "access_points", "actor")
+    __slots__ = ()
     ACCESS_RIGHT_FIELD_NUMBER: _ClassVar[int]
     ACCESS_POINTS_FIELD_NUMBER: _ClassVar[int]
     ACTOR_FIELD_NUMBER: _ClassVar[int]
@@ -241,7 +242,7 @@ class AccessRightAccessPointsBatchDeleted(_message.Message):
     def __init__(self, access_right: _Optional[_Union[_access_right_pb2.AccessRight, _Mapping]] = ..., access_points: _Optional[_Iterable[_Union[_access_point_pb2.AccessPoint, _Mapping]]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class UserCreated(_message.Message):
-    __slots__ = ("user", "actor")
+    __slots__ = ()
     USER_FIELD_NUMBER: _ClassVar[int]
     ACTOR_FIELD_NUMBER: _ClassVar[int]
     user: _user_pb2.User
@@ -249,7 +250,7 @@ class UserCreated(_message.Message):
     def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class UserUpdated(_message.Message):
-    __slots__ = ("user", "actor", "previous_values")
+    __slots__ = ()
     USER_FIELD_NUMBER: _ClassVar[int]
     ACTOR_FIELD_NUMBER: _ClassVar[int]
     PREVIOUS_VALUES_FIELD_NUMBER: _ClassVar[int]
@@ -259,7 +260,7 @@ class UserUpdated(_message.Message):
     def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ..., previous_values: _Optional[_Union[PreviousValues, _Mapping]] = ...) -> None: ...
 
 class UserBlocked(_message.Message):
-    __slots__ = ("user", "actor")
+    __slots__ = ()
     USER_FIELD_NUMBER: _ClassVar[int]
     ACTOR_FIELD_NUMBER: _ClassVar[int]
     user: _user_pb2.User
@@ -267,7 +268,7 @@ class UserBlocked(_message.Message):
     def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class UserUnblocked(_message.Message):
-    __slots__ = ("user", "actor")
+    __slots__ = ()
     USER_FIELD_NUMBER: _ClassVar[int]
     ACTOR_FIELD_NUMBER: _ClassVar[int]
     user: _user_pb2.User
@@ -275,7 +276,7 @@ class UserUnblocked(_message.Message):
     def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class UserDeleted(_message.Message):
-    __slots__ = ("user", "actor")
+    __slots__ = ()
     USER_FIELD_NUMBER: _ClassVar[int]
     ACTOR_FIELD_NUMBER: _ClassVar[int]
     user: _user_pb2.User
@@ -283,7 +284,7 @@ class UserDeleted(_message.Message):
     def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class UserAccessRightCreated(_message.Message):
-    __slots__ = ("user", "access_right", "actor")
+    __slots__ = ()
     USER_FIELD_NUMBER: _ClassVar[int]
     ACCESS_RIGHT_FIELD_NUMBER: _ClassVar[int]
     ACTOR_FIELD_NUMBER: _ClassVar[int]
@@ -293,7 +294,7 @@ class UserAccessRightCreated(_message.Message):
     def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., access_right: _Optional[_Union[_access_right_pb2.AccessRight, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class UserAccessRightUpdated(_message.Message):
-    __slots__ = ("user", "access_right", "actor")
+    __slots__ = ()
     USER_FIELD_NUMBER: _ClassVar[int]
     ACCESS_RIGHT_FIELD_NUMBER: _ClassVar[int]
     ACTOR_FIELD_NUMBER: _ClassVar[int]
@@ -303,7 +304,7 @@ class UserAccessRightUpdated(_message.Message):
     def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., access_right: _Optional[_Union[_access_right_pb2.AccessRight, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class UserAccessRightDeleted(_message.Message):
-    __slots__ = ("user", "access_right", "actor")
+    __slots__ = ()
     USER_FIELD_NUMBER: _ClassVar[int]
     ACCESS_RIGHT_FIELD_NUMBER: _ClassVar[int]
     ACTOR_FIELD_NUMBER: _ClassVar[int]
@@ -313,7 +314,7 @@ class UserAccessRightDeleted(_message.Message):
     def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., access_right: _Optional[_Union[_access_right_pb2.AccessRight, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class CardKeyAssigned(_message.Message):
-    __slots__ = ("user", "card_key", "actor")
+    __slots__ = ()
     USER_FIELD_NUMBER: _ClassVar[int]
     CARD_KEY_FIELD_NUMBER: _ClassVar[int]
     ACTOR_FIELD_NUMBER: _ClassVar[int]
@@ -323,7 +324,7 @@ class CardKeyAssigned(_message.Message):
     def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., card_key: _Optional[_Union[_user_pb2.CardKey, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class CardKeyCanceled(_message.Message):
-    __slots__ = ("user", "card_key", "actor")
+    __slots__ = ()
     USER_FIELD_NUMBER: _ClassVar[int]
     CARD_KEY_FIELD_NUMBER: _ClassVar[int]
     ACTOR_FIELD_NUMBER: _ClassVar[int]
@@ -333,7 +334,7 @@ class CardKeyCanceled(_message.Message):
     def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., card_key: _Optional[_Union[_user_pb2.CardKey, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class AppKeyAssigned(_message.Message):
-    __slots__ = ("user", "app_key", "actor")
+    __slots__ = ()
     USER_FIELD_NUMBER: _ClassVar[int]
     APP_KEY_FIELD_NUMBER: _ClassVar[int]
     ACTOR_FIELD_NUMBER: _ClassVar[int]
@@ -343,7 +344,7 @@ class AppKeyAssigned(_message.Message):
     def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., app_key: _Optional[_Union[_user_pb2.AppKey, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class AppKeyCanceled(_message.Message):
-    __slots__ = ("user", "app_key", "actor")
+    __slots__ = ()
     USER_FIELD_NUMBER: _ClassVar[int]
     APP_KEY_FIELD_NUMBER: _ClassVar[int]
     ACTOR_FIELD_NUMBER: _ClassVar[int]
@@ -353,7 +354,7 @@ class AppKeyCanceled(_message.Message):
     def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., app_key: _Optional[_Union[_user_pb2.AppKey, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class WalletKeyAssigned(_message.Message):
-    __slots__ = ("user", "wallet_key", "actor")
+    __slots__ = ()
     USER_FIELD_NUMBER: _ClassVar[int]
     WALLET_KEY_FIELD_NUMBER: _ClassVar[int]
     ACTOR_FIELD_NUMBER: _ClassVar[int]
@@ -363,7 +364,7 @@ class WalletKeyAssigned(_message.Message):
     def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., wallet_key: _Optional[_Union[_user_pb2.WalletKey, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class WalletKeyCanceled(_message.Message):
-    __slots__ = ("user", "wallet_key", "actor")
+    __slots__ = ()
     USER_FIELD_NUMBER: _ClassVar[int]
     WALLET_KEY_FIELD_NUMBER: _ClassVar[int]
     ACTOR_FIELD_NUMBER: _ClassVar[int]
@@ -373,7 +374,7 @@ class WalletKeyCanceled(_message.Message):
     def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., wallet_key: _Optional[_Union[_user_pb2.WalletKey, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class UnitMovedIn(_message.Message):
-    __slots__ = ("unit", "actor")
+    __slots__ = ()
     UNIT_FIELD_NUMBER: _ClassVar[int]
     ACTOR_FIELD_NUMBER: _ClassVar[int]
     unit: _unit_pb2.Unit
@@ -381,7 +382,7 @@ class UnitMovedIn(_message.Message):
     def __init__(self, unit: _Optional[_Union[_unit_pb2.Unit, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class UnitMovedOut(_message.Message):
-    __slots__ = ("unit", "actor")
+    __slots__ = ()
     UNIT_FIELD_NUMBER: _ClassVar[int]
     ACTOR_FIELD_NUMBER: _ClassVar[int]
     unit: _unit_pb2.Unit
@@ -389,7 +390,7 @@ class UnitMovedOut(_message.Message):
     def __init__(self, unit: _Optional[_Union[_unit_pb2.Unit, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class UnitCreated(_message.Message):
-    __slots__ = ("unit", "actor")
+    __slots__ = ()
     UNIT_FIELD_NUMBER: _ClassVar[int]
     ACTOR_FIELD_NUMBER: _ClassVar[int]
     unit: _unit_pb2.Unit
@@ -397,7 +398,7 @@ class UnitCreated(_message.Message):
     def __init__(self, unit: _Optional[_Union[_unit_pb2.Unit, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class UnitUpdated(_message.Message):
-    __slots__ = ("unit", "actor", "previous_values")
+    __slots__ = ()
     UNIT_FIELD_NUMBER: _ClassVar[int]
     ACTOR_FIELD_NUMBER: _ClassVar[int]
     PREVIOUS_VALUES_FIELD_NUMBER: _ClassVar[int]
@@ -407,7 +408,7 @@ class UnitUpdated(_message.Message):
     def __init__(self, unit: _Optional[_Union[_unit_pb2.Unit, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ..., previous_values: _Optional[_Union[PreviousValues, _Mapping]] = ...) -> None: ...
 
 class UnitDeleted(_message.Message):
-    __slots__ = ("unit", "actor")
+    __slots__ = ()
     UNIT_FIELD_NUMBER: _ClassVar[int]
     ACTOR_FIELD_NUMBER: _ClassVar[int]
     unit: _unit_pb2.Unit
@@ -415,7 +416,7 @@ class UnitDeleted(_message.Message):
     def __init__(self, unit: _Optional[_Union[_unit_pb2.Unit, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class EmergencyKeyCreated(_message.Message):
-    __slots__ = ("emergency_key", "actor")
+    __slots__ = ()
     EMERGENCY_KEY_FIELD_NUMBER: _ClassVar[int]
     ACTOR_FIELD_NUMBER: _ClassVar[int]
     emergency_key: _emergency_key_pb2.EmergencyKey
@@ -423,7 +424,7 @@ class EmergencyKeyCreated(_message.Message):
     def __init__(self, emergency_key: _Optional[_Union[_emergency_key_pb2.EmergencyKey, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class EmergencyKeyUpdated(_message.Message):
-    __slots__ = ("emergency_key", "actor", "previous_values")
+    __slots__ = ()
     EMERGENCY_KEY_FIELD_NUMBER: _ClassVar[int]
     ACTOR_FIELD_NUMBER: _ClassVar[int]
     PREVIOUS_VALUES_FIELD_NUMBER: _ClassVar[int]
@@ -433,7 +434,7 @@ class EmergencyKeyUpdated(_message.Message):
     def __init__(self, emergency_key: _Optional[_Union[_emergency_key_pb2.EmergencyKey, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ..., previous_values: _Optional[_Union[PreviousValues, _Mapping]] = ...) -> None: ...
 
 class EmergencyKeyDeleted(_message.Message):
-    __slots__ = ("emergency_key", "actor")
+    __slots__ = ()
     EMERGENCY_KEY_FIELD_NUMBER: _ClassVar[int]
     ACTOR_FIELD_NUMBER: _ClassVar[int]
     emergency_key: _emergency_key_pb2.EmergencyKey
@@ -441,7 +442,7 @@ class EmergencyKeyDeleted(_message.Message):
     def __init__(self, emergency_key: _Optional[_Union[_emergency_key_pb2.EmergencyKey, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class ElectronicKeyAssigned(_message.Message):
-    __slots__ = ("user", "electronic_key", "actor")
+    __slots__ = ()
     USER_FIELD_NUMBER: _ClassVar[int]
     ELECTRONIC_KEY_FIELD_NUMBER: _ClassVar[int]
     ACTOR_FIELD_NUMBER: _ClassVar[int]
@@ -451,7 +452,7 @@ class ElectronicKeyAssigned(_message.Message):
     def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., electronic_key: _Optional[_Union[_user_pb2.ElectronicKey, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class ElectronicKeyCanceled(_message.Message):
-    __slots__ = ("user", "electronic_key", "actor")
+    __slots__ = ()
     USER_FIELD_NUMBER: _ClassVar[int]
     ELECTRONIC_KEY_FIELD_NUMBER: _ClassVar[int]
     ACTOR_FIELD_NUMBER: _ClassVar[int]
@@ -461,7 +462,7 @@ class ElectronicKeyCanceled(_message.Message):
     def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., electronic_key: _Optional[_Union[_user_pb2.ElectronicKey, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
 
 class AccessGranted(_message.Message):
-    __slots__ = ("controller", "user", "emergency_key", "card_key", "app_key", "wallet_key", "passcode", "electronic_key")
+    __slots__ = ()
     CONTROLLER_FIELD_NUMBER: _ClassVar[int]
     USER_FIELD_NUMBER: _ClassVar[int]
     EMERGENCY_KEY_FIELD_NUMBER: _ClassVar[int]
