@@ -7,7 +7,7 @@ from saltoapis.longrunning.v1 import operation_pb2 as salto_dot_longrunning_dot_
 from saltoapis.longrunning.v1 import operation_pb2 as salto_dot_longrunning_dot_v1_dot_operation__pb2
 
 
-class OperationServiceStub(object):
+class OperationServiceStub:
     """Manages long-running operations with an API service.
 
     When an API method normally takes long time to complete, it can be designed
@@ -47,7 +47,7 @@ class OperationServiceStub(object):
                 _registered_method=True)
 
 
-class OperationServiceServicer(object):
+class OperationServiceServicer:
     """Manages long-running operations with an API service.
 
     When an API method normally takes long time to complete, it can be designed
@@ -135,7 +135,7 @@ def add_OperationServiceServicer_to_server(servicer, server):
 
 
  # This class is part of an EXPERIMENTAL API.
-class OperationService(object):
+class OperationService:
     """Manages long-running operations with an API service.
 
     When an API method normally takes long time to complete, it can be designed

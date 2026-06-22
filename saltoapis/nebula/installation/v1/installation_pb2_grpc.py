@@ -7,7 +7,7 @@ from saltoapis.nebula.installation.v1 import installation_pb2 as salto_dot_nebul
 from saltoapis.nebula.installation.v1 import installation_pb2 as salto_dot_nebula_dot_installation_dot_v1_dot_installation__pb2
 
 
-class InstallationServiceStub(object):
+class InstallationServiceStub:
     """An installation represents any entity such as a company, office or building
     that contains all the access control objects (access points, access rights,
     users, etc.) that comprise the access control system within a facility.
@@ -136,7 +136,7 @@ class InstallationServiceStub(object):
                 _registered_method=True)
 
 
-class InstallationServiceServicer(object):
+class InstallationServiceServicer:
     """An installation represents any entity such as a company, office or building
     that contains all the access control objects (access points, access rights,
     users, etc.) that comprise the access control system within a facility.
@@ -498,7 +498,7 @@ def add_InstallationServiceServicer_to_server(servicer, server):
 
 
  # This class is part of an EXPERIMENTAL API.
-class InstallationService(object):
+class InstallationService:
     """An installation represents any entity such as a company, office or building
     that contains all the access control objects (access points, access rights,
     users, etc.) that comprise the access control system within a facility.

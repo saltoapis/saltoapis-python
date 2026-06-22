@@ -7,7 +7,7 @@ from saltoapis.nebula.unit.v1 import unit_pb2 as salto_dot_nebula_dot_unit_dot_v
 from saltoapis.nebula.unit.v1 import unit_pb2 as salto_dot_nebula_dot_unit_dot_v1_dot_unit__pb2
 
 
-class UnitServiceStub(object):
+class UnitServiceStub:
     """UnitService is the service responsible for managing unit resources.
     """
 
@@ -89,7 +89,7 @@ class UnitServiceStub(object):
                 _registered_method=True)
 
 
-class UnitServiceServicer(object):
+class UnitServiceServicer:
     """UnitService is the service responsible for managing unit resources.
     """
 
@@ -314,7 +314,7 @@ def add_UnitServiceServicer_to_server(servicer, server):
 
 
  # This class is part of an EXPERIMENTAL API.
-class UnitService(object):
+class UnitService:
     """UnitService is the service responsible for managing unit resources.
     """
 

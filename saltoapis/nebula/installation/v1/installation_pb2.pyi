@@ -1,3 +1,5 @@
+import datetime
+
 from google.protobuf import duration_pb2 as _duration_pb2
 from google.protobuf import empty_pb2 as _empty_pb2
 from google.protobuf import field_mask_pb2 as _field_mask_pb2
@@ -10,7 +12,8 @@ from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
+from collections.abc import Iterable as _Iterable, Mapping as _Mapping
+from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
@@ -31,7 +34,7 @@ class Installation(_message.Message):
         EXPIRE_TIME_FIELD_NUMBER: _ClassVar[int]
         email: str
         expire_time: _timestamp_pb2.Timestamp
-        def __init__(self, email: _Optional[str] = ..., expire_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+        def __init__(self, email: _Optional[str] = ..., expire_time: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
     class PartnerInfo(_message.Message):
         __slots__ = ("partner_id", "currency_code")
         PARTNER_ID_FIELD_NUMBER: _ClassVar[int]
@@ -63,7 +66,7 @@ class Installation(_message.Message):
     partner_info: Installation.PartnerInfo
     block_time: _timestamp_pb2.Timestamp
     key_renewal_duration: _duration_pb2.Duration
-    def __init__(self, name: _Optional[str] = ..., display_name: _Optional[str] = ..., photo: _Optional[str] = ..., photo_uri: _Optional[str] = ..., address: _Optional[str] = ..., time_zone: _Optional[str] = ..., digital_key_art: _Optional[_Union[Installation.DigitalKeyArt, _Mapping]] = ..., transfer_ownership_state: _Optional[_Union[Installation.TransferOwnershipState, _Mapping]] = ..., delete_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., partner_info: _Optional[_Union[Installation.PartnerInfo, _Mapping]] = ..., block_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., key_renewal_duration: _Optional[_Union[_duration_pb2.Duration, _Mapping]] = ...) -> None: ...
+    def __init__(self, name: _Optional[str] = ..., display_name: _Optional[str] = ..., photo: _Optional[str] = ..., photo_uri: _Optional[str] = ..., address: _Optional[str] = ..., time_zone: _Optional[str] = ..., digital_key_art: _Optional[_Union[Installation.DigitalKeyArt, _Mapping]] = ..., transfer_ownership_state: _Optional[_Union[Installation.TransferOwnershipState, _Mapping]] = ..., delete_time: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., partner_info: _Optional[_Union[Installation.PartnerInfo, _Mapping]] = ..., block_time: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., key_renewal_duration: _Optional[_Union[datetime.timedelta, _duration_pb2.Duration, _Mapping]] = ...) -> None: ...
 
 class Subscription(_message.Message):
     __slots__ = ("name", "trial_end_time", "billing_info", "payment_method", "coupons")
@@ -77,7 +80,7 @@ class Subscription(_message.Message):
     billing_info: BillingInfo
     payment_method: PaymentMethod
     coupons: _containers.RepeatedCompositeFieldContainer[Coupon]
-    def __init__(self, name: _Optional[str] = ..., trial_end_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., billing_info: _Optional[_Union[BillingInfo, _Mapping]] = ..., payment_method: _Optional[_Union[PaymentMethod, _Mapping]] = ..., coupons: _Optional[_Iterable[_Union[Coupon, _Mapping]]] = ...) -> None: ...
+    def __init__(self, name: _Optional[str] = ..., trial_end_time: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., billing_info: _Optional[_Union[BillingInfo, _Mapping]] = ..., payment_method: _Optional[_Union[PaymentMethod, _Mapping]] = ..., coupons: _Optional[_Iterable[_Union[Coupon, _Mapping]]] = ...) -> None: ...
 
 class BillingInfo(_message.Message):
     __slots__ = ("name", "company", "address", "region_code", "city", "state_code", "zip", "vat_number")
@@ -177,7 +180,7 @@ class Invoice(_message.Message):
     line_items: _containers.RepeatedCompositeFieldContainer[Invoice.LineItem]
     total: int
     state: Invoice.State
-    def __init__(self, name: _Optional[str] = ..., start_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., end_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., line_items: _Optional[_Iterable[_Union[Invoice.LineItem, _Mapping]]] = ..., total: _Optional[int] = ..., state: _Optional[_Union[Invoice.State, str]] = ...) -> None: ...
+    def __init__(self, name: _Optional[str] = ..., start_time: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., end_time: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., line_items: _Optional[_Iterable[_Union[Invoice.LineItem, _Mapping]]] = ..., total: _Optional[int] = ..., state: _Optional[_Union[Invoice.State, str]] = ...) -> None: ...
 
 class Policy(_message.Message):
     __slots__ = ("name", "member", "roles")
@@ -197,7 +200,7 @@ class CreateInstallationRequest(_message.Message):
     installation_id: str
     installation: Installation
     validate_only: bool
-    def __init__(self, installation_id: _Optional[str] = ..., installation: _Optional[_Union[Installation, _Mapping]] = ..., validate_only: bool = ...) -> None: ...
+    def __init__(self, installation_id: _Optional[str] = ..., installation: _Optional[_Union[Installation, _Mapping]] = ..., validate_only: _Optional[bool] = ...) -> None: ...
 
 class GetInstallationRequest(_message.Message):
     __slots__ = ("name",)
@@ -217,7 +220,7 @@ class ListInstallationsRequest(_message.Message):
     filter: str
     order_by: str
     show_deleted: bool
-    def __init__(self, page_size: _Optional[int] = ..., page_token: _Optional[str] = ..., filter: _Optional[str] = ..., order_by: _Optional[str] = ..., show_deleted: bool = ...) -> None: ...
+    def __init__(self, page_size: _Optional[int] = ..., page_token: _Optional[str] = ..., filter: _Optional[str] = ..., order_by: _Optional[str] = ..., show_deleted: _Optional[bool] = ...) -> None: ...
 
 class ListInstallationsResponse(_message.Message):
     __slots__ = ("installations", "next_page_token")
@@ -243,7 +246,7 @@ class DeleteInstallationRequest(_message.Message):
     name: str
     validate_only: bool
     delay_hours: int
-    def __init__(self, name: _Optional[str] = ..., validate_only: bool = ..., delay_hours: _Optional[int] = ...) -> None: ...
+    def __init__(self, name: _Optional[str] = ..., validate_only: _Optional[bool] = ..., delay_hours: _Optional[int] = ...) -> None: ...
 
 class UndeleteInstallationRequest(_message.Message):
     __slots__ = ("name",)

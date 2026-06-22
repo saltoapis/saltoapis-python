@@ -9,7 +9,7 @@ from saltoapis.nebula.controller.v1 import controller_pb2 as salto_dot_nebula_do
 from saltoapis.nebula.controller.v1 import controller_pb2 as salto_dot_nebula_dot_controller_dot_v1_dot_controller__pb2
 
 
-class ControllerServiceStub(object):
+class ControllerServiceStub:
     """Controllers are mains-wired hardware devices that can be used to control access where
     a standalone lock cannot be fitted. For example, on car park barriers, turnstiles or
     sliding doors. They allow the management of multiple accesses from a single device.
@@ -131,7 +131,7 @@ class ControllerServiceStub(object):
                 _registered_method=True)
 
 
-class ControllerServiceServicer(object):
+class ControllerServiceServicer:
     """Controllers are mains-wired hardware devices that can be used to control access where
     a standalone lock cannot be fitted. For example, on car park barriers, turnstiles or
     sliding doors. They allow the management of multiple accesses from a single device.
@@ -464,7 +464,7 @@ def add_ControllerServiceServicer_to_server(servicer, server):
 
 
  # This class is part of an EXPERIMENTAL API.
-class ControllerService(object):
+class ControllerService:
     """Controllers are mains-wired hardware devices that can be used to control access where
     a standalone lock cannot be fitted. For example, on car park barriers, turnstiles or
     sliding doors. They allow the management of multiple accesses from a single device.

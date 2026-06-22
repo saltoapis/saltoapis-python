@@ -9,7 +9,7 @@ from saltoapis.nebula.user.v1 import user_pb2 as salto_dot_nebula_dot_user_dot_v
 from saltoapis.nebula.user.v1 import user_pb2 as salto_dot_nebula_dot_user_dot_v1_dot_user__pb2
 
 
-class UserServiceStub(object):
+class UserServiceStub:
     """A user can refer to both a holder of keys and a user with permissions to
     manage other users. Users are eligible to access rights and may be assigned a
     key. This service is responsible for managing user resources as well as
@@ -154,7 +154,7 @@ class UserServiceStub(object):
                 _registered_method=True)
 
 
-class UserServiceServicer(object):
+class UserServiceServicer:
     """A user can refer to both a holder of keys and a user with permissions to
     manage other users. Users are eligible to access rights and may be assigned a
     key. This service is responsible for managing user resources as well as
@@ -549,7 +549,7 @@ def add_UserServiceServicer_to_server(servicer, server):
 
 
  # This class is part of an EXPERIMENTAL API.
-class UserService(object):
+class UserService:
     """A user can refer to both a holder of keys and a user with permissions to
     manage other users. Users are eligible to access rights and may be assigned a
     key. This service is responsible for managing user resources as well as

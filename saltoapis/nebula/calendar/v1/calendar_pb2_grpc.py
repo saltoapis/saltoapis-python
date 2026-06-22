@@ -7,7 +7,7 @@ from saltoapis.nebula.calendar.v1 import calendar_pb2 as salto_dot_nebula_dot_ca
 from saltoapis.nebula.calendar.v1 import calendar_pb2 as salto_dot_nebula_dot_calendar_dot_v1_dot_calendar__pb2
 
 
-class CalendarServiceStub(object):
+class CalendarServiceStub:
     """The calendar functionality defines your organization's working calendar.
     For example, you can define public holidays, company holidays and company
     shutdowns. This service is responsible for managing calendar resources.
@@ -71,7 +71,7 @@ class CalendarServiceStub(object):
                 _registered_method=True)
 
 
-class CalendarServiceServicer(object):
+class CalendarServiceServicer:
     """The calendar functionality defines your organization's working calendar.
     For example, you can define public holidays, company holidays and company
     shutdowns. This service is responsible for managing calendar resources.
@@ -228,7 +228,7 @@ def add_CalendarServiceServicer_to_server(servicer, server):
 
 
  # This class is part of an EXPERIMENTAL API.
-class CalendarService(object):
+class CalendarService:
     """The calendar functionality defines your organization's working calendar.
     For example, you can define public holidays, company holidays and company
     shutdowns. This service is responsible for managing calendar resources.

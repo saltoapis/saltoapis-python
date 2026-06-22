@@ -9,7 +9,7 @@ from saltoapis.nebula.intercomadaptor.v1 import intercom_adaptor_pb2 as salto_do
 from saltoapis.nebula.intercomadaptor.v1 import intercom_adaptor_pb2 as salto_dot_nebula_dot_intercomadaptor_dot_v1_dot_intercom__adaptor__pb2
 
 
-class IntercomAdaptorServiceStub(object):
+class IntercomAdaptorServiceStub:
     """An intercom adaptor is a device that can be connected to an existing intercom
     system close to the telephone handset, without affecting its proper
     functioning. Its main function is to convert the intercom system to become
@@ -89,7 +89,7 @@ class IntercomAdaptorServiceStub(object):
                 _registered_method=True)
 
 
-class IntercomAdaptorServiceServicer(object):
+class IntercomAdaptorServiceServicer:
     """An intercom adaptor is a device that can be connected to an existing intercom
     system close to the telephone handset, without affecting its proper
     functioning. Its main function is to convert the intercom system to become
@@ -307,7 +307,7 @@ def add_IntercomAdaptorServiceServicer_to_server(servicer, server):
 
 
  # This class is part of an EXPERIMENTAL API.
-class IntercomAdaptorService(object):
+class IntercomAdaptorService:
     """An intercom adaptor is a device that can be connected to an existing intercom
     system close to the telephone handset, without affecting its proper
     functioning. Its main function is to convert the intercom system to become

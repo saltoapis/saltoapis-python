@@ -8,7 +8,7 @@ from saltoapis.nebula.digitalkey.v1 import digital_key_pb2 as salto_dot_nebula_d
 from saltoapis.nebula.digitalkey.v1 import digital_key_pb2 as salto_dot_nebula_dot_digitalkey_dot_v1_dot_digital__key__pb2
 
 
-class DigitalKeyServiceStub(object):
+class DigitalKeyServiceStub:
     """DigitalKeyService is the service responsible for managing digital key
     resources. This service manages resources for the different types of keys
     that exist on mobile devices, such as app keys or wallet keys.
@@ -52,7 +52,7 @@ class DigitalKeyServiceStub(object):
                 _registered_method=True)
 
 
-class DigitalKeyServiceServicer(object):
+class DigitalKeyServiceServicer:
     """DigitalKeyService is the service responsible for managing digital key
     resources. This service manages resources for the different types of keys
     that exist on mobile devices, such as app keys or wallet keys.
@@ -159,7 +159,7 @@ def add_DigitalKeyServiceServicer_to_server(servicer, server):
 
 
  # This class is part of an EXPERIMENTAL API.
-class DigitalKeyService(object):
+class DigitalKeyService:
     """DigitalKeyService is the service responsible for managing digital key
     resources. This service manages resources for the different types of keys
     that exist on mobile devices, such as app keys or wallet keys.

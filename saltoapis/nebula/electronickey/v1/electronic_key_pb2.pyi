@@ -7,7 +7,8 @@ from saltoapis.nebula.type import device_metadata_pb2 as _device_metadata_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
+from collections.abc import Iterable as _Iterable, Mapping as _Mapping
+from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
@@ -27,7 +28,7 @@ class ElectronicKey(_message.Message):
     outdated: bool
     device_metadata: _device_metadata_pb2.DeviceMetadata
     user: str
-    def __init__(self, name: _Optional[str] = ..., display_name: _Optional[str] = ..., initialized: bool = ..., device_id: _Optional[str] = ..., outdated: bool = ..., device_metadata: _Optional[_Union[_device_metadata_pb2.DeviceMetadata, _Mapping]] = ..., user: _Optional[str] = ...) -> None: ...
+    def __init__(self, name: _Optional[str] = ..., display_name: _Optional[str] = ..., initialized: _Optional[bool] = ..., device_id: _Optional[str] = ..., outdated: _Optional[bool] = ..., device_metadata: _Optional[_Union[_device_metadata_pb2.DeviceMetadata, _Mapping]] = ..., user: _Optional[str] = ...) -> None: ...
 
 class CreateElectronicKeyRequest(_message.Message):
     __slots__ = ("parent", "electronic_key_id", "electronic_key")
@@ -99,7 +100,7 @@ class UnbindElectronicKeyRequest(_message.Message):
     FORCE_FIELD_NUMBER: _ClassVar[int]
     name: str
     force: bool
-    def __init__(self, name: _Optional[str] = ..., force: bool = ...) -> None: ...
+    def __init__(self, name: _Optional[str] = ..., force: _Optional[bool] = ...) -> None: ...
 
 class UnbindElectronicKeyResponse(_message.Message):
     __slots__ = ()

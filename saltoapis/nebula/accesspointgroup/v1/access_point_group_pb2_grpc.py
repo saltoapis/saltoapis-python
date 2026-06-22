@@ -7,7 +7,7 @@ from saltoapis.nebula.accesspointgroup.v1 import access_point_group_pb2 as salto
 from saltoapis.nebula.accesspointgroup.v1 import access_point_group_pb2 as salto_dot_nebula_dot_accesspointgroup_dot_v1_dot_access__point__group__pb2
 
 
-class AccessPointGroupServiceStub(object):
+class AccessPointGroupServiceStub:
     """Access point group is a collection of access points that can be managed as a
     single entity. It is used to simplify the management of multiple access
     points by grouping them together and applying settings to all of them at
@@ -83,7 +83,7 @@ class AccessPointGroupServiceStub(object):
                 _registered_method=True)
 
 
-class AccessPointGroupServiceServicer(object):
+class AccessPointGroupServiceServicer:
     """Access point group is a collection of access points that can be managed as a
     single entity. It is used to simplify the management of multiple access
     points by grouping them together and applying settings to all of them at
@@ -273,7 +273,7 @@ def add_AccessPointGroupServiceServicer_to_server(servicer, server):
 
 
  # This class is part of an EXPERIMENTAL API.
-class AccessPointGroupService(object):
+class AccessPointGroupService:
     """Access point group is a collection of access points that can be managed as a
     single entity. It is used to simplify the management of multiple access
     points by grouping them together and applying settings to all of them at

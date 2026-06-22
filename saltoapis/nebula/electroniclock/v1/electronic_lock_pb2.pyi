@@ -1,3 +1,5 @@
+import datetime
+
 from google.protobuf import duration_pb2 as _duration_pb2
 from google.protobuf import empty_pb2 as _empty_pb2
 from google.protobuf import field_mask_pb2 as _field_mask_pb2
@@ -9,7 +11,8 @@ from saltoapis.nebula.type import device_metadata_pb2 as _device_metadata_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
+from collections.abc import Iterable as _Iterable, Mapping as _Mapping
+from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
@@ -45,7 +48,7 @@ class ElectronicLock(_message.Message):
     calibration_settings: bytes
     force_rotate_carriage_end: bool
     hold_back_latch_duration: _duration_pb2.Duration
-    def __init__(self, name: _Optional[str] = ..., display_name: _Optional[str] = ..., device_id: _Optional[str] = ..., gateway: _Optional[str] = ..., extender: _Optional[str] = ..., access_point: _Optional[str] = ..., initialized: bool = ..., device_metadata: _Optional[_Union[_device_metadata_pb2.DeviceMetadata, _Mapping]] = ..., outdated: bool = ..., connected: bool = ..., low_battery: bool = ..., last_event_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., calibration_settings: _Optional[bytes] = ..., force_rotate_carriage_end: bool = ..., hold_back_latch_duration: _Optional[_Union[_duration_pb2.Duration, _Mapping]] = ...) -> None: ...
+    def __init__(self, name: _Optional[str] = ..., display_name: _Optional[str] = ..., device_id: _Optional[str] = ..., gateway: _Optional[str] = ..., extender: _Optional[str] = ..., access_point: _Optional[str] = ..., initialized: _Optional[bool] = ..., device_metadata: _Optional[_Union[_device_metadata_pb2.DeviceMetadata, _Mapping]] = ..., outdated: _Optional[bool] = ..., connected: _Optional[bool] = ..., low_battery: _Optional[bool] = ..., last_event_time: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., calibration_settings: _Optional[bytes] = ..., force_rotate_carriage_end: _Optional[bool] = ..., hold_back_latch_duration: _Optional[_Union[datetime.timedelta, _duration_pb2.Duration, _Mapping]] = ...) -> None: ...
 
 class CreateElectronicLockRequest(_message.Message):
     __slots__ = ("parent", "electronic_lock_id", "electronic_lock")
@@ -117,7 +120,7 @@ class UnbindElectronicLockRequest(_message.Message):
     FORCE_FIELD_NUMBER: _ClassVar[int]
     name: str
     force: bool
-    def __init__(self, name: _Optional[str] = ..., force: bool = ...) -> None: ...
+    def __init__(self, name: _Optional[str] = ..., force: _Optional[bool] = ...) -> None: ...
 
 class UnbindElectronicLockResponse(_message.Message):
     __slots__ = ()

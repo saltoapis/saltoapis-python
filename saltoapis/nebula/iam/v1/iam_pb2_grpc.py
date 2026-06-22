@@ -6,7 +6,7 @@ from saltoapis.nebula.iam.v1 import iam_pb2 as salto_dot_nebula_dot_iam_dot_v1_d
 from saltoapis.nebula.iam.v1 import iam_pb2 as salto_dot_nebula_dot_iam_dot_v1_dot_iam__pb2
 
 
-class IAMServiceStub(object):
+class IAMServiceStub:
     """Identity and Access Management (IAM) is a service that allows you to securely
     control user access to specific resources. IAM gives you full control and
     visibility to manage resources centrally. You grant roles to users by
@@ -32,7 +32,7 @@ class IAMServiceStub(object):
                 _registered_method=True)
 
 
-class IAMServiceServicer(object):
+class IAMServiceServicer:
     """Identity and Access Management (IAM) is a service that allows you to securely
     control user access to specific resources. IAM gives you full control and
     visibility to manage resources centrally. You grant roles to users by
@@ -79,7 +79,7 @@ def add_IAMServiceServicer_to_server(servicer, server):
 
 
  # This class is part of an EXPERIMENTAL API.
-class IAMService(object):
+class IAMService:
     """Identity and Access Management (IAM) is a service that allows you to securely
     control user access to specific resources. IAM gives you full control and
     visibility to manage resources centrally. You grant roles to users by

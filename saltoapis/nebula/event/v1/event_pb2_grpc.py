@@ -6,7 +6,7 @@ from saltoapis.nebula.event.v1 import event_pb2 as salto_dot_nebula_dot_event_do
 from saltoapis.nebula.event.v1 import event_pb2 as salto_dot_nebula_dot_event_dot_v1_dot_event__pb2
 
 
-class EventServiceStub(object):
+class EventServiceStub:
     """Events allow you to see activity, such as an access point opening, that is
     taking place within an installation. This service is responsible for managing
     event resources.
@@ -30,7 +30,7 @@ class EventServiceStub(object):
                 _registered_method=True)
 
 
-class EventServiceServicer(object):
+class EventServiceServicer:
     """Events allow you to see activity, such as an access point opening, that is
     taking place within an installation. This service is responsible for managing
     event resources.
@@ -75,7 +75,7 @@ def add_EventServiceServicer_to_server(servicer, server):
 
 
  # This class is part of an EXPERIMENTAL API.
-class EventService(object):
+class EventService:
     """Events allow you to see activity, such as an access point opening, that is
     taking place within an installation. This service is responsible for managing
     event resources.

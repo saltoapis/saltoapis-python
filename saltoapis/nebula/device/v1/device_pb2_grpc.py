@@ -6,7 +6,7 @@ from saltoapis.nebula.device.v1 import device_pb2 as salto_dot_nebula_dot_device
 from saltoapis.nebula.device.v1 import device_pb2 as salto_dot_nebula_dot_device_dot_v1_dot_device__pb2
 
 
-class DeviceServiceStub(object):
+class DeviceServiceStub:
     """A device could be an electronic lock, gateway, extender or any piece of
     hardware manufactured by SALTO. This service provides access to an aggregated
     view of all of them in an eventual consistent way.
@@ -30,7 +30,7 @@ class DeviceServiceStub(object):
                 _registered_method=True)
 
 
-class DeviceServiceServicer(object):
+class DeviceServiceServicer:
     """A device could be an electronic lock, gateway, extender or any piece of
     hardware manufactured by SALTO. This service provides access to an aggregated
     view of all of them in an eventual consistent way.
@@ -75,7 +75,7 @@ def add_DeviceServiceServicer_to_server(servicer, server):
 
 
  # This class is part of an EXPERIMENTAL API.
-class DeviceService(object):
+class DeviceService:
     """A device could be an electronic lock, gateway, extender or any piece of
     hardware manufactured by SALTO. This service provides access to an aggregated
     view of all of them in an eventual consistent way.

@@ -7,7 +7,7 @@ from saltoapis.nebula.openingmodeschedule.v1 import opening_mode_schedule_pb2 as
 from saltoapis.nebula.openingmodeschedule.v1 import opening_mode_schedule_pb2 as salto_dot_nebula_dot_openingmodeschedule_dot_v1_dot_opening__mode__schedule__pb2
 
 
-class OpeningModeScheduleServiceStub(object):
+class OpeningModeScheduleServiceStub:
     """An opening mode is a type of behavior which can be applied to a specific
     access point or collection of access points. For example: Office or Toggle.
     This service allows you to make a number of different opening modes switch
@@ -47,7 +47,7 @@ class OpeningModeScheduleServiceStub(object):
                 _registered_method=True)
 
 
-class OpeningModeScheduleServiceServicer(object):
+class OpeningModeScheduleServiceServicer:
     """An opening mode is a type of behavior which can be applied to a specific
     access point or collection of access points. For example: Office or Toggle.
     This service allows you to make a number of different opening modes switch
@@ -136,7 +136,7 @@ def add_OpeningModeScheduleServiceServicer_to_server(servicer, server):
 
 
  # This class is part of an EXPERIMENTAL API.
-class OpeningModeScheduleService(object):
+class OpeningModeScheduleService:
     """An opening mode is a type of behavior which can be applied to a specific
     access point or collection of access points. For example: Office or Toggle.
     This service allows you to make a number of different opening modes switch

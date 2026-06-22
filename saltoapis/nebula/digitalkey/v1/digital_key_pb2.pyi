@@ -1,3 +1,5 @@
+import datetime
+
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from saltoapis.longrunning.v1 import operation_pb2 as _operation_pb2
 from saltoapis.longrunning.v1 import operation_pb2 as _operation_pb2
@@ -9,7 +11,8 @@ from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
+from collections.abc import Iterable as _Iterable, Mapping as _Mapping
+from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
@@ -60,7 +63,7 @@ class DigitalKey(_message.Message):
         unit_id: str
         access_points_sync_time: _timestamp_pb2.Timestamp
         access_points_sync_state: DigitalKey.AppKey.AccessPointsSyncState
-        def __init__(self, metadata: _Optional[_Union[DigitalKey.Metadata, _Mapping]] = ..., data: _Optional[bytes] = ..., installation: _Optional[str] = ..., unit: _Optional[str] = ..., installation_id: _Optional[str] = ..., unit_id: _Optional[str] = ..., access_points_sync_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., access_points_sync_state: _Optional[_Union[DigitalKey.AppKey.AccessPointsSyncState, str]] = ...) -> None: ...
+        def __init__(self, metadata: _Optional[_Union[DigitalKey.Metadata, _Mapping]] = ..., data: _Optional[bytes] = ..., installation: _Optional[str] = ..., unit: _Optional[str] = ..., installation_id: _Optional[str] = ..., unit_id: _Optional[str] = ..., access_points_sync_time: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., access_points_sync_state: _Optional[_Union[DigitalKey.AppKey.AccessPointsSyncState, str]] = ...) -> None: ...
     class WalletKey(_message.Message):
         __slots__ = ("metadata", "hydra_credential")
         class HydraCredential(_message.Message):

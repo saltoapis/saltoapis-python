@@ -8,15 +8,16 @@ name = "saltoapis-python"
 dynamic = ["version"]
 description = "Saltoapis Python SDK"
 dependencies = [
-  'grpcio==1.69.0',
-  'grpcio-tools==1.69.0',
-  'protobuf==5.29.2',
+  'grpcio==1.81.0',
+  'grpcio-tools==1.81.0',
+  'protobuf==6.33.6',
 ]
 license = {file = "LICENSE"}
 
 [tool.setuptools]
 packages = [
     'saltoapis.nebula.accesspointgroup.v1',
+    'saltoapis.nebula.booking.v1',
     'saltoapis.nebula.destination.v1',
     'saltoapis.nebula.emergencykey.v1',
     'saltoapis.nebula.file.v1',

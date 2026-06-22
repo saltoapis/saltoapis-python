@@ -7,7 +7,7 @@ from saltoapis.nebula.destination.v1 import destination_pb2 as salto_dot_nebula_
 from saltoapis.nebula.destination.v1 import destination_pb2 as salto_dot_nebula_dot_destination_dot_v1_dot_destination__pb2
 
 
-class DestinationServiceStub(object):
+class DestinationServiceStub:
     """DestinationService is the service responsible for managing destination resources.
     Destinations refer to feature where a controller with multiple relays can activate
     different outputs based on keys and schedules. The primary use case is elevator control,
@@ -53,7 +53,7 @@ class DestinationServiceStub(object):
                 _registered_method=True)
 
 
-class DestinationServiceServicer(object):
+class DestinationServiceServicer:
     """DestinationService is the service responsible for managing destination resources.
     Destinations refer to feature where a controller with multiple relays can activate
     different outputs based on keys and schedules. The primary use case is elevator control,
@@ -156,7 +156,7 @@ def add_DestinationServiceServicer_to_server(servicer, server):
 
 
  # This class is part of an EXPERIMENTAL API.
-class DestinationService(object):
+class DestinationService:
     """DestinationService is the service responsible for managing destination resources.
     Destinations refer to feature where a controller with multiple relays can activate
     different outputs based on keys and schedules. The primary use case is elevator control,

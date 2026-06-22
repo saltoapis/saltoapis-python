@@ -1,3 +1,5 @@
+import datetime
+
 from google.protobuf import duration_pb2 as _duration_pb2
 from google.protobuf import empty_pb2 as _empty_pb2
 from google.protobuf import field_mask_pb2 as _field_mask_pb2
@@ -8,7 +10,8 @@ from saltoapis.nebula.type import opening_mode_pb2 as _opening_mode_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
+from collections.abc import Iterable as _Iterable, Mapping as _Mapping
+from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
@@ -36,7 +39,7 @@ class AccessPoint(_message.Message):
     electronic_lock: str
     controller: str
     intercom_adaptor: str
-    def __init__(self, name: _Optional[str] = ..., display_name: _Optional[str] = ..., fixed: _Optional[_Union[_opening_mode_pb2.OpeningMode, str]] = ..., schedule: _Optional[str] = ..., calendar: _Optional[str] = ..., card_key_updater: bool = ..., unlock_duration: _Optional[_Union[_duration_pb2.Duration, _Mapping]] = ..., left_open: bool = ..., electronic_lock: _Optional[str] = ..., controller: _Optional[str] = ..., intercom_adaptor: _Optional[str] = ...) -> None: ...
+    def __init__(self, name: _Optional[str] = ..., display_name: _Optional[str] = ..., fixed: _Optional[_Union[_opening_mode_pb2.OpeningMode, str]] = ..., schedule: _Optional[str] = ..., calendar: _Optional[str] = ..., card_key_updater: _Optional[bool] = ..., unlock_duration: _Optional[_Union[datetime.timedelta, _duration_pb2.Duration, _Mapping]] = ..., left_open: _Optional[bool] = ..., electronic_lock: _Optional[str] = ..., controller: _Optional[str] = ..., intercom_adaptor: _Optional[str] = ...) -> None: ...
 
 class CreateAccessPointRequest(_message.Message):
     __slots__ = ("parent", "access_point_id", "access_point")
