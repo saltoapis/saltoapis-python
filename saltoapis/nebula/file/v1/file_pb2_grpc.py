@@ -6,7 +6,7 @@ from saltoapis.nebula.file.v1 import file_pb2 as salto_dot_nebula_dot_file_dot_v
 from saltoapis.nebula.file.v1 import file_pb2 as salto_dot_nebula_dot_file_dot_v1_dot_file__pb2
 
 
-class FileServiceStub(object):
+class FileServiceStub:
     """A file represents an object that serves as a reference for files
     stored elsewhere. This service is responsible for managing file resources.
     """
@@ -24,7 +24,7 @@ class FileServiceStub(object):
                 _registered_method=True)
 
 
-class FileServiceServicer(object):
+class FileServiceServicer:
     """A file represents an object that serves as a reference for files
     stored elsewhere. This service is responsible for managing file resources.
     """
@@ -54,7 +54,7 @@ def add_FileServiceServicer_to_server(servicer, server):
 
 
  # This class is part of an EXPERIMENTAL API.
-class FileService(object):
+class FileService:
     """A file represents an object that serves as a reference for files
     stored elsewhere. This service is responsible for managing file resources.
     """

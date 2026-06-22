@@ -6,7 +6,7 @@ from saltoapis.nebula.installation.v1 import encrypted_payload_pb2 as salto_dot_
 from saltoapis.nebula.installation.v1 import encrypted_payload_pb2 as salto_dot_nebula_dot_installation_dot_v1_dot_encrypted__payload__pb2
 
 
-class EncryptedPayloadServiceStub(object):
+class EncryptedPayloadServiceStub:
     """This service is responsible for the ingestion of encrypted payloads.
     """
 
@@ -23,7 +23,7 @@ class EncryptedPayloadServiceStub(object):
                 _registered_method=True)
 
 
-class EncryptedPayloadServiceServicer(object):
+class EncryptedPayloadServiceServicer:
     """This service is responsible for the ingestion of encrypted payloads.
     """
 
@@ -52,7 +52,7 @@ def add_EncryptedPayloadServiceServicer_to_server(servicer, server):
 
 
  # This class is part of an EXPERIMENTAL API.
-class EncryptedPayloadService(object):
+class EncryptedPayloadService:
     """This service is responsible for the ingestion of encrypted payloads.
     """
 

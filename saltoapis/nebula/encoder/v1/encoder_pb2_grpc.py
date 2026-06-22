@@ -9,7 +9,7 @@ from saltoapis.nebula.encoder.v1 import encoder_pb2 as salto_dot_nebula_dot_enco
 from saltoapis.nebula.encoder.v1 import encoder_pb2 as salto_dot_nebula_dot_encoder_dot_v1_dot_encoder__pb2
 
 
-class EncoderServiceStub(object):
+class EncoderServiceStub:
     """A card encoder is an external device that reads and updates physical card
     keys with access information. This service is responsible for managing
     encoder resources.
@@ -93,7 +93,7 @@ class EncoderServiceStub(object):
                 _registered_method=True)
 
 
-class EncoderServiceServicer(object):
+class EncoderServiceServicer:
     """A card encoder is an external device that reads and updates physical card
     keys with access information. This service is responsible for managing
     encoder resources.
@@ -324,7 +324,7 @@ def add_EncoderServiceServicer_to_server(servicer, server):
 
 
  # This class is part of an EXPERIMENTAL API.
-class EncoderService(object):
+class EncoderService:
     """A card encoder is an external device that reads and updates physical card
     keys with access information. This service is responsible for managing
     encoder resources.

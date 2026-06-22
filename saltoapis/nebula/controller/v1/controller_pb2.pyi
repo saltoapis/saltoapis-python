@@ -1,3 +1,5 @@
+import datetime
+
 from google.protobuf import empty_pb2 as _empty_pb2
 from google.protobuf import field_mask_pb2 as _field_mask_pb2
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
@@ -8,12 +10,13 @@ from saltoapis.nebula.type import device_metadata_pb2 as _device_metadata_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
+from collections.abc import Iterable as _Iterable, Mapping as _Mapping
+from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Controller(_message.Message):
-    __slots__ = ("name", "display_name", "device_id", "gateway", "extender", "access_points", "initialized", "device_metadata", "outdated", "connected", "last_event_time")
+    __slots__ = ("name", "display_name", "device_id", "gateway", "extender", "access_points", "initialized", "device_metadata", "outdated", "connected", "last_event_time", "card_key_updater")
     NAME_FIELD_NUMBER: _ClassVar[int]
     DISPLAY_NAME_FIELD_NUMBER: _ClassVar[int]
     DEVICE_ID_FIELD_NUMBER: _ClassVar[int]
@@ -25,6 +28,7 @@ class Controller(_message.Message):
     OUTDATED_FIELD_NUMBER: _ClassVar[int]
     CONNECTED_FIELD_NUMBER: _ClassVar[int]
     LAST_EVENT_TIME_FIELD_NUMBER: _ClassVar[int]
+    CARD_KEY_UPDATER_FIELD_NUMBER: _ClassVar[int]
     name: str
     display_name: str
     device_id: str
@@ -36,7 +40,8 @@ class Controller(_message.Message):
     outdated: bool
     connected: bool
     last_event_time: _timestamp_pb2.Timestamp
-    def __init__(self, name: _Optional[str] = ..., display_name: _Optional[str] = ..., device_id: _Optional[str] = ..., gateway: _Optional[str] = ..., extender: _Optional[str] = ..., access_points: _Optional[_Iterable[str]] = ..., initialized: bool = ..., device_metadata: _Optional[_Union[_device_metadata_pb2.DeviceMetadata, _Mapping]] = ..., outdated: bool = ..., connected: bool = ..., last_event_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+    card_key_updater: bool
+    def __init__(self, name: _Optional[str] = ..., display_name: _Optional[str] = ..., device_id: _Optional[str] = ..., gateway: _Optional[str] = ..., extender: _Optional[str] = ..., access_points: _Optional[_Iterable[str]] = ..., initialized: _Optional[bool] = ..., device_metadata: _Optional[_Union[_device_metadata_pb2.DeviceMetadata, _Mapping]] = ..., outdated: _Optional[bool] = ..., connected: _Optional[bool] = ..., last_event_time: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., card_key_updater: _Optional[bool] = ...) -> None: ...
 
 class ControllerRelay(_message.Message):
     __slots__ = ("name", "dip_switch", "relay_id", "destination_output", "strike")
@@ -132,7 +137,7 @@ class UnbindControllerRequest(_message.Message):
     FORCE_FIELD_NUMBER: _ClassVar[int]
     name: str
     force: bool
-    def __init__(self, name: _Optional[str] = ..., force: bool = ...) -> None: ...
+    def __init__(self, name: _Optional[str] = ..., force: _Optional[bool] = ...) -> None: ...
 
 class UnbindControllerResponse(_message.Message):
     __slots__ = ()

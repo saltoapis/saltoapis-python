@@ -1,3 +1,5 @@
+import datetime
+
 from google.protobuf import empty_pb2 as _empty_pb2
 from google.protobuf import field_mask_pb2 as _field_mask_pb2
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
@@ -8,7 +10,8 @@ from saltoapis.nebula.type import device_metadata_pb2 as _device_metadata_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
+from collections.abc import Iterable as _Iterable, Mapping as _Mapping
+from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
@@ -46,7 +49,7 @@ class IntercomAdaptor(_message.Message):
     photos: _containers.RepeatedScalarFieldContainer[str]
     photo_uris: _containers.RepeatedScalarFieldContainer[str]
     readings: _containers.RepeatedScalarFieldContainer[str]
-    def __init__(self, name: _Optional[str] = ..., display_name: _Optional[str] = ..., device_id: _Optional[str] = ..., gateway: _Optional[str] = ..., extender: _Optional[str] = ..., access_points: _Optional[_Iterable[_Union[IntercomAdaptorAccessPoint, _Mapping]]] = ..., initialized: bool = ..., device_metadata: _Optional[_Union[_device_metadata_pb2.DeviceMetadata, _Mapping]] = ..., outdated: bool = ..., connected: bool = ..., low_battery: bool = ..., last_event_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., intercom: _Optional[str] = ..., photos: _Optional[_Iterable[str]] = ..., photo_uris: _Optional[_Iterable[str]] = ..., readings: _Optional[_Iterable[str]] = ...) -> None: ...
+    def __init__(self, name: _Optional[str] = ..., display_name: _Optional[str] = ..., device_id: _Optional[str] = ..., gateway: _Optional[str] = ..., extender: _Optional[str] = ..., access_points: _Optional[_Iterable[_Union[IntercomAdaptorAccessPoint, _Mapping]]] = ..., initialized: _Optional[bool] = ..., device_metadata: _Optional[_Union[_device_metadata_pb2.DeviceMetadata, _Mapping]] = ..., outdated: _Optional[bool] = ..., connected: _Optional[bool] = ..., low_battery: _Optional[bool] = ..., last_event_time: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., intercom: _Optional[str] = ..., photos: _Optional[_Iterable[str]] = ..., photo_uris: _Optional[_Iterable[str]] = ..., readings: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class IntercomAdaptorAccessPoint(_message.Message):
     __slots__ = ("access_point", "frame_settings")
@@ -126,7 +129,7 @@ class UnbindIntercomAdaptorRequest(_message.Message):
     FORCE_FIELD_NUMBER: _ClassVar[int]
     name: str
     force: bool
-    def __init__(self, name: _Optional[str] = ..., force: bool = ...) -> None: ...
+    def __init__(self, name: _Optional[str] = ..., force: _Optional[bool] = ...) -> None: ...
 
 class UnbindIntercomAdaptorResponse(_message.Message):
     __slots__ = ()

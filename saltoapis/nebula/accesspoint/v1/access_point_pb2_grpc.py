@@ -9,7 +9,7 @@ from saltoapis.nebula.accesspoint.v1 import access_point_pb2 as salto_dot_nebula
 from saltoapis.nebula.accesspoint.v1 import access_point_pb2 as salto_dot_nebula_dot_accesspoint_dot_v1_dot_access__point__pb2
 
 
-class AccessPointServiceStub(object):
+class AccessPointServiceStub:
     """An access point is a smart electronic locking device capable of granting or
     denying access to a secured area. This service is responsible for managing
     access point resources.
@@ -58,7 +58,7 @@ class AccessPointServiceStub(object):
                 _registered_method=True)
 
 
-class AccessPointServiceServicer(object):
+class AccessPointServiceServicer:
     """An access point is a smart electronic locking device capable of granting or
     denying access to a secured area. This service is responsible for managing
     access point resources.
@@ -177,7 +177,7 @@ def add_AccessPointServiceServicer_to_server(servicer, server):
 
 
  # This class is part of an EXPERIMENTAL API.
-class AccessPointService(object):
+class AccessPointService:
     """An access point is a smart electronic locking device capable of granting or
     denying access to a secured area. This service is responsible for managing
     access point resources.

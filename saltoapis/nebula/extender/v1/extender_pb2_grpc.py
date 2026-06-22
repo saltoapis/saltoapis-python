@@ -9,7 +9,7 @@ from saltoapis.nebula.extender.v1 import extender_pb2 as salto_dot_nebula_dot_ex
 from saltoapis.nebula.extender.v1 import extender_pb2 as salto_dot_nebula_dot_extender_dot_v1_dot_extender__pb2
 
 
-class ExtenderServiceStub(object):
+class ExtenderServiceStub:
     """An extender allows the distance between the a gateway and an electronic lock
     to be extended. It forwards signals between an access point (lock) and a
     gateway. This service is responsible for managing extender resources.
@@ -73,7 +73,7 @@ class ExtenderServiceStub(object):
                 _registered_method=True)
 
 
-class ExtenderServiceServicer(object):
+class ExtenderServiceServicer:
     """An extender allows the distance between the a gateway and an electronic lock
     to be extended. It forwards signals between an access point (lock) and a
     gateway. This service is responsible for managing extender resources.
@@ -237,7 +237,7 @@ def add_ExtenderServiceServicer_to_server(servicer, server):
 
 
  # This class is part of an EXPERIMENTAL API.
-class ExtenderService(object):
+class ExtenderService:
     """An extender allows the distance between the a gateway and an electronic lock
     to be extended. It forwards signals between an access point (lock) and a
     gateway. This service is responsible for managing extender resources.

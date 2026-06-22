@@ -9,7 +9,7 @@ from saltoapis.nebula.electronickey.v1 import electronic_key_pb2 as salto_dot_ne
 from saltoapis.nebula.electronickey.v1 import electronic_key_pb2 as salto_dot_nebula_dot_electronickey_dot_v1_dot_electronic__key__pb2
 
 
-class ElectronicKeyServiceStub(object):
+class ElectronicKeyServiceStub:
     """An electronic key is battery-powered device used to interact with electronic locks.
     """
 
@@ -81,7 +81,7 @@ class ElectronicKeyServiceStub(object):
                 _registered_method=True)
 
 
-class ElectronicKeyServiceServicer(object):
+class ElectronicKeyServiceServicer:
     """An electronic key is battery-powered device used to interact with electronic locks.
     """
 
@@ -281,7 +281,7 @@ def add_ElectronicKeyServiceServicer_to_server(servicer, server):
 
 
  # This class is part of an EXPERIMENTAL API.
-class ElectronicKeyService(object):
+class ElectronicKeyService:
     """An electronic key is battery-powered device used to interact with electronic locks.
     """
 

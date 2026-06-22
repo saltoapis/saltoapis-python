@@ -7,7 +7,7 @@ from saltoapis.nebula.accessright.v1 import access_right_pb2 as salto_dot_nebula
 from saltoapis.nebula.accessright.v1 import access_right_pb2 as salto_dot_nebula_dot_accessright_dot_v1_dot_access__right__pb2
 
 
-class AccessRightServiceStub(object):
+class AccessRightServiceStub:
     """Access rights simplify the management of access permissions for large
     sets of users with similar access profiles. An access right can contain
     multiple access points. Access rights determine who can enter where, and
@@ -143,7 +143,7 @@ class AccessRightServiceStub(object):
                 _registered_method=True)
 
 
-class AccessRightServiceServicer(object):
+class AccessRightServiceServicer:
     """Access rights simplify the management of access permissions for large
     sets of users with similar access profiles. An access right can contain
     multiple access points. Access rights determine who can enter where, and
@@ -501,7 +501,7 @@ def add_AccessRightServiceServicer_to_server(servicer, server):
 
 
  # This class is part of an EXPERIMENTAL API.
-class AccessRightService(object):
+class AccessRightService:
     """Access rights simplify the management of access permissions for large
     sets of users with similar access profiles. An access right can contain
     multiple access points. Access rights determine who can enter where, and

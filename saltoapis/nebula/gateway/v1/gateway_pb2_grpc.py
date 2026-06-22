@@ -9,7 +9,7 @@ from saltoapis.nebula.gateway.v1 import gateway_pb2 as salto_dot_nebula_dot_gate
 from saltoapis.nebula.gateway.v1 import gateway_pb2 as salto_dot_nebula_dot_gateway_dot_v1_dot_gateway__pb2
 
 
-class GatewayServiceStub(object):
+class GatewayServiceStub:
     """Gateways are hardware devices intended to be used with access points where
     online connectivity is needed. This service is responsible for managing
     gateway resources.
@@ -88,7 +88,7 @@ class GatewayServiceStub(object):
                 _registered_method=True)
 
 
-class GatewayServiceServicer(object):
+class GatewayServiceServicer:
     """Gateways are hardware devices intended to be used with access points where
     online connectivity is needed. This service is responsible for managing
     gateway resources.
@@ -304,7 +304,7 @@ def add_GatewayServiceServicer_to_server(servicer, server):
 
 
  # This class is part of an EXPERIMENTAL API.
-class GatewayService(object):
+class GatewayService:
     """Gateways are hardware devices intended to be used with access points where
     online connectivity is needed. This service is responsible for managing
     gateway resources.

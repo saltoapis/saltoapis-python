@@ -7,7 +7,7 @@ from saltoapis.nebula.emergencykey.v1 import emergency_key_pb2 as salto_dot_nebu
 from saltoapis.nebula.emergencykey.v1 import emergency_key_pb2 as salto_dot_nebula_dot_emergencykey_dot_v1_dot_emergency__key__pb2
 
 
-class EmergencyKeyServiceStub(object):
+class EmergencyKeyServiceStub:
     """Emergency keys are a credential type in Nebula, based on allowlisting,
     that grant access to designated access points within an installation.
     They do not expire and do not require any form of revalidation.
@@ -47,7 +47,7 @@ class EmergencyKeyServiceStub(object):
                 _registered_method=True)
 
 
-class EmergencyKeyServiceServicer(object):
+class EmergencyKeyServiceServicer:
     """Emergency keys are a credential type in Nebula, based on allowlisting,
     that grant access to designated access points within an installation.
     They do not expire and do not require any form of revalidation.
@@ -135,7 +135,7 @@ def add_EmergencyKeyServiceServicer_to_server(servicer, server):
 
 
  # This class is part of an EXPERIMENTAL API.
-class EmergencyKeyService(object):
+class EmergencyKeyService:
     """Emergency keys are a credential type in Nebula, based on allowlisting,
     that grant access to designated access points within an installation.
     They do not expire and do not require any form of revalidation.

@@ -3,6 +3,8 @@ from saltoapis.nebula.accesspoint.v1 import access_point_pb2 as _access_point_pb
 from saltoapis.nebula.accesspoint.v1 import access_point_pb2 as _access_point_pb2
 from saltoapis.nebula.accessright.v1 import access_right_pb2 as _access_right_pb2
 from saltoapis.nebula.accessright.v1 import access_right_pb2 as _access_right_pb2
+from saltoapis.nebula.booking.v1 import booking_pb2 as _booking_pb2
+from saltoapis.nebula.booking.v1 import booking_pb2 as _booking_pb2
 from saltoapis.nebula.controller.v1 import controller_pb2 as _controller_pb2
 from saltoapis.nebula.controller.v1 import controller_pb2 as _controller_pb2
 from saltoapis.nebula.emergencykey.v1 import emergency_key_pb2 as _emergency_key_pb2
@@ -15,7 +17,8 @@ from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
+from collections.abc import Iterable as _Iterable, Mapping as _Mapping
+from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
@@ -138,6 +141,7 @@ class AccessDenied(_message.Message):
         CREDENTIAL_PERMISSION_OUTSIDE_SCHEDULE: _ClassVar[AccessDenied.Reason]
         INVALID_ACCESS_CODE: _ClassVar[AccessDenied.Reason]
         DEVICE_BATTERY_INSUFFICIENT: _ClassVar[AccessDenied.Reason]
+        CREDENTIAL_DO_NOT_DISTURB_OVERRIDE_PERMISSION_NOT_PRESENT: _ClassVar[AccessDenied.Reason]
     REASON_UNSPECIFIED: AccessDenied.Reason
     CREDENTIAL_EXPIRED: AccessDenied.Reason
     CREDENTIAL_UNACTIVATED: AccessDenied.Reason
@@ -146,6 +150,7 @@ class AccessDenied(_message.Message):
     CREDENTIAL_PERMISSION_OUTSIDE_SCHEDULE: AccessDenied.Reason
     INVALID_ACCESS_CODE: AccessDenied.Reason
     DEVICE_BATTERY_INSUFFICIENT: AccessDenied.Reason
+    CREDENTIAL_DO_NOT_DISTURB_OVERRIDE_PERMISSION_NOT_PRESENT: AccessDenied.Reason
     ACCESS_POINT_FIELD_NUMBER: _ClassVar[int]
     CONTROLLER_FIELD_NUMBER: _ClassVar[int]
     USER_FIELD_NUMBER: _ClassVar[int]
@@ -479,3 +484,19 @@ class AccessGranted(_message.Message):
     passcode: _user_pb2.Passcode
     electronic_key: _user_pb2.ElectronicKey
     def __init__(self, controller: _Optional[_Union[_controller_pb2.Controller, _Mapping]] = ..., user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., emergency_key: _Optional[_Union[_emergency_key_pb2.EmergencyKey, _Mapping]] = ..., card_key: _Optional[_Union[_user_pb2.CardKey, _Mapping]] = ..., app_key: _Optional[_Union[_user_pb2.AppKey, _Mapping]] = ..., wallet_key: _Optional[_Union[_user_pb2.WalletKey, _Mapping]] = ..., passcode: _Optional[_Union[_user_pb2.Passcode, _Mapping]] = ..., electronic_key: _Optional[_Union[_user_pb2.ElectronicKey, _Mapping]] = ...) -> None: ...
+
+class BookingCheckedIn(_message.Message):
+    __slots__ = ("booking", "actor")
+    BOOKING_FIELD_NUMBER: _ClassVar[int]
+    ACTOR_FIELD_NUMBER: _ClassVar[int]
+    booking: _booking_pb2.Booking
+    actor: Principal
+    def __init__(self, booking: _Optional[_Union[_booking_pb2.Booking, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...
+
+class BookingCheckedOut(_message.Message):
+    __slots__ = ("booking", "actor")
+    BOOKING_FIELD_NUMBER: _ClassVar[int]
+    ACTOR_FIELD_NUMBER: _ClassVar[int]
+    booking: _booking_pb2.Booking
+    actor: Principal
+    def __init__(self, booking: _Optional[_Union[_booking_pb2.Booking, _Mapping]] = ..., actor: _Optional[_Union[Principal, _Mapping]] = ...) -> None: ...

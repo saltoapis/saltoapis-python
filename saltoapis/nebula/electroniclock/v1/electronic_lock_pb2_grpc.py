@@ -9,7 +9,7 @@ from saltoapis.nebula.electroniclock.v1 import electronic_lock_pb2 as salto_dot_
 from saltoapis.nebula.electroniclock.v1 import electronic_lock_pb2 as salto_dot_nebula_dot_electroniclock_dot_v1_dot_electronic__lock__pb2
 
 
-class ElectronicLockServiceStub(object):
+class ElectronicLockServiceStub:
     """An electronic lock is a physical electronic device such as an electronic
     escutcheon or cylinder, or a door controller with an electric strike. It
     differs from an access point in that, an electronic lock could be a
@@ -95,7 +95,7 @@ class ElectronicLockServiceStub(object):
                 _registered_method=True)
 
 
-class ElectronicLockServiceServicer(object):
+class ElectronicLockServiceServicer:
     """An electronic lock is a physical electronic device such as an electronic
     escutcheon or cylinder, or a door controller with an electric strike. It
     differs from an access point in that, an electronic lock could be a
@@ -319,7 +319,7 @@ def add_ElectronicLockServiceServicer_to_server(servicer, server):
 
 
  # This class is part of an EXPERIMENTAL API.
-class ElectronicLockService(object):
+class ElectronicLockService:
     """An electronic lock is a physical electronic device such as an electronic
     escutcheon or cylinder, or a door controller with an electric strike. It
     differs from an access point in that, an electronic lock could be a
