@@ -10,7 +10,7 @@ description = "Saltoapis Python SDK"
 dependencies = [
   'grpcio==1.81.0',
   'grpcio-tools==1.81.0',
-  'protobuf==5.33.6',
+  'protobuf==6.33.6',
 ]
 license = {file = "LICENSE"}
 
