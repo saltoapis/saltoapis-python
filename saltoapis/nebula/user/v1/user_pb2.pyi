@@ -5,6 +5,8 @@ from google.protobuf import field_mask_pb2 as _field_mask_pb2
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from saltoapis.longrunning.v1 import operation_pb2 as _operation_pb2
 from saltoapis.longrunning.v1 import operation_pb2 as _operation_pb2
+from saltoapis.nebula.type import remote_operation_pb2 as _remote_operation_pb2
+from saltoapis.nebula.type import remote_operation_pb2 as _remote_operation_pb2
 from saltoapis.nebula.type import schedule_pb2 as _schedule_pb2
 from saltoapis.nebula.type import schedule_pb2 as _schedule_pb2
 from google.protobuf.internal import containers as _containers
@@ -99,7 +101,7 @@ class CardKey(_message.Message):
     def __init__(self, name: _Optional[str] = ..., uid: _Optional[str] = ..., state: _Optional[_Union[CardKey.State, str]] = ..., outdated: _Optional[bool] = ...) -> None: ...
 
 class AppKey(_message.Message):
-    __slots__ = ("name", "state", "outdated")
+    __slots__ = ("name", "state", "outdated", "remote_operations")
     class State(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         STATE_UNSPECIFIED: _ClassVar[AppKey.State]
@@ -113,10 +115,12 @@ class AppKey(_message.Message):
     NAME_FIELD_NUMBER: _ClassVar[int]
     STATE_FIELD_NUMBER: _ClassVar[int]
     OUTDATED_FIELD_NUMBER: _ClassVar[int]
+    REMOTE_OPERATIONS_FIELD_NUMBER: _ClassVar[int]
     name: str
     state: AppKey.State
     outdated: bool
-    def __init__(self, name: _Optional[str] = ..., state: _Optional[_Union[AppKey.State, str]] = ..., outdated: _Optional[bool] = ...) -> None: ...
+    remote_operations: _containers.RepeatedScalarFieldContainer[_remote_operation_pb2.AppKeyRemoteOperation]
+    def __init__(self, name: _Optional[str] = ..., state: _Optional[_Union[AppKey.State, str]] = ..., outdated: _Optional[bool] = ..., remote_operations: _Optional[_Iterable[_Union[_remote_operation_pb2.AppKeyRemoteOperation, str]]] = ...) -> None: ...
 
 class WalletKey(_message.Message):
     __slots__ = ("name", "state", "outdated")

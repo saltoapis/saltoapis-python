@@ -7,6 +7,8 @@ from saltoapis.longrunning.v1 import operation_pb2 as _operation_pb2
 from saltoapis.longrunning.v1 import operation_pb2 as _operation_pb2
 from saltoapis.nebula.type import opening_mode_pb2 as _opening_mode_pb2
 from saltoapis.nebula.type import opening_mode_pb2 as _opening_mode_pb2
+from saltoapis.nebula.type import remote_operation_pb2 as _remote_operation_pb2
+from saltoapis.nebula.type import remote_operation_pb2 as _remote_operation_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -16,7 +18,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class AccessPoint(_message.Message):
-    __slots__ = ("name", "display_name", "fixed", "schedule", "calendar", "card_key_updater", "unlock_duration", "left_open", "electronic_lock", "controller", "intercom_adaptor")
+    __slots__ = ("name", "display_name", "fixed", "schedule", "calendar", "card_key_updater", "unlock_duration", "left_open", "electronic_lock", "controller", "intercom_adaptor", "user_remote_operations")
     NAME_FIELD_NUMBER: _ClassVar[int]
     DISPLAY_NAME_FIELD_NUMBER: _ClassVar[int]
     FIXED_FIELD_NUMBER: _ClassVar[int]
@@ -28,6 +30,7 @@ class AccessPoint(_message.Message):
     ELECTRONIC_LOCK_FIELD_NUMBER: _ClassVar[int]
     CONTROLLER_FIELD_NUMBER: _ClassVar[int]
     INTERCOM_ADAPTOR_FIELD_NUMBER: _ClassVar[int]
+    USER_REMOTE_OPERATIONS_FIELD_NUMBER: _ClassVar[int]
     name: str
     display_name: str
     fixed: _opening_mode_pb2.OpeningMode
@@ -39,7 +42,8 @@ class AccessPoint(_message.Message):
     electronic_lock: str
     controller: str
     intercom_adaptor: str
-    def __init__(self, name: _Optional[str] = ..., display_name: _Optional[str] = ..., fixed: _Optional[_Union[_opening_mode_pb2.OpeningMode, str]] = ..., schedule: _Optional[str] = ..., calendar: _Optional[str] = ..., card_key_updater: _Optional[bool] = ..., unlock_duration: _Optional[_Union[datetime.timedelta, _duration_pb2.Duration, _Mapping]] = ..., left_open: _Optional[bool] = ..., electronic_lock: _Optional[str] = ..., controller: _Optional[str] = ..., intercom_adaptor: _Optional[str] = ...) -> None: ...
+    user_remote_operations: _containers.RepeatedScalarFieldContainer[_remote_operation_pb2.AppKeyRemoteOperation]
+    def __init__(self, name: _Optional[str] = ..., display_name: _Optional[str] = ..., fixed: _Optional[_Union[_opening_mode_pb2.OpeningMode, str]] = ..., schedule: _Optional[str] = ..., calendar: _Optional[str] = ..., card_key_updater: _Optional[bool] = ..., unlock_duration: _Optional[_Union[datetime.timedelta, _duration_pb2.Duration, _Mapping]] = ..., left_open: _Optional[bool] = ..., electronic_lock: _Optional[str] = ..., controller: _Optional[str] = ..., intercom_adaptor: _Optional[str] = ..., user_remote_operations: _Optional[_Iterable[_Union[_remote_operation_pb2.AppKeyRemoteOperation, str]]] = ...) -> None: ...
 
 class CreateAccessPointRequest(_message.Message):
     __slots__ = ("parent", "access_point_id", "access_point")
