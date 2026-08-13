@@ -33,7 +33,7 @@ from saltoapis.nebula.type import remote_operation_pb2 as salto_dot_nebula_dot_t
 from saltoapis.nebula.type import remote_operation_pb2 as salto_dot_nebula_dot_type_dot_remote__operation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n.salto/nebula/accesspoint/v1/access_point.proto\x12\x1bsalto.nebula.accesspoint.v1\x1a\x1egoogle/protobuf/duration.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a google/protobuf/field_mask.proto\x1a$salto/longrunning/v1/operation.proto\x1a$salto/nebula/type/opening_mode.proto\x1a(salto/nebula/type/remote_operation.proto\"\xdf\x03\n\x0b\x41\x63\x63\x65ssPoint\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x14\n\x0c\x64isplay_name\x18\x02 \x01(\t\x12/\n\x05\x66ixed\x18\x03 \x01(\x0e\x32\x1e.salto.nebula.type.OpeningModeH\x00\x12\x12\n\x08schedule\x18\x04 \x01(\tH\x00\x12\x15\n\x08\x63\x61lendar\x18\x05 \x01(\tH\x02\x88\x01\x01\x12\x1d\n\x10\x63\x61rd_key_updater\x18\x06 \x01(\x08H\x03\x88\x01\x01\x12\x37\n\x0funlock_duration\x18\x07 \x01(\x0b\x32\x19.google.protobuf.DurationH\x04\x88\x01\x01\x12\x11\n\tleft_open\x18\x08 \x01(\x08\x12\x19\n\x0f\x65lectronic_lock\x18\t \x01(\tH\x01\x12\x14\n\ncontroller\x18\n \x01(\tH\x01\x12\x1a\n\x10intercom_adaptor\x18\x0b \x01(\tH\x01\x12H\n\x16user_remote_operations\x18\x0c \x03(\x0e\x32(.salto.nebula.type.AppKeyRemoteOperationB\x0e\n\x0copening_modeB\x08\n\x06sourceB\x0b\n\t_calendarB\x13\n\x11_card_key_updaterB\x12\n\x10_unlock_duration\"\x9c\x01\n\x18\x43reateAccessPointRequest\x12\x0e\n\x06parent\x18\x01 \x01(\t\x12\x1c\n\x0f\x61\x63\x63\x65ss_point_id\x18\x02 \x01(\tH\x00\x88\x01\x01\x12>\n\x0c\x61\x63\x63\x65ss_point\x18\x03 \x01(\x0b\x32(.salto.nebula.accesspoint.v1.AccessPointB\x12\n\x10_access_point_id\"%\n\x15GetAccessPointRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"r\n\x17ListAccessPointsRequest\x12\x0e\n\x06parent\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\x12\x0e\n\x06\x66ilter\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\"\x88\x01\n\x18ListAccessPointsResponse\x12?\n\raccess_points\x18\x01 \x03(\x0b\x32(.salto.nebula.accesspoint.v1.AccessPoint\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\x12\x12\n\ntotal_size\x18\x03 \x01(\x05\"\x8b\x01\n\x18UpdateAccessPointRequest\x12>\n\x0c\x61\x63\x63\x65ss_point\x18\x01 \x01(\x0b\x32(.salto.nebula.accesspoint.v1.AccessPoint\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"(\n\x18\x44\x65leteAccessPointRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"(\n\x18UnlockAccessPointRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"\x1b\n\x19UnlockAccessPointResponse\"\x1b\n\x19UnlockAccessPointMetadata\"&\n\x16LockAccessPointRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"\x19\n\x17LockAccessPointResponse\"\x19\n\x17LockAccessPointMetadata2\xab\x06\n\x12\x41\x63\x63\x65ssPointService\x12t\n\x11\x43reateAccessPoint\x12\x35.salto.nebula.accesspoint.v1.CreateAccessPointRequest\x1a(.salto.nebula.accesspoint.v1.AccessPoint\x12n\n\x0eGetAccessPoint\x12\x32.salto.nebula.accesspoint.v1.GetAccessPointRequest\x1a(.salto.nebula.accesspoint.v1.AccessPoint\x12\x7f\n\x10ListAccessPoints\x12\x34.salto.nebula.accesspoint.v1.ListAccessPointsRequest\x1a\x35.salto.nebula.accesspoint.v1.ListAccessPointsResponse\x12t\n\x11UpdateAccessPoint\x12\x35.salto.nebula.accesspoint.v1.UpdateAccessPointRequest\x1a(.salto.nebula.accesspoint.v1.AccessPoint\x12\x62\n\x11\x44\x65leteAccessPoint\x12\x35.salto.nebula.accesspoint.v1.DeleteAccessPointRequest\x1a\x16.google.protobuf.Empty\x12k\n\x11UnlockAccessPoint\x12\x35.salto.nebula.accesspoint.v1.UnlockAccessPointRequest\x1a\x1f.salto.longrunning.v1.Operation\x12g\n\x0fLockAccessPoint\x12\x33.salto.nebula.accesspoint.v1.LockAccessPointRequest\x1a\x1f.salto.longrunning.v1.OperationB\xf9\x01\n#com.saltoapis.nebula.accesspoint.v1B\x10\x41\x63\x63\x65ssPointProtoP\x01ZLgithub.com/saltoapis-internal/saltoapis-go/nebula/accesspoint/v1;accesspoint\xaa\x02\x1fSaltoapis.Nebula.AccessPoint.V1\xca\x02\x1fSaltoapis\\Nebula\\AccessPoint\\V1\xe2\x02+GPBMetadata\\Saltoapis\\Nebula\\AccessPoint\\V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n.salto/nebula/accesspoint/v1/access_point.proto\x12\x1bsalto.nebula.accesspoint.v1\x1a\x1egoogle/protobuf/duration.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a google/protobuf/field_mask.proto\x1a$salto/longrunning/v1/operation.proto\x1a$salto/nebula/type/opening_mode.proto\x1a(salto/nebula/type/remote_operation.proto\"\x85\x04\n\x0b\x41\x63\x63\x65ssPoint\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x14\n\x0c\x64isplay_name\x18\x02 \x01(\t\x12/\n\x05\x66ixed\x18\x03 \x01(\x0e\x32\x1e.salto.nebula.type.OpeningModeH\x00\x12\x12\n\x08schedule\x18\x04 \x01(\tH\x00\x12\x15\n\x08\x63\x61lendar\x18\x05 \x01(\tH\x02\x88\x01\x01\x12\x1d\n\x10\x63\x61rd_key_updater\x18\x06 \x01(\x08H\x03\x88\x01\x01\x12\x37\n\x0funlock_duration\x18\x07 \x01(\x0b\x32\x19.google.protobuf.DurationH\x04\x88\x01\x01\x12\x11\n\tleft_open\x18\x08 \x01(\x08\x12\x19\n\x0f\x65lectronic_lock\x18\t \x01(\tH\x01\x12\x14\n\ncontroller\x18\n \x01(\tH\x01\x12\x1a\n\x10intercom_adaptor\x18\x0b \x01(\tH\x01\x12H\n\x16user_remote_operations\x18\x0c \x03(\x0e\x32(.salto.nebula.type.AppKeyRemoteOperation\x12\x16\n\ttime_zone\x18\r \x01(\tH\x05\x88\x01\x01\x42\x0e\n\x0copening_modeB\x08\n\x06sourceB\x0b\n\t_calendarB\x13\n\x11_card_key_updaterB\x12\n\x10_unlock_durationB\x0c\n\n_time_zone\"\x9c\x01\n\x18\x43reateAccessPointRequest\x12\x0e\n\x06parent\x18\x01 \x01(\t\x12\x1c\n\x0f\x61\x63\x63\x65ss_point_id\x18\x02 \x01(\tH\x00\x88\x01\x01\x12>\n\x0c\x61\x63\x63\x65ss_point\x18\x03 \x01(\x0b\x32(.salto.nebula.accesspoint.v1.AccessPointB\x12\n\x10_access_point_id\"%\n\x15GetAccessPointRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"r\n\x17ListAccessPointsRequest\x12\x0e\n\x06parent\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\x12\x0e\n\x06\x66ilter\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\"\x88\x01\n\x18ListAccessPointsResponse\x12?\n\raccess_points\x18\x01 \x03(\x0b\x32(.salto.nebula.accesspoint.v1.AccessPoint\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\x12\x12\n\ntotal_size\x18\x03 \x01(\x05\"\x8b\x01\n\x18UpdateAccessPointRequest\x12>\n\x0c\x61\x63\x63\x65ss_point\x18\x01 \x01(\x0b\x32(.salto.nebula.accesspoint.v1.AccessPoint\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"(\n\x18\x44\x65leteAccessPointRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"(\n\x18UnlockAccessPointRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"\x1b\n\x19UnlockAccessPointResponse\"\x1b\n\x19UnlockAccessPointMetadata\"&\n\x16LockAccessPointRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"\x19\n\x17LockAccessPointResponse\"\x19\n\x17LockAccessPointMetadata2\xab\x06\n\x12\x41\x63\x63\x65ssPointService\x12t\n\x11\x43reateAccessPoint\x12\x35.salto.nebula.accesspoint.v1.CreateAccessPointRequest\x1a(.salto.nebula.accesspoint.v1.AccessPoint\x12n\n\x0eGetAccessPoint\x12\x32.salto.nebula.accesspoint.v1.GetAccessPointRequest\x1a(.salto.nebula.accesspoint.v1.AccessPoint\x12\x7f\n\x10ListAccessPoints\x12\x34.salto.nebula.accesspoint.v1.ListAccessPointsRequest\x1a\x35.salto.nebula.accesspoint.v1.ListAccessPointsResponse\x12t\n\x11UpdateAccessPoint\x12\x35.salto.nebula.accesspoint.v1.UpdateAccessPointRequest\x1a(.salto.nebula.accesspoint.v1.AccessPoint\x12\x62\n\x11\x44\x65leteAccessPoint\x12\x35.salto.nebula.accesspoint.v1.DeleteAccessPointRequest\x1a\x16.google.protobuf.Empty\x12k\n\x11UnlockAccessPoint\x12\x35.salto.nebula.accesspoint.v1.UnlockAccessPointRequest\x1a\x1f.salto.longrunning.v1.Operation\x12g\n\x0fLockAccessPoint\x12\x33.salto.nebula.accesspoint.v1.LockAccessPointRequest\x1a\x1f.salto.longrunning.v1.OperationB\xf9\x01\n#com.saltoapis.nebula.accesspoint.v1B\x10\x41\x63\x63\x65ssPointProtoP\x01ZLgithub.com/saltoapis-internal/saltoapis-go/nebula/accesspoint/v1;accesspoint\xaa\x02\x1fSaltoapis.Nebula.AccessPoint.V1\xca\x02\x1fSaltoapis\\Nebula\\AccessPoint\\V1\xe2\x02+GPBMetadata\\Saltoapis\\Nebula\\AccessPoint\\V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -42,31 +42,31 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n#com.saltoapis.nebula.accesspoint.v1B\020AccessPointProtoP\001ZLgithub.com/saltoapis-internal/saltoapis-go/nebula/accesspoint/v1;accesspoint\252\002\037Saltoapis.Nebula.AccessPoint.V1\312\002\037Saltoapis\\Nebula\\AccessPoint\\V1\342\002+GPBMetadata\\Saltoapis\\Nebula\\AccessPoint\\V1'
   _globals['_ACCESSPOINT']._serialized_start=293
-  _globals['_ACCESSPOINT']._serialized_end=772
-  _globals['_CREATEACCESSPOINTREQUEST']._serialized_start=775
-  _globals['_CREATEACCESSPOINTREQUEST']._serialized_end=931
-  _globals['_GETACCESSPOINTREQUEST']._serialized_start=933
-  _globals['_GETACCESSPOINTREQUEST']._serialized_end=970
-  _globals['_LISTACCESSPOINTSREQUEST']._serialized_start=972
-  _globals['_LISTACCESSPOINTSREQUEST']._serialized_end=1086
-  _globals['_LISTACCESSPOINTSRESPONSE']._serialized_start=1089
-  _globals['_LISTACCESSPOINTSRESPONSE']._serialized_end=1225
-  _globals['_UPDATEACCESSPOINTREQUEST']._serialized_start=1228
-  _globals['_UPDATEACCESSPOINTREQUEST']._serialized_end=1367
-  _globals['_DELETEACCESSPOINTREQUEST']._serialized_start=1369
-  _globals['_DELETEACCESSPOINTREQUEST']._serialized_end=1409
-  _globals['_UNLOCKACCESSPOINTREQUEST']._serialized_start=1411
-  _globals['_UNLOCKACCESSPOINTREQUEST']._serialized_end=1451
-  _globals['_UNLOCKACCESSPOINTRESPONSE']._serialized_start=1453
-  _globals['_UNLOCKACCESSPOINTRESPONSE']._serialized_end=1480
-  _globals['_UNLOCKACCESSPOINTMETADATA']._serialized_start=1482
-  _globals['_UNLOCKACCESSPOINTMETADATA']._serialized_end=1509
-  _globals['_LOCKACCESSPOINTREQUEST']._serialized_start=1511
-  _globals['_LOCKACCESSPOINTREQUEST']._serialized_end=1549
-  _globals['_LOCKACCESSPOINTRESPONSE']._serialized_start=1551
-  _globals['_LOCKACCESSPOINTRESPONSE']._serialized_end=1576
-  _globals['_LOCKACCESSPOINTMETADATA']._serialized_start=1578
-  _globals['_LOCKACCESSPOINTMETADATA']._serialized_end=1603
-  _globals['_ACCESSPOINTSERVICE']._serialized_start=1606
-  _globals['_ACCESSPOINTSERVICE']._serialized_end=2417
+  _globals['_ACCESSPOINT']._serialized_end=810
+  _globals['_CREATEACCESSPOINTREQUEST']._serialized_start=813
+  _globals['_CREATEACCESSPOINTREQUEST']._serialized_end=969
+  _globals['_GETACCESSPOINTREQUEST']._serialized_start=971
+  _globals['_GETACCESSPOINTREQUEST']._serialized_end=1008
+  _globals['_LISTACCESSPOINTSREQUEST']._serialized_start=1010
+  _globals['_LISTACCESSPOINTSREQUEST']._serialized_end=1124
+  _globals['_LISTACCESSPOINTSRESPONSE']._serialized_start=1127
+  _globals['_LISTACCESSPOINTSRESPONSE']._serialized_end=1263
+  _globals['_UPDATEACCESSPOINTREQUEST']._serialized_start=1266
+  _globals['_UPDATEACCESSPOINTREQUEST']._serialized_end=1405
+  _globals['_DELETEACCESSPOINTREQUEST']._serialized_start=1407
+  _globals['_DELETEACCESSPOINTREQUEST']._serialized_end=1447
+  _globals['_UNLOCKACCESSPOINTREQUEST']._serialized_start=1449
+  _globals['_UNLOCKACCESSPOINTREQUEST']._serialized_end=1489
+  _globals['_UNLOCKACCESSPOINTRESPONSE']._serialized_start=1491
+  _globals['_UNLOCKACCESSPOINTRESPONSE']._serialized_end=1518
+  _globals['_UNLOCKACCESSPOINTMETADATA']._serialized_start=1520
+  _globals['_UNLOCKACCESSPOINTMETADATA']._serialized_end=1547
+  _globals['_LOCKACCESSPOINTREQUEST']._serialized_start=1549
+  _globals['_LOCKACCESSPOINTREQUEST']._serialized_end=1587
+  _globals['_LOCKACCESSPOINTRESPONSE']._serialized_start=1589
+  _globals['_LOCKACCESSPOINTRESPONSE']._serialized_end=1614
+  _globals['_LOCKACCESSPOINTMETADATA']._serialized_start=1616
+  _globals['_LOCKACCESSPOINTMETADATA']._serialized_end=1641
+  _globals['_ACCESSPOINTSERVICE']._serialized_start=1644
+  _globals['_ACCESSPOINTSERVICE']._serialized_end=2455
 # @@protoc_insertion_point(module_scope)
