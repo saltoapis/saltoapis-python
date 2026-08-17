@@ -352,6 +352,14 @@ class EncodeCardKeyMetadata(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
+class UpdateAppKeyRequest(_message.Message):
+    __slots__ = ("app_key", "update_mask")
+    APP_KEY_FIELD_NUMBER: _ClassVar[int]
+    UPDATE_MASK_FIELD_NUMBER: _ClassVar[int]
+    app_key: AppKey
+    update_mask: _field_mask_pb2.FieldMask
+    def __init__(self, app_key: _Optional[_Union[AppKey, _Mapping]] = ..., update_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
+
 class AssignAppKeyRequest(_message.Message):
     __slots__ = ("name",)
     NAME_FIELD_NUMBER: _ClassVar[int]
