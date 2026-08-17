@@ -102,6 +102,11 @@ class UserServiceStub:
                 request_serializer=salto_dot_nebula_dot_user_dot_v1_dot_user__pb2.EncodeCardKeyRequest.SerializeToString,
                 response_deserializer=salto_dot_longrunning_dot_v1_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.UpdateAppKey = channel.unary_unary(
+                '/salto.nebula.user.v1.UserService/UpdateAppKey',
+                request_serializer=salto_dot_nebula_dot_user_dot_v1_dot_user__pb2.UpdateAppKeyRequest.SerializeToString,
+                response_deserializer=salto_dot_nebula_dot_user_dot_v1_dot_user__pb2.AppKey.FromString,
+                _registered_method=True)
         self.AssignAppKey = channel.unary_unary(
                 '/salto.nebula.user.v1.UserService/AssignAppKey',
                 request_serializer=salto_dot_nebula_dot_user_dot_v1_dot_user__pb2.AssignAppKeyRequest.SerializeToString,
@@ -311,6 +316,15 @@ class UserServiceServicer:
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def UpdateAppKey(self, request, context):
+        """Update an app key
+
+        Updates an existing user's app key.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def AssignAppKey(self, request, context):
         """Assign an app key
 
@@ -490,6 +504,11 @@ def add_UserServiceServicer_to_server(servicer, server):
                     servicer.EncodeCardKey,
                     request_deserializer=salto_dot_nebula_dot_user_dot_v1_dot_user__pb2.EncodeCardKeyRequest.FromString,
                     response_serializer=salto_dot_longrunning_dot_v1_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'UpdateAppKey': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateAppKey,
+                    request_deserializer=salto_dot_nebula_dot_user_dot_v1_dot_user__pb2.UpdateAppKeyRequest.FromString,
+                    response_serializer=salto_dot_nebula_dot_user_dot_v1_dot_user__pb2.AppKey.SerializeToString,
             ),
             'AssignAppKey': grpc.unary_unary_rpc_method_handler(
                     servicer.AssignAppKey,
@@ -978,6 +997,33 @@ class UserService:
             '/salto.nebula.user.v1.UserService/EncodeCardKey',
             salto_dot_nebula_dot_user_dot_v1_dot_user__pb2.EncodeCardKeyRequest.SerializeToString,
             salto_dot_longrunning_dot_v1_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UpdateAppKey(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/salto.nebula.user.v1.UserService/UpdateAppKey',
+            salto_dot_nebula_dot_user_dot_v1_dot_user__pb2.UpdateAppKeyRequest.SerializeToString,
+            salto_dot_nebula_dot_user_dot_v1_dot_user__pb2.AppKey.FromString,
             options,
             channel_credentials,
             insecure,
