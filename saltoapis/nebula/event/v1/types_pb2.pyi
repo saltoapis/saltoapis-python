@@ -9,6 +9,8 @@ from saltoapis.nebula.controller.v1 import controller_pb2 as _controller_pb2
 from saltoapis.nebula.controller.v1 import controller_pb2 as _controller_pb2
 from saltoapis.nebula.emergencykey.v1 import emergency_key_pb2 as _emergency_key_pb2
 from saltoapis.nebula.emergencykey.v1 import emergency_key_pb2 as _emergency_key_pb2
+from saltoapis.nebula.serviceaccount.v1 import service_account_pb2 as _service_account_pb2
+from saltoapis.nebula.serviceaccount.v1 import service_account_pb2 as _service_account_pb2
 from saltoapis.nebula.unit.v1 import unit_pb2 as _unit_pb2
 from saltoapis.nebula.unit.v1 import unit_pb2 as _unit_pb2
 from saltoapis.nebula.user.v1 import user_pb2 as _user_pb2
@@ -23,10 +25,12 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Principal(_message.Message):
-    __slots__ = ("user",)
+    __slots__ = ("user", "service_account")
     USER_FIELD_NUMBER: _ClassVar[int]
+    SERVICE_ACCOUNT_FIELD_NUMBER: _ClassVar[int]
     user: _user_pb2.User
-    def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ...) -> None: ...
+    service_account: _service_account_pb2.ServiceAccount
+    def __init__(self, user: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., service_account: _Optional[_Union[_service_account_pb2.ServiceAccount, _Mapping]] = ...) -> None: ...
 
 class PreviousValues(_message.Message):
     __slots__ = ("values",)

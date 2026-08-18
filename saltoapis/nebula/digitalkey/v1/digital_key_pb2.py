@@ -25,6 +25,8 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 from saltoapis.longrunning.v1 import operation_pb2 as salto_dot_longrunning_dot_v1_dot_operation__pb2
 from saltoapis.longrunning.v1 import operation_pb2 as salto_dot_longrunning_dot_v1_dot_operation__pb2
+from saltoapis.nebula.type import local_operation_pb2 as salto_dot_nebula_dot_type_dot_local__operation__pb2
+from saltoapis.nebula.type import local_operation_pb2 as salto_dot_nebula_dot_type_dot_local__operation__pb2
 from saltoapis.nebula.type import remote_operation_pb2 as salto_dot_nebula_dot_type_dot_remote__operation__pb2
 from saltoapis.nebula.type import remote_operation_pb2 as salto_dot_nebula_dot_type_dot_remote__operation__pb2
 from saltoapis.nebula.type import technology_pb2 as salto_dot_nebula_dot_type_dot_technology__pb2
@@ -33,7 +35,7 @@ from saltoapis.type import color_pb2 as salto_dot_type_dot_color__pb2
 from saltoapis.type import color_pb2 as salto_dot_type_dot_color__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n,salto/nebula/digitalkey/v1/digital_key.proto\x12\x1asalto.nebula.digitalkey.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a$salto/longrunning/v1/operation.proto\x1a(salto/nebula/type/remote_operation.proto\x1a\"salto/nebula/type/technology.proto\x1a\x16salto/type/color.proto\"\xf6\x08\n\nDigitalKey\x12\x0c\n\x04name\x18\x01 \x01(\t\x12@\n\x07\x61pp_key\x18\x02 \x01(\x0b\x32-.salto.nebula.digitalkey.v1.DigitalKey.AppKeyH\x00\x12\x46\n\nwallet_key\x18\x03 \x01(\x0b\x32\x30.salto.nebula.digitalkey.v1.DigitalKey.WalletKeyH\x00\x1av\n\x08Metadata\x12\r\n\x05title\x18\x01 \x01(\t\x12\x10\n\x08subtitle\x18\x02 \x01(\t\x12\x11\n\tphoto_uri\x18\x03 \x01(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\x04 \x01(\t\x12%\n\ntext_color\x18\x05 \x01(\x0b\x32\x11.salto.type.Color\x1a\xff\x03\n\x06\x41ppKey\x12\x41\n\x08metadata\x18\x01 \x01(\x0b\x32/.salto.nebula.digitalkey.v1.DigitalKey.Metadata\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\x0c\x12\x14\n\x0cinstallation\x18\x05 \x01(\t\x12\x11\n\x04unit\x18\x06 \x01(\tH\x00\x88\x01\x01\x12\x17\n\x0finstallation_id\x18\x03 \x01(\t\x12\x14\n\x07unit_id\x18\x04 \x01(\tH\x01\x88\x01\x01\x12;\n\x17\x61\x63\x63\x65ss_points_sync_time\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x65\n\x18\x61\x63\x63\x65ss_points_sync_state\x18\x08 \x01(\x0e\x32\x43.salto.nebula.digitalkey.v1.DigitalKey.AppKey.AccessPointsSyncState\"\x92\x01\n\x15\x41\x63\x63\x65ssPointsSyncState\x12(\n$ACCESS_POINTS_SYNC_STATE_UNSPECIFIED\x10\x00\x12\x0f\n\x0bINVALIDATED\x10\x03\x12\x0b\n\x07SYNCING\x10\x01\x12\n\n\x06SYNCED\x10\x02\x12\x11\n\rNOT_SUPPORTED\x10\x04\x12\x12\n\x0eLIMIT_EXCEEDED\x10\x05\x42\x07\n\x05_unitB\n\n\x08_unit_id\x1a\xcd\x02\n\tWalletKey\x12\x41\n\x08metadata\x18\x01 \x01(\x0b\x32/.salto.nebula.digitalkey.v1.DigitalKey.Metadata\x12Z\n\x10hydra_credential\x18\x02 \x01(\x0b\x32@.salto.nebula.digitalkey.v1.DigitalKey.WalletKey.HydraCredential\x1a\xa0\x01\n\x0fHydraCredential\x12\x15\n\rcredential_id\x18\x01 \x01(\t\x12\x1b\n\x13sharing_instance_id\x18\x02 \x01(\t\x12\x14\n\x0c\x61\x63\x63ount_hash\x18\x03 \x01(\t\x12\x13\n\x0btemplate_id\x18\x04 \x01(\t\x12\x18\n\x10relying_party_id\x18\x05 \x01(\t\x12\x14\n\x0creference_id\x18\x06 \x01(\tB\x06\n\x04type\"$\n\x14GetDigitalKeyRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"a\n\x16ListDigitalKeysRequest\x12\x11\n\tpage_size\x18\x01 \x01(\x05\x12\x12\n\npage_token\x18\x02 \x01(\t\x12\x0e\n\x06\x66ilter\x18\x03 \x01(\t\x12\x10\n\x08order_by\x18\x04 \x01(\t\"p\n\x17ListDigitalKeysResponse\x12<\n\x0c\x64igital_keys\x18\x01 \x03(\x0b\x32&.salto.nebula.digitalkey.v1.DigitalKey\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xd8\x01\n\x15\x44igitalKeyAccessPoint\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x14\n\x0c\x64isplay_name\x18\x02 \x01(\t\x12\x11\n\tdevice_id\x18\x03 \x01(\t\x12\x43\n\x16supported_technologies\x18\x04 \x03(\x0e\x32#.salto.nebula.type.AppKeyTechnology\x12\x43\n\x11remote_operations\x18\x05 \x03(\x0e\x32(.salto.nebula.type.AppKeyRemoteOperation\"/\n\x1fGetDigitalKeyAccessPointRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"j\n!ListDigitalKeyAccessPointsRequest\x12\x0e\n\x06parent\x18\x01 \x01(\t\x12\x0e\n\x06\x66ilter\x18\x02 \x01(\t\x12\x11\n\tpage_size\x18\x03 \x01(\x05\x12\x12\n\npage_token\x18\x04 \x01(\t\"\x93\x01\n\"ListDigitalKeyAccessPointsResponse\x12T\n\x19\x64igital_key_access_points\x18\x01 \x03(\x0b\x32\x31.salto.nebula.digitalkey.v1.DigitalKeyAccessPoint\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"1\n!SyncDigitalKeyAccessPointsRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"$\n\"SyncDigitalKeyAccessPointsResponse\"$\n\"SyncDigitalKeyAccessPointsMetadata\"2\n\"UnlockDigitalKeyAccessPointRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"%\n#UnlockDigitalKeyAccessPointResponse\"%\n#UnlockDigitalKeyAccessPointMetadata\"0\n LockDigitalKeyAccessPointRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"#\n!LockDigitalKeyAccessPointResponse\"#\n!LockDigitalKeyAccessPointMetadata2\x9f\x07\n\x11\x44igitalKeyService\x12i\n\rGetDigitalKey\x12\x30.salto.nebula.digitalkey.v1.GetDigitalKeyRequest\x1a&.salto.nebula.digitalkey.v1.DigitalKey\x12z\n\x0fListDigitalKeys\x12\x32.salto.nebula.digitalkey.v1.ListDigitalKeysRequest\x1a\x33.salto.nebula.digitalkey.v1.ListDigitalKeysResponse\x12\x8a\x01\n\x18GetDigitalKeyAccessPoint\x12;.salto.nebula.digitalkey.v1.GetDigitalKeyAccessPointRequest\x1a\x31.salto.nebula.digitalkey.v1.DigitalKeyAccessPoint\x12\x9b\x01\n\x1aListDigitalKeyAccessPoints\x12=.salto.nebula.digitalkey.v1.ListDigitalKeyAccessPointsRequest\x1a>.salto.nebula.digitalkey.v1.ListDigitalKeyAccessPointsResponse\x12|\n\x1aSyncDigitalKeyAccessPoints\x12=.salto.nebula.digitalkey.v1.SyncDigitalKeyAccessPointsRequest\x1a\x1f.salto.longrunning.v1.Operation\x12~\n\x1bUnlockDigitalKeyAccessPoint\x12>.salto.nebula.digitalkey.v1.UnlockDigitalKeyAccessPointRequest\x1a\x1f.salto.longrunning.v1.Operation\x12z\n\x19LockDigitalKeyAccessPoint\x12<.salto.nebula.digitalkey.v1.LockDigitalKeyAccessPointRequest\x1a\x1f.salto.longrunning.v1.OperationB\xf2\x01\n\"com.saltoapis.nebula.digitalkey.v1B\x0f\x44igitalKeyProtoP\x01ZJgithub.com/saltoapis-internal/saltoapis-go/nebula/digitalkey/v1;digitalkey\xaa\x02\x1eSaltoapis.Nebula.DigitalKey.V1\xca\x02\x1eSaltoapis\\Nebula\\DigitalKey\\V1\xe2\x02*GPBMetadata\\Saltoapis\\Nebula\\DigitalKey\\V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n,salto/nebula/digitalkey/v1/digital_key.proto\x12\x1asalto.nebula.digitalkey.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a$salto/longrunning/v1/operation.proto\x1a\'salto/nebula/type/local_operation.proto\x1a(salto/nebula/type/remote_operation.proto\x1a\"salto/nebula/type/technology.proto\x1a\x16salto/type/color.proto\"\xf6\x08\n\nDigitalKey\x12\x0c\n\x04name\x18\x01 \x01(\t\x12@\n\x07\x61pp_key\x18\x02 \x01(\x0b\x32-.salto.nebula.digitalkey.v1.DigitalKey.AppKeyH\x00\x12\x46\n\nwallet_key\x18\x03 \x01(\x0b\x32\x30.salto.nebula.digitalkey.v1.DigitalKey.WalletKeyH\x00\x1av\n\x08Metadata\x12\r\n\x05title\x18\x01 \x01(\t\x12\x10\n\x08subtitle\x18\x02 \x01(\t\x12\x11\n\tphoto_uri\x18\x03 \x01(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\x04 \x01(\t\x12%\n\ntext_color\x18\x05 \x01(\x0b\x32\x11.salto.type.Color\x1a\xff\x03\n\x06\x41ppKey\x12\x41\n\x08metadata\x18\x01 \x01(\x0b\x32/.salto.nebula.digitalkey.v1.DigitalKey.Metadata\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\x0c\x12\x14\n\x0cinstallation\x18\x05 \x01(\t\x12\x11\n\x04unit\x18\x06 \x01(\tH\x00\x88\x01\x01\x12\x17\n\x0finstallation_id\x18\x03 \x01(\t\x12\x14\n\x07unit_id\x18\x04 \x01(\tH\x01\x88\x01\x01\x12;\n\x17\x61\x63\x63\x65ss_points_sync_time\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x65\n\x18\x61\x63\x63\x65ss_points_sync_state\x18\x08 \x01(\x0e\x32\x43.salto.nebula.digitalkey.v1.DigitalKey.AppKey.AccessPointsSyncState\"\x92\x01\n\x15\x41\x63\x63\x65ssPointsSyncState\x12(\n$ACCESS_POINTS_SYNC_STATE_UNSPECIFIED\x10\x00\x12\x0f\n\x0bINVALIDATED\x10\x03\x12\x0b\n\x07SYNCING\x10\x01\x12\n\n\x06SYNCED\x10\x02\x12\x11\n\rNOT_SUPPORTED\x10\x04\x12\x12\n\x0eLIMIT_EXCEEDED\x10\x05\x42\x07\n\x05_unitB\n\n\x08_unit_id\x1a\xcd\x02\n\tWalletKey\x12\x41\n\x08metadata\x18\x01 \x01(\x0b\x32/.salto.nebula.digitalkey.v1.DigitalKey.Metadata\x12Z\n\x10hydra_credential\x18\x02 \x01(\x0b\x32@.salto.nebula.digitalkey.v1.DigitalKey.WalletKey.HydraCredential\x1a\xa0\x01\n\x0fHydraCredential\x12\x15\n\rcredential_id\x18\x01 \x01(\t\x12\x1b\n\x13sharing_instance_id\x18\x02 \x01(\t\x12\x14\n\x0c\x61\x63\x63ount_hash\x18\x03 \x01(\t\x12\x13\n\x0btemplate_id\x18\x04 \x01(\t\x12\x18\n\x10relying_party_id\x18\x05 \x01(\t\x12\x14\n\x0creference_id\x18\x06 \x01(\tB\x06\n\x04type\"$\n\x14GetDigitalKeyRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"a\n\x16ListDigitalKeysRequest\x12\x11\n\tpage_size\x18\x01 \x01(\x05\x12\x12\n\npage_token\x18\x02 \x01(\t\x12\x0e\n\x06\x66ilter\x18\x03 \x01(\t\x12\x10\n\x08order_by\x18\x04 \x01(\t\"p\n\x17ListDigitalKeysResponse\x12<\n\x0c\x64igital_keys\x18\x01 \x03(\x0b\x32&.salto.nebula.digitalkey.v1.DigitalKey\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x9b\x02\n\x15\x44igitalKeyAccessPoint\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x14\n\x0c\x64isplay_name\x18\x02 \x01(\t\x12\x11\n\tdevice_id\x18\x03 \x01(\t\x12\x43\n\x16supported_technologies\x18\x04 \x03(\x0e\x32#.salto.nebula.type.AppKeyTechnology\x12\x43\n\x11remote_operations\x18\x05 \x03(\x0e\x32(.salto.nebula.type.AppKeyRemoteOperation\x12\x41\n\x10local_operations\x18\x06 \x03(\x0e\x32\'.salto.nebula.type.AppKeyLocalOperation\"/\n\x1fGetDigitalKeyAccessPointRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"j\n!ListDigitalKeyAccessPointsRequest\x12\x0e\n\x06parent\x18\x01 \x01(\t\x12\x0e\n\x06\x66ilter\x18\x02 \x01(\t\x12\x11\n\tpage_size\x18\x03 \x01(\x05\x12\x12\n\npage_token\x18\x04 \x01(\t\"\x93\x01\n\"ListDigitalKeyAccessPointsResponse\x12T\n\x19\x64igital_key_access_points\x18\x01 \x03(\x0b\x32\x31.salto.nebula.digitalkey.v1.DigitalKeyAccessPoint\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"1\n!SyncDigitalKeyAccessPointsRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"$\n\"SyncDigitalKeyAccessPointsResponse\"$\n\"SyncDigitalKeyAccessPointsMetadata\"2\n\"UnlockDigitalKeyAccessPointRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"%\n#UnlockDigitalKeyAccessPointResponse\"%\n#UnlockDigitalKeyAccessPointMetadata\"0\n LockDigitalKeyAccessPointRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"#\n!LockDigitalKeyAccessPointResponse\"#\n!LockDigitalKeyAccessPointMetadata2\x9f\x07\n\x11\x44igitalKeyService\x12i\n\rGetDigitalKey\x12\x30.salto.nebula.digitalkey.v1.GetDigitalKeyRequest\x1a&.salto.nebula.digitalkey.v1.DigitalKey\x12z\n\x0fListDigitalKeys\x12\x32.salto.nebula.digitalkey.v1.ListDigitalKeysRequest\x1a\x33.salto.nebula.digitalkey.v1.ListDigitalKeysResponse\x12\x8a\x01\n\x18GetDigitalKeyAccessPoint\x12;.salto.nebula.digitalkey.v1.GetDigitalKeyAccessPointRequest\x1a\x31.salto.nebula.digitalkey.v1.DigitalKeyAccessPoint\x12\x9b\x01\n\x1aListDigitalKeyAccessPoints\x12=.salto.nebula.digitalkey.v1.ListDigitalKeyAccessPointsRequest\x1a>.salto.nebula.digitalkey.v1.ListDigitalKeyAccessPointsResponse\x12|\n\x1aSyncDigitalKeyAccessPoints\x12=.salto.nebula.digitalkey.v1.SyncDigitalKeyAccessPointsRequest\x1a\x1f.salto.longrunning.v1.Operation\x12~\n\x1bUnlockDigitalKeyAccessPoint\x12>.salto.nebula.digitalkey.v1.UnlockDigitalKeyAccessPointRequest\x1a\x1f.salto.longrunning.v1.Operation\x12z\n\x19LockDigitalKeyAccessPoint\x12<.salto.nebula.digitalkey.v1.LockDigitalKeyAccessPointRequest\x1a\x1f.salto.longrunning.v1.OperationB\xf2\x01\n\"com.saltoapis.nebula.digitalkey.v1B\x0f\x44igitalKeyProtoP\x01ZJgithub.com/saltoapis-internal/saltoapis-go/nebula/digitalkey/v1;digitalkey\xaa\x02\x1eSaltoapis.Nebula.DigitalKey.V1\xca\x02\x1eSaltoapis\\Nebula\\DigitalKey\\V1\xe2\x02*GPBMetadata\\Saltoapis\\Nebula\\DigitalKey\\V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -41,50 +43,50 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'salto.nebula.digitalkey.v1.
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\"com.saltoapis.nebula.digitalkey.v1B\017DigitalKeyProtoP\001ZJgithub.com/saltoapis-internal/saltoapis-go/nebula/digitalkey/v1;digitalkey\252\002\036Saltoapis.Nebula.DigitalKey.V1\312\002\036Saltoapis\\Nebula\\DigitalKey\\V1\342\002*GPBMetadata\\Saltoapis\\Nebula\\DigitalKey\\V1'
-  _globals['_DIGITALKEY']._serialized_start=250
-  _globals['_DIGITALKEY']._serialized_end=1392
-  _globals['_DIGITALKEY_METADATA']._serialized_start=416
-  _globals['_DIGITALKEY_METADATA']._serialized_end=534
-  _globals['_DIGITALKEY_APPKEY']._serialized_start=537
-  _globals['_DIGITALKEY_APPKEY']._serialized_end=1048
-  _globals['_DIGITALKEY_APPKEY_ACCESSPOINTSSYNCSTATE']._serialized_start=881
-  _globals['_DIGITALKEY_APPKEY_ACCESSPOINTSSYNCSTATE']._serialized_end=1027
-  _globals['_DIGITALKEY_WALLETKEY']._serialized_start=1051
-  _globals['_DIGITALKEY_WALLETKEY']._serialized_end=1384
-  _globals['_DIGITALKEY_WALLETKEY_HYDRACREDENTIAL']._serialized_start=1224
-  _globals['_DIGITALKEY_WALLETKEY_HYDRACREDENTIAL']._serialized_end=1384
-  _globals['_GETDIGITALKEYREQUEST']._serialized_start=1394
-  _globals['_GETDIGITALKEYREQUEST']._serialized_end=1430
-  _globals['_LISTDIGITALKEYSREQUEST']._serialized_start=1432
-  _globals['_LISTDIGITALKEYSREQUEST']._serialized_end=1529
-  _globals['_LISTDIGITALKEYSRESPONSE']._serialized_start=1531
-  _globals['_LISTDIGITALKEYSRESPONSE']._serialized_end=1643
-  _globals['_DIGITALKEYACCESSPOINT']._serialized_start=1646
-  _globals['_DIGITALKEYACCESSPOINT']._serialized_end=1862
-  _globals['_GETDIGITALKEYACCESSPOINTREQUEST']._serialized_start=1864
-  _globals['_GETDIGITALKEYACCESSPOINTREQUEST']._serialized_end=1911
-  _globals['_LISTDIGITALKEYACCESSPOINTSREQUEST']._serialized_start=1913
-  _globals['_LISTDIGITALKEYACCESSPOINTSREQUEST']._serialized_end=2019
-  _globals['_LISTDIGITALKEYACCESSPOINTSRESPONSE']._serialized_start=2022
-  _globals['_LISTDIGITALKEYACCESSPOINTSRESPONSE']._serialized_end=2169
-  _globals['_SYNCDIGITALKEYACCESSPOINTSREQUEST']._serialized_start=2171
-  _globals['_SYNCDIGITALKEYACCESSPOINTSREQUEST']._serialized_end=2220
-  _globals['_SYNCDIGITALKEYACCESSPOINTSRESPONSE']._serialized_start=2222
-  _globals['_SYNCDIGITALKEYACCESSPOINTSRESPONSE']._serialized_end=2258
-  _globals['_SYNCDIGITALKEYACCESSPOINTSMETADATA']._serialized_start=2260
-  _globals['_SYNCDIGITALKEYACCESSPOINTSMETADATA']._serialized_end=2296
-  _globals['_UNLOCKDIGITALKEYACCESSPOINTREQUEST']._serialized_start=2298
-  _globals['_UNLOCKDIGITALKEYACCESSPOINTREQUEST']._serialized_end=2348
-  _globals['_UNLOCKDIGITALKEYACCESSPOINTRESPONSE']._serialized_start=2350
-  _globals['_UNLOCKDIGITALKEYACCESSPOINTRESPONSE']._serialized_end=2387
-  _globals['_UNLOCKDIGITALKEYACCESSPOINTMETADATA']._serialized_start=2389
-  _globals['_UNLOCKDIGITALKEYACCESSPOINTMETADATA']._serialized_end=2426
-  _globals['_LOCKDIGITALKEYACCESSPOINTREQUEST']._serialized_start=2428
-  _globals['_LOCKDIGITALKEYACCESSPOINTREQUEST']._serialized_end=2476
-  _globals['_LOCKDIGITALKEYACCESSPOINTRESPONSE']._serialized_start=2478
-  _globals['_LOCKDIGITALKEYACCESSPOINTRESPONSE']._serialized_end=2513
-  _globals['_LOCKDIGITALKEYACCESSPOINTMETADATA']._serialized_start=2515
-  _globals['_LOCKDIGITALKEYACCESSPOINTMETADATA']._serialized_end=2550
-  _globals['_DIGITALKEYSERVICE']._serialized_start=2553
-  _globals['_DIGITALKEYSERVICE']._serialized_end=3480
+  _globals['_DIGITALKEY']._serialized_start=291
+  _globals['_DIGITALKEY']._serialized_end=1433
+  _globals['_DIGITALKEY_METADATA']._serialized_start=457
+  _globals['_DIGITALKEY_METADATA']._serialized_end=575
+  _globals['_DIGITALKEY_APPKEY']._serialized_start=578
+  _globals['_DIGITALKEY_APPKEY']._serialized_end=1089
+  _globals['_DIGITALKEY_APPKEY_ACCESSPOINTSSYNCSTATE']._serialized_start=922
+  _globals['_DIGITALKEY_APPKEY_ACCESSPOINTSSYNCSTATE']._serialized_end=1068
+  _globals['_DIGITALKEY_WALLETKEY']._serialized_start=1092
+  _globals['_DIGITALKEY_WALLETKEY']._serialized_end=1425
+  _globals['_DIGITALKEY_WALLETKEY_HYDRACREDENTIAL']._serialized_start=1265
+  _globals['_DIGITALKEY_WALLETKEY_HYDRACREDENTIAL']._serialized_end=1425
+  _globals['_GETDIGITALKEYREQUEST']._serialized_start=1435
+  _globals['_GETDIGITALKEYREQUEST']._serialized_end=1471
+  _globals['_LISTDIGITALKEYSREQUEST']._serialized_start=1473
+  _globals['_LISTDIGITALKEYSREQUEST']._serialized_end=1570
+  _globals['_LISTDIGITALKEYSRESPONSE']._serialized_start=1572
+  _globals['_LISTDIGITALKEYSRESPONSE']._serialized_end=1684
+  _globals['_DIGITALKEYACCESSPOINT']._serialized_start=1687
+  _globals['_DIGITALKEYACCESSPOINT']._serialized_end=1970
+  _globals['_GETDIGITALKEYACCESSPOINTREQUEST']._serialized_start=1972
+  _globals['_GETDIGITALKEYACCESSPOINTREQUEST']._serialized_end=2019
+  _globals['_LISTDIGITALKEYACCESSPOINTSREQUEST']._serialized_start=2021
+  _globals['_LISTDIGITALKEYACCESSPOINTSREQUEST']._serialized_end=2127
+  _globals['_LISTDIGITALKEYACCESSPOINTSRESPONSE']._serialized_start=2130
+  _globals['_LISTDIGITALKEYACCESSPOINTSRESPONSE']._serialized_end=2277
+  _globals['_SYNCDIGITALKEYACCESSPOINTSREQUEST']._serialized_start=2279
+  _globals['_SYNCDIGITALKEYACCESSPOINTSREQUEST']._serialized_end=2328
+  _globals['_SYNCDIGITALKEYACCESSPOINTSRESPONSE']._serialized_start=2330
+  _globals['_SYNCDIGITALKEYACCESSPOINTSRESPONSE']._serialized_end=2366
+  _globals['_SYNCDIGITALKEYACCESSPOINTSMETADATA']._serialized_start=2368
+  _globals['_SYNCDIGITALKEYACCESSPOINTSMETADATA']._serialized_end=2404
+  _globals['_UNLOCKDIGITALKEYACCESSPOINTREQUEST']._serialized_start=2406
+  _globals['_UNLOCKDIGITALKEYACCESSPOINTREQUEST']._serialized_end=2456
+  _globals['_UNLOCKDIGITALKEYACCESSPOINTRESPONSE']._serialized_start=2458
+  _globals['_UNLOCKDIGITALKEYACCESSPOINTRESPONSE']._serialized_end=2495
+  _globals['_UNLOCKDIGITALKEYACCESSPOINTMETADATA']._serialized_start=2497
+  _globals['_UNLOCKDIGITALKEYACCESSPOINTMETADATA']._serialized_end=2534
+  _globals['_LOCKDIGITALKEYACCESSPOINTREQUEST']._serialized_start=2536
+  _globals['_LOCKDIGITALKEYACCESSPOINTREQUEST']._serialized_end=2584
+  _globals['_LOCKDIGITALKEYACCESSPOINTRESPONSE']._serialized_start=2586
+  _globals['_LOCKDIGITALKEYACCESSPOINTRESPONSE']._serialized_end=2621
+  _globals['_LOCKDIGITALKEYACCESSPOINTMETADATA']._serialized_start=2623
+  _globals['_LOCKDIGITALKEYACCESSPOINTMETADATA']._serialized_end=2658
+  _globals['_DIGITALKEYSERVICE']._serialized_start=2661
+  _globals['_DIGITALKEYSERVICE']._serialized_end=3588
 # @@protoc_insertion_point(module_scope)

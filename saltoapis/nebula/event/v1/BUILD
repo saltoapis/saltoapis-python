@@ -11,6 +11,7 @@ load_rules(
         '//saltoapis/nebula/booking/v1',
         '//saltoapis/nebula/controller/v1',
         '//saltoapis/nebula/emergencykey/v1',
+        '//saltoapis/nebula/serviceaccount/v1',
         '//saltoapis/nebula/unit/v1',
         '//saltoapis/nebula/user/v1',
     ],
