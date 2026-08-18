@@ -3,6 +3,8 @@ import datetime
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from saltoapis.longrunning.v1 import operation_pb2 as _operation_pb2
 from saltoapis.longrunning.v1 import operation_pb2 as _operation_pb2
+from saltoapis.nebula.type import local_operation_pb2 as _local_operation_pb2
+from saltoapis.nebula.type import local_operation_pb2 as _local_operation_pb2
 from saltoapis.nebula.type import remote_operation_pb2 as _remote_operation_pb2
 from saltoapis.nebula.type import remote_operation_pb2 as _remote_operation_pb2
 from saltoapis.nebula.type import technology_pb2 as _technology_pb2
@@ -123,18 +125,20 @@ class ListDigitalKeysResponse(_message.Message):
     def __init__(self, digital_keys: _Optional[_Iterable[_Union[DigitalKey, _Mapping]]] = ..., next_page_token: _Optional[str] = ...) -> None: ...
 
 class DigitalKeyAccessPoint(_message.Message):
-    __slots__ = ("name", "display_name", "device_id", "supported_technologies", "remote_operations")
+    __slots__ = ("name", "display_name", "device_id", "supported_technologies", "remote_operations", "local_operations")
     NAME_FIELD_NUMBER: _ClassVar[int]
     DISPLAY_NAME_FIELD_NUMBER: _ClassVar[int]
     DEVICE_ID_FIELD_NUMBER: _ClassVar[int]
     SUPPORTED_TECHNOLOGIES_FIELD_NUMBER: _ClassVar[int]
     REMOTE_OPERATIONS_FIELD_NUMBER: _ClassVar[int]
+    LOCAL_OPERATIONS_FIELD_NUMBER: _ClassVar[int]
     name: str
     display_name: str
     device_id: str
     supported_technologies: _containers.RepeatedScalarFieldContainer[_technology_pb2.AppKeyTechnology]
     remote_operations: _containers.RepeatedScalarFieldContainer[_remote_operation_pb2.AppKeyRemoteOperation]
-    def __init__(self, name: _Optional[str] = ..., display_name: _Optional[str] = ..., device_id: _Optional[str] = ..., supported_technologies: _Optional[_Iterable[_Union[_technology_pb2.AppKeyTechnology, str]]] = ..., remote_operations: _Optional[_Iterable[_Union[_remote_operation_pb2.AppKeyRemoteOperation, str]]] = ...) -> None: ...
+    local_operations: _containers.RepeatedScalarFieldContainer[_local_operation_pb2.AppKeyLocalOperation]
+    def __init__(self, name: _Optional[str] = ..., display_name: _Optional[str] = ..., device_id: _Optional[str] = ..., supported_technologies: _Optional[_Iterable[_Union[_technology_pb2.AppKeyTechnology, str]]] = ..., remote_operations: _Optional[_Iterable[_Union[_remote_operation_pb2.AppKeyRemoteOperation, str]]] = ..., local_operations: _Optional[_Iterable[_Union[_local_operation_pb2.AppKeyLocalOperation, str]]] = ...) -> None: ...
 
 class GetDigitalKeyAccessPointRequest(_message.Message):
     __slots__ = ("name",)
