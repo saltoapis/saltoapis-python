@@ -57,6 +57,7 @@ python_projects = [
     '//saltoapis/nebula/emergencykey/v1',
     '//saltoapis/nebula/file/v1',
     '//saltoapis/nebula/iam/v1',
+    '//saltoapis/nebula/serviceaccount/v1',
     '//saltoapis/nebula/unit/v1',
     '//saltoapis/type',
     '//google/rpc',
