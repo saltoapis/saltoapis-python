@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n(salto/nebula/type/remote_operation.proto\x12\x11salto.nebula.type*W\n\x15\x41ppKeyRemoteOperation\x12(\n$APP_KEY_REMOTE_OPERATION_UNSPECIFIED\x10\x00\x12\x08\n\x04LOCK\x10\x01\x12\n\n\x06UNLOCK\x10\x02\x42\xdf\x01\n\x19\x63om.saltoapis.nebula.typeB\x14RemoteOperationProtoP\x01ZVgithub.com/saltoapis-internal/saltoapis-go/nebula/type/remoteoperation;remoteoperation\xaa\x02\x15Saltoapis.Nebula.Type\xca\x02\x15Saltoapis\\Nebula\\Type\xe2\x02!GPBMetadata\\Saltoapis\\Nebula\\Typeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n(salto/nebula/type/remote_operation.proto\x12\x11salto.nebula.type*\x89\x01\n\x15\x41ppKeyRemoteOperation\x12(\n$APP_KEY_REMOTE_OPERATION_UNSPECIFIED\x10\x00\x12!\n\x1d\x41PP_KEY_REMOTE_OPERATION_LOCK\x10\x01\x12#\n\x1f\x41PP_KEY_REMOTE_OPERATION_UNLOCK\x10\x02\x42\xdf\x01\n\x19\x63om.saltoapis.nebula.typeB\x14RemoteOperationProtoP\x01ZVgithub.com/saltoapis-internal/saltoapis-go/nebula/type/remoteoperation;remoteoperation\xaa\x02\x15Saltoapis.Nebula.Type\xca\x02\x15Saltoapis\\Nebula\\Type\xe2\x02!GPBMetadata\\Saltoapis\\Nebula\\Typeb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,6 +32,6 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'salto.nebula.type.remote_op
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\031com.saltoapis.nebula.typeB\024RemoteOperationProtoP\001ZVgithub.com/saltoapis-internal/saltoapis-go/nebula/type/remoteoperation;remoteoperation\252\002\025Saltoapis.Nebula.Type\312\002\025Saltoapis\\Nebula\\Type\342\002!GPBMetadata\\Saltoapis\\Nebula\\Type'
-  _globals['_APPKEYREMOTEOPERATION']._serialized_start=63
-  _globals['_APPKEYREMOTEOPERATION']._serialized_end=150
+  _globals['_APPKEYREMOTEOPERATION']._serialized_start=64
+  _globals['_APPKEYREMOTEOPERATION']._serialized_end=201
 # @@protoc_insertion_point(module_scope)
