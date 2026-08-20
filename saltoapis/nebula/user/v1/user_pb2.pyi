@@ -79,7 +79,7 @@ class UserAccessRight(_message.Message):
     def __init__(self, name: _Optional[str] = ..., access_right: _Optional[str] = ..., display_name: _Optional[str] = ..., schedules: _Optional[_Iterable[_Union[_schedule_pb2.Schedule, _Mapping]]] = ..., effective_schedules: _Optional[_Iterable[_Union[_schedule_pb2.Schedule, _Mapping]]] = ..., activate_time: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., expire_time: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., manager: _Optional[str] = ...) -> None: ...
 
 class CardKey(_message.Message):
-    __slots__ = ("name", "uid", "state", "outdated")
+    __slots__ = ("name", "uid", "state", "outdated", "expire_time")
     class State(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         STATE_UNSPECIFIED: _ClassVar[CardKey.State]
@@ -94,11 +94,13 @@ class CardKey(_message.Message):
     UID_FIELD_NUMBER: _ClassVar[int]
     STATE_FIELD_NUMBER: _ClassVar[int]
     OUTDATED_FIELD_NUMBER: _ClassVar[int]
+    EXPIRE_TIME_FIELD_NUMBER: _ClassVar[int]
     name: str
     uid: str
     state: CardKey.State
     outdated: bool
-    def __init__(self, name: _Optional[str] = ..., uid: _Optional[str] = ..., state: _Optional[_Union[CardKey.State, str]] = ..., outdated: _Optional[bool] = ...) -> None: ...
+    expire_time: _timestamp_pb2.Timestamp
+    def __init__(self, name: _Optional[str] = ..., uid: _Optional[str] = ..., state: _Optional[_Union[CardKey.State, str]] = ..., outdated: _Optional[bool] = ..., expire_time: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
 
 class AppKey(_message.Message):
     __slots__ = ("name", "state", "outdated", "remote_operations")
@@ -159,7 +161,7 @@ class Passcode(_message.Message):
     def __init__(self, name: _Optional[str] = ..., state: _Optional[_Union[Passcode.State, str]] = ...) -> None: ...
 
 class ElectronicKey(_message.Message):
-    __slots__ = ("name", "device_id", "state", "outdated")
+    __slots__ = ("name", "device_id", "state", "outdated", "expire_time")
     class State(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         STATE_UNSPECIFIED: _ClassVar[ElectronicKey.State]
@@ -174,11 +176,13 @@ class ElectronicKey(_message.Message):
     DEVICE_ID_FIELD_NUMBER: _ClassVar[int]
     STATE_FIELD_NUMBER: _ClassVar[int]
     OUTDATED_FIELD_NUMBER: _ClassVar[int]
+    EXPIRE_TIME_FIELD_NUMBER: _ClassVar[int]
     name: str
     device_id: str
     state: ElectronicKey.State
     outdated: bool
-    def __init__(self, name: _Optional[str] = ..., device_id: _Optional[str] = ..., state: _Optional[_Union[ElectronicKey.State, str]] = ..., outdated: _Optional[bool] = ...) -> None: ...
+    expire_time: _timestamp_pb2.Timestamp
+    def __init__(self, name: _Optional[str] = ..., device_id: _Optional[str] = ..., state: _Optional[_Union[ElectronicKey.State, str]] = ..., outdated: _Optional[bool] = ..., expire_time: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
 
 class CreateUserRequest(_message.Message):
     __slots__ = ("parent", "user_id", "user")
