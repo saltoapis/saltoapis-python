@@ -9,6 +9,8 @@ class AppKeyLocalOperation(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     APP_KEY_LOCAL_OPERATION_UNSPECIFIED: _ClassVar[AppKeyLocalOperation]
     APP_KEY_LOCAL_OPERATION_UNLOCK: _ClassVar[AppKeyLocalOperation]
     APP_KEY_LOCAL_OPERATION_LOCK: _ClassVar[AppKeyLocalOperation]
+    APP_KEY_LOCAL_OPERATION_OFFICE: _ClassVar[AppKeyLocalOperation]
 APP_KEY_LOCAL_OPERATION_UNSPECIFIED: AppKeyLocalOperation
 APP_KEY_LOCAL_OPERATION_UNLOCK: AppKeyLocalOperation
 APP_KEY_LOCAL_OPERATION_LOCK: AppKeyLocalOperation
+APP_KEY_LOCAL_OPERATION_OFFICE: AppKeyLocalOperation
