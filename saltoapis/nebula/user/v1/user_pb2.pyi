@@ -103,7 +103,7 @@ class CardKey(_message.Message):
     def __init__(self, name: _Optional[str] = ..., uid: _Optional[str] = ..., state: _Optional[_Union[CardKey.State, str]] = ..., outdated: _Optional[bool] = ..., expire_time: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
 
 class AppKey(_message.Message):
-    __slots__ = ("name", "state", "outdated", "remote_operations", "type", "email")
+    __slots__ = ("name", "state", "outdated", "remote_operations")
     class State(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         STATE_UNSPECIFIED: _ClassVar[AppKey.State]
@@ -114,27 +114,15 @@ class AppKey(_message.Message):
     NOT_ASSIGNED: AppKey.State
     PENDING: AppKey.State
     ACTIVE: AppKey.State
-    class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = ()
-        TYPE_UNSPECIFIED: _ClassVar[AppKey.Type]
-        MANAGED: _ClassVar[AppKey.Type]
-        CALLER_MANAGED: _ClassVar[AppKey.Type]
-    TYPE_UNSPECIFIED: AppKey.Type
-    MANAGED: AppKey.Type
-    CALLER_MANAGED: AppKey.Type
     NAME_FIELD_NUMBER: _ClassVar[int]
     STATE_FIELD_NUMBER: _ClassVar[int]
     OUTDATED_FIELD_NUMBER: _ClassVar[int]
     REMOTE_OPERATIONS_FIELD_NUMBER: _ClassVar[int]
-    TYPE_FIELD_NUMBER: _ClassVar[int]
-    EMAIL_FIELD_NUMBER: _ClassVar[int]
     name: str
     state: AppKey.State
     outdated: bool
     remote_operations: _containers.RepeatedScalarFieldContainer[_remote_operation_pb2.AppKeyRemoteOperation]
-    type: AppKey.Type
-    email: str
-    def __init__(self, name: _Optional[str] = ..., state: _Optional[_Union[AppKey.State, str]] = ..., outdated: _Optional[bool] = ..., remote_operations: _Optional[_Iterable[_Union[_remote_operation_pb2.AppKeyRemoteOperation, str]]] = ..., type: _Optional[_Union[AppKey.Type, str]] = ..., email: _Optional[str] = ...) -> None: ...
+    def __init__(self, name: _Optional[str] = ..., state: _Optional[_Union[AppKey.State, str]] = ..., outdated: _Optional[bool] = ..., remote_operations: _Optional[_Iterable[_Union[_remote_operation_pb2.AppKeyRemoteOperation, str]]] = ...) -> None: ...
 
 class WalletKey(_message.Message):
     __slots__ = ("name", "state", "outdated")
@@ -377,27 +365,10 @@ class UpdateAppKeyRequest(_message.Message):
     def __init__(self, app_key: _Optional[_Union[AppKey, _Mapping]] = ..., update_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
 
 class AssignAppKeyRequest(_message.Message):
-    __slots__ = ("name", "managed", "caller_managed")
-    class Managed(_message.Message):
-        __slots__ = ("email",)
-        class Email(_message.Message):
-            __slots__ = ("address",)
-            ADDRESS_FIELD_NUMBER: _ClassVar[int]
-            address: str
-            def __init__(self, address: _Optional[str] = ...) -> None: ...
-        EMAIL_FIELD_NUMBER: _ClassVar[int]
-        email: AssignAppKeyRequest.Managed.Email
-        def __init__(self, email: _Optional[_Union[AssignAppKeyRequest.Managed.Email, _Mapping]] = ...) -> None: ...
-    class CallerManaged(_message.Message):
-        __slots__ = ()
-        def __init__(self) -> None: ...
+    __slots__ = ("name",)
     NAME_FIELD_NUMBER: _ClassVar[int]
-    MANAGED_FIELD_NUMBER: _ClassVar[int]
-    CALLER_MANAGED_FIELD_NUMBER: _ClassVar[int]
     name: str
-    managed: AssignAppKeyRequest.Managed
-    caller_managed: AssignAppKeyRequest.CallerManaged
-    def __init__(self, name: _Optional[str] = ..., managed: _Optional[_Union[AssignAppKeyRequest.Managed, _Mapping]] = ..., caller_managed: _Optional[_Union[AssignAppKeyRequest.CallerManaged, _Mapping]] = ...) -> None: ...
+    def __init__(self, name: _Optional[str] = ...) -> None: ...
 
 class CancelAppKeyRequest(_message.Message):
     __slots__ = ("name",)
