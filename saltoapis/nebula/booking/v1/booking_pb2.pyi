@@ -13,7 +13,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Booking(_message.Message):
-    __slots__ = ("name", "start_time", "end_time", "state", "check_in_time", "check_out_time", "unit", "access_rights")
+    __slots__ = ("name", "start_time", "end_time", "state", "check_in_time", "check_out_time", "unit_asset", "access_rights")
     class State(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         STATE_UNSPECIFIED: _ClassVar[Booking.State]
@@ -24,13 +24,18 @@ class Booking(_message.Message):
     SCHEDULED: Booking.State
     CHECKED_IN: Booking.State
     CHECKED_OUT: Booking.State
+    class UnitAsset(_message.Message):
+        __slots__ = ("unit",)
+        UNIT_FIELD_NUMBER: _ClassVar[int]
+        unit: str
+        def __init__(self, unit: _Optional[str] = ...) -> None: ...
     NAME_FIELD_NUMBER: _ClassVar[int]
     START_TIME_FIELD_NUMBER: _ClassVar[int]
     END_TIME_FIELD_NUMBER: _ClassVar[int]
     STATE_FIELD_NUMBER: _ClassVar[int]
     CHECK_IN_TIME_FIELD_NUMBER: _ClassVar[int]
     CHECK_OUT_TIME_FIELD_NUMBER: _ClassVar[int]
-    UNIT_FIELD_NUMBER: _ClassVar[int]
+    UNIT_ASSET_FIELD_NUMBER: _ClassVar[int]
     ACCESS_RIGHTS_FIELD_NUMBER: _ClassVar[int]
     name: str
     start_time: _timestamp_pb2.Timestamp
@@ -38,9 +43,9 @@ class Booking(_message.Message):
     state: Booking.State
     check_in_time: _timestamp_pb2.Timestamp
     check_out_time: _timestamp_pb2.Timestamp
-    unit: str
+    unit_asset: Booking.UnitAsset
     access_rights: _containers.RepeatedScalarFieldContainer[str]
-    def __init__(self, name: _Optional[str] = ..., start_time: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., end_time: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., state: _Optional[_Union[Booking.State, str]] = ..., check_in_time: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., check_out_time: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., unit: _Optional[str] = ..., access_rights: _Optional[_Iterable[str]] = ...) -> None: ...
+    def __init__(self, name: _Optional[str] = ..., start_time: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., end_time: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., state: _Optional[_Union[Booking.State, str]] = ..., check_in_time: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., check_out_time: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., unit_asset: _Optional[_Union[Booking.UnitAsset, _Mapping]] = ..., access_rights: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class CreateBookingRequest(_message.Message):
     __slots__ = ("parent", "booking_id", "booking")
