@@ -103,7 +103,7 @@ class BillingInfo(_message.Message):
     def __init__(self, name: _Optional[str] = ..., company: _Optional[str] = ..., address: _Optional[_Iterable[str]] = ..., region_code: _Optional[str] = ..., city: _Optional[str] = ..., state_code: _Optional[str] = ..., zip: _Optional[str] = ..., vat_number: _Optional[str] = ...) -> None: ...
 
 class PaymentMethod(_message.Message):
-    __slots__ = ("name", "card", "direct_debit")
+    __slots__ = ("name", "card", "direct_debit", "bank_transfer")
     class Card(_message.Message):
         __slots__ = ("expire_date", "last_four", "brand", "payment_authorization")
         EXPIRE_DATE_FIELD_NUMBER: _ClassVar[int]
@@ -129,13 +129,18 @@ class PaymentMethod(_message.Message):
         SEPA_FIELD_NUMBER: _ClassVar[int]
         sepa: PaymentMethod.DirectDebit.SEPA
         def __init__(self, sepa: _Optional[_Union[PaymentMethod.DirectDebit.SEPA, _Mapping]] = ...) -> None: ...
+    class BankTransfer(_message.Message):
+        __slots__ = ()
+        def __init__(self) -> None: ...
     NAME_FIELD_NUMBER: _ClassVar[int]
     CARD_FIELD_NUMBER: _ClassVar[int]
     DIRECT_DEBIT_FIELD_NUMBER: _ClassVar[int]
+    BANK_TRANSFER_FIELD_NUMBER: _ClassVar[int]
     name: str
     card: PaymentMethod.Card
     direct_debit: PaymentMethod.DirectDebit
-    def __init__(self, name: _Optional[str] = ..., card: _Optional[_Union[PaymentMethod.Card, _Mapping]] = ..., direct_debit: _Optional[_Union[PaymentMethod.DirectDebit, _Mapping]] = ...) -> None: ...
+    bank_transfer: PaymentMethod.BankTransfer
+    def __init__(self, name: _Optional[str] = ..., card: _Optional[_Union[PaymentMethod.Card, _Mapping]] = ..., direct_debit: _Optional[_Union[PaymentMethod.DirectDebit, _Mapping]] = ..., bank_transfer: _Optional[_Union[PaymentMethod.BankTransfer, _Mapping]] = ...) -> None: ...
 
 class PaymentAuthorization(_message.Message):
     __slots__ = ("name",)
